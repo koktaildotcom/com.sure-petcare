@@ -1,1 +1,3 @@
-# com.sureflap
+# Sureflap
+
+Adds support for Sureflap hub

@@ -1,0 +1,130 @@
+{
+	"id": "com.sureflap",
+	"version": "1.0.0",
+	"compatibility": ">=3.0.0",
+	"sdk": 2,
+	"name": {
+		"en": "Sureflap"
+	},
+	"description": {
+		"en": "Adds support for Sureflap hub"
+	},
+	"category": [
+		"lights"
+	],
+	"permissions": [],
+	"images": {
+		"large": "/assets/images/large.png",
+		"small": "/assets/images/small.png"
+	},
+	"author": {
+		"name": "Leendert De Kok",
+		"email": "koktaildotcom@hotmail.com"
+	},
+	"drivers": [
+		{
+			"id": "pet-door-connect",
+			"name": {
+				"en": "Pet Door connect"
+			},
+			"class": "lock",
+			"capabilities": [
+				"locked.out",
+				"locked.in"
+			],
+			"capabilitiesOptions": {
+				"locked.out": {
+					"titleTrue": {
+						"en": "Locked out",
+						"nl": "Gesloten uit"
+					},
+					"titleFalse": {
+						"en": "Unlocked out",
+						"nl": "Open uit"
+					},
+					"icon": "/drivers/pet-door-connect/assets/outside-icon.svg"
+				},
+				"locked.in": {
+					"titleTrue": {
+						"en": "Locked in",
+						"nl": "Gesloten in"
+					},
+					"titleFalse": {
+						"en": "Unlocked in",
+						"nl": "Open in"
+					},
+					"icon": "/drivers/pet-door-connect/assets/inside-icon.svg"
+				}
+			},
+			"images": {
+				"large": "/drivers/pet-door-connect/assets/images/large.png",
+				"small": "/drivers/pet-door-connect/assets/images/small.png"
+			},
+			"mobile": {
+				"components": [
+					{
+						"id": "icon",
+						"capabilities": []
+					},
+					{
+						"id": "sensor",
+						"capabilities": [
+							"locked.out",
+							"locked.in"
+						],
+						"options": {
+							"locked.out": {
+								"noblink": true,
+								"greyout": true,
+								"label": {
+									"true": {
+										"en": "Locked out",
+										"nl": "Gesloten uit"
+									},
+									"false": {
+										"en": "Unlocked out",
+										"nl": "Open uit"
+									}
+								}
+							},
+							"locked.in": {
+								"noblink": true,
+								"greyout": true,
+								"label": {
+									"true": {
+										"en": "Locked in",
+										"nl": "Gesloten in"
+									},
+									"false": {
+										"en": "Unlocked in",
+										"nl": "Open in"
+									}
+								}
+							}
+						}
+					},
+					{
+						"id": "toggle",
+						"capabilities": [
+							"locked.out",
+							"locked.in"
+						]
+					}
+				]
+			},
+			"pair": [
+				{
+					"id": "list_devices",
+					"template": "list_devices",
+					"navigation": {
+						"next": "add_device"
+					}
+				},
+				{
+					"id": "add_device",
+					"template": "add_devices"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "com.sureflap",
+  "version": "1.0.0",
+  "description": "Adds support for Sureflap hub",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koktaildotcom/com.sureflap.git"
+  },
+  "author": "Leendert de Kok",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/koktaildotcom/com.sureflap/issues"
+  },
+  "homepage": "https://github.com/koktaildotcom/com.sureflap#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  }
+}
