@@ -8,26 +8,46 @@ class PetDoorConnectDriver extends Homey.Driver {
         this.log('PetDoorConnectDriver has been inited')
     }
 
-    onPairListDevices (data, callback) {
-        const devices = [
-            {
-                // Required properties:
-                'data': {'id': 'abcd'},
+    onPair (socket) {
+        let username = ''
+        let password = ''
 
-                // Optional properties, these overwrite those specified in app.json:
-                // "name": "My Device",
-                // "icon": "/my_icon.svg", // relative to: /drivers/<driver_id>/assets/
-                // "capabilities": [ "onoff", "dim" ],
-                // "capabilitiesOptions: { "onoff": {} },
+        socket.on('login', (data, callback) => {
+            username = data.username
+            password = data.password
 
-                // Optional properties, device-specific:
-                // "store": { "foo": "bar" },
-                // "settings": { "my_setting": "my_value" },
+            console.log(data)
+            callback(null, true)
+        })
 
-            },
-        ]
+        socket.on('list_devices', (data, callback) => {
 
-        callback(null, devices)
+            // MyAPI.login({ username, password })
+            // .then(api => {
+            //     return api.getDevices();
+            // })
+            // .then(myDevices => {
+            //
+            // });
+
+            Homey.app.client.getDevices().then((sureFlapDevices) => {
+
+                const petDoors = sureFlapDevices.filter((sureFlapDevice) => {
+                    return sureFlapDevice.hasOwnProperty('product_id') &&
+                      3 === sureFlapDevice.product_id
+                })
+
+                const devices = []
+                for (const petDoor of petDoors) {
+                    devices.push({
+                        name: petDoor.name,
+                        data: petDoor,
+                    })
+                }
+
+                callback(null, devices)
+            })
+        })
     }
 }
 
