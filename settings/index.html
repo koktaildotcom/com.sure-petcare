@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+<head>
+    <style type="text/css">
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body.unauthorized #form,
+        body.authorized #profile {
+            display: flex;
+        }
+
+        body #profile,
+        body #form {
+            display: none;
+        }
+
+        .title {
+            font-size: 1.6em;
+            margin-bottom: 0.6em;
+            text-align: center;
+            color: #3440B6;
+        }
+
+        .logo {
+            position: relative;
+            margin: auto;
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+            background: #eee;
+            margin-bottom: 1em;
+            background-image: url(./logo.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        #profile {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        #name {
+            color: #ED8C00;
+        }
+
+        #address {
+            color: #999;
+            margin-bottom: 1em;
+            white-space: pre;
+        }
+
+        #form {
+            flex-direction: column;
+            align-items: center;
+            padding: 1em;
+        }
+
+        #form input {
+        }
+
+        #form #username,
+        #form #password {
+        }
+
+        #form #submit {
+            align-self: center;
+        }
+
+        #form #error {
+            color: orange;
+        }
+
+        .postnl-text {
+            width: 240px;
+            border: 1px solid #D4D9E3;
+            padding: 8px 10px;
+            height: 40px;
+            font-size: 14px;
+            caret-color: #ED8C00;
+            box-sizing: border-box;
+            transition: all 0.3s;
+            margin-bottom: 0.5em;
+        }
+
+        .postnl-text:focus {
+            border-color: #ED8C00;
+        }
+
+        .logout-button {
+            background: #F58C28;
+            border-radius: 6px 6px 0 6px;
+            color: white;
+            border: none;
+            line-height: 38px;
+            padding: 0 40px;
+            height: 40px;
+            font-size: 16px;
+            transition: all 0.3s;
+            -webkit-appearance: none;
+        }
+
+        .logout-button:hover {
+            cursor: pointer;
+            background: #647289;
+        }
+    </style>
+
+    <script type="text/javascript" src="/homey.js" data-origin="settings"></script>
+    <script type="text/javascript">
+        function onHomeyReady (Homey) {
+
+            var usernameEl = document.getElementById('username')
+            var passwordEl = document.getElementById('password')
+            var formEl = document.getElementById('form')
+            var errorEl = document.getElementById('error')
+            var logoEl = document.getElementById('logo')
+            var nameEl = document.getElementById('name')
+            var addressEl = document.getElementById('address')
+            var logoutEl = document.getElementById('logout')
+
+            function getUser () {
+                document.body.classList.remove('authorized')
+                document.body.classList.add('unauthorized')
+                if (null !== Homey.ManagerSettings.get('token')) {
+                    document.body.classList.remove('unauthorized')
+                    document.body.classList.add('authorized')
+                }
+            }
+
+            logoutEl.addEventListener('click', function (e) {
+                e.preventDefault()
+
+                Homey.ManagerSettings.set('token', null)
+            })
+
+            formEl.addEventListener('submit', function (e) {
+                e.preventDefault()
+
+                const username = usernameEl.value
+                const password = passwordEl.value
+
+                Homey.ManagerSettings.set('username', username)
+                Homey.ManagerSettings.set('password', password)
+
+                errorEl.textContent = ''
+                Homey.app.client.login(username, password).then((token) => {
+                    Homey.ManagerSettings.set('token', token)
+                }).catch((err) => {
+                    if (err) err = err.message || err
+                    const invalidCredentials = err && err.includes('invalid_credentials')
+
+                    if (err && invalidCredentials)
+                        return errorEl.textContent = Homey.__('invalid_credentials')
+
+                    if (err) return Homey.alert(err)
+                    getUser()
+                })
+
+                return false
+            })
+
+            getUser()
+            Homey.ready()
+        }
+    </script>
+</head>
+<body>
+
+<div id="profile">
+    <div id="logo" class="logo"></div>
+    <h2 class="title" id="name"></h2>
+    <div id="address"></div>
+    <button id="logout" data-i18n="logout" class="logout-button"></button>
+</div>
+
+<form id="form" action="/" method="post">
+    <div class="logo"></div>
+    <h2 class="title" data-i18n="login-title"></h2>
+    <input id="username" name="username" type="email" value="" data-i18n-placeholder="username" class="postnl-text"/>
+    <input id="password" name="password" type="password" value="" data-i18n-placeholder="password" class="postnl-text"/>
+    <input id="submit" type="submit" data-i18n-value="login" class="logout-button"/>
+    <p id="error"></p>
+</form>
+
+</body>
+</html>

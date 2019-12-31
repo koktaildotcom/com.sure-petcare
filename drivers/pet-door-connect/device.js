@@ -17,7 +17,13 @@ class PetDoorConnect extends Homey.Device {
         this.uuid = this.getDeviceData('id')
 
         this.registerListeners()
-        this.updateDevice()
+        if (false === Homey.app.client.hasToken()) {
+            Homey.app.login().then(() => {
+                this.updateDevice()
+            })
+        } else {
+            this.updateDevice()
+        }
     }
 
     updateDevice () {
@@ -55,10 +61,13 @@ class PetDoorConnect extends Homey.Device {
 
     _getProperty (target, params) {
         for (const param of params) {
+
+            // todo remove debugging
             console.log('get param:')
             console.log(param)
             console.log('from object:')
             console.log(target)
+
             if (false === target.hasOwnProperty(param)) {
                 throw new Error('Unknown param: ' + param)
             }

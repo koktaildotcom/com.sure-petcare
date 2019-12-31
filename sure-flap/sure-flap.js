@@ -4,8 +4,13 @@ const axios = require('axios')
 
 class SureFlapClient {
 
-    constructor () {
+    constructor (token) {
         this.baseUrl = 'https://app.api.surehub.io/api'
+        this.token = token
+    }
+
+    async hasToken () {
+        return !!this.token
     }
 
     async getDevice (uuid) {
@@ -25,8 +30,8 @@ class SureFlapClient {
         })
     }
 
-    async login (username, password) {
-        const login = await this.getLogin(username, password)
+    async authenticate (username, password) {
+        const login = await this.authLogin(username, password)
 
         if (false === login.hasOwnProperty('data')) {
             throw new Error('No data attribute in `auth` configuration.')
@@ -41,7 +46,7 @@ class SureFlapClient {
         return this.token
     }
 
-    async getLogin (username, password) {
+    async authLogin (username, password) {
         return axios(
           {
               method: 'post',
