@@ -1,11 +1,14 @@
 'use strict'
 
 const Homey = require('homey')
-const DeviceClient = require('./sure-flap/sure-flap.js')
+const DeviceClient = require('./lib/sure-flap.js')
 
 class SureFlap extends Homey.App {
     onInit () {
         this.log('SureFlap is running...')
+        if (undefined === Homey.ManagerSettings.get('token')) {
+            Homey.ManagerSettings.set('token', null)
+        }
         this.client = new DeviceClient(Homey.ManagerSettings.get('token'))
 
         if (false === Homey.app.client.hasToken()) {
@@ -13,15 +16,14 @@ class SureFlap extends Homey.App {
         }
     }
 
-    login () {
+    async login () {
         const token = Homey.ManagerSettings.get('token')
-        console.log('login?')
-        console.log(token)
         const username = Homey.ManagerSettings.get('username')
         const password = Homey.ManagerSettings.get('password')
-        Homey.app.client.authenticate(username, password).then((token) => {
-            Homey.ManagerSettings.set('token', token)
-            return token
+        return Homey.app.client.authenticate(username, password).then((token) => {
+            return Homey.ManagerSettings.set('token', token, () => {
+                return token
+            })
         }).catch((error) => {
             console.error('Error when logging in')
             throw new Error(error)

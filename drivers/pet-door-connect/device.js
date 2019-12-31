@@ -17,11 +17,8 @@ class PetDoorConnect extends Homey.Device {
         this.uuid = this.getDeviceData('id')
 
         this.registerListeners()
-        if (false === Homey.app.client.hasToken()) {
-            Homey.app.login().then(() => {
-                this.updateDevice()
-            })
-        } else {
+        console.log("PetDoorConnect.onInit token: " + Homey.app.client.hasToken())
+        if (Homey.app.client.hasToken()) {
             this.updateDevice()
         }
     }
@@ -32,6 +29,7 @@ class PetDoorConnect extends Homey.Device {
               device,
               ['data', 'locking'],
             )
+            console.log('get lockstate ' + currentLockState);
             for (let lockState in lockStates) {
                 if (lockStates[lockState] === currentLockState) {
                     this.setCapabilityValue('lock_mode', lockState)
@@ -61,13 +59,6 @@ class PetDoorConnect extends Homey.Device {
 
     _getProperty (target, params) {
         for (const param of params) {
-
-            // todo remove debugging
-            console.log('get param:')
-            console.log(param)
-            console.log('from object:')
-            console.log(target)
-
             if (false === target.hasOwnProperty(param)) {
                 throw new Error('Unknown param: ' + param)
             }

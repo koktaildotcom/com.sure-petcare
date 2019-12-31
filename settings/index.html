@@ -14,8 +14,8 @@
             display: flex;
         }
 
-        body #profile,
-        body #form {
+        body #form,
+        body #profile {
             display: none;
         }
 
@@ -78,7 +78,7 @@
             color: orange;
         }
 
-        .postnl-text {
+        .input-text {
             width: 240px;
             border: 1px solid #D4D9E3;
             padding: 8px 10px;
@@ -90,7 +90,7 @@
             margin-bottom: 0.5em;
         }
 
-        .postnl-text:focus {
+        .input-text:focus {
             border-color: #ED8C00;
         }
 
@@ -117,28 +117,45 @@
     <script type="text/javascript">
         function onHomeyReady (Homey) {
 
-            var usernameEl = document.getElementById('username')
-            var passwordEl = document.getElementById('password')
-            var formEl = document.getElementById('form')
-            var errorEl = document.getElementById('error')
-            var logoEl = document.getElementById('logo')
-            var nameEl = document.getElementById('name')
-            var addressEl = document.getElementById('address')
-            var logoutEl = document.getElementById('logout')
+            Homey.ready()
 
-            function getUser () {
+            const usernameEl = document.getElementById('username')
+            const passwordEl = document.getElementById('password')
+            const formEl = document.getElementById('form')
+            const errorEl = document.getElementById('error')
+            const logoutEl = document.getElementById('logout')
+
+            Homey.get('username', function (err, username) {
+                if (err) return Homey.alert(err)
+                usernameEl.value = username
+            })
+
+            Homey.get('password', function (err, password) {
+                if (err) return Homey.alert(err)
+                passwordEl.value = password
+            })
+
+            function checkAuthorisation () {
                 document.body.classList.remove('authorized')
                 document.body.classList.add('unauthorized')
-                if (null !== Homey.ManagerSettings.get('token')) {
-                    document.body.classList.remove('unauthorized')
-                    document.body.classList.add('authorized')
-                }
+
+                Homey.get('token', function (err, token) {
+                    if (err) return Homey.alert(err)x
+                    if (token && null !== token) {
+                        document.body.classList.remove('unauthorized')
+                        document.body.classList.add('authorized')
+                    }
+                })
             }
 
             logoutEl.addEventListener('click', function (e) {
                 e.preventDefault()
 
-                Homey.ManagerSettings.set('token', null)
+                Homey.set('token', null, err => {
+                    if (err) return Homey.alert(err)
+                })
+
+                checkAuthorisation()
             })
 
             formEl.addEventListener('submit', function (e) {
@@ -147,28 +164,28 @@
                 const username = usernameEl.value
                 const password = passwordEl.value
 
-                Homey.ManagerSettings.set('username', username)
-                Homey.ManagerSettings.set('password', password)
-
-                errorEl.textContent = ''
-                Homey.app.client.login(username, password).then((token) => {
-                    Homey.ManagerSettings.set('token', token)
-                }).catch((err) => {
-                    if (err) err = err.message || err
-                    const invalidCredentials = err && err.includes('invalid_credentials')
-
-                    if (err && invalidCredentials)
-                        return errorEl.textContent = Homey.__('invalid_credentials')
-
+                Homey.set('username', username, err => {
                     if (err) return Homey.alert(err)
-                    getUser()
+                })
+                Homey.set('password', password, err => {
+                    if (err) return Homey.alert(err)
                 })
 
-                return false
+                errorEl.textContent = ''
+
+                Homey.api(
+                  'POST',
+                  '/login',
+                  {},
+                  (err, result) => {
+                      console.log(err, result)
+                      if (err)
+                          errorEl.textContent = err.message
+                      checkAuthorisation()
+                  })
             })
 
-            getUser()
-            Homey.ready()
+            checkAuthorisation()
         }
     </script>
 </head>
@@ -184,8 +201,8 @@
 <form id="form" action="/" method="post">
     <div class="logo"></div>
     <h2 class="title" data-i18n="login-title"></h2>
-    <input id="username" name="username" type="email" value="" data-i18n-placeholder="username" class="postnl-text"/>
-    <input id="password" name="password" type="password" value="" data-i18n-placeholder="password" class="postnl-text"/>
+    <input id="username" name="username" type="email" value="" data-i18n-placeholder="username" class="input-text"/>
+    <input id="password" name="password" type="password" value="" data-i18n-placeholder="password" class="input-text"/>
     <input id="submit" type="submit" data-i18n-value="login" class="logout-button"/>
     <p id="error"></p>
 </form>
