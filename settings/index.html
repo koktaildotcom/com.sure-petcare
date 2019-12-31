@@ -140,7 +140,7 @@
                 document.body.classList.add('unauthorized')
 
                 Homey.get('token', function (err, token) {
-                    if (err) return Homey.alert(err)x
+                    if (err) return Homey.alert(err)
                     if (token && null !== token) {
                         document.body.classList.remove('unauthorized')
                         document.body.classList.add('authorized')
