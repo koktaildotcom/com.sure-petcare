@@ -17,7 +17,7 @@ class PetDoorConnect extends Homey.Device {
         this.uuid = this.getDeviceData('id')
 
         this.registerListeners()
-        console.log("PetDoorConnect.onInit token: " + Homey.app.client.hasToken())
+
         if (Homey.app.client.hasToken()) {
             this.updateDevice()
         }
@@ -29,7 +29,6 @@ class PetDoorConnect extends Homey.Device {
               device,
               ['data', 'locking'],
             )
-            console.log('get lockstate ' + currentLockState);
             for (let lockState in lockStates) {
                 if (lockStates[lockState] === currentLockState) {
                     this.setCapabilityValue('lock_mode', lockState)
