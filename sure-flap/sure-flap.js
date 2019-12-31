@@ -5,14 +5,60 @@ const axios = require('axios')
 class SureFlapClient {
 
     constructor () {
+        this.baseUrl = 'https://app.api.surehub.io/api'
     }
 
     async getDevice (uuid) {
-        const request = {
-            method: 'get',
-            url: '/device/' + uuid,
+        return axios(
+          {
+              method: 'get',
+              url: this.baseUrl + '/device/' + uuid,
+              headers: {
+                  'Content-Type': 'application/json',
+                  'Authorization': 'Bearer ' + this.token,
+              },
+          },
+        ).then((response) => {
+            return response.data
+        }).catch(function (error) {
+            console.error(error)
+        })
+    }
+
+    async login (username, password) {
+        const login = await this.getLogin(username, password)
+
+        if (false === login.hasOwnProperty('data')) {
+            throw new Error('No data attribute in `auth` configuration.')
         }
-        return this.client(request).then((response) => {
+
+        if (false === login.data.hasOwnProperty('token')) {
+            throw new Error('No token attribute in `login` configuration.')
+        }
+
+        this.token = login.data.token
+
+        return this.token
+    }
+
+    async getLogin (username, password) {
+        return axios(
+          {
+              method: 'post',
+              url: this.baseUrl + '/auth/login',
+              data: JSON.stringify({
+                  email_address: username,
+                  password: password,
+                  device_id: Math.floor(
+                    Math.random() * (999999999 - 100000000) + 100000000,
+                  ).toString(),
+              }),
+              headers: {
+                  'Content-Type': 'application/json',
+                  'Accept': 'application/json',
+              },
+          },
+        ).then((response) => {
             return response.data
         }).catch(function (error) {
             console.error(error)
@@ -35,11 +81,16 @@ class SureFlapClient {
     }
 
     async getAccountConfiguration () {
-        const request = {
-            method: 'get',
-            url: '/me/start',
-        }
-        return this.client(request).then((response) => {
+        return axios(
+          {
+              method: 'get',
+              url: this.baseUrl + '/me/start',
+              headers: {
+                  'Content-Type': 'application/json',
+                  'Authorization': 'Bearer ' + this.token,
+              },
+          },
+        ).then((response) => {
             return response.data
         }).catch(function (error) {
             console.error(error)
@@ -47,11 +98,16 @@ class SureFlapClient {
     }
 
     async getDeviceControl (uuid) {
-        const request = {
-            method: 'get',
-            url: '/device/' + uuid + '/control',
-        }
-        return this.client(request).then((response) => {
+        return axios(
+          {
+              method: 'get',
+              url: this.baseUrl + '/device/' + uuid + '/control',
+              headers: {
+                  'Content-Type': 'application/json',
+                  'Authorization': 'Bearer ' + this.token,
+              },
+          },
+        ).then((response) => {
             return response.data
         }).catch(function (error) {
             console.error(error)
@@ -59,14 +115,19 @@ class SureFlapClient {
     }
 
     async setDeviceControl (uuid, state) {
-        const request = {
-            method: 'put',
-            url: '/device/' + uuid + '/control',
-            data: JSON.stringify({
-                locking: state,
-            }),
-        }
-        return this.client(request).then((response) => {
+        return axios(
+          {
+              method: 'put',
+              url: this.baseUrl + '/device/' + uuid + '/control',
+              data: JSON.stringify({
+                  locking: state,
+              }),
+              headers: {
+                  'Content-Type': 'application/json',
+                  'Authorization': 'Bearer ' + this.token,
+              },
+          },
+        ).then((response) => {
             return response.data
         }).catch(function (error) {
             console.error(error)

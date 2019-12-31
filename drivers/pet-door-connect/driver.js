@@ -9,33 +9,32 @@ class PetDoorConnectDriver extends Homey.Driver {
     }
 
     onPair (socket) {
-        let username = ''
-        let password = ''
 
-        socket.on('login', (data, callback) => {
-            username = data.username
-            password = data.password
+        if (!Homey.ManagerSettings.get('token')) {
+            socket.on('login', (data, callback) => {
+                Homey.ManagerSettings.set('username', data.username)
+                Homey.ManagerSettings.set('password', data.password)
 
-            console.log(data)
-            callback(null, true)
-        })
+                const username = Homey.ManagerSettings.get('username')
+                const password = Homey.ManagerSettings.get('password')
+
+                Homey.app.client.login(username, password).then((token) => {
+                    Homey.ManagerSettings.set('token', token)
+                    callback(null, true)
+                }).catch((error) => {
+                    callback('Error when logging in')
+                    throw new Error(error)
+                })
+            })
+        }
 
         socket.on('list_devices', (data, callback) => {
-
-            // MyAPI.login({ username, password })
-            // .then(api => {
-            //     return api.getDevices();
-            // })
-            // .then(myDevices => {
-            //
-            // });
-
-            Homey.app.client.getDevices().then((sureFlapDevices) => {
-
-                const petDoors = sureFlapDevices.filter((sureFlapDevice) => {
-                    return sureFlapDevice.hasOwnProperty('product_id') &&
-                      3 === sureFlapDevice.product_id
-                })
+            Homey.app.client.getDevices().then(sureFlapDevices => {
+                const petDoors = sureFlapDevices.filter(
+                  (sureFlapDevice) => {
+                      return sureFlapDevice.hasOwnProperty('product_id') &&
+                        3 === sureFlapDevice.product_id
+                  })
 
                 const devices = []
                 for (const petDoor of petDoors) {

@@ -220,7 +220,7 @@
 		{
 			"id": "pet-door-connect",
 			"name": {
-				"en": "Pet door connect"
+				"en": "Pet Door Connect"
 			},
 			"class": "lock",
 			"capabilities": [
@@ -232,7 +232,8 @@
 			},
 			"pair": [
 				{
-					"id": "login_credentials"
+					"id": "login",
+					"template": "login_credentials"
 				},
 				{
 					"id": "list_devices",
