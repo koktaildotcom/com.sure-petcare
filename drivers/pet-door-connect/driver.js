@@ -9,21 +9,6 @@ class PetDoorConnectDriver extends Homey.Driver {
     }
 
     onPair (socket) {
-
-        if (false === Homey.app.client.hasToken()) {
-            socket.on('login', (data, callback) => {
-                Homey.ManagerSettings.set('username', data.username)
-                Homey.ManagerSettings.set('password', data.password)
-
-                Homey.app.login().then(() => {
-                    callback(null, true)
-                }).catch((error) => {
-                    callback('Error when logging in')
-                    throw new Error(error)
-                })
-            })
-        }
-
         socket.on('list_devices', (data, callback) => {
             Homey.app.client.getDevices().then(sureFlapDevices => {
                 const petDoors = sureFlapDevices.filter(

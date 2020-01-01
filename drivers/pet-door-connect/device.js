@@ -27,7 +27,7 @@ class PetDoorConnect extends Homey.Device {
         Homey.app.client.getDeviceControl(this.uuid).then((device) => {
             const currentLockState = this._getProperty(
               device,
-              ['data', 'locking'],
+              ['locking'],
             )
             for (let lockState in lockStates) {
                 if (lockStates[lockState] === currentLockState) {

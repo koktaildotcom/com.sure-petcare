@@ -10,24 +10,13 @@ class SureFlap extends Homey.App {
             Homey.ManagerSettings.set('token', null)
         }
         this.client = new DeviceClient(Homey.ManagerSettings.get('token'))
-
-        if (false === Homey.app.client.hasToken()) {
-            this.login()
-        }
     }
 
-    async login () {
-        const token = Homey.ManagerSettings.get('token')
-        const username = Homey.ManagerSettings.get('username')
-        const password = Homey.ManagerSettings.get('password')
-        return Homey.app.client.authenticate(username, password).then((token) => {
-            return Homey.ManagerSettings.set('token', token, () => {
-                return token
-            })
-        }).catch((error) => {
-            console.error('Error when logging in')
-            throw new Error(error)
-        })
+    async login (username, password) {
+        const token = await Homey.app.client.authenticate(username, password);
+        await Homey.ManagerSettings.set('token', token);
+
+        return token
     }
 }
 
