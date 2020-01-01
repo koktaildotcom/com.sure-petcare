@@ -33,7 +33,6 @@
             width: 150px;
             height: 150px;
             margin-bottom: 1em;
-            background-image: url(./logo.png);
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
@@ -95,7 +94,7 @@
             padding: 8px 10px;
             height: 40px;
             font-size: 14px;
-            caret-color: #ED8C00;
+            color: #ED8C00;
             box-sizing: border-box;
             transition: all 0.3s;
             margin-bottom: 0.5em;
@@ -105,7 +104,7 @@
             border-color: #ED8C00;
         }
 
-        .button {
+        .sure-patcare-button {
             background: #4fb0bd;
             color: white;
             border-radius: 6px 6px 0 6px;
@@ -118,7 +117,7 @@
             -webkit-appearance: none;
         }
 
-        .button:hover {
+        .sure-patcare-button:hover {
             cursor: pointer;
             background: #3b919a;
         }
@@ -232,9 +231,7 @@
 <div id="profile">
     <div id="avatar" class="avatar"></div>
     <h2 class="name" id="name"></h2>
-    <button id="logout" class="button">
-        <span data-i18n="logout"></span>
-    </button>
+    <input id="logout" type="submit" data-i18n-value="logout" class="sure-patcare-button"/>
 </div>
 
 <form id="form" action="/" method="post">
@@ -242,7 +239,7 @@
     <h2 class="title" data-i18n="login-title"></h2>
     <input id="username" name="username" type="email" value="" data-i18n-placeholder="username" class="input-text"/>
     <input id="password" name="password" type="password" value="" data-i18n-placeholder="password" class="input-text"/>
-    <input id="submit" type="submit" data-i18n-value="login" class="button"/>
+    <input id="submit" type="submit" data-i18n-value="login" class="sure-patcare-button"/>
     <p id="error"></p>
 </form>
 
