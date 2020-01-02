@@ -9,7 +9,7 @@ const lockStates = {
     lock_both_ways: 3,
 }
 
-class PetDoorConnect extends Homey.Device {
+class SureflapPetDoorConnect extends Homey.Device {
 
     onInit () {
         this.log('PetDoorConnect has been inited')
@@ -67,4 +67,4 @@ class PetDoorConnect extends Homey.Device {
     }
 }
 
-module.exports = PetDoorConnect
+module.exports = SureflapPetDoorConnect

@@ -1,15 +1,15 @@
 'use strict'
 
 const Homey = require('homey')
-const DeviceClient = require('./lib/sure-flap.js')
+const SurePetcareClient = require('./lib/sure-petcare-api.js')
 
-class SureFlap extends Homey.App {
+class SurePetcare extends Homey.App {
     onInit () {
         this.log('SureFlap is running...')
         if (undefined === Homey.ManagerSettings.get('token')) {
             Homey.ManagerSettings.set('token', null)
         }
-        this.client = new DeviceClient(Homey.ManagerSettings.get('token'))
+        this.client = new SurePetcareClient(Homey.ManagerSettings.get('token'))
     }
 
     async login (username, password) {
@@ -20,4 +20,4 @@ class SureFlap extends Homey.App {
     }
 }
 
-module.exports = SureFlap
+module.exports = SurePetcare

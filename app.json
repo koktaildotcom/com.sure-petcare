@@ -1,15 +1,15 @@
 {
-	"id": "com.sureflap",
+	"id": "com.sure-petcare",
 	"version": "1.0.0",
 	"compatibility": ">=3.0.0",
 	"sdk": 2,
 	"name": {
-		"en": "Sureflap",
-		"nl": "Sureflap"
+		"en": "Sure Petcare",
+		"nl": "Sure Petcare"
 	},
 	"description": {
-		"en": "Integrate Sureflap products into Homey",
-		"nl": "Integreert Sureflap producten met Homey"
+		"en": "Integrate Sure Petcare products into Homey",
+		"nl": "Integreert Sure Petcare producten met Homey"
 	},
 	"category": [
 		"tools",
@@ -17,14 +17,25 @@
 	],
 	"tags": {
 		"en": [
-			"Sureflap",
+			"sure",
+			"petcare",
+			"pet",
+			"cat",
+			"dog",
+			"sureflap",
 			"catflap"
 		],
 		"nl": [
-			"Sureflap",
-			"Kattenluik"
+			"sure",
+			"petcare",
+			"huisdier",
+			"kat",
+			"hond",
+			"sureflap",
+			"kattenluik"
 		]
 	},
+	"brandColor": "#16A6B6",
 	"permissions": [],
 	"images": {
 		"large": "/assets/images/large.png",
@@ -125,10 +136,7 @@
 						"id": "lock_mode_is",
 						"title": {
 							"en": "Lock mode is",
-							"nl": "Slot modus is",
-							"de": "Schloss-Modus ist",
-							"fr": "Mode verrou est",
-							"it": "La modalità di blocco è"
+							"nl": "Slot modus is"
 						},
 						"args": [
 							{
@@ -218,17 +226,17 @@
 	},
 	"drivers": [
 		{
-			"id": "pet-door-connect",
+			"id": "sureflap-pet-door-connect",
 			"name": {
-				"en": "Pet Door Connect"
+				"en": "Sureflap Pet Door Connect"
 			},
 			"class": "lock",
 			"capabilities": [
 				"lock_mode"
 			],
 			"images": {
-				"large": "/drivers/pet-door-connect/assets/images/large.png",
-				"small": "/drivers/pet-door-connect/assets/images/small.png"
+				"large": "/drivers/sureflap-pet-door-connect/assets/images/large.png",
+				"small": "/drivers/sureflap-pet-door-connect/assets/images/small.png"
 			},
 			"pair": [
 				{

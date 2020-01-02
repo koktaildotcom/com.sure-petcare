@@ -2,7 +2,7 @@
 
 const Homey = require('homey')
 
-class PetDoorConnectDriver extends Homey.Driver {
+class SureflapPetDoorConnectDriver extends Homey.Driver {
 
     onInit () {
         this.log('PetDoorConnectDriver has been inited')
@@ -31,4 +31,4 @@ class PetDoorConnectDriver extends Homey.Driver {
     }
 }
 
-module.exports = PetDoorConnectDriver
+module.exports = SureflapPetDoorConnectDriver
