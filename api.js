@@ -6,8 +6,10 @@ module.exports = [
         path: '/login',
         fn: (args, callback) => {
             Homey.app.login(args.body.username, args.body.password).then((token) => {
-                return callback(null, token)
-            })
+                  return callback(null, token)
+              }).catch((error) => {
+                  return callback(error.message, null)
+              })
         },
     },
     {
@@ -16,6 +18,8 @@ module.exports = [
         fn: (args, callback) => {
             Homey.app.client.getProfile().then((profile) => {
                 return callback(null, profile)
+            }).catch((error) => {
+                return callback(error.message, null)
             })
         },
     },
@@ -24,8 +28,10 @@ module.exports = [
         path: '/photo/:id',
         fn: (args, callback) => {
             Homey.app.client.getPhoto(parseInt(args.params.id)).then((photo) => {
-                return callback(null, photo)
-            })
+                  return callback(null, photo)
+              }).catch((error) => {
+                  return callback(error.message, null)
+              })
         },
     },
 ]

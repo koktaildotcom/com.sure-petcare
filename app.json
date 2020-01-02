@@ -228,7 +228,8 @@
 		{
 			"id": "sureflap-pet-door-connect",
 			"name": {
-				"en": "Sureflap Pet Door Connect"
+				"en": "Sureflap Pet Door Connect",
+				"nl": "Sureflap Huisdierluik Connect"
 			},
 			"class": "lock",
 			"capabilities": [
