@@ -29,18 +29,22 @@
             display: none;
         }
 
-        .loader div {
-            border: 16px solid #fff;
-            border-top: 16px solid #597181;
+        body.loading #loading div {
+            border: 3px solid #fff;
+            border-top: 3px solid #597181;
             border-radius: 50%;
-            width: 120px;
-            height: 120px;
-            animation: spin 2s linear infinite;
+            width: 25px;
+            height: 25px;
+            animation: spin 0.5s linear infinite;
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         .title {
@@ -85,7 +89,7 @@
 
         #name {
             font-size: 1em;
-            margin-bottom: 2em;
+            margin-bottom: 1em;
             text-align: center;
             color: #597181;
             font-weight: 400;
@@ -136,6 +140,7 @@
             font-size: 16px;
             transition: all 0.3s;
             -webkit-appearance: none;
+            margin-top: 1em;
         }
 
         .sure-patcare-button:hover {
@@ -257,7 +262,7 @@
 <body>
 
 <div id="loading">
-    <div>loading</div>
+    <div></div>
 </div>
 
 <div id="profile">
