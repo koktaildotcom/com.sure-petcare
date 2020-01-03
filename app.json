@@ -142,8 +142,8 @@
 					{
 						"id": "lock_mode_is",
 						"title": {
-							"en": "Lock mode is",
-							"nl": "Slot modus is"
+							"en": "Lock mode !{{is|is not}}",
+							"nl": "Slot modus !{{is|is niet}}"
 						},
 						"args": [
 							{
@@ -187,8 +187,8 @@
 					{
 						"id": "mode",
 						"title": {
-							"en": "Set mode",
-							"nl": "Stel stand in"
+							"en": "Set lock mode to:",
+							"nl": "Zet slot modus naar:"
 						},
 						"args": [
 							{

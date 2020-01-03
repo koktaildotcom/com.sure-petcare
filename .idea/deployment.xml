@@ -5,7 +5,7 @@
       <paths name="Pi">
         <serverdata>
           <mappings>
-            <mapping deploy="/var/www/html/com.sureflap" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/var/www/html/com.sure-petcare" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
