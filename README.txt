@@ -17,3 +17,5 @@ first alpha
 add support for Sureflap Ped Door
 v1.0.1 - 03.01.2020
 add support for Sureflap Cat Flap
+v1.0.2 - 03.01.2020
+update metadata
