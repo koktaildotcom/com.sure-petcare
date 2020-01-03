@@ -20,6 +20,9 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
 ## History
 ### v1.0.0 - 02.01.2020
   * first alpha
-
+  * add support for Sureflap Ped Door
+### v1.0.1 - 03.01.2020
+  * add support for Sureflap Cat Flap
+  
 ## Final note ##
 The repository is available at: https://github.com/koktaildotcom/homey-mi-flora

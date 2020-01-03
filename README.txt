@@ -14,3 +14,6 @@ Usage
 
 v1.0.0 - 02.01.2020
 first alpha
+add support for Sureflap Ped Door
+v1.0.1 - 03.01.2020
+add support for Sureflap Cat Flap
