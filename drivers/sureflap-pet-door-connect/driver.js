@@ -4,7 +4,7 @@ const SureflapDriver = require('../../lib/sureflap-driver.js')
 
 class SureflapPetDoorConnectDriver extends SureflapDriver {
     getProductId () {
-        return 2
+        return 3
     }
 }
 

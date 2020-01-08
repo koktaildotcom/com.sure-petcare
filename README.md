@@ -25,6 +25,7 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
   * add support for Sureflap Cat Flap
 ### v1.0.2 - 03.01.2020
   * update metadata
+  * change readme after review
   
 ## Final note ##
 The repository is available at: https://github.com/koktaildotcom/homey-mi-flora

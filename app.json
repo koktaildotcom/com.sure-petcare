@@ -91,144 +91,7 @@
 			],
 			"getable": true,
 			"setable": true,
-			"uiComponent": "picker",
-			"$flow": {
-				"triggers": [
-					{
-						"id": "lock_mode_changed",
-						"title": {
-							"en": "Lock mode has changed",
-							"nl": "Slot modus is veranderd"
-						},
-						"args": [
-							{
-								"name": "mode",
-								"type": "dropdown",
-								"values": [
-									{
-										"id": "open",
-										"title": {
-											"en": "Open",
-											"nl": "Open"
-										}
-									},
-									{
-										"id": "keep_inside",
-										"title": {
-											"en": "Keep inside",
-											"nl": "Binnen houden"
-										}
-									},
-									{
-										"id": "keep_inside",
-										"title": {
-											"en": "Keep outside",
-											"nl": "Buiten houden"
-										}
-									},
-									{
-										"id": "lock_both_ways",
-										"title": {
-											"en": "Lock both ways",
-											"nl": "Beide kanten vergrendelen"
-										}
-									}
-								]
-							}
-						]
-					}
-				],
-				"conditions": [
-					{
-						"id": "lock_mode_is",
-						"title": {
-							"en": "Lock mode !{{is|is not}}",
-							"nl": "Slot modus !{{is|is niet}}"
-						},
-						"args": [
-							{
-								"name": "mode",
-								"type": "dropdown",
-								"values": [
-									{
-										"id": "open",
-										"title": {
-											"en": "Open",
-											"nl": "Open"
-										}
-									},
-									{
-										"id": "keep_inside",
-										"title": {
-											"en": "Keep inside",
-											"nl": "Binnen houden"
-										}
-									},
-									{
-										"id": "keep_inside",
-										"title": {
-											"en": "Keep outside",
-											"nl": "Buiten houden"
-										}
-									},
-									{
-										"id": "lock_both_ways",
-										"title": {
-											"en": "Lock both ways",
-											"nl": "Beide kanten vergrendelen"
-										}
-									}
-								]
-							}
-						]
-					}
-				],
-				"actions": [
-					{
-						"id": "mode",
-						"title": {
-							"en": "Set lock mode to:",
-							"nl": "Zet slot modus naar:"
-						},
-						"args": [
-							{
-								"name": "mode",
-								"type": "dropdown",
-								"values": [
-									{
-										"id": "open",
-										"title": {
-											"en": "Open",
-											"nl": "Open"
-										}
-									},
-									{
-										"id": "keep_inside",
-										"title": {
-											"en": "Keep inside",
-											"nl": "Binnen houden"
-										}
-									},
-									{
-										"id": "keep_inside",
-										"title": {
-											"en": "Keep outside",
-											"nl": "Buiten houden"
-										}
-									},
-									{
-										"id": "lock_both_ways",
-										"title": {
-											"en": "Lock both ways",
-											"nl": "Beide kanten vergrendelen"
-										}
-									}
-								]
-							}
-						]
-					}
-				]
-			}
+			"uiComponent": "picker"
 		}
 	},
 	"drivers": [
@@ -288,5 +151,158 @@
 				}
 			]
 		}
-	]
+	],
+	"flow": {
+		"triggers": [
+			{
+				"id": "lock_mode_changed",
+				"title": {
+					"en": "Lock mode has changed",
+					"nl": "Slot modus is veranderd"
+				},
+				"tokens": [
+					{
+						"name": "lock_mode",
+						"title": {
+							"en": "Lock mode",
+							"nl": "Slot modus"
+						},
+						"example": {
+							"en": "Open",
+							"nl": "Open"
+						}
+					}
+				],
+				"args": [
+					{
+						"name": "lock_mode",
+						"type": "device",
+						"values": [
+							{
+								"id": "open",
+								"title": {
+									"en": "Open",
+									"nl": "Open"
+								}
+							},
+							{
+								"id": "keep_inside",
+								"title": {
+									"en": "Keep inside",
+									"nl": "Binnen houden"
+								}
+							},
+							{
+								"id": "keep_inside",
+								"title": {
+									"en": "Keep outside",
+									"nl": "Buiten houden"
+								}
+							},
+							{
+								"id": "lock_both_ways",
+								"title": {
+									"en": "Lock both ways",
+									"nl": "Beide kanten vergrendelen"
+								}
+							}
+						],
+						"filter": "driver_id=sureflap-pet-door-connect|sureflap-cat-flap-connect"
+					}
+				]
+			}
+		],
+		"conditions": [
+			{
+				"id": "lock_mode_is",
+				"title": {
+					"en": "Lock mode !{{is|is not}}",
+					"nl": "Slot modus !{{is|is niet}}"
+				},
+				"args": [
+					{
+						"name": "lock_mode",
+						"type": "dropdown",
+						"values": [
+							{
+								"id": "open",
+								"title": {
+									"en": "Open",
+									"nl": "Open"
+								}
+							},
+							{
+								"id": "keep_inside",
+								"title": {
+									"en": "Keep inside",
+									"nl": "Binnen houden"
+								}
+							},
+							{
+								"id": "keep_inside",
+								"title": {
+									"en": "Keep outside",
+									"nl": "Buiten houden"
+								}
+							},
+							{
+								"id": "lock_both_ways",
+								"title": {
+									"en": "Lock both ways",
+									"nl": "Beide kanten vergrendelen"
+								}
+							}
+						],
+						"filter": "driver_id=sureflap-pet-door-connect|sureflap-cat-flap-connect"
+					}
+				]
+			}
+		],
+		"actions": [
+			{
+				"id": "set_lock_mode",
+				"title": {
+					"en": "Set lock mode to:",
+					"nl": "Zet slot modus naar:"
+				},
+				"args": [
+					{
+						"name": "lock_mode",
+						"type": "dropdown",
+						"values": [
+							{
+								"id": "open",
+								"title": {
+									"en": "Open",
+									"nl": "Open"
+								}
+							},
+							{
+								"id": "keep_inside",
+								"title": {
+									"en": "Keep inside",
+									"nl": "Binnen houden"
+								}
+							},
+							{
+								"id": "keep_inside",
+								"title": {
+									"en": "Keep outside",
+									"nl": "Buiten houden"
+								}
+							},
+							{
+								"id": "lock_both_ways",
+								"title": {
+									"en": "Lock both ways",
+									"nl": "Beide kanten vergrendelen"
+								}
+							}
+						],
+						"filter": "driver_id=sureflap-pet-door-connect|sureflap-cat-flap-connect"
+					}
+				]
+			}
+		]
+	}
 }
