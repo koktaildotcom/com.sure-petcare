@@ -6,11 +6,11 @@ module.exports = [
         path: '/login',
         fn: (args, callback) => {
 
-            if (args.body.hasOwnProperty('username')) {
+            if (false === args.body.hasOwnProperty('username')) {
                 callback('No username found')
             }
 
-            if (args.body.hasOwnProperty('password')) {
+            if (false === args.body.hasOwnProperty('password')) {
                 callback('No password found')
             }
 
