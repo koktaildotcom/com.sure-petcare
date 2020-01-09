@@ -36,3 +36,4 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
 ### v1.0.4 - 09.01.2020
   * add new metadata
   * add communityId
+  * resolve login issue
