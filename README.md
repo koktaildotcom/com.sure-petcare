@@ -28,6 +28,3 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
   * change readme after review
 ### v1.0.3 - 09.01.2020
   * add trigger, condition and action cards
-  
-## Final note ##
-The repository is available at: https://github.com/koktaildotcom/homey-mi-flora
