@@ -7,9 +7,14 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
 
 ## Q&amp;A
 
-> **Q1**  Why is the `Pet feeder connect` not available?
+> **Q1** Why is the `Pet feeder connect` not available?
 
 * _I don't have that device to test the functionality_
+
+
+> **Q2** Why is there no card for presence detection for pets?
+
+* _I'm currently investigate the opportunity for that functionality_
 
 ## Usage
 1. Install app
@@ -20,7 +25,7 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
 ## History
 ### v1.0.0 - 02.01.2020
   * first alpha
-  * add support for Sureflap Ped Door
+  * add support for Sureflap Pet Door 
 ### v1.0.1 - 03.01.2020
   * add support for Sureflap Cat Flap
 ### v1.0.2 - 03.01.2020
@@ -28,3 +33,6 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
   * change readme after review
 ### v1.0.3 - 09.01.2020
   * add trigger, condition and action cards
+### v1.0.4 - 09.01.2020
+  * add new metadata
+  * add communityId
