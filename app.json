@@ -1,6 +1,6 @@
 {
 	"id": "com.sure-petcare",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"compatibility": ">=3.0.0",
 	"sdk": 2,
 	"name": {
@@ -12,8 +12,8 @@
 		"nl": "Integreert Sure Petcare producten met Homey"
 	},
 	"category": [
-		"tools",
-		"localization"
+		"localization",
+		"tools"
 	],
 	"tags": {
 		"en": [

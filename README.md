@@ -33,6 +33,7 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
   * change readme after review
 ### v1.0.3 - 09.01.2020
   * add trigger, condition and action cards
-### v1.0.4 - 09.01.2020
+### v1.0.4 - ?.01.2020
   * add new metadata
   * add communityId
+  * change category
