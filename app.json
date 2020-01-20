@@ -1,6 +1,6 @@
 {
 	"id": "com.sure-petcare",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"compatibility": ">=3.0.0",
 	"sdk": 2,
 	"name": {
@@ -194,7 +194,7 @@
 								}
 							},
 							{
-								"id": "keep_inside",
+								"id": "keep_outside",
 								"title": {
 									"en": "Keep outside",
 									"nl": "Buiten houden"
@@ -240,7 +240,7 @@
 								}
 							},
 							{
-								"id": "keep_inside",
+								"id": "keep_outside",
 								"title": {
 									"en": "Keep outside",
 									"nl": "Buiten houden"
@@ -286,7 +286,7 @@
 								}
 							},
 							{
-								"id": "keep_inside",
+								"id": "keep_outside",
 								"title": {
 									"en": "Keep outside",
 									"nl": "Buiten houden"

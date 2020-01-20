@@ -37,3 +37,5 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
   * add new metadata
   * add communityId
   * resolve login issue
+### v1.0.5 - 20.01.2020
+  * fixed typo that will resolve [trigger action issue](https://github.com/koktaildotcom/com.sure-petcare/issues/1)
