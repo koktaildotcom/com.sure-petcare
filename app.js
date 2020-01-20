@@ -98,6 +98,19 @@ class SurePetcare extends Homey.App {
     }
 
     /**
+     * Patch a stored pet by name
+     *
+     * @param pet
+     */
+    patchStoredPet(pet) {
+        for (const index in this.storedPets) {
+            if (pet.name === this.storedPets[index].name) {
+                this.storedPets[index] = pet;
+            }
+        }
+    }
+
+    /**
      * @private
      *
      * start the synchronisation
@@ -189,6 +202,8 @@ class SurePetcare extends Homey.App {
             for (const pet of pets) {
                 const storedPet = this.getStoredPet(pet.name)
                 if(pet.position.where !== storedPet.position.where){
+                    storedPet.position = pet.position
+                    this.patchStoredPet(storedPet);
                     try{
                         const deviceId = this._getProperty(pet, ['position', 'device_id'])
                         console.log('change position for ' + device.name)
