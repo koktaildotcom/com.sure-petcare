@@ -17,25 +17,45 @@ class SurePetcare extends Homey.App {
 
         this.client = new SurePetcareClient(Homey.ManagerSettings.get('token'))
 
-        this.petCameHome = new Homey.FlowCardTrigger('pet_came_home')
-        this.petCameHome.register()
+        // @todo make the registerAutocompleteListener run in function
+        this.petAway = new Homey.FlowCardTriggerDevice('pet_away')
+        this.petAway.register()
+        // this.petAway.registerRunListener((args, state) => {
+        //         console.log(args, state)
+        // })
+        this.petAway
+            .getArgument('search_pet')
+            .registerAutocompleteListener((query, args) => {
+                let matches = this.storedPets.filter(
+                  (pet) => { return pet.name.match(new RegExp(query, 'gi')) },
+                )
+                if (!matches) {
+                    matches = []
+                }
+                return Promise.resolve(matches)
+            })
 
-        this.petCameHome.registerRunListener((args, state) => {
-            console.log(args, state)
-        })
-
-        this.petCameHome.getArgument('search_pet').
-          registerAutocompleteListener((query, args) => {
-              let matches = this.storedPets.filter(
-                (pet) => { return pet.name.match(new RegExp(query, 'gi')) },
-              )
-              if (!matches) {
-                  matches = []
-              }
-              return Promise.resolve(matches)
-          })
+        this.petHome = new Homey.FlowCardTriggerDevice('pet_home')
+        this.petHome.register()
+        // this.petHome.registerRunListener((args, state) => {
+        //     console.log(args, state)
+        // })
+        this.petHome
+            .getArgument('search_pet')
+            .registerAutocompleteListener((query, args) => {
+                let matches = this.storedPets.filter(
+                  (pet) => { return pet.name.match(new RegExp(query, 'gi')) },
+                )
+                if (!matches) {
+                    matches = []
+                }
+                return Promise.resolve(matches)
+            })
     }
 
+    /**
+     * start the sync process
+     */
     startSync () {
         console.log('startSync')
         if (Homey.app.client.hasToken()) {
@@ -49,6 +69,18 @@ class SurePetcare extends Homey.App {
     registerDevice (device) {
         console.log('register device ' + device)
         this.devices.push(device)
+    }
+
+    /**
+     * @param device SureflapDevice
+     */
+    unregisterDevice (device) {
+        console.log('unregister device ' + device)
+        for (const index in this.devices) {
+            if (device.name === this.devices[index].name) {
+                this.devices.splice(index, 1)
+            }
+        }
     }
 
     /**
@@ -66,17 +98,11 @@ class SurePetcare extends Homey.App {
      * start the synchronisation
      */
     _synchronise () {
-
-        console.log('_synchronise')
-
-        console.log(this.syncInProgress)
-
         if (false === this.syncInProgress) {
             try {
                 this.syncInProgress = true
                 let updateDevicesTime = new Date()
                 if (this.devices.length > 0) {
-                    console.log('get start')
                     Homey.app.client.getStart().then(syncData => {
 
                         const pets = this._getProperty(syncData, ['pets'])
@@ -84,21 +110,13 @@ class SurePetcare extends Homey.App {
                             for (const pet of pets) {
                                 const storedPet = this.getStoredPet(pet.name);
                                 if (!storedPet) {
-                                    this.client.getPhoto(
-                                      parseInt(pet.photo_id)).then((photo) => {
-                                        console.log('add ' + pet.name)
-                                        this.storedPets.push({
-                                            image: photo.location,
-                                            name: pet.name,
-                                            description: pet.name,
-                                        })
-                                    }).catch(() => {
-                                        console.log('add ' + pet.name)
-                                        this.storedPets.push({
-                                            name: pet.name,
-                                            description: pet.name,
-                                        })
-                                    })
+                                    const newPet = {
+                                        image: this._getProperty(pet, ['photo', 'location']),
+                                        name: pet.name,
+                                        description: pet.comments,
+                                        position: this._getProperty(pet, ['position'])
+                                    }
+                                    this.storedPets.push(newPet)
                                 }
                             }
                         }
@@ -141,10 +159,8 @@ class SurePetcare extends Homey.App {
      * @returns {Promise.<SureflapDevice[]>}
      */
     async updateDevices (devices, data) {
-        console.log('_updateDevices')
         return await devices.reduce((promise, device) => {
             return promise.then(() => {
-                console.log('reduce')
                 return Homey.app.updateDevice(device, data).catch((error) => {
                     console.log(error.message)
                 })
@@ -159,43 +175,53 @@ class SurePetcare extends Homey.App {
      * update the devices one by one
      *
      * @param device SureflapDevice
+     * @param data object
      *
      * @returns {Promise.<SureflapDevice>}
      */
     async updateDevice (device, data) {
-
-        const pets = this._getProperty(syncData, ['pets'])
+        const pets = this._getProperty(data, ['pets'])
         if (pets.length > 0) {
             for (const pet of pets) {
-                if(this._getProperty(pet, ['status', 'activity', 'device_id']) === device.getId()){
-                    console.log('throught this device!');
-                }
-                const storedPet = this.getStoredPet(pet.name);
-                if(storedPet){
-                    this.petCameHome.trigger({
-                        'pet': pet.name
-                    })
+
+                this.petHome.trigger(device, {
+                    'pet': pet.name
+                })
+
+                const storedPet = this.getStoredPet(pet.name)
+                if(pet.position.where !== storedPet.position.where){
+                    try{
+                        const deviceId = this._getProperty(pet, ['position', 'device_id'])
+                        console.log('change position for ' + device.name)
+                        if(deviceId === device.getId()) {
+                            if (pet.position.where === 1) {
+                                this.petHome.trigger(device, {
+                                    'pet': pet.name
+                                })
+                            }
+                            if (pet.position.where === 2) {
+                                this.petAway.trigger(device, {
+                                    'pet': pet.name
+                                })
+                            }
+                        }
+                    }
+                    catch (error) {
+                        // @todo add trigger for home/away globally
+                    }
                 }
             }
         }
 
-
-
-        /**
-         status:
-         { activity:
-            { tag_id: 86163,
-              device_id: 477790,
-              where: 1,
-              since: '2020-01-12T07:21:00+00:00' } } }
-         */
-
-        //console.log(data)
-        //console.log(device)
-
         return device
     }
 
+    /**
+     * @param username
+     * @param password
+     *
+     * @returns {Promise}
+     */
     async login (username, password) {
         const token = await Homey.app.client.authenticate(username, password)
         await Homey.ManagerSettings.set('token', token)
@@ -203,6 +229,14 @@ class SurePetcare extends Homey.App {
         return token
     }
 
+    /**
+     * @private
+     *
+     * @param target
+     * @param params
+     *
+     * @returns {*}
+     */
     _getProperty (target, params) {
         for (const param of params) {
             if (false === target.hasOwnProperty(param)) {
@@ -219,7 +253,7 @@ class SurePetcare extends Homey.App {
      * set a new timeout for synchronisation
      */
     _setNewTimeout () {
-        let interval = 1000 * 10
+        let interval = 1000 * 60
 
         setTimeout(this._synchronise.bind(this), interval)
     }

@@ -213,7 +213,7 @@
 				]
 			},
 			{
-				"id": "pet_came_home",
+				"id": "pet_home",
 				"title": {
 					"en": "Pet came home",
 					"nl": "Huisdier is thuis gekomen"
@@ -230,8 +230,48 @@
 							"nl": "Mr. kat"
 						}
 					}
-				],`
+				],
 				"args": [
+					{
+						"name": "device",
+						"type": "device",
+						"filter": "driver_id=sureflap-pet-door-connect|sureflap-cat-flap-connect"
+					},
+					{
+						"name": "search_pet",
+						"type": "autocomplete",
+						"placeholder": {
+							"en": "Search your pet",
+							"nl": "Zoek je huisdier"
+						}
+					}
+				]
+			},
+			{
+				"id": "pet_away",
+				"title": {
+					"en": "Pet goes outside",
+					"nl": "Huisdier is naar buiten gegaan"
+				},
+				"tokens": [
+					{
+						"name": "pet",
+						"title": {
+							"en": "Pet",
+							"nl": "Huisdier"
+						},
+						"example": {
+							"en": "Mr. kat",
+							"nl": "Mr. kat"
+						}
+					}
+				],
+				"args": [
+					{
+						"name": "device",
+						"type": "device",
+						"filter": "driver_id=sureflap-pet-door-connect|sureflap-cat-flap-connect"
+					},
 					{
 						"name": "search_pet",
 						"type": "autocomplete",
