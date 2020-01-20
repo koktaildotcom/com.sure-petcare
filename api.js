@@ -5,6 +5,15 @@ module.exports = [
         method: 'POST',
         path: '/login',
         fn: (args, callback) => {
+
+            if (false === args.body.hasOwnProperty('username')) {
+                callback('No username found')
+            }
+
+            if (false === args.body.hasOwnProperty('password')) {
+                callback('No password found')
+            }
+
             Homey.app.login(args.body.username, args.body.password).then((token) => {
                   return callback(null, token)
               }).catch((error) => {

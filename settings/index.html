@@ -163,12 +163,17 @@
             const nameEl = document.getElementById('name')
 
             function setupApp () {
+
                 Homey.get('username', function (err, username) {
-                    if (err) return Homey.alert(err)
+                    if (err) {
+                        usernameEl.value = ''
+                    }
                     usernameEl.value = username
                 })
                 Homey.get('password', function (err, password) {
-                    if (err) return Homey.alert(err)
+                    if (err) {
+                        passwordEl.value = ''
+                    }
                     passwordEl.value = password
                 })
                 Homey.get('token', function (err, result) {
@@ -238,6 +243,11 @@
                 })
 
                 errorEl.textContent = ''
+
+                console.log({
+                    username: username,
+                    password: password,
+                })
 
                 Homey.api(
                   'POST',
