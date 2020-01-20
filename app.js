@@ -17,14 +17,16 @@ class SurePetcare extends Homey.App {
 
         this.client = new SurePetcareClient(Homey.ManagerSettings.get('token'))
 
-        // @todo make the registerAutocompleteListener run in function
-        this.petAway = new Homey.FlowCardTriggerDevice('pet_away')
-        this.petAway.register()
-        // this.petAway.registerRunListener((args, state) => {
-        //         console.log(args, state)
-        // })
-        this.petAway
-            .getArgument('search_pet')
+        new Homey.FlowCardTriggerDevice('pet_away')
+            .registerRunListener((args, state) => {
+                let match = false
+                if (args.hasOwnProperty('pet') && args.pet.hasOwnProperty('id')) {
+                    match = args.pet.id === state.petId
+                }
+                return Promise.resolve(match)
+            })
+            .register()
+            .getArgument('pet')
             .registerAutocompleteListener((query, args) => {
                 let matches = this.storedPets.filter(
                   (pet) => { return pet.name.match(new RegExp(query, 'gi')) },
@@ -35,13 +37,16 @@ class SurePetcare extends Homey.App {
                 return Promise.resolve(matches)
             })
 
-        this.petHome = new Homey.FlowCardTriggerDevice('pet_home')
-        this.petHome.register()
-        // this.petHome.registerRunListener((args, state) => {
-        //     console.log(args, state)
-        // })
-        this.petHome
-            .getArgument('search_pet')
+        new Homey.FlowCardTriggerDevice('pet_home')
+            .registerRunListener((args, state) => {
+                let match = false
+                if (args.hasOwnProperty('pet') && args.pet.hasOwnProperty('id')) {
+                    match = args.pet.id === state.petId
+                }
+                return Promise.resolve(match)
+            })
+            .register()
+            .getArgument('pet')
             .registerAutocompleteListener((query, args) => {
                 let matches = this.storedPets.filter(
                   (pet) => { return pet.name.match(new RegExp(query, 'gi')) },
@@ -111,6 +116,7 @@ class SurePetcare extends Homey.App {
                                 const storedPet = this.getStoredPet(pet.name);
                                 if (!storedPet) {
                                     const newPet = {
+                                        id: pet.id,
                                         image: this._getProperty(pet, ['photo', 'location']),
                                         name: pet.name,
                                         description: pet.comments,
@@ -123,9 +129,7 @@ class SurePetcare extends Homey.App {
 
                         Homey.app.updateDevices(this.devices, syncData).
                           then(() => {
-                              console.log('Hub sync complete in: ' +
-                                (new Date() - updateDevicesTime) / 1000 +
-                                ' seconds')
+                              console.log('Hub sync complete in: ' + (new Date() - updateDevicesTime) / 1000 + ' seconds')
                               this.syncInProgress = false
                               this._setNewTimeout()
                           }).
@@ -183,11 +187,6 @@ class SurePetcare extends Homey.App {
         const pets = this._getProperty(data, ['pets'])
         if (pets.length > 0) {
             for (const pet of pets) {
-
-                this.petHome.trigger(device, {
-                    'pet': pet.name
-                })
-
                 const storedPet = this.getStoredPet(pet.name)
                 if(pet.position.where !== storedPet.position.where){
                     try{
@@ -195,14 +194,26 @@ class SurePetcare extends Homey.App {
                         console.log('change position for ' + device.name)
                         if(deviceId === device.getId()) {
                             if (pet.position.where === 1) {
-                                this.petHome.trigger(device, {
-                                    'pet': pet.name
-                                })
+                                Homey.ManagerFlow.getCard('trigger', 'pet_home').trigger(
+                                  device,
+                                  {
+                                      'pet': pet.name,
+                                  },
+                                  {
+                                      petId: pet.id,
+                                  },
+                                )
                             }
                             if (pet.position.where === 2) {
-                                this.petAway.trigger(device, {
-                                    'pet': pet.name
-                                })
+                                Homey.ManagerFlow.getCard('trigger', 'pet_away').trigger(
+                                  device,
+                                  {
+                                      'pet': pet.name,
+                                  },
+                                  {
+                                      petId: pet.id,
+                                  },
+                                )
                             }
                         }
                     }

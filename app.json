@@ -238,7 +238,7 @@
 						"filter": "driver_id=sureflap-pet-door-connect|sureflap-cat-flap-connect"
 					},
 					{
-						"name": "search_pet",
+						"name": "pet",
 						"type": "autocomplete",
 						"placeholder": {
 							"en": "Search your pet",
@@ -273,7 +273,7 @@
 						"filter": "driver_id=sureflap-pet-door-connect|sureflap-cat-flap-connect"
 					},
 					{
-						"name": "search_pet",
+						"name": "pet",
 						"type": "autocomplete",
 						"placeholder": {
 							"en": "Search your pet",
