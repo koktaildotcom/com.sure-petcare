@@ -17,7 +17,7 @@ class SurePetcare extends Homey.App {
 
         this.client = new SurePetcareClient(Homey.ManagerSettings.get('token'))
 
-        new Homey.FlowCardTriggerDevice('pet_away')
+        new Homey.FlowCardTriggerDevice('specific_pet_away')
             .registerRunListener((args, state) => {
                 let match = false
                 if (args.hasOwnProperty('pet') && args.pet.hasOwnProperty('id')) {
@@ -37,7 +37,7 @@ class SurePetcare extends Homey.App {
                 return Promise.resolve(matches)
             })
 
-        new Homey.FlowCardTriggerDevice('pet_home')
+        new Homey.FlowCardTriggerDevice('specific_pet_home')
             .registerRunListener((args, state) => {
                 let match = false
                 if (args.hasOwnProperty('pet') && args.pet.hasOwnProperty('id')) {
@@ -56,6 +56,9 @@ class SurePetcare extends Homey.App {
                 }
                 return Promise.resolve(matches)
             })
+
+        new Homey.FlowCardTriggerDevice('pet_away').register()
+        new Homey.FlowCardTriggerDevice('pet_home').register()
     }
 
     /**
@@ -140,17 +143,15 @@ class SurePetcare extends Homey.App {
                             }
                         }
 
-                        Homey.app.updateDevices(this.devices, syncData).
-                          then(() => {
-                              console.log('Hub sync complete in: ' + (new Date() - updateDevicesTime) / 1000 + ' seconds')
-                              this.syncInProgress = false
-                              this._setNewTimeout()
-                          }).
-                          catch(error => {
-                              this.syncInProgress = false
-                              this._setNewTimeout()
-                              console.log(error)
-                          })
+                        Homey.app.updateDevices(this.devices, syncData)
+                            .then(() => {
+                                console.log('Hub sync complete in: ' + (new Date() - updateDevicesTime) / 1000 + ' seconds')
+                                this.syncInProgress = false
+                                this._setNewTimeout()
+                            })
+                            .catch(error => {
+                                throw new Error(error)
+                            })
                     })
                 } else {
                     this.syncInProgress = false
@@ -158,9 +159,7 @@ class SurePetcare extends Homey.App {
                     this._setNewTimeout()
                 }
             } catch (error) {
-                this.syncInProgress = false
-                this._setNewTimeout()
-                console.log(error)
+                throw new Error(error)
             }
         } else {
             this._setNewTimeout()
@@ -203,32 +202,25 @@ class SurePetcare extends Homey.App {
                 const storedPet = this.getStoredPet(pet.name)
                 if(pet.position.where !== storedPet.position.where){
                     storedPet.position = pet.position
-                    this.patchStoredPet(storedPet);
                     try{
                         const deviceId = this._getProperty(pet, ['position', 'device_id'])
                         console.log('change position for ' + device.name)
                         if(deviceId === device.getId()) {
+                            this.patchStoredPet(storedPet);
+                            const data = {
+                                  'pet': pet.name,
+                              }
                             if (pet.position.where === 1) {
-                                Homey.ManagerFlow.getCard('trigger', 'pet_home').trigger(
-                                  device,
-                                  {
-                                      'pet': pet.name,
-                                  },
-                                  {
+                                Homey.ManagerFlow.getCard('trigger', 'pet_home').trigger(device, data);
+                                Homey.ManagerFlow.getCard('trigger', 'specific_pet_home').trigger(device, data, {
                                       petId: pet.id,
-                                  },
-                                )
+                                })
                             }
                             if (pet.position.where === 2) {
-                                Homey.ManagerFlow.getCard('trigger', 'pet_away').trigger(
-                                  device,
-                                  {
-                                      'pet': pet.name,
-                                  },
-                                  {
-                                      petId: pet.id,
-                                  },
-                                )
+                                Homey.ManagerFlow.getCard('trigger', 'pet_away').trigger(device, data);
+                                Homey.ManagerFlow.getCard('trigger', 'specific_pet_away').trigger(device, data, {
+                                    petId: pet.id,
+                                })
                             }
                         }
                     }
@@ -279,7 +271,7 @@ class SurePetcare extends Homey.App {
      * set a new timeout for synchronisation
      */
     _setNewTimeout () {
-        let interval = 1000 * 60
+        let interval = 1000 * 30
 
         setTimeout(this._synchronise.bind(this), interval)
     }

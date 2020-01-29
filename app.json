@@ -215,8 +215,62 @@
 			{
 				"id": "pet_home",
 				"title": {
-					"en": "Pet came home",
-					"nl": "Huisdier is thuis gekomen"
+					"en": "A pet came home",
+					"nl": "Een huisdier is thuis gekomen"
+				},
+				"tokens": [
+					{
+						"name": "pet",
+						"title": {
+							"en": "Pet",
+							"nl": "Huisdier"
+						},
+						"example": {
+							"en": "Mr. kat",
+							"nl": "Mr. kat"
+						}
+					}
+				],
+				"args": [
+					{
+						"name": "device",
+						"type": "device",
+						"filter": "driver_id=sureflap-pet-door-connect|sureflap-cat-flap-connect"
+					}
+				]
+			},
+			{
+				"id": "pet_away",
+				"title": {
+					"en": "A pet goes outside",
+					"nl": "Een huisdier is naar buiten gegaan"
+				},
+				"tokens": [
+					{
+						"name": "pet",
+						"title": {
+							"en": "Pet",
+							"nl": "Huisdier"
+						},
+						"example": {
+							"en": "Mr. kat",
+							"nl": "Mr. kat"
+						}
+					}
+				],
+				"args": [
+					{
+						"name": "device",
+						"type": "device",
+						"filter": "driver_id=sureflap-pet-door-connect|sureflap-cat-flap-connect"
+					}
+				]
+			},
+			{
+				"id": "specific_pet_home",
+				"title": {
+					"en": "A specific pet came home",
+					"nl": "Een specifiek huisdier is thuis gekomen"
 				},
 				"tokens": [
 					{
@@ -248,10 +302,10 @@
 				]
 			},
 			{
-				"id": "pet_away",
+				"id": "specific_pet_away",
 				"title": {
-					"en": "Pet goes outside",
-					"nl": "Huisdier is naar buiten gegaan"
+					"en": "A specific pet goes outside",
+					"nl": "Een specifiek huisdier is naar buiten gegaan"
 				},
 				"tokens": [
 					{
