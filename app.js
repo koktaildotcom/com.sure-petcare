@@ -202,25 +202,32 @@ class SurePetcare extends Homey.App {
                 const storedPet = this.getStoredPet(pet.name)
                 if(pet.position.where !== storedPet.position.where){
                     storedPet.position = pet.position
+                    this.patchStoredPet(storedPet);
                     try{
                         const deviceId = this._getProperty(pet, ['position', 'device_id'])
                         console.log('change position for ' + device.name)
                         if(deviceId === device.getId()) {
-                            this.patchStoredPet(storedPet);
-                            const data = {
-                                  'pet': pet.name,
-                              }
                             if (pet.position.where === 1) {
-                                Homey.ManagerFlow.getCard('trigger', 'pet_home').trigger(device, data);
-                                Homey.ManagerFlow.getCard('trigger', 'specific_pet_home').trigger(device, data, {
+                                Homey.ManagerFlow.getCard('trigger', 'pet_home').trigger(
+                                  device,
+                                  {
+                                      'pet': pet.name,
+                                  },
+                                  {
                                       petId: pet.id,
-                                })
+                                  },
+                                )
                             }
                             if (pet.position.where === 2) {
-                                Homey.ManagerFlow.getCard('trigger', 'pet_away').trigger(device, data);
-                                Homey.ManagerFlow.getCard('trigger', 'specific_pet_away').trigger(device, data, {
-                                    petId: pet.id,
-                                })
+                                Homey.ManagerFlow.getCard('trigger', 'pet_away').trigger(
+                                  device,
+                                  {
+                                      'pet': pet.name,
+                                  },
+                                  {
+                                      petId: pet.id,
+                                  },
+                                )
                             }
                         }
                     }
@@ -271,7 +278,7 @@ class SurePetcare extends Homey.App {
      * set a new timeout for synchronisation
      */
     _setNewTimeout () {
-        let interval = 1000 * 30
+        let interval = 1000 * 60
 
         setTimeout(this._synchronise.bind(this), interval)
     }
