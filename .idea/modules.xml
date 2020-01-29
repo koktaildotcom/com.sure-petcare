@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/com.sureflap.iml" filepath="$PROJECT_DIR$/.idea/com.sureflap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/com.sure-petcare.iml" filepath="$PROJECT_DIR$/.idea/com.sure-petcare.iml" />
     </modules>
   </component>
 </project>

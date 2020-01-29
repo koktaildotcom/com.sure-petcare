@@ -44,4 +44,3 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
   * add communityId
   * change category
   * add sync process for polling state
-  * add cards for presence detection for pets
