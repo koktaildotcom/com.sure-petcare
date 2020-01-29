@@ -17,7 +17,8 @@ class SurePetcare extends Homey.App {
 
         this.client = new SurePetcareClient(Homey.ManagerSettings.get('token'))
 
-        new Homey.FlowCardTriggerDevice('pet_away')
+        const petAwayDevice = new Homey.FlowCardTriggerDevice('pet_away').register();
+        petAwayDevice
             .registerRunListener((args, state) => {
                 let match = false
                 if (args.hasOwnProperty('pet') && args.pet.hasOwnProperty('id')) {
@@ -25,7 +26,7 @@ class SurePetcare extends Homey.App {
                 }
                 return Promise.resolve(match)
             })
-            .register()
+        petAwayDevice
             .getArgument('pet')
             .registerAutocompleteListener((query, args) => {
                 let matches = this.storedPets.filter(
@@ -37,7 +38,8 @@ class SurePetcare extends Homey.App {
                 return Promise.resolve(matches)
             })
 
-        new Homey.FlowCardTriggerDevice('pet_home')
+        const petHomeDevice = new Homey.FlowCardTriggerDevice('pet_home').register();
+        petHomeDevice
             .registerRunListener((args, state) => {
                 let match = false
                 if (args.hasOwnProperty('pet') && args.pet.hasOwnProperty('id')) {
@@ -45,7 +47,7 @@ class SurePetcare extends Homey.App {
                 }
                 return Promise.resolve(match)
             })
-            .register()
+        petHomeDevice
             .getArgument('pet')
             .registerAutocompleteListener((query, args) => {
                 let matches = this.storedPets.filter(
