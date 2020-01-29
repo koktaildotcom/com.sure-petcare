@@ -140,17 +140,15 @@ class SurePetcare extends Homey.App {
                             }
                         }
 
-                        Homey.app.updateDevices(this.devices, syncData).
-                          then(() => {
-                              console.log('Hub sync complete in: ' + (new Date() - updateDevicesTime) / 1000 + ' seconds')
-                              this.syncInProgress = false
-                              this._setNewTimeout()
-                          }).
-                          catch(error => {
-                              this.syncInProgress = false
-                              this._setNewTimeout()
-                              console.log(error)
-                          })
+                        Homey.app.updateDevices(this.devices, syncData)
+                            .then(() => {
+                                console.log('Hub sync complete in: ' + (new Date() - updateDevicesTime) / 1000 + ' seconds')
+                                this.syncInProgress = false
+                                this._setNewTimeout()
+                            })
+                            .catch(error => {
+                                throw new Error(error)
+                            })
                     })
                 } else {
                     this.syncInProgress = false
@@ -158,9 +156,7 @@ class SurePetcare extends Homey.App {
                     this._setNewTimeout()
                 }
             } catch (error) {
-                this.syncInProgress = false
-                this._setNewTimeout()
-                console.log(error)
+                throw new Error(error)
             }
         } else {
             this._setNewTimeout()

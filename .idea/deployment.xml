@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="Pi">
+  <component name="PublishConfigData" autoUpload="Always" serverName="pi remote">
     <serverData>
       <paths name="Pi">
         <serverdata>
           <mappings>
             <mapping deploy="/var/www/html/com.sure-petcare" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="pi remote">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/com.sure-petcare" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
