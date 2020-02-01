@@ -153,6 +153,9 @@ class SurePetcare extends Homey.App {
                                 throw new Error(error)
                             })
                     })
+                    .catch(error => {
+                        throw new Error(error)
+                    })
                 } else {
                     this.syncInProgress = false
                     console.log('No devices found, try next time')
