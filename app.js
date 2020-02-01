@@ -207,27 +207,20 @@ class SurePetcare extends Homey.App {
                             console.log('change position for ' + pet.name)
                             storedPet.position = pet.position
                             this.patchStoredPet(storedPet);
+                            const petData = {
+                                'pet': pet.name,
+                            }
                             if (pet.position.where === 1) {
-                                Homey.ManagerFlow.getCard('trigger', 'pet_home').trigger(
-                                  device,
-                                  {
-                                      'pet': pet.name,
-                                  },
-                                  {
-                                      petId: pet.id,
-                                  },
-                                )
+                                Homey.ManagerFlow.getCard('trigger', 'pet_home').trigger(device, petData);
+                                Homey.ManagerFlow.getCard('trigger', 'specific_pet_home').trigger(device, petData, {
+                                    petId: pet.id,
+                                })
                             }
                             if (pet.position.where === 2) {
-                                Homey.ManagerFlow.getCard('trigger', 'pet_away').trigger(
-                                  device,
-                                  {
-                                      'pet': pet.name,
-                                  },
-                                  {
-                                      petId: pet.id,
-                                  },
-                                )
+                                Homey.ManagerFlow.getCard('trigger', 'pet_away').trigger(device, petData);
+                                Homey.ManagerFlow.getCard('trigger', 'specific_pet_away').trigger(device, petData, {
+                                    petId: pet.id,
+                                })
                             }
                         }
                     }
