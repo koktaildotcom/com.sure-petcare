@@ -201,12 +201,12 @@ class SurePetcare extends Homey.App {
             for (const pet of pets) {
                 const storedPet = this.getStoredPet(pet.name)
                 if(pet.position.where !== storedPet.position.where){
-                    storedPet.position = pet.position
-                    this.patchStoredPet(storedPet);
                     try{
                         const deviceId = this._getProperty(pet, ['position', 'device_id'])
-                        console.log('change position for ' + device.name)
                         if(deviceId === device.getId()) {
+                            console.log('change position for ' + pet.name)
+                            storedPet.position = pet.position
+                            this.patchStoredPet(storedPet);
                             if (pet.position.where === 1) {
                                 Homey.ManagerFlow.getCard('trigger', 'pet_home').trigger(
                                   device,
@@ -278,7 +278,7 @@ class SurePetcare extends Homey.App {
      * set a new timeout for synchronisation
      */
     _setNewTimeout () {
-        let interval = 1000 * 60
+        let interval = 1000 * 5
 
         setTimeout(this._synchronise.bind(this), interval)
     }
