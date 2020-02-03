@@ -180,12 +180,9 @@ class SurePetcare extends Homey.App {
     async updateDevices (devices, data) {
         return await devices.reduce((promise, device) => {
             return promise.then(() => {
-                return Homey.app.updateDevice(device, data).catch((error) => {
-                    console.log(error.message)
-                })
-
+                return Homey.app.updateDevice(device, data)
             }).catch(error => {
-                console.log(error.message)
+                throw new Error(error)
             })
         }, Promise.resolve())
     }
@@ -204,31 +201,26 @@ class SurePetcare extends Homey.App {
             for (const pet of pets) {
                 const storedPet = this.getStoredPet(pet.name)
                 if(pet.position.where !== storedPet.position.where){
-                    try{
-                        const deviceId = this._getProperty(pet, ['position', 'device_id'])
-                        if(deviceId === device.getId()) {
-                            console.log('change position for ' + pet.name)
-                            storedPet.position = pet.position
-                            this.patchStoredPet(storedPet);
-                            const petData = {
-                                'pet': pet.name,
-                            }
-                            if (pet.position.where === 1) {
-                                Homey.ManagerFlow.getCard('trigger', 'pet_home').trigger(device, petData);
-                                Homey.ManagerFlow.getCard('trigger', 'specific_pet_home').trigger(device, petData, {
-                                    petId: pet.id,
-                                })
-                            }
-                            if (pet.position.where === 2) {
-                                Homey.ManagerFlow.getCard('trigger', 'pet_away').trigger(device, petData);
-                                Homey.ManagerFlow.getCard('trigger', 'specific_pet_away').trigger(device, petData, {
-                                    petId: pet.id,
-                                })
-                            }
+                    const deviceId = this._getProperty(pet, ['position', 'device_id'])
+                    if(deviceId === device.getId()) {
+                        console.log('change position for ' + pet.name)
+                        storedPet.position = pet.position
+                        this.patchStoredPet(storedPet);
+                        const petData = {
+                            'pet': pet.name,
                         }
-                    }
-                    catch (error) {
-                        // @todo add trigger for home/away globally
+                        if (pet.position.where === 1) {
+                            Homey.ManagerFlow.getCard('trigger', 'pet_home').trigger(device, petData);
+                            Homey.ManagerFlow.getCard('trigger', 'specific_pet_home').trigger(device, petData, {
+                                petId: pet.id,
+                            })
+                        }
+                        if (pet.position.where === 2) {
+                            Homey.ManagerFlow.getCard('trigger', 'pet_away').trigger(device, petData);
+                            Homey.ManagerFlow.getCard('trigger', 'specific_pet_away').trigger(device, petData, {
+                                petId: pet.id,
+                            })
+                        }
                     }
                 }
             }
