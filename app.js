@@ -151,52 +151,54 @@ class SurePetcare extends Homey.App {
      * start the synchronisation
      */
     _synchronise () {
-        if (false === this.syncInProgress) {
-            try {
-                this.syncInProgress = true
-                let updateDevicesTime = new Date()
-                if (this.devices.length > 0) {
-                    Homey.app.client.getStart().then(syncData => {
+        if (true === this.syncInProgress) {
+            this.logMessage('syncInProgress not ready yet, wait for it')
+            return;
+        }
 
-                        const pets = this._getProperty(syncData, ['pets'])
-                        if (pets.length > 0) {
-                            for (const pet of pets) {
-                                const storedPet = this.getStoredPet(pet.name);
-                                if (!storedPet) {
-                                    const newPet = {
-                                        id: pet.id,
-                                        image: this._getProperty(pet, ['photo', 'location']),
-                                        name: pet.name,
-                                        description: pet.comments,
-                                        position: this._getProperty(pet, ['position'])
-                                    }
-                                    this.storedPets.push(newPet)
+        try {
+            this.syncInProgress = true
+            let updateDevicesTime = new Date()
+            if (this.devices.length > 0) {
+                Homey.app.client.getStart().then(syncData => {
+
+                    const pets = this._getProperty(syncData, ['pets'])
+                    if (pets.length > 0) {
+                        for (const pet of pets) {
+                            const storedPet = this.getStoredPet(pet.name);
+                            if (!storedPet) {
+                                const newPet = {
+                                    id: pet.id,
+                                    image: this._getProperty(pet, ['photo', 'location']),
+                                    name: pet.name,
+                                    description: pet.comments,
+                                    position: this._getProperty(pet, ['position'])
                                 }
+                                this.storedPets.push(newPet)
                             }
                         }
+                    }
 
-                        Homey.app.updateDevices(this.devices, syncData)
-                            .then(() => {
-                                this.logMessage('Hub sync complete in: ' + (new Date() - updateDevicesTime) / 1000 + ' seconds')
-                                this.syncInProgress = false
-                                this._setNewTimeout()
-                            })
-                            .catch(error => {
-                                throw new Error(error)
-                            })
-                    })
-                    .catch(error => {
-                        throw new Error(error)
-                    })
-                } else {
-                    this.syncInProgress = false
-                    this.logMessage('No devices found, try next time')
+                    Homey.app.updateDevices(this.devices, syncData)
+                        .then(() => {
+                            this.logMessage('Hub sync complete in: ' + (new Date() - updateDevicesTime) / 1000 + ' seconds')
+                            this._setNewTimeout()
+                        })
+                        .catch(error => {
+                            this.logMessage(error)
+                            this._setNewTimeout()
+                        })
+                })
+                .catch(error => {
+                    this.logMessage(error)
                     this._setNewTimeout()
-                }
-            } catch (error) {
-                throw new Error(error)
+                })
+            } else {
+                this.logMessage('No devices found, try next time')
+                this._setNewTimeout()
             }
-        } else {
+        } catch (error) {
+            this.logMessage(error)
             this._setNewTimeout()
         }
     }
@@ -298,8 +300,9 @@ class SurePetcare extends Homey.App {
      * set a new timeout for synchronisation
      */
     _setNewTimeout () {
-        let interval = 1000 * 5
+        let interval = 1000 * 2
 
+        this.syncInProgress = false
         setTimeout(this._synchronise.bind(this), interval)
     }
 }
