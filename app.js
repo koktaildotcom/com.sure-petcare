@@ -61,11 +61,43 @@ class SurePetcare extends Homey.App {
         new Homey.FlowCardTriggerDevice('pet_home').register()
     }
 
+    logMessage(message) {
+        console.log(this._getDateTime(new Date()) + ' ' + message);
+    }
+
+
+    /**
+     * @param date Date
+     * @returns {string}
+     * @private
+     */
+    _getDateTime(date) {
+
+        let hour = date.getHours();
+        hour = (hour < 10 ? "0" : "") + hour;
+
+        let min = date.getMinutes();
+        min = (min < 10 ? "0" : "") + min;
+
+        let sec = date.getSeconds();
+        sec = (sec < 10 ? "0" : "") + sec;
+
+        let year = date.getFullYear();
+
+        let month = date.getMonth() + 1;
+        month = (month < 10 ? "0" : "") + month;
+
+        let day = date.getDate();
+        day = (day < 10 ? "0" : "") + day;
+
+        return day + "-" + month + "-" + year + " " + hour + ":" + min + ":" + sec;
+    }
+
     /**
      * start the sync process
      */
     startSync () {
-        console.log('startSync')
+        this.logMessage('startSync')
         if (Homey.app.client.hasToken()) {
             this._synchronise()
         }
@@ -75,7 +107,7 @@ class SurePetcare extends Homey.App {
      * @param device SureflapDevice
      */
     registerDevice (device) {
-        console.log('register device ' + device)
+        this.logMessage('register device ' + device)
         this.devices.push(device)
     }
 
@@ -83,7 +115,7 @@ class SurePetcare extends Homey.App {
      * @param device SureflapDevice
      */
     unregisterDevice (device) {
-        console.log('unregister device ' + device)
+        this.logMessage('unregister device ' + device)
         for (const index in this.devices) {
             if (device.name === this.devices[index].name) {
                 this.devices.splice(index, 1)
@@ -145,7 +177,7 @@ class SurePetcare extends Homey.App {
 
                         Homey.app.updateDevices(this.devices, syncData)
                             .then(() => {
-                                console.log('Hub sync complete in: ' + (new Date() - updateDevicesTime) / 1000 + ' seconds')
+                                this.logMessage('Hub sync complete in: ' + (new Date() - updateDevicesTime) / 1000 + ' seconds')
                                 this.syncInProgress = false
                                 this._setNewTimeout()
                             })
@@ -158,7 +190,7 @@ class SurePetcare extends Homey.App {
                     })
                 } else {
                     this.syncInProgress = false
-                    console.log('No devices found, try next time')
+                    this.logMessage('No devices found, try next time')
                     this._setNewTimeout()
                 }
             } catch (error) {
@@ -203,7 +235,7 @@ class SurePetcare extends Homey.App {
                 if(pet.position.where !== storedPet.position.where){
                     const deviceId = this._getProperty(pet, ['position', 'device_id'])
                     if(deviceId === device.getId()) {
-                        console.log('change position for ' + pet.name)
+                        this.logMessage('change position for ' + pet.name)
                         storedPet.position = pet.position
                         this.patchStoredPet(storedPet);
                         const petData = {
