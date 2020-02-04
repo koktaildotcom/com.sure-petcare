@@ -156,49 +156,41 @@ class SurePetcare extends Homey.App {
             return;
         }
 
-        try {
-            this.syncInProgress = true
-            let updateDevicesTime = new Date()
-            if (this.devices.length > 0) {
-                Homey.app.client.getStart().then(syncData => {
-
-                    const pets = this._getProperty(syncData, ['pets'])
-                    if (pets.length > 0) {
-                        for (const pet of pets) {
-                            const storedPet = this.getStoredPet(pet.name);
-                            if (!storedPet) {
-                                const newPet = {
-                                    id: pet.id,
-                                    image: this._getProperty(pet, ['photo', 'location']),
-                                    name: pet.name,
-                                    description: pet.comments,
-                                    position: this._getProperty(pet, ['position'])
-                                }
-                                this.storedPets.push(newPet)
-                            }
+        this.syncInProgress = true
+        let updateDevicesTime = new Date()
+        if (this.devices.length > 0) {
+            Homey.app.client.getStart().then(syncData => {
+                const pets = this._getProperty(syncData, ['pets'])
+                if (pets.length > 0) {
+                    for (const pet of pets) {
+                        const storedPet = this.getStoredPet(pet.name);
+                        if (!storedPet) {
+                            this.storedPets.push({
+                                id: pet.id,
+                                image: this._getProperty(pet, ['photo', 'location']),
+                                name: pet.name,
+                                description: pet.comments,
+                                position: this._getProperty(pet, ['position'])
+                            })
                         }
                     }
+                }
 
-                    Homey.app.updateDevices(this.devices, syncData)
-                        .then(() => {
-                            this.logMessage('Hub sync complete in: ' + (new Date() - updateDevicesTime) / 1000 + ' seconds')
-                            this._setNewTimeout()
-                        })
-                        .catch(error => {
-                            this.logMessage(error)
-                            this._setNewTimeout()
-                        })
-                })
-                .catch(error => {
-                    this.logMessage(error)
-                    this._setNewTimeout()
-                })
-            } else {
-                this.logMessage('No devices found, try next time')
+                return syncData
+            })
+            .then((syncData) => {
+                return Homey.app.updateDevices(this.devices, syncData)
+            })
+            .then(() => {
+                this.logMessage('Hub sync complete in: ' + (new Date() - updateDevicesTime) / 1000 + ' seconds')
                 this._setNewTimeout()
-            }
-        } catch (error) {
-            this.logMessage(error)
+            })
+            .catch(error => {
+                this.logMessage(error)
+                this._setNewTimeout()
+            })
+        } else {
+            this.logMessage('No devices found, try next time')
             this._setNewTimeout()
         }
     }
@@ -235,11 +227,11 @@ class SurePetcare extends Homey.App {
             for (const pet of pets) {
                 const storedPet = this.getStoredPet(pet.name)
                 if(pet.position.where !== storedPet.position.where){
+                    this.logMessage('change position for ' + pet.name)
+                    storedPet.position = pet.position
+                    this.patchStoredPet(storedPet);
                     const deviceId = this._getProperty(pet, ['position', 'device_id'])
                     if(deviceId === device.getId()) {
-                        this.logMessage('change position for ' + pet.name)
-                        storedPet.position = pet.position
-                        this.patchStoredPet(storedPet);
                         const petData = {
                             'pet': pet.name,
                         }
