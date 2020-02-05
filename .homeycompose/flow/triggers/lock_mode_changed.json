@@ -1,0 +1,57 @@
+{
+  "id": "lock_mode_changed",
+  "title": {
+    "en": "Lock mode has changed",
+    "nl": "Slot modus is veranderd"
+  },
+  "tokens": [
+    {
+      "name": "lock_mode",
+      "title": {
+        "en": "Lock mode",
+        "nl": "Slot modus"
+      },
+      "example": {
+        "en": "Open",
+        "nl": "Open"
+      }
+    }
+  ],
+  "args": [
+    {
+      "name": "lock_mode",
+      "type": "device",
+      "values": [
+        {
+          "id": "open",
+          "title": {
+            "en": "Open",
+            "nl": "Open"
+          }
+        },
+        {
+          "id": "keep_inside",
+          "title": {
+            "en": "Keep inside",
+            "nl": "Binnen houden"
+          }
+        },
+        {
+          "id": "keep_outside",
+          "title": {
+            "en": "Keep outside",
+            "nl": "Buiten houden"
+          }
+        },
+        {
+          "id": "lock_both_ways",
+          "title": {
+            "en": "Lock both ways",
+            "nl": "Beide kanten vergrendelen"
+          }
+        }
+      ],
+      "filter": "driver_id=sureflap-pet-door-connect|sureflap-cat-flap-connect"
+    }
+  ]
+}

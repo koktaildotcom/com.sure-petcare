@@ -1,0 +1,40 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Lock mode",
+    "nl": "Slot modus"
+  },
+  "values": [
+    {
+      "id": "open",
+      "title": {
+        "en": "Open",
+        "nl": "Open"
+      }
+    },
+    {
+      "id": "keep_inside",
+      "title": {
+        "en": "Keep inside",
+        "nl": "Binnen houden"
+      }
+    },
+    {
+      "id": "keep_outside",
+      "title": {
+        "en": "Keep outside",
+        "nl": "Buiten houden"
+      }
+    },
+    {
+      "id": "lock_both_ways",
+      "title": {
+        "en": "Lock both ways",
+        "nl": "Beide kanten vergrendelen"
+      }
+    }
+  ],
+  "getable": true,
+  "setable": true,
+  "uiComponent": "picker"
+}

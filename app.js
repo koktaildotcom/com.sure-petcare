@@ -5,9 +5,10 @@ const SurePetcareClient = require('./lib/sure-petcare-api.js')
 
 class SurePetcare extends Homey.App {
 
-    onInit () {
+    onInit() {
         this.log('SureFlap is running...')
         this.syncInProgress = false
+        this.timeout = null
         this.devices = []
         this.storedPets = []
 
@@ -29,7 +30,9 @@ class SurePetcare extends Homey.App {
             .getArgument('pet')
             .registerAutocompleteListener((query, args) => {
                 let matches = this.storedPets.filter(
-                  (pet) => { return pet.name.match(new RegExp(query, 'gi')) },
+                    (pet) => {
+                        return pet.name.match(new RegExp(query, 'gi'))
+                    },
                 )
                 if (!matches) {
                     matches = []
@@ -49,7 +52,9 @@ class SurePetcare extends Homey.App {
             .getArgument('pet')
             .registerAutocompleteListener((query, args) => {
                 let matches = this.storedPets.filter(
-                  (pet) => { return pet.name.match(new RegExp(query, 'gi')) },
+                    (pet) => {
+                        return pet.name.match(new RegExp(query, 'gi'))
+                    },
                 )
                 if (!matches) {
                     matches = []
@@ -96,7 +101,7 @@ class SurePetcare extends Homey.App {
     /**
      * start the sync process
      */
-    startSync () {
+    startSync() {
         this.logMessage('startSync')
         if (Homey.app.client.hasToken()) {
             this._synchronise()
@@ -106,16 +111,16 @@ class SurePetcare extends Homey.App {
     /**
      * @param device SureflapDevice
      */
-    registerDevice (device) {
-        this.logMessage('register device ' + device)
+    registerDevice(device) {
+        this.logMessage('register device ' + device.id)
         this.devices.push(device)
     }
 
     /**
      * @param device SureflapDevice
      */
-    unregisterDevice (device) {
-        this.logMessage('unregister device ' + device)
+    unregisterDevice(device) {
+        this.logMessage('unregister device ' + device.id)
         for (const index in this.devices) {
             if (device.name === this.devices[index].name) {
                 this.devices.splice(index, 1)
@@ -150,45 +155,46 @@ class SurePetcare extends Homey.App {
      *
      * start the synchronisation
      */
-    _synchronise () {
+    _synchronise() {
         if (true === this.syncInProgress) {
             this.logMessage('syncInProgress not ready yet, wait for it')
             return;
         }
 
         this.syncInProgress = true
+
         let updateDevicesTime = new Date()
         if (this.devices.length > 0) {
-            Homey.app.client.getStart().then(syncData => {
-                const pets = this._getProperty(syncData, ['pets'])
-                if (pets.length > 0) {
-                    for (const pet of pets) {
-                        const storedPet = this.getStoredPet(pet.name);
-                        if (!storedPet) {
-                            this.storedPets.push({
-                                id: pet.id,
-                                image: this._getProperty(pet, ['photo', 'location']),
-                                name: pet.name,
-                                description: pet.comments,
-                                position: this._getProperty(pet, ['position'])
-                            })
+            Homey.app.client.getStart()
+                .then(syncData => {
+                    const pets = this._getProperty(syncData, ['pets'])
+                    if (pets.length > 0) {
+                        for (const pet of pets) {
+                            const storedPet = this.getStoredPet(pet.name);
+                            if (!storedPet) {
+                                this.storedPets.push({
+                                    id: pet.id,
+                                    image: this._getProperty(pet, ['photo', 'location']),
+                                    name: pet.name,
+                                    description: pet.comments,
+                                    position: this._getProperty(pet, ['position'])
+                                })
+                            }
                         }
                     }
-                }
-
-                return syncData
-            })
-            .then((syncData) => {
-                return Homey.app.updateDevices(this.devices, syncData)
-            })
-            .then(() => {
-                this.logMessage('Hub sync complete in: ' + (new Date() - updateDevicesTime) / 1000 + ' seconds')
-                this._setNewTimeout()
-            })
-            .catch(error => {
-                this.logMessage(error)
-                this._setNewTimeout()
-            })
+                    return syncData;
+                })
+                .then((syncData) => {
+                    return Homey.app.updateDevices(this.devices, syncData)
+                })
+                .then(() => {
+                    this.logMessage('Hub sync complete in: ' + (new Date() - updateDevicesTime) / 1000 + ' seconds')
+                    this._setNewTimeout()
+                })
+                .catch(error => {
+                    this.logMessage(error)
+                    this._setNewTimeout()
+                })
         } else {
             this.logMessage('No devices found, try next time')
             this._setNewTimeout()
@@ -203,12 +209,10 @@ class SurePetcare extends Homey.App {
      *
      * @returns {Promise.<SureflapDevice[]>}
      */
-    async updateDevices (devices, data) {
+    async updateDevices(devices, data) {
         return await devices.reduce((promise, device) => {
             return promise.then(() => {
                 return Homey.app.updateDevice(device, data)
-            }).catch(error => {
-                throw new Error(error)
             })
         }, Promise.resolve())
     }
@@ -221,17 +225,17 @@ class SurePetcare extends Homey.App {
      *
      * @returns {Promise.<SureflapDevice>}
      */
-    async updateDevice (device, data) {
+    async updateDevice(device, data) {
         const pets = this._getProperty(data, ['pets'])
         if (pets.length > 0) {
             for (const pet of pets) {
                 const storedPet = this.getStoredPet(pet.name)
-                if(pet.position.where !== storedPet.position.where){
+                if (pet.position.where !== storedPet.position.where) {
                     this.logMessage('change position for ' + pet.name)
                     storedPet.position = pet.position
                     this.patchStoredPet(storedPet);
                     const deviceId = this._getProperty(pet, ['position', 'device_id'])
-                    if(deviceId === device.getId()) {
+                    if (deviceId === device.getId()) {
                         const petData = {
                             'pet': pet.name,
                         }
@@ -261,7 +265,7 @@ class SurePetcare extends Homey.App {
      *
      * @returns {Promise}
      */
-    async login (username, password) {
+    async login(username, password) {
         const token = await Homey.app.client.authenticate(username, password)
         await Homey.ManagerSettings.set('token', token)
 
@@ -276,12 +280,11 @@ class SurePetcare extends Homey.App {
      *
      * @returns {*}
      */
-    _getProperty (target, params) {
+    _getProperty(target, params) {
         for (const param of params) {
-            if (false === target.hasOwnProperty(param)) {
-                throw new Error('Unknown param: ' + param)
+            if (target.hasOwnProperty(param)) {
+                target = target[param]
             }
-            target = target[param]
         }
         return target
     }
@@ -291,11 +294,15 @@ class SurePetcare extends Homey.App {
      *
      * set a new timeout for synchronisation
      */
-    _setNewTimeout () {
+    _setNewTimeout() {
         let interval = 1000 * 2
 
         this.syncInProgress = false
-        setTimeout(this._synchronise.bind(this), interval)
+
+        if (this.timeout) {
+            clearTimeout(this.timeout);
+        }
+        this.timeout = setTimeout(this._synchronise.bind(this), interval)
     }
 }
 

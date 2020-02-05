@@ -1,0 +1,27 @@
+{
+  "id": "pet_away",
+  "title": {
+    "en": "A pet goes outside",
+    "nl": "Een huisdier is naar buiten gegaan"
+  },
+  "tokens": [
+    {
+      "name": "pet",
+      "title": {
+        "en": "Pet",
+        "nl": "Huisdier"
+      },
+      "example": {
+        "en": "Mr. kat",
+        "nl": "Mr. kat"
+      }
+    }
+  ],
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=sureflap-pet-door-connect|sureflap-cat-flap-connect"
+    }
+  ]
+}

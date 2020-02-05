@@ -1,0 +1,35 @@
+{
+  "id": "specific_pet_home",
+  "title": {
+    "en": "A specific pet came home",
+    "nl": "Een specifiek huisdier is thuis gekomen"
+  },
+  "tokens": [
+    {
+      "name": "pet",
+      "title": {
+        "en": "Pet",
+        "nl": "Huisdier"
+      },
+      "example": {
+        "en": "Mr. kat",
+        "nl": "Mr. kat"
+      }
+    }
+  ],
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=sureflap-pet-door-connect|sureflap-cat-flap-connect"
+    },
+    {
+      "name": "pet",
+      "type": "autocomplete",
+      "placeholder": {
+        "en": "Search your pet",
+        "nl": "Zoek je huisdier"
+      }
+    }
+  ]
+}

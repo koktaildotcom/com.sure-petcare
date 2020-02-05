@@ -1,0 +1,44 @@
+{
+  "id": "set_lock_mode",
+  "title": {
+    "en": "Set lock mode to:",
+    "nl": "Zet slot modus naar:"
+  },
+  "args": [
+    {
+      "name": "lock_mode",
+      "type": "dropdown",
+      "values": [
+        {
+          "id": "open",
+          "title": {
+            "en": "Open",
+            "nl": "Open"
+          }
+        },
+        {
+          "id": "keep_inside",
+          "title": {
+            "en": "Keep inside",
+            "nl": "Binnen houden"
+          }
+        },
+        {
+          "id": "keep_outside",
+          "title": {
+            "en": "Keep outside",
+            "nl": "Buiten houden"
+          }
+        },
+        {
+          "id": "lock_both_ways",
+          "title": {
+            "en": "Lock both ways",
+            "nl": "Beide kanten vergrendelen"
+          }
+        }
+      ],
+      "filter": "driver_id=sureflap-pet-door-connect|sureflap-cat-flap-connect"
+    }
+  ]
+}
