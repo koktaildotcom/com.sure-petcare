@@ -1,0 +1,31 @@
+{
+	"id": "log_message",
+	"title": {
+		"en": "The app generates a error",
+		"nl": "De app genereert een error"
+	},
+	"tokens": [
+		{
+			"name": "severity",
+			"title": {
+				"en": "severity",
+				"nl": "severity"
+			},
+			"example": {
+				"en": "error",
+				"nl": "error"
+			}
+		},
+		{
+			"name": "message",
+			"title": {
+				"en": "message",
+				"nl": "message"
+			},
+			"example": {
+				"en": "An error occur",
+				"nl": "Er is een fout opgetreden"
+			}
+		}
+	]
+}
