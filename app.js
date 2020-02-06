@@ -295,7 +295,7 @@ class SurePetcare extends Homey.App {
      * set a new timeout for synchronisation
      */
     _setNewTimeout() {
-        let interval = 1000 * 2
+        let interval = 1000 * 5
 
         this.syncInProgress = false
 
