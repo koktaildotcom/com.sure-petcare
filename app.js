@@ -70,7 +70,7 @@ class SurePetcare extends Homey.App {
 
     logMessage(severity, message) {
         console.log(this._getDateTime(new Date()) + ' ' + message);
-        if (severity === 'error' || severity === 'debug')
+        if (severity === 'error')
             if (this.triggerError) {
                 this.triggerError.trigger({
                     'severity': severity,
@@ -201,7 +201,7 @@ class SurePetcare extends Homey.App {
                     this._setNewTimeout()
                 })
                 .catch(error => {
-                    this.logMessage('error', error)
+                    this.logMessage('error', error.toString())
                     this._setNewTimeout()
                 })
         } else {
