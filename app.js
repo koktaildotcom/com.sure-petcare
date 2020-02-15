@@ -70,7 +70,7 @@ class SurePetcare extends Homey.App {
 
     logMessage(severity, message) {
         console.log(this._getDateTime(new Date()) + ' ' + message);
-        if (severity === 'error')
+        if (severity === 'error' || severity === 'debug')
             if (this.triggerError) {
                 this.triggerError.trigger({
                     'severity': severity,
@@ -181,12 +181,17 @@ class SurePetcare extends Homey.App {
                         for (const pet of pets) {
                             const storedPet = this.getStoredPet(pet.name);
                             if (!storedPet) {
-                                this.storedPets.push({
-                                    id: pet.id,
-                                    image: this._getProperty(pet, ['photo', 'location']),
-                                    name: pet.name,
-                                    description: pet.comments,
-                                    position: this._getProperty(pet, ['position'])
+                                const imageUrl = this._getProperty(pet, ['photo', 'location']);
+                                const position = this._getProperty(pet, ['position']);
+                                this.getImageData(imageUrl).then((image) => {
+                                    this.storedPets.push({
+                                        id: pet.id,
+                                        imageUrl: imageUrl,
+                                        image: image,
+                                        name: pet.name,
+                                        description: pet.comments,
+                                        position: position
+                                    })
                                 })
                             }
                         }
@@ -205,9 +210,20 @@ class SurePetcare extends Homey.App {
                     this._setNewTimeout()
                 })
         } else {
-            this.logMessage('debug', 'No devices found')
+            this.logMessage('log', 'No devices found')
             this._setNewTimeout()
         }
+    }
+
+    async getImageData (url) {
+        console.log('try to grab' + url)
+        const homeyImage = new Homey.Image()
+        homeyImage.setStream(async (stream) => {
+            console.log('set stream')
+            return await Homey.app.client.getSteam(url).pipe(stream)
+        })
+
+        return homeyImage.register();
     }
 
     /**
@@ -235,17 +251,32 @@ class SurePetcare extends Homey.App {
      * @returns {Promise.<SureflapDevice>}
      */
     async updateDevice(device, data) {
+console.log(data.devices.find((deviceData) => deviceData.id === device.id))
+        await device.update(data.devices.find((deviceData) => deviceData.id === device.id));
+
         const pets = this._getProperty(data, ['pets'])
         if (pets.length > 0) {
             for (const pet of pets) {
                 const storedPet = this.getStoredPet(pet.name)
-                if (pet.position.where !== storedPet.position.where) {
+                if(storedPet){
+                    console.log('check stored pet: ' + storedPet.name)
+                    console.log('at position: ' + storedPet.position.where)
+                    console.log('check pet: ' + pet.name)
+                    console.log('at position: ' + pet.position.where)
+                }
+                if (storedPet && pet.position.where !== storedPet.position.where) {
                     this.logMessage('log', 'change position for ' + pet.name)
                     storedPet.position = pet.position
                     this.patchStoredPet(storedPet);
                     const deviceId = this._getProperty(pet, ['position', 'device_id'])
-                    if (deviceId === device.getId()) {
+                    console.log(storedPet.position)
+                    console.log({
+                        image: storedPet.image,
+                        'pet': pet.name,
+                    });
+                    //if (deviceId === device.getId()) {
                         const petData = {
+                            image: storedPet.image,
                             'pet': pet.name,
                         }
                         if (pet.position.where === 1) {
@@ -260,7 +291,7 @@ class SurePetcare extends Homey.App {
                                 petId: pet.id,
                             })
                         }
-                    }
+                    //}
                 }
             }
         }
