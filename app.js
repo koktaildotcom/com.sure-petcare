@@ -252,7 +252,7 @@ class SurePetcare extends Homey.App {
      */
     async updateDevice(device, data) {
 console.log(data.devices.find((deviceData) => deviceData.id === device.id))
-        await device.update(data.devices.find((deviceData) => deviceData.id === device.id));
+        wadevice.update(data.devices.find((deviceData) => deviceData.id === device.id));
 
         const pets = this._getProperty(data, ['pets'])
         if (pets.length > 0) {
