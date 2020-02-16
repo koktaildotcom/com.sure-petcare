@@ -247,7 +247,6 @@ class SurePetcare extends Homey.App {
                     console.log('check pet: ' + pet.name)
                     console.log('at position: ' + pet.position.where)
                 }
-                console.log(pet.position);
                 if (storedPet && pet.position.since !== storedPet.position.since) {
                     this.logMessage('log', 'change position for ' + pet.name)
                     storedPet.position = pet.position
