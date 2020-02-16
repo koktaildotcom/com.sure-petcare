@@ -11,11 +11,6 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
 
 * _I don't have that device to test the functionality_
 
-
-> **Q2** Why is there no card for presence detection for pets?
-
-* _I'm currently investigate the opportunity for that functionality_
-
 ## Usage
 1. Install app
 1. Go to the the settings of the app 
