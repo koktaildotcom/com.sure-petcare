@@ -11,6 +11,22 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
 
 * _I don't have that device to test the functionality_
 
+## Cards
+
+### Trigger
+1. Lock mode change
+1. Log error message
+1. Pet away
+1. Pet home
+1. Specific pet away
+1. Specific pet home
+
+### Condition
+1. Lock mode is
+
+### Action
+1. Set lock mode
+
 ## Usage
 1. Install app
 1. Go to the the settings of the app 
