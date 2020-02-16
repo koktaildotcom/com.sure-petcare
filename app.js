@@ -79,7 +79,6 @@ class SurePetcare extends Homey.App {
             }
     }
 
-
     /**
      * @param date Date
      * @returns {string}
@@ -183,15 +182,12 @@ class SurePetcare extends Homey.App {
                             if (!storedPet) {
                                 const imageUrl = this._getProperty(pet, ['photo', 'location']);
                                 const position = this._getProperty(pet, ['position']);
-                                this.getImageData(imageUrl).then((image) => {
-                                    this.storedPets.push({
-                                        id: pet.id,
-                                        imageUrl: imageUrl,
-                                        image: image,
-                                        name: pet.name,
-                                        description: pet.comments,
-                                        position: position
-                                    })
+                                this.storedPets.push({
+                                    id: pet.id,
+                                    imageUrl: imageUrl,
+                                    name: pet.name,
+                                    description: pet.comments,
+                                    position: position
                                 })
                             }
                         }
@@ -213,17 +209,6 @@ class SurePetcare extends Homey.App {
             this.logMessage('log', 'No devices found')
             this._setNewTimeout()
         }
-    }
-
-    async getImageData (url) {
-        console.log('try to grab' + url)
-        const homeyImage = new Homey.Image()
-        homeyImage.setStream(async (stream) => {
-            console.log('set stream')
-            return await Homey.app.client.getSteam(url).pipe(stream)
-        })
-
-        return homeyImage.register();
     }
 
     /**
@@ -251,9 +236,7 @@ class SurePetcare extends Homey.App {
      * @returns {Promise.<SureflapDevice>}
      */
     async updateDevice(device, data) {
-console.log(data.devices.find((deviceData) => deviceData.id === device.id))
         await device.update(data.devices.find((deviceData) => deviceData.id === device.id));
-
         const pets = this._getProperty(data, ['pets'])
         if (pets.length > 0) {
             for (const pet of pets) {
@@ -269,15 +252,9 @@ console.log(data.devices.find((deviceData) => deviceData.id === device.id))
                     storedPet.position = pet.position
                     this.patchStoredPet(storedPet);
                     const deviceId = this._getProperty(pet, ['position', 'device_id'])
-                    console.log(storedPet.position)
-                    console.log({
-                        image: storedPet.image,
-                        'pet': pet.name,
-                    });
-                    //if (deviceId === device.getId()) {
+                    if (deviceId === device.getId()) {
                         const petData = {
-                            image: storedPet.image,
-                            'pet': pet.name,
+                            'pet': pet.name
                         }
                         if (pet.position.where === 1) {
                             Homey.ManagerFlow.getCard('trigger', 'pet_home').trigger(device, petData);
@@ -291,7 +268,7 @@ console.log(data.devices.find((deviceData) => deviceData.id === device.id))
                                 petId: pet.id,
                             })
                         }
-                    //}
+                    }
                 }
             }
         }

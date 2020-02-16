@@ -15,14 +15,6 @@
         "en": "Mr. kat",
         "nl": "Mr. kat"
       }
-    },
-    {
-      "name": "image",
-      "title": {
-        "en": "image",
-        "nl": "afbeelding"
-      },
-      "type": "image"
     }
   ],
   "args": [
