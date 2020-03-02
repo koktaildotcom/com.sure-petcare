@@ -60,3 +60,6 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
   * don't try to render profile image is not exist
   * set location of pet if change manually
   * fixed translation and optimize icon
+### v1.0.11 - 03.02.2020
+  * fixed bug when lockstate is in curfew mode
+  
