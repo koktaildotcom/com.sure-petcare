@@ -56,7 +56,7 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
   * change category
   * add sync process for polling state
   * add cards for presence detection for pets
-### v1.0.9 - 03.02.2020
+### v1.0.10 - 03.02.2020
   * don't try to render profile image is not exist
   * set location of pet if change manually
   * fixed translation and optimize icon
