@@ -58,3 +58,4 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
   * add cards for presence detection for pets
 ### v1.0.7 - 03.02.2020
   * don't try to render profile image is not exist
+  * set location of pet if change manually

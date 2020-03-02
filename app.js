@@ -251,8 +251,12 @@ class SurePetcare extends Homey.App {
                     this.logMessage('log', 'change position for ' + pet.name)
                     storedPet.position = pet.position
                     this.patchStoredPet(storedPet);
-                    const deviceId = this._getProperty(pet, ['position', 'device_id'])
-                    if (deviceId === device.getId()) {
+                    const position = this._getProperty(pet, ['position'])
+                    let deviceId = null
+                    if (position.hasOwnProperty('device_id')) {
+                        deviceId = position['device_id']
+                    }
+                    if (deviceId === device.getId() || null === deviceId) {
                         const petData = {
                             'pet': pet.name
                         }

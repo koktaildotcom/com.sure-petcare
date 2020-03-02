@@ -1,17 +1,23 @@
 {
-	"1.0.0": {
-		"en": "add support for Sureflap Ped Door"
-	},
-	"1.0.1": {
-		"en": "add support for Sureflap Cat Flap"
-	},
-	"1.0.2": {
-		"en": "Update metadata"
-	},
-	"1.0.3": {
-		"en": "add trigger, condition and action cards"
-	},
-	"1.0.4": {
-		"en": "resolve login issue"
-	}
+  "1.0.0": {
+    "en": "add support for Sureflap Ped Door"
+  },
+  "1.0.1": {
+    "en": "add support for Sureflap Cat Flap"
+  },
+  "1.0.2": {
+    "en": "Update metadata"
+  },
+  "1.0.3": {
+    "en": "add trigger, condition and action cards"
+  },
+  "1.0.4": {
+    "en": "resolve login issue"
+  },
+  "1.0.6": {
+    "en": "add presence detection"
+  },
+  "1.0.7": {
+    "en": "bug fixes"
+  }
 }
