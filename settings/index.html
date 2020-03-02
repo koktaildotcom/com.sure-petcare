@@ -196,21 +196,29 @@
                               Homey.alert(err.message)
                           }
 
-                          Homey.api(
-                            'GET',
-                            '/photo/' + profile['photo_id'],
-                            (err, photo) => {
-                                if (err) {
-                                    Homey.alert(err.message)
-                                }
+                          if (profile.hasOwnProperty('photo_id') && profile['photo_id']) {
+                              Homey.api(
+                                'GET',
+                                '/photo/' + profile['photo_id'],
+                                (err, photo) => {
+                                    if (err) {
+                                        Homey.alert(err.message)
+                                    }
 
-                                avatarEl.style.backgroundImage = 'url(\'' + photo.location + '\')'
-                                nameEl.innerHTML = profile['first_name'] + ' ' + profile['last_name']
+                                    avatarEl.style.backgroundImage = 'url(\'' + photo.location + '\')'
+                                    nameEl.innerHTML = profile['first_name'] + ' ' + profile['last_name']
 
-                                document.body.classList.remove('unauthorized')
-                                document.body.classList.add('authorized')
-                                document.body.classList.remove('loading')
-                            })
+                                    document.body.classList.remove('unauthorized')
+                                    document.body.classList.add('authorized')
+                                    document.body.classList.remove('loading')
+                                })
+                          } else {
+                              nameEl.innerHTML = profile['first_name'] + ' ' + profile['last_name']
+
+                              document.body.classList.remove('unauthorized')
+                              document.body.classList.add('authorized')
+                              document.body.classList.remove('loading')
+                          }
                       })
                 } else {
                     document.body.classList.remove('authorized')
