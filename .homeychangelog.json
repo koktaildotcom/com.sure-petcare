@@ -16,5 +16,8 @@
   },
   "1.0.6": {
     "en": "add presence detection"
+  },
+  "1.0.11": {
+    "en": "add presence detection update"
   }
 }
