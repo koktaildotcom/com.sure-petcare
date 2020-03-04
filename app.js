@@ -240,12 +240,9 @@ class SurePetcare extends Homey.App {
         const pets = this._getProperty(data, ['pets'])
         if (pets.length > 0) {
             for (const pet of pets) {
-                const storedPet = this.getStoredPet(pet.name)
-                if(storedPet){
-                    console.log('check stored pet: ' + storedPet.name)
-                    console.log('at position: ' + storedPet.position.where)
-                    console.log('check pet: ' + pet.name)
-                    console.log('at position: ' + pet.position.where)
+                const storedPet = this.getStoredPet(pet.name);
+                if(!storedPet || !storedPet.position || !pet.position){
+                    continue;
                 }
                 if (storedPet && pet.position.since !== storedPet.position.since) {
                     this.logMessage('log', 'change position for ' + pet.name)

@@ -62,4 +62,5 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
   * fixed translation and optimize icon
 ### v1.0.11 - 03.02.2020
   * fixed bug when lockstate is in curfew mode
-  
+### v1.0.12 - ...
+  * prevent the case that the position is unknown
