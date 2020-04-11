@@ -186,7 +186,12 @@
           }
 
           function setAuthorized(profile, image = null) {
-              avatarEl.style.backgroundImage = 'url(\'' + image + '\')'
+              if (image) {
+                  avatarEl.style.backgroundImage = 'url(\'' + image + '\')'
+              } else {
+                  avatarEl.style.backgroundImage = 'url(\'./logo.png\')'
+              }
+
               nameEl.innerHTML = profile['first_name'] + ' ' + profile['last_name']
 
               document.body.classList.remove('unauthorized')
@@ -223,7 +228,7 @@
                                       setAuthorized(profile, photo.location);
                                   })
                           } else {
-                              setAuthorized(profile, './icon.svg');
+                              setAuthorized(profile);
                           }
                       })
               } else {
