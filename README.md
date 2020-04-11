@@ -62,5 +62,6 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
   * fixed translation and optimize icon
 ### v1.0.11 - 03.02.2020
   * fixed bug when lockstate is in curfew mode
-### v1.0.12 - ...
+### v1.0.12 - 03.02.2020
   * prevent the case that the position is unknown
+  * fixed bug that you cannot find new devices [trigger action issue](https://github.com/koktaildotcom/com.sure-petcare/issues/5)
