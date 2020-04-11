@@ -65,3 +65,4 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
 ### v1.0.12 - 03.02.2020
   * prevent the case that the position is unknown
   * fixed bug that you cannot find new devices [trigger action issue](https://github.com/koktaildotcom/com.sure-petcare/issues/5)
+  * fixed bug [profile image cannot be null](https://github.com/koktaildotcom/com.sure-petcare/issues/5)
