@@ -2,6 +2,7 @@
 
 ## Introduction
 This app integrate the `Sure Petcare` products into Homey.
+Manage the state of your pet- or catflap and keep track of your pets!  
 
 Do you like the app? You can make me happy by buying me a beer! [![](https://img.shields.io/badge/paypal-donate-green.svg)](https://www.paypal.me/koktaildotcom)
 

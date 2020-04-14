@@ -1,11 +1,6 @@
-Sure Petcare
-
 Introduction
 This app integrate the `Sure Petcare` products into Homey.
-
-Supported products:
-Sureflap Pet Door connect
-Sureflap Cat Flap connect
+Manage the state of your pet- or catflap and keep track of your pets!
 
 Usage
 1. Install app
