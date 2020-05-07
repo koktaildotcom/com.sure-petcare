@@ -25,5 +25,8 @@
   },
   "1.0.13": {
     "en": "add battery capability and percentage"
+  },
+  "1.0.14": {
+    "en": "run compose before publish"
   }
 }
