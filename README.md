@@ -68,4 +68,6 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
   * fixed bug that you cannot find new devices [trigger action issue](https://github.com/koktaildotcom/com.sure-petcare/issues/5)
   * fixed bug [profile image cannot be null](https://github.com/koktaildotcom/com.sure-petcare/issues/5)
 ### v1.0.13 - 
+  * add battery capability and percentage
+  * always run synchronize trigger
   * improve readme

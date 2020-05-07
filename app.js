@@ -66,8 +66,14 @@ class SurePetcare extends Homey.App {
         new Homey.FlowCardTriggerDevice('pet_home').register()
 
         this.triggerError = new Homey.FlowCardTrigger('log_message').register()
+
+        this._synchronise();
     }
 
+    /**
+     * @param severity
+     * @param message
+     */
     logMessage(severity, message) {
         console.log(this._getDateTime(new Date()) + ' ' + message);
         if (severity === 'error' || severity === 'debug')
@@ -107,20 +113,10 @@ class SurePetcare extends Homey.App {
     }
 
     /**
-     * start the sync process
-     */
-    startSync() {
-        this.logMessage('log', 'startSync')
-        if (Homey.app.client.hasToken()) {
-            this._synchronise()
-        }
-    }
-
-    /**
      * @param device SureflapDevice
      */
     registerDevice(device) {
-        this.logMessage('log', 'register device ' + device.id)
+        this.logMessage('log', 'register device ' + device.getId());
         this.devices.push(device)
     }
 
@@ -164,8 +160,17 @@ class SurePetcare extends Homey.App {
      * start the synchronisation
      */
     _synchronise() {
+
+        this.logMessage('log', 'startSync')
+
         if (true === this.syncInProgress) {
             this.logMessage('log', 'syncInProgress not ready yet, wait for it')
+            return;
+        }
+
+        if (false === Homey.app.client.hasToken()) {
+            this.logMessage('log', 'Not authorized');
+            this._setNewTimeout()
             return;
         }
 
@@ -241,7 +246,7 @@ class SurePetcare extends Homey.App {
         if (pets.length > 0) {
             for (const pet of pets) {
                 const storedPet = this.getStoredPet(pet.name);
-                if(!storedPet || !storedPet.position || !pet.position){
+                if (!storedPet || !storedPet.position || !pet.position) {
                     continue;
                 }
                 if (storedPet && pet.position.since !== storedPet.position.since) {

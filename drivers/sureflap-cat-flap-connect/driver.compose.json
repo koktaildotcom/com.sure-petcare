@@ -1,27 +1,36 @@
 {
-  "name": {
-    "en": "Sureflap Cat Flap Connect",
-    "nl": "Sureflap Katten Flap Connect"
-  },
-  "class": "lock",
-  "capabilities": [
-    "lock_mode"
-  ],
-  "images": {
-    "large": "/drivers/sureflap-cat-flap-connect/assets/images/large.png",
-    "small": "/drivers/sureflap-cat-flap-connect/assets/images/small.png"
-  },
-  "pair": [
-    {
-      "id": "list_devices",
-      "template": "list_devices",
-      "navigation": {
-        "next": "add_device"
-      }
+    "name": {
+        "en": "Sureflap Cat Flap Connect",
+        "nl": "Sureflap Katten Flap Connect"
     },
-    {
-      "id": "add_device",
-      "template": "add_devices"
+    "class": "lock",
+    "capabilities": [
+        "lock_mode",
+        "measure_battery"
+    ],
+    "images": {
+        "large": "/drivers/sureflap-cat-flap-connect/assets/images/large.png",
+        "small": "/drivers/sureflap-cat-flap-connect/assets/images/small.png"
+    },
+    "pair": [
+        {
+            "id": "list_devices",
+            "template": "list_devices",
+            "navigation": {
+                "next": "add_device"
+            }
+        },
+        {
+            "id": "add_device",
+            "template": "add_devices"
+        }
+    ],
+    "energy": {
+        "batteries": [
+            "AA",
+            "AA",
+            "AA",
+            "AA"
+        ]
     }
-  ]
 }
