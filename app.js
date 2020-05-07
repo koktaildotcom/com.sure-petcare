@@ -67,29 +67,6 @@ class SurePetcare extends Homey.App {
 
         this.triggerError = new Homey.FlowCardTrigger('log_message').register()
 
-        new Homey.FlowCardCondition('specific_pet_is_home')
-        .registerRunListener((args, state) => {
-            console.log(args, state)
-            let match = false
-            if (args.hasOwnProperty('pet') && args.pet.hasOwnProperty('id')) {
-                match = args.pet.id === state.petId
-            }
-            return Promise.resolve(match)
-        })
-        .register()
-        .getArgument('pet')
-        .registerAutocompleteListener((query, args) => {
-            let matches = this.storedPets.filter(
-              (pet) => {
-                  return pet.name.match(new RegExp(query, 'gi'))
-              },
-            )
-            if (!matches) {
-                matches = []
-            }
-            return Promise.resolve(matches)
-        })
-
         this._synchronise();
     }
 
