@@ -1,12 +1,8 @@
 'use strict';
 
-const Homey = require('homey');
+const SurefeedDevice = require('../../lib/surefeed-device');
 
-class SurefeedPetfeederConnect extends Homey.Device {
-
-  onInit() {
-    this.log('SurefeedPetfeederConnect has been inited');
-  }
+class SurefeedPetfeederConnect extends SurefeedDevice {
 
 }
 
