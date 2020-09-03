@@ -1,33 +1,33 @@
 {
-    "name": {
-        "en": "Sureflap Pet Door Connect",
-        "nl": "Sureflap Huisdierluik Connect"
+  "name": {
+    "en": "Sureflap Pet Door Connect",
+    "nl": "Sureflap Huisdierluik Connect"
+  },
+  "class": "lock",
+  "capabilities": [
+    "lock_mode",
+    "measure_battery"
+  ],
+  "images": {
+    "large": "/drivers/sureflap-pet-door-connect/assets/images/large.png",
+    "small": "/drivers/sureflap-pet-door-connect/assets/images/small.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_device"
+      }
     },
-    "class": "lock",
-    "capabilities": [
-        "lock_mode",
-        "measure_battery"
-    ],
-    "images": {
-        "large": "/drivers/sureflap-pet-door-connect/assets/images/large.png",
-        "small": "/drivers/sureflap-pet-door-connect/assets/images/small.png"
-    },
-    "pair": [
-        {
-            "id": "list_devices",
-            "template": "list_devices",
-            "navigation": {
-                "next": "add_device"
-            }
-        },
-        {
-            "id": "add_device",
-            "template": "add_devices"
-        }
-    ],
-    "energy": {
-        "batteries": [
-            "OTHER"
-        ]
+    {
+      "id": "add_device",
+      "template": "add_devices"
     }
+  ],
+  "energy": {
+    "batteries": [
+      "OTHER"
+    ]
+  }
 }

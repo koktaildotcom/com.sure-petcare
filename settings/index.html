@@ -1,310 +1,310 @@
 <!doctype html>
 <html>
 <head>
-  <style type="text/css">
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
+    <style type="text/css">
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
 
-    body.unauthorized #form,
-    body.authorized #profile {
-      display: flex;
-    }
+        body.unauthorized #form,
+        body.authorized #profile {
+            display: flex;
+        }
 
-    body.unauthorized.loading #form,
-    body.authorized.loading #profile {
-      display: none;
-    }
+        body.unauthorized.loading #form,
+        body.authorized.loading #profile {
+            display: none;
+        }
 
-    body.loading #loading {
-      display: inline-block;
-    }
+        body.loading #loading {
+            display: inline-block;
+        }
 
-    body #form,
-    body #profile,
-    body #loading {
-      display: none;
-    }
+        body #form,
+        body #profile,
+        body #loading {
+            display: none;
+        }
 
-    body.loading #loading div {
-      border: 3px solid #fff;
-      border-top: 3px solid #597181;
-      border-radius: 50%;
-      width: 25px;
-      height: 25px;
-      animation: spin 0.5s linear infinite;
-    }
+        body.loading #loading div {
+            border: 3px solid #fff;
+            border-top: 3px solid #597181;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            animation: spin 0.5s linear infinite;
+        }
 
-    @keyframes spin {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-    }
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
 
-    .title {
-      font-size: 2em;
-      margin-bottom: 0.9em;
-      text-align: center;
-      color: #597181;
-      font-weight: 400;
-    }
+        .title {
+            font-size: 2em;
+            margin-bottom: 0.9em;
+            text-align: center;
+            color: #597181;
+            font-weight: 400;
+        }
 
-    .logo {
-      position: relative;
-      margin: auto;
-      width: 150px;
-      height: 150px;
-      margin-bottom: 1em;
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
-      background-image: url(./logo.png);
-    }
+        .logo {
+            position: relative;
+            margin: auto;
+            width: 150px;
+            height: 150px;
+            margin-bottom: 1em;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            background-image: url(./logo.png);
+        }
 
-    .avatar {
-      position: relative;
-      margin: auto;
-      width: 100px;
-      height: 100px;
-      border-radius: 100px;
-      background: #eee;
-      margin-bottom: 1em;
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
-      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
-    }
+        .avatar {
+            position: relative;
+            margin: auto;
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+            background: #eee;
+            margin-bottom: 1em;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+        }
 
-    #profile {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
+        #profile {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
 
-    #name {
-      font-size: 1em;
-      margin-bottom: 1em;
-      text-align: center;
-      color: #597181;
-      font-weight: 400;
-    }
+        #name {
+            font-size: 1em;
+            margin-bottom: 1em;
+            text-align: center;
+            color: #597181;
+            font-weight: 400;
+        }
 
-    #form {
-      flex-direction: column;
-      align-items: center;
-      padding: 1em;
-    }
+        #form {
+            flex-direction: column;
+            align-items: center;
+            padding: 1em;
+        }
 
-    #form input {
-    }
+        #form input {
+        }
 
-    #form #username,
-    #form #password {
-    }
+        #form #username,
+        #form #password {
+        }
 
-    #form #submit {
-      align-self: center;
-    }
+        #form #submit {
+            align-self: center;
+        }
 
-    .input-text {
-      width: 240px;
-      border: 1px solid #D4D9E3;
-      padding: 8px 10px;
-      height: 40px;
-      font-size: 14px;
-      color: #ED8C00;
-      box-sizing: border-box;
-      transition: all 0.3s;
-      margin-bottom: 0.5em;
-    }
+        .input-text {
+            width: 240px;
+            border: 1px solid #D4D9E3;
+            padding: 8px 10px;
+            height: 40px;
+            font-size: 14px;
+            color: #ED8C00;
+            box-sizing: border-box;
+            transition: all 0.3s;
+            margin-bottom: 0.5em;
+        }
 
-    .input-text:focus {
-      border-color: #ED8C00;
-    }
+        .input-text:focus {
+            border-color: #ED8C00;
+        }
 
-    .sure-patcare-button {
-      display: inline-block;
-      background: #4fb0bd;
-      color: white;
-      border-radius: 6px;
-      border: none;
-      line-height: 38px;
-      padding: 0 40px;
-      height: 40px;
-      font-size: 16px;
-      transition: all 0.3s;
-      -webkit-appearance: none;
-      margin-top: 1em;
-    }
+        .sure-patcare-button {
+            display: inline-block;
+            background: #4fb0bd;
+            color: white;
+            border-radius: 6px;
+            border: none;
+            line-height: 38px;
+            padding: 0 40px;
+            height: 40px;
+            font-size: 16px;
+            transition: all 0.3s;
+            -webkit-appearance: none;
+            margin-top: 1em;
+        }
 
-    .sure-patcare-button:hover {
-      cursor: pointer;
-      background: #3b919a;
-    }
-  </style>
+        .sure-patcare-button:hover {
+            cursor: pointer;
+            background: #3b919a;
+        }
+    </style>
 
-  <script type="text/javascript" src="/homey.js" data-origin="settings"></script>
-  <script type="text/javascript">
-      function onHomeyReady(Homey) {
+    <script type="text/javascript" src="/homey.js" data-origin="settings"></script>
+    <script type="text/javascript">
+        function onHomeyReady(Homey) {
 
-          let authenticationToken = null
-          const usernameEl = document.getElementById('username')
-          const passwordEl = document.getElementById('password')
-          const formEl = document.getElementById('form')
-          const errorEl = document.getElementById('error')
-          const logoutEl = document.getElementById('logout')
-          const avatarEl = document.getElementById('avatar')
-          const nameEl = document.getElementById('name')
+            let authenticationToken = null
+            const usernameEl = document.getElementById('username')
+            const passwordEl = document.getElementById('password')
+            const formEl = document.getElementById('form')
+            const errorEl = document.getElementById('error')
+            const logoutEl = document.getElementById('logout')
+            const avatarEl = document.getElementById('avatar')
+            const nameEl = document.getElementById('name')
 
-          function setupApp() {
+            function setupApp() {
 
-              Homey.get('username', function (err, username) {
-                  if (err) {
-                      usernameEl.value = ''
-                  }
-                  usernameEl.value = username
-              })
-              Homey.get('password', function (err, password) {
-                  if (err) {
-                      passwordEl.value = ''
-                  }
-                  passwordEl.value = password
-              })
-              Homey.get('token', function (err, result) {
-                  if (err) return Homey.alert(err)
-                  authenticationToken = result
+                Homey.get('username', function (err, username) {
+                    if (err) {
+                        usernameEl.value = ''
+                    }
+                    usernameEl.value = username
+                })
+                Homey.get('password', function (err, password) {
+                    if (err) {
+                        passwordEl.value = ''
+                    }
+                    passwordEl.value = password
+                })
+                Homey.get('token', function (err, result) {
+                    if (err) return Homey.alert(err)
+                    authenticationToken = result
 
-                  Homey.ready()
-                  checkAuthorisation()
-              })
-          }
+                    Homey.ready()
+                    checkAuthorisation()
+                })
+            }
 
-          function setAuthorized(profile, image = null) {
-              if (image) {
-                  avatarEl.style.backgroundImage = 'url(\'' + image + '\')'
-              } else {
-                  avatarEl.style.backgroundImage = 'url(\'./logo.png\')'
-              }
+            function setAuthorized(profile, image = null) {
+                if (image) {
+                    avatarEl.style.backgroundImage = 'url(\'' + image + '\')'
+                } else {
+                    avatarEl.style.backgroundImage = 'url(\'./logo.png\')'
+                }
 
-              nameEl.innerHTML = profile['first_name'] + ' ' + profile['last_name']
+                nameEl.innerHTML = profile['first_name'] + ' ' + profile['last_name']
 
-              document.body.classList.remove('unauthorized')
-              document.body.classList.add('authorized')
-              document.body.classList.remove('loading')
-          }
+                document.body.classList.remove('unauthorized')
+                document.body.classList.add('authorized')
+                document.body.classList.remove('loading')
+            }
 
-          function setUnauthorized() {
-              document.body.classList.remove('authorized')
-              document.body.classList.add('unauthorized')
-              document.body.classList.remove('loading')
-          }
+            function setUnauthorized() {
+                document.body.classList.remove('authorized')
+                document.body.classList.add('unauthorized')
+                document.body.classList.remove('loading')
+            }
 
-          function checkAuthorisation() {
-              document.body.classList.add('loading')
-              if (authenticationToken) {
-                  Homey.api(
-                      'GET',
-                      '/profile',
-                      (err, profile) => {
-                          if (err) {
-                              Homey.alert(err.message)
-                          }
+            function checkAuthorisation() {
+                document.body.classList.add('loading')
+                if (authenticationToken) {
+                    Homey.api(
+                        'GET',
+                        '/profile',
+                        (err, profile) => {
+                            if (err) {
+                                Homey.alert(err.message)
+                            }
 
-                          if (!profile.hasOwnProperty('photo_id')) {
-                              Homey.api(
-                                  'GET',
-                                  '/photo/' + profile['photo_id'],
-                                  (err, photo) => {
-                                      if (err) {
-                                          Homey.alert(err.message)
-                                      }
+                            if (!profile.hasOwnProperty('photo_id')) {
+                                Homey.api(
+                                    'GET',
+                                    '/photo/' + profile['photo_id'],
+                                    (err, photo) => {
+                                        if (err) {
+                                            Homey.alert(err.message)
+                                        }
 
-                                      setAuthorized(profile, photo.location);
-                                  })
-                          } else {
-                              setAuthorized(profile);
-                          }
-                      })
-              } else {
-                  setUnauthorized();
-              }
-          }
+                                        setAuthorized(profile, photo.location);
+                                    })
+                            } else {
+                                setAuthorized(profile);
+                            }
+                        })
+                } else {
+                    setUnauthorized();
+                }
+            }
 
-          logoutEl.addEventListener('click', function (e) {
-              e.preventDefault()
+            logoutEl.addEventListener('click', function (e) {
+                e.preventDefault()
 
-              Homey.set('token', null, err => {
-                  if (err) return Homey.alert(err)
-                  authenticationToken = null
-                  checkAuthorisation()
-              })
-          })
+                Homey.set('token', null, err => {
+                    if (err) return Homey.alert(err)
+                    authenticationToken = null
+                    checkAuthorisation()
+                })
+            })
 
-          formEl.addEventListener('submit', function (e) {
-              e.preventDefault()
+            formEl.addEventListener('submit', function (e) {
+                e.preventDefault()
 
-              const username = usernameEl.value
-              const password = passwordEl.value
+                const username = usernameEl.value
+                const password = passwordEl.value
 
-              Homey.set('username', username, err => {
-                  if (err) return Homey.alert(err)
-              })
-              Homey.set('password', password, err => {
-                  if (err) return Homey.alert(err)
-              })
+                Homey.set('username', username, err => {
+                    if (err) return Homey.alert(err)
+                })
+                Homey.set('password', password, err => {
+                    if (err) return Homey.alert(err)
+                })
 
-              errorEl.textContent = ''
+                errorEl.textContent = ''
 
-              console.log({
-                  username: username,
-                  password: password,
-              })
+                console.log({
+                    username: username,
+                    password: password,
+                })
 
-              Homey.api(
-                  'POST',
-                  '/login',
-                  {
-                      username: username,
-                      password: password,
-                  },
-                  (err, token) => {
-                      if (err) {
-                          Homey.alert(err.message)
-                      }
-                      authenticationToken = token
-                      checkAuthorisation()
-                  })
-          })
+                Homey.api(
+                    'POST',
+                    '/login',
+                    {
+                        username: username,
+                        password: password,
+                    },
+                    (err, token) => {
+                        if (err) {
+                            Homey.alert(err.message)
+                        }
+                        authenticationToken = token
+                        checkAuthorisation()
+                    })
+            })
 
-          setupApp()
-      }
-  </script>
+            setupApp()
+        }
+    </script>
 </head>
 <body>
 
 <div id="loading">
-  <div></div>
+    <div></div>
 </div>
 
 <div id="profile">
-  <div id="avatar" class="avatar"></div>
-  <h2 class="name" id="name"></h2>
-  <input id="logout" type="submit" data-i18n-value="logout" class="sure-patcare-button"/>
+    <div id="avatar" class="avatar"></div>
+    <h2 class="name" id="name"></h2>
+    <input id="logout" type="submit" data-i18n-value="logout" class="sure-patcare-button"/>
 </div>
 
 <form id="form" action="/" method="post">
-  <div class="logo"></div>
-  <h2 class="title" data-i18n="login-title"></h2>
-  <input id="username" name="username" type="email" value="" data-i18n-placeholder="username" class="input-text"/>
-  <input id="password" name="password" type="password" value="" data-i18n-placeholder="password" class="input-text"/>
-  <input id="submit" type="submit" data-i18n-value="login" class="sure-patcare-button"/>
-  <p id="error"></p>
+    <div class="logo"></div>
+    <h2 class="title" data-i18n="login-title"></h2>
+    <input id="username" name="username" type="email" value="" data-i18n-placeholder="username" class="input-text"/>
+    <input id="password" name="password" type="password" value="" data-i18n-placeholder="password" class="input-text"/>
+    <input id="submit" type="submit" data-i18n-value="login" class="sure-patcare-button"/>
+    <p id="error"></p>
 </form>
 
 </body>

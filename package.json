@@ -14,9 +14,12 @@
   },
   "homepage": "https://github.com/koktaildotcom/com.sureflap#readme",
   "dependencies": {
+    "node": ">=12.16.1",
     "axios": "^0.19.0"
   },
   "devDependencies": {
-    "homey": "^2.3.3"
+    "eslint": "^7.8.1",
+    "eslint-config-athom": "^2.1.0",
+    "homey": "^2.6.2"
   }
 }

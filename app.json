@@ -1,6 +1,6 @@
 {
   "id": "com.sure-petcare",
-  "version": "1.0.11",
+  "version": "1.0.14",
   "compatibility": ">=3.0.0",
   "sdk": 2,
   "name": {
@@ -51,6 +51,462 @@
       "paypal": {
         "username": "koktaildotcom"
       }
+    }
+  },
+  "flow": {
+    "triggers": [
+      {
+        "id": "lock_mode_changed",
+        "title": {
+          "en": "Lock mode has changed",
+          "nl": "Slot modus is veranderd"
+        },
+        "tokens": [
+          {
+            "name": "lock_mode",
+            "title": {
+              "en": "Lock mode",
+              "nl": "Slot modus"
+            },
+            "example": {
+              "en": "Open",
+              "nl": "Open"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "lock_mode",
+            "type": "device",
+            "values": [
+              {
+                "id": "open",
+                "title": {
+                  "en": "Open",
+                  "nl": "Open"
+                }
+              },
+              {
+                "id": "keep_inside",
+                "title": {
+                  "en": "Keep inside",
+                  "nl": "Binnen houden"
+                }
+              },
+              {
+                "id": "keep_outside",
+                "title": {
+                  "en": "Keep outside",
+                  "nl": "Buiten houden"
+                }
+              },
+              {
+                "id": "lock_both_ways",
+                "title": {
+                  "en": "Lock both ways",
+                  "nl": "Beide kanten vergrendelen"
+                }
+              }
+            ],
+            "filter": "driver_id=sureflap-pet-door-connect|sureflap-cat-flap-connect"
+          }
+        ]
+      },
+      {
+        "id": "log_message",
+        "title": {
+          "en": "The app generates a error",
+          "nl": "De app genereert een error"
+        },
+        "tokens": [
+          {
+            "name": "severity",
+            "title": {
+              "en": "severity",
+              "nl": "severity"
+            },
+            "example": {
+              "en": "error",
+              "nl": "error"
+            }
+          },
+          {
+            "name": "message",
+            "title": {
+              "en": "message",
+              "nl": "message"
+            },
+            "example": {
+              "en": "An error occur",
+              "nl": "Er is een fout opgetreden"
+            }
+          }
+        ]
+      },
+      {
+        "id": "pet_away",
+        "title": {
+          "en": "A pet goes away",
+          "nl": "Een huisdier is naar buiten gegaan"
+        },
+        "tokens": [
+          {
+            "name": "pet",
+            "title": {
+              "en": "Pet",
+              "nl": "Huisdier"
+            },
+            "example": {
+              "en": "Mr. kat",
+              "nl": "Mr. kat"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=sureflap-pet-door-connect|sureflap-cat-flap-connect"
+          }
+        ]
+      },
+      {
+        "id": "pet_home",
+        "title": {
+          "en": "A pet came home",
+          "nl": "Een huisdier is thuis gekomen"
+        },
+        "tokens": [
+          {
+            "name": "pet",
+            "title": {
+              "en": "Pet",
+              "nl": "Huisdier"
+            },
+            "example": {
+              "en": "Mr. kat",
+              "nl": "Mr. kat"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=sureflap-pet-door-connect|sureflap-cat-flap-connect"
+          }
+        ]
+      },
+      {
+        "id": "specific_pet_away",
+        "title": {
+          "en": "A specific pet goes away",
+          "nl": "Een specifiek huisdier is naar buiten gegaan"
+        },
+        "tokens": [
+          {
+            "name": "pet",
+            "title": {
+              "en": "Pet",
+              "nl": "Huisdier"
+            },
+            "example": {
+              "en": "Mr. kat",
+              "nl": "Mr. kat"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=sureflap-pet-door-connect|sureflap-cat-flap-connect"
+          },
+          {
+            "name": "pet",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "Search your pet",
+              "nl": "Zoek je huisdier"
+            }
+          }
+        ]
+      },
+      {
+        "id": "specific_pet_home",
+        "title": {
+          "en": "A specific pet came home",
+          "nl": "Een specifiek huisdier is thuis gekomen"
+        },
+        "tokens": [
+          {
+            "name": "pet",
+            "title": {
+              "en": "Pet",
+              "nl": "Huisdier"
+            },
+            "example": {
+              "en": "Mr. kat",
+              "nl": "Mr. kat"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=sureflap-pet-door-connect|sureflap-cat-flap-connect"
+          },
+          {
+            "name": "pet",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "Search your pet",
+              "nl": "Zoek je huisdier"
+            }
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "lock_mode_is",
+        "title": {
+          "en": "Lock mode !{{is|is not}}",
+          "nl": "Slot modus !{{is|is niet}}"
+        },
+        "args": [
+          {
+            "name": "lock_mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "open",
+                "title": {
+                  "en": "Open",
+                  "nl": "Open"
+                }
+              },
+              {
+                "id": "keep_inside",
+                "title": {
+                  "en": "Keep inside",
+                  "nl": "Binnen houden"
+                }
+              },
+              {
+                "id": "keep_outside",
+                "title": {
+                  "en": "Keep outside",
+                  "nl": "Buiten houden"
+                }
+              },
+              {
+                "id": "lock_both_ways",
+                "title": {
+                  "en": "Lock both ways",
+                  "nl": "Beide kanten vergrendelen"
+                }
+              }
+            ],
+            "filter": "driver_id=sureflap-pet-door-connect|sureflap-cat-flap-connect"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "set_lock_mode",
+        "title": {
+          "en": "Set lock mode to:",
+          "nl": "Zet slot modus naar:"
+        },
+        "args": [
+          {
+            "name": "lock_mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "open",
+                "title": {
+                  "en": "Open",
+                  "nl": "Open"
+                }
+              },
+              {
+                "id": "keep_inside",
+                "title": {
+                  "en": "Keep inside",
+                  "nl": "Binnen houden"
+                }
+              },
+              {
+                "id": "keep_outside",
+                "title": {
+                  "en": "Keep outside",
+                  "nl": "Buiten houden"
+                }
+              },
+              {
+                "id": "lock_both_ways",
+                "title": {
+                  "en": "Lock both ways",
+                  "nl": "Beide kanten vergrendelen"
+                }
+              }
+            ],
+            "filter": "driver_id=sureflap-pet-door-connect|sureflap-cat-flap-connect"
+          }
+        ]
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "id": "surefeed-petfeeder-connect",
+      "name": {
+        "en": "Surefeed Microchip Petfeeder"
+      },
+      "class": "lock",
+      "capabilities": [
+        "measure_battery",
+        "locked"
+      ],
+      "images": {
+        "large": "/drivers/surefeed-microchip-petfeeder/assets/images/large.png",
+        "small": "/drivers/surefeed-microchip-petfeeder/assets/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_device"
+          }
+        },
+        {
+          "id": "add_device",
+          "template": "add_devices"
+        }
+      ],
+      "energy": {
+        "batteries": [
+          "OTHER"
+        ]
+      }
+    },
+    {
+      "name": {
+        "en": "Sureflap Cat Flap Connect",
+        "nl": "Sureflap Katten Flap Connect"
+      },
+      "class": "lock",
+      "capabilities": [
+        "lock_mode",
+        "measure_battery"
+      ],
+      "images": {
+        "large": "/drivers/sureflap-cat-flap-connect/assets/images/large.png",
+        "small": "/drivers/sureflap-cat-flap-connect/assets/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_device"
+          }
+        },
+        {
+          "id": "add_device",
+          "template": "add_devices"
+        }
+      ],
+      "energy": {
+        "batteries": [
+          "AA",
+          "AA",
+          "AA",
+          "AA"
+        ]
+      },
+      "id": "sureflap-cat-flap-connect"
+    },
+    {
+      "name": {
+        "en": "Sureflap Pet Door Connect",
+        "nl": "Sureflap Huisdierluik Connect"
+      },
+      "class": "lock",
+      "capabilities": [
+        "lock_mode",
+        "measure_battery"
+      ],
+      "images": {
+        "large": "/drivers/sureflap-pet-door-connect/assets/images/large.png",
+        "small": "/drivers/sureflap-pet-door-connect/assets/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_device"
+          }
+        },
+        {
+          "id": "add_device",
+          "template": "add_devices"
+        }
+      ],
+      "energy": {
+        "batteries": [
+          "OTHER"
+        ]
+      },
+      "id": "sureflap-pet-door-connect"
+    }
+  ],
+  "capabilities": {
+    "lock_mode": {
+      "type": "enum",
+      "title": {
+        "en": "Lock mode",
+        "nl": "Slot modus"
+      },
+      "values": [
+        {
+          "id": "open",
+          "title": {
+            "en": "Open",
+            "nl": "Open"
+          }
+        },
+        {
+          "id": "keep_inside",
+          "title": {
+            "en": "Keep inside",
+            "nl": "Binnen houden"
+          }
+        },
+        {
+          "id": "keep_outside",
+          "title": {
+            "en": "Keep outside",
+            "nl": "Buiten houden"
+          }
+        },
+        {
+          "id": "lock_both_ways",
+          "title": {
+            "en": "Lock both ways",
+            "nl": "Beide kanten vergrendelen"
+          }
+        }
+      ],
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker"
     }
   }
 }

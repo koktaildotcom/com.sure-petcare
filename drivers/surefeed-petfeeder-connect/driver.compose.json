@@ -1,16 +1,16 @@
 {
+  "id": "surefeed-microchip-petfeeder",
   "name": {
-    "en": "Sureflap Cat Flap Connect",
-    "nl": "Sureflap Katten Flap Connect"
+    "en": "Surefeed Microchip Petfeeder"
   },
   "class": "lock",
   "capabilities": [
-    "lock_mode",
-    "measure_battery"
+    "measure_battery",
+    "locked"
   ],
   "images": {
-    "large": "/drivers/sureflap-cat-flap-connect/assets/images/large.png",
-    "small": "/drivers/sureflap-cat-flap-connect/assets/images/small.png"
+    "large": "/drivers/surefeed-microchip-petfeeder/assets/images/large.png",
+    "small": "/drivers/surefeed-microchip-petfeeder/assets/images/small.png"
   },
   "pair": [
     {
@@ -27,10 +27,7 @@
   ],
   "energy": {
     "batteries": [
-      "AA",
-      "AA",
-      "AA",
-      "AA"
+      "OTHER"
     ]
   }
 }

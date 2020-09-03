@@ -1,11 +1,13 @@
-'use strict'
+'use strict';
 
-const SureflapDriver = require('../../lib/sureflap-driver.js')
+const SurePetcareDriver = require('../../lib/sure-petcare-driver.js');
 
-class SureflapCatFlapConnectDriver extends SureflapDriver {
-    getProductId () {
-        return 6
-    }
+class SureflapCatFlapConnectDriver extends SurePetcareDriver {
+
+  getProductId() {
+    return 6;
+  }
+
 }
 
-module.exports = SureflapCatFlapConnectDriver
+module.exports = SureflapCatFlapConnectDriver;
