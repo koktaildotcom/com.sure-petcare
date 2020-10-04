@@ -280,7 +280,7 @@ module.exports = class SurePetcare extends Homey.App {
       for (const pet of pets) {
         const storedPet = this.getStoredPet(pet.name);
         if (storedPet) {
-          await this.device.checkPetChange(storedPet, pet);
+          await device.checkPetChange(storedPet, pet);
         }
       }
     }
