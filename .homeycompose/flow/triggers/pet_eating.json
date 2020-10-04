@@ -1,0 +1,27 @@
+{
+  "id": "pet_eating",
+  "title": {
+    "en": "A pet is eating",
+    "nl": "Een huisdier is aan het eten"
+  },
+  "tokens": [
+    {
+      "name": "pet",
+      "title": {
+        "en": "Pet",
+        "nl": "Huisdier"
+      },
+      "example": {
+        "en": "Mr. kat",
+        "nl": "Mr. kat"
+      }
+    }
+  ],
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=surefeed-microchip-petfeeder"
+    }
+  ]
+}

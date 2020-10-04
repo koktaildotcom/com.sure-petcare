@@ -1,9 +1,9 @@
 'use strict';
 
 const Homey = require('homey');
-const SurePetcareClient = require('./lib/sure-petcare-api.js');
+const SurePetcareClient = require('./lib/sure-petcare-api');
 
-class SurePetcare extends Homey.App {
+module.exports = class SurePetcare extends Homey.App {
 
   onInit() {
     this.log('SureFlap is running...');
@@ -17,6 +17,28 @@ class SurePetcare extends Homey.App {
     }
 
     this.client = new SurePetcareClient(Homey.ManagerSettings.get('token'));
+
+    new Homey.FlowCardTriggerDevice('specific_pet_eating')
+      .registerRunListener((args, state) => {
+        let match = false;
+        if (Object.prototype.hasOwnProperty.call(args, 'pet') && Object.prototype.hasOwnProperty.call(args.pet, 'id')) {
+          match = args.pet.id === state.petId;
+        }
+        return Promise.resolve(match);
+      })
+      .register()
+      .getArgument('pet')
+      .registerAutocompleteListener((query, args) => {
+        let matches = this.storedPets.filter(
+          pet => {
+            return pet.name.match(new RegExp(query, 'gi'));
+          },
+        );
+        if (!matches) {
+          matches = [];
+        }
+        return Promise.resolve(matches);
+      });
 
     new Homey.FlowCardTriggerDevice('specific_pet_away')
       .registerRunListener((args, state) => {
@@ -64,6 +86,7 @@ class SurePetcare extends Homey.App {
 
     new Homey.FlowCardTriggerDevice('pet_away').register();
     new Homey.FlowCardTriggerDevice('pet_home').register();
+    new Homey.FlowCardTriggerDevice('pet_eating').register();
 
     this.triggerError = new Homey.FlowCardTrigger('log_message').register();
 
@@ -176,22 +199,33 @@ class SurePetcare extends Homey.App {
     if (this.devices.length > 0) {
       Homey.app.client.getStart()
         .then(syncData => {
-          const pets = this._getProperty(syncData, ['pets']);
+          console.log(syncData);
+          const pets = this.getProperty(syncData, ['pets']);
           if (pets.length > 0) {
             for (const pet of pets) {
               const storedPet = this.getStoredPet(pet.name);
               if (!storedPet) {
-                console.log('pet');
-                console.log(pet);
-                const imageUrl = this._getProperty(pet, ['photo', 'location']);
-                const position = this._getProperty(pet, ['position']);
-                this.storedPets.push({
+                const imageUrl = this.getProperty(pet, ['photo', 'location']);
+                const newPet = {
                   id: pet.id,
                   imageUrl,
                   name: pet.name,
                   description: pet.comments,
-                  position,
-                });
+                };
+
+                try {
+                  newPet.status.feeding = this.getProperty(pet, ['status', 'feeding']);
+                } catch (e) {
+                  // don't support feeding
+                }
+
+                try {
+                  newPet.position = this.getProperty(pet, ['position']);
+                } catch (e) {
+                  // don't support position
+                }
+
+                this.storedPets.push(newPet);
               }
             }
           }
@@ -240,49 +274,18 @@ class SurePetcare extends Homey.App {
    */
   async updateDevice(device, data) {
     await device.update(data.devices.find(deviceData => deviceData.id === device.id));
-    const pets = this._getProperty(data, ['pets']);
+    const pets = this.getProperty(data, ['pets']);
 
     if (pets.length > 0) {
       for (const pet of pets) {
         const storedPet = this.getStoredPet(pet.name);
-        if (storedPet && pet.position) {
-          // @todo check checkPosition function
-          await this.checkPosition(storedPet, pet, device);
+        if (storedPet) {
+          await this.device.checkPetChange(storedPet, pet);
         }
       }
     }
 
     return device;
-  }
-
-  async checkPosition(storedPet, pet, device) {
-    if (storedPet.position && storedPet.position.since !== pet.position.since) {
-      this.logMessage('log', `change position for ${pet.name}`);
-      storedPet.position = pet.position;
-      this.patchStoredPet(storedPet);
-      const position = this._getProperty(pet, ['position']);
-      let deviceId = null;
-      if (Object.prototype.hasOwnProperty.call(position, 'device_id')) {
-        deviceId = position['device_id'];
-      }
-      if (deviceId === device.getId() || deviceId === null) {
-        const petData = {
-          pet: pet.name,
-        };
-        if (pet.position.where === 1) {
-          Homey.ManagerFlow.getCard('trigger', 'pet_home').trigger(device, petData);
-          Homey.ManagerFlow.getCard('trigger', 'specific_pet_home').trigger(device, petData, {
-            petId: pet.id,
-          });
-        }
-        if (pet.position.where === 2) {
-          Homey.ManagerFlow.getCard('trigger', 'pet_away').trigger(device, petData);
-          Homey.ManagerFlow.getCard('trigger', 'specific_pet_away').trigger(device, petData, {
-            petId: pet.id,
-          });
-        }
-      }
-    }
   }
 
   /**
@@ -301,23 +304,6 @@ class SurePetcare extends Homey.App {
   /**
    * @private
    *
-   * @param target
-   * @param params
-   *
-   * @returns {*}
-   */
-  _getProperty(target, params) {
-    for (const param of params) {
-      if (Object.prototype.hasOwnProperty.call(target, param)) {
-        target = target[param];
-      }
-    }
-    return target;
-  }
-
-  /**
-   * @private
-   *
    * set a new timeout for synchronisation
    */
   _setNewTimeout() {
@@ -331,6 +317,49 @@ class SurePetcare extends Homey.App {
     this.timeout = setTimeout(this._synchronise.bind(this), interval);
   }
 
-}
+  /**
+   * @param target
+   * @param params
+   *
+   * @returns {*}
+   */
+  getProperty(target, params) {
+    for (const param of params) {
+      if (!this.hasProperty(target, param)) {
+        throw new Error(`Unknown param: ${param}`);
+      }
+      target = target[param];
+    }
+    return target;
+  }
 
-module.exports = SurePetcare;
+  /**
+   * @param target
+   * @param param
+   *
+   * @returns {boolean}
+   */
+  hasProperty(target, param) {
+    return Object.prototype.hasOwnProperty.call(target, param);
+  }
+
+  /**
+   *
+   * @param status
+   *
+   * @returns {Promise<number>}
+   */
+  async calculateBatteryPercentage(status) {
+    let batteryPercentage = Math.round(((status - 5) / (6 - 5)) * 100);
+    if (batteryPercentage > 100) {
+      batteryPercentage = 100;
+    }
+
+    if (batteryPercentage < 0) {
+      batteryPercentage = 0;
+    }
+
+    return batteryPercentage;
+  }
+
+};
