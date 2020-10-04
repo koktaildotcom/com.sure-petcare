@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="82.176.217.50" id="a06c70d2-7f11-4449-9b4c-321443af1148" port="22" customName="PI" nameFormat="CUSTOM" username="root">
+        <option name="customName" value="PI" />
+      </sshConfig>
+    </configs>
+  </component>
+</project>

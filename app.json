@@ -365,12 +365,12 @@
     {
       "id": "surefeed-petfeeder-connect",
       "name": {
-        "en": "Surefeed Microchip Petfeeder"
+        "en": "Surefeed Microchip Petfeeder",
+        "nl": "Sureflap Microchip Voerbak"
       },
-      "class": "lock",
+      "class": "other",
       "capabilities": [
-        "measure_battery",
-        "locked"
+        "measure_battery"
       ],
       "images": {
         "large": "/drivers/surefeed-microchip-petfeeder/assets/images/large.png",
