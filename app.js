@@ -199,7 +199,6 @@ module.exports = class SurePetcare extends Homey.App {
     if (this.devices.length > 0) {
       Homey.app.client.getStart()
         .then(syncData => {
-          console.log(syncData);
           const pets = this.getProperty(syncData, ['pets']);
           if (pets.length > 0) {
             for (const pet of pets) {
@@ -325,7 +324,7 @@ module.exports = class SurePetcare extends Homey.App {
    */
   getProperty(target, params) {
     for (const param of params) {
-      if (!this.hasProperty(target, param)) {
+      if (!this.hasProperties(target, [param])) {
         throw new Error(`Unknown param: ${param}`);
       }
       target = target[param];
@@ -335,12 +334,18 @@ module.exports = class SurePetcare extends Homey.App {
 
   /**
    * @param target
-   * @param param
+   * @param params
    *
    * @returns {boolean}
    */
-  hasProperty(target, param) {
-    return Object.prototype.hasOwnProperty.call(target, param);
+  hasProperties(target, params) {
+    for (const param of params) {
+      if (!Object.prototype.hasOwnProperty.call(target, param)) {
+        return false;
+      }
+      target = target[param];
+    }
+    return true;
   }
 
   /**
