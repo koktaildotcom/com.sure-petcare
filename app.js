@@ -18,7 +18,7 @@ module.exports = class SurePetcare extends Homey.App {
 
     this.client = new SurePetcareClient(Homey.ManagerSettings.get('token'));
 
-    new Homey.FlowCardTriggerDevice('specific_pet_eating')
+    new Homey.FlowCardTriggerDevice('specific_pet_has_eating')
       .registerRunListener((args, state) => {
         let match = false;
         if (Object.prototype.hasOwnProperty.call(args, 'pet') && Object.prototype.hasOwnProperty.call(args.pet, 'id')) {
@@ -86,7 +86,7 @@ module.exports = class SurePetcare extends Homey.App {
 
     new Homey.FlowCardTriggerDevice('pet_away').register();
     new Homey.FlowCardTriggerDevice('pet_home').register();
-    new Homey.FlowCardTriggerDevice('pet_eating').register();
+    new Homey.FlowCardTriggerDevice('pet_has_eating').register();
 
     this.triggerError = new Homey.FlowCardTrigger('log_message').register();
 
@@ -224,6 +224,7 @@ module.exports = class SurePetcare extends Homey.App {
                   // don't support position
                 }
 
+                console.log('store pet');
                 this.storedPets.push(newPet);
               }
             }
@@ -231,7 +232,28 @@ module.exports = class SurePetcare extends Homey.App {
           return syncData;
         })
         .then(syncData => {
-          return Homey.app.updateDevices(this.devices, syncData);
+          return this.devices.reduce((promise, device) => {
+            promise.then(async () => {
+              const pets = this.getProperty(syncData, ['pets']);
+              if (pets.length > 0) {
+                for (const pet of pets) {
+                  const storedPet = this.getStoredPet(pet.name);
+                  if (storedPet) {
+                    await device.checkPetChange(storedPet, pet);
+                  }
+                }
+              }
+            });
+
+            return Promise.resolve(syncData);
+          }, Promise.resolve());
+        })
+        .then(syncData => {
+          return this.devices.reduce((promise, device) => {
+            return promise.then(() => {
+              return Homey.app.updateDevice(device, syncData);
+            });
+          }, Promise.resolve(syncData));
         })
         .then(() => {
           this.logMessage('log', `Hub sync complete in: ${(new Date() - updateDevicesTime) / 1000} seconds`);
@@ -250,41 +272,13 @@ module.exports = class SurePetcare extends Homey.App {
   /**
    * update the devices one by one
    *
-   * @param devices SureflapDevice[]
-   * @param data object
-   *
-   * @returns {Promise.<SureflapDevice[]>}
-   */
-  async updateDevices(devices, data) {
-    return devices.reduce((promise, device) => {
-      return promise.then(() => {
-        return Homey.app.updateDevice(device, data);
-      });
-    }, Promise.resolve());
-  }
-
-  /**
-   * update the devices one by one
-   *
    * @param device SureflapDevice
    * @param data object
    *
    * @returns {Promise.<SureflapDevice>}
    */
   async updateDevice(device, data) {
-    await device.update(data.devices.find(deviceData => deviceData.id === device.id));
-    const pets = this.getProperty(data, ['pets']);
-
-    if (pets.length > 0) {
-      for (const pet of pets) {
-        const storedPet = this.getStoredPet(pet.name);
-        if (storedPet) {
-          await device.checkPetChange(storedPet, pet);
-        }
-      }
-    }
-
-    return device;
+    return device.update(data.devices.find(deviceData => deviceData.id === device.id));
   }
 
   /**

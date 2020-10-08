@@ -1,8 +1,8 @@
 {
-  "id": "specific_pet_eating",
+  "id": "specific_pet_has_eating",
   "title": {
-    "en": "A specific pet is eating",
-    "nl": "Een specifiek huisdier is aan het eten"
+    "en": "A specific pet has eaten",
+    "nl": "Een specifiek huisdier heeft gegeten"
   },
   "tokens": [
     {
@@ -21,7 +21,7 @@
     {
       "name": "device",
       "type": "device",
-      "filter": "driver_id=surefeed-microchip-petfeeder"
+      "filter": "driver_id=surefeed-petfeeder-connect"
     },
     {
       "name": "pet",

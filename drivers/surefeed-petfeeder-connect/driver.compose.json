@@ -1,5 +1,5 @@
 {
-  "id": "surefeed-microchip-petfeeder",
+  "id": "surefeed-petfeeder-connect",
   "name": {
     "en": "Surefeed Microchip Petfeeder",
     "nl": "Sureflap Microchip Voerbak"
@@ -9,8 +9,8 @@
     "measure_battery"
   ],
   "images": {
-    "large": "/drivers/surefeed-microchip-petfeeder/assets/images/large.png",
-    "small": "/drivers/surefeed-microchip-petfeeder/assets/images/small.png"
+    "large": "/drivers/surefeed-petfeeder-connect/assets/images/large.png",
+    "small": "/drivers/surefeed-petfeeder-connect/assets/images/small.png"
   },
   "pair": [
     {

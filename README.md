@@ -6,12 +6,6 @@ Manage the state of your pet- or catflap and keep track of your pets!
 
 Do you like the app? You can make me happy by buying me a beer! [![](https://img.shields.io/badge/paypal-donate-green.svg)](https://www.paypal.me/koktaildotcom)
 
-## Q&amp;A
-
-> **Q1** Why is the `Pet feeder connect` not available?
-
-* _I don't have that device to test the functionality_
-
 ## Cards
 
 ### Trigger
