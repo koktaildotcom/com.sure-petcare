@@ -201,11 +201,12 @@
           },
           {
             "name": "amount",
+            "type": "number",
             "title": {
               "en": "Amount in grams",
               "nl": "Hoeveelheid in gram"
             },
-            "example": "1.2"
+            "example": 1.2
           }
         ],
         "args": [
@@ -309,11 +310,12 @@
           },
           {
             "name": "amount",
+            "type": "number",
             "title": {
               "en": "Amount in grams",
               "nl": "Hoeveelheid in gram"
             },
-            "example": "1.2"
+            "example": 1.2
           }
         ],
         "args": [

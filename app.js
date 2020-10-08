@@ -196,77 +196,79 @@ module.exports = class SurePetcare extends Homey.App {
     this.syncInProgress = true;
 
     const updateDevicesTime = new Date();
-    if (this.devices.length > 0) {
-      Homey.app.client.getStart()
-        .then(syncData => {
-          const pets = this.getProperty(syncData, ['pets']);
-          if (pets.length > 0) {
-            for (const pet of pets) {
-              const storedPet = this.getStoredPet(pet.name);
-              if (!storedPet) {
-                const imageUrl = this.getProperty(pet, ['photo', 'location']);
-                const newPet = {
-                  id: pet.id,
-                  imageUrl,
-                  name: pet.name,
-                  description: pet.comments,
-                };
-
-                try {
-                  newPet.status.feeding = this.getProperty(pet, ['status', 'feeding']);
-                } catch (e) {
-                  // don't support feeding
-                }
-
-                try {
-                  newPet.position = this.getProperty(pet, ['position']);
-                } catch (e) {
-                  // don't support position
-                }
-
-                console.log('store pet');
-                this.storedPets.push(newPet);
-              }
-            }
-          }
-          return syncData;
-        })
-        .then(syncData => {
-          return this.devices.reduce((promise, device) => {
-            promise.then(async () => {
-              const pets = this.getProperty(syncData, ['pets']);
-              if (pets.length > 0) {
-                for (const pet of pets) {
-                  const storedPet = this.getStoredPet(pet.name);
-                  if (storedPet) {
-                    await device.checkPetChange(storedPet, pet);
-                  }
-                }
-              }
-            });
-
-            return Promise.resolve(syncData);
-          }, Promise.resolve());
-        })
-        .then(syncData => {
-          return this.devices.reduce((promise, device) => {
-            return promise.then(() => {
-              return Homey.app.updateDevice(device, syncData);
-            });
-          }, Promise.resolve(syncData));
-        })
-        .then(() => {
-          this.logMessage('log', `Hub sync complete in: ${(new Date() - updateDevicesTime) / 1000} seconds`);
-          this._setNewTimeout();
-        })
-        .catch(error => {
-          this.logMessage('error', error.toString());
-          this._setNewTimeout();
-        });
-    } else {
+    if (this.devices.length === 0) {
       this.logMessage('log', 'No devices found');
       this._setNewTimeout();
+
+      return;
     }
+
+    Homey.app.client.getStart()
+      .then(syncData => {
+        const pets = this.getProperty(syncData, ['pets']);
+        if (pets.length > 0) {
+          for (const pet of pets) {
+            const storedPet = this.getStoredPet(pet.name);
+            if (!storedPet) {
+              const imageUrl = this.getProperty(pet, ['photo', 'location']);
+              const newPet = {
+                id: pet.id,
+                imageUrl,
+                name: pet.name,
+                description: pet.comments,
+              };
+
+              try {
+                newPet.status.feeding = this.getProperty(pet, ['status', 'feeding']);
+              } catch (e) {
+                // don't support feeding
+              }
+
+              try {
+                newPet.position = this.getProperty(pet, ['position']);
+              } catch (e) {
+                // don't support position
+              }
+
+              console.log('store pet');
+              this.storedPets.push(newPet);
+            }
+          }
+        }
+        return syncData;
+      })
+      .then(syncData => {
+        return this.devices.reduce((promise, device) => {
+          promise.then(async () => {
+            const pets = this.getProperty(syncData, ['pets']);
+            if (pets.length > 0) {
+              for (const pet of pets) {
+                const storedPet = this.getStoredPet(pet.name);
+                if (storedPet) {
+                  await device.checkPetChange(storedPet, pet);
+                }
+              }
+            }
+          });
+
+          return Promise.resolve(syncData);
+        }, Promise.resolve());
+      })
+      .then(syncData => {
+        return this.devices.reduce((promise, device) => {
+          return promise.then(() => {
+            return Homey.app.updateDevice(device, syncData);
+          });
+        }, Promise.resolve(syncData));
+      })
+      .then(() => {
+        this.logMessage('log', `Hub sync complete in: ${(new Date() - updateDevicesTime) / 1000} seconds`);
+        this._setNewTimeout();
+      })
+      .catch(error => {
+        this.logMessage('error', error.toString());
+        this._setNewTimeout();
+      });
   }
 
   /**
