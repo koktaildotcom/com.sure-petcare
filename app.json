@@ -187,6 +187,25 @@
               "en": "Mr. kat",
               "nl": "Mr. kat"
             }
+          },
+          {
+            "name": "bowl",
+            "title": {
+              "en": "From which bowl",
+              "nl": "Uit welke bakje"
+            },
+            "example": {
+              "en": "Left",
+              "nl": "Links"
+            }
+          },
+          {
+            "name": "amount",
+            "title": {
+              "en": "Amount in grams",
+              "nl": "Hoeveelheid in gram"
+            },
+            "example": "1.2"
           }
         ],
         "args": [
@@ -276,6 +295,25 @@
               "en": "Mr. kat",
               "nl": "Mr. kat"
             }
+          },
+          {
+            "name": "bowl",
+            "title": {
+              "en": "From which bowl",
+              "nl": "Uit welke bakje"
+            },
+            "example": {
+              "en": "Left",
+              "nl": "Links"
+            }
+          },
+          {
+            "name": "amount",
+            "title": {
+              "en": "Amount in grams",
+              "nl": "Hoeveelheid in gram"
+            },
+            "example": "1.2"
           }
         ],
         "args": [
