@@ -28,5 +28,8 @@
   },
   "1.0.14": {
     "en": "run compose before publish"
+  },
+  "1.0.15": {
+    "en": "add surefeed device trigger card `weight changed`"
   }
 }

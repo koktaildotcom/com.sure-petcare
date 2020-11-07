@@ -67,3 +67,5 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
   * improve readme
 ### v1.0.14 - 07.05.2020
   * run compose before publish
+### v1.0.15 - 07.11.2020
+  * add surefeed device trigger card `weight changed`
