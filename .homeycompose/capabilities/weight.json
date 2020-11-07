@@ -12,5 +12,6 @@
     "nl": "gram"
   },
   "min": 0,
-  "max": 500
+  "max": 500,
+  "icon": "./assets/images/scale.svg"
 }
