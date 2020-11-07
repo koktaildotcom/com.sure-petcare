@@ -6,8 +6,34 @@
   },
   "class": "other",
   "capabilities": [
+    "weight.left",
+    "weight.right",
+    "weight.both",
     "measure_battery"
   ],
+  "capabilitiesOptions": {
+    "weight.left": {
+      "title": {
+        "en": "Weight left bowl",
+        "nl": "Gewicht bakje links"
+      },
+      "decimals": 2
+    },
+    "weight.right": {
+      "title": {
+        "en": "Weight right bowl",
+        "nl": "Gewicht bakje rechts"
+      },
+      "decimals": 2
+    },
+    "weight.both": {
+      "title": {
+        "en": "Weight bowl",
+        "nl": "Gewicht bakje"
+      },
+      "decimals": 2
+    }
+  },
   "images": {
     "large": "/drivers/surefeed-petfeeder-connect/assets/images/large.png",
     "small": "/drivers/surefeed-petfeeder-connect/assets/images/small.png"

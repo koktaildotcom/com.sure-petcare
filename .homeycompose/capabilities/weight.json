@@ -1,0 +1,17 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Weight in grams",
+    "nl": "Gewicht in gram"
+  },
+  "uiComponent": "slider",
+  "getable": true,
+  "setable": false,
+  "units": {
+    "en": "grams",
+    "nl": "gram"
+  },
+  "min": 0,
+  "max": 500,
+  "step": 0.01
+}
