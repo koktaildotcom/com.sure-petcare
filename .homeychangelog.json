@@ -43,5 +43,8 @@
   },
   "1.0.19": {
     "en": "add bowl settings"
+  },
+  "1.0.20": {
+    "en": "bugfix login form"
   }
 }

@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.sure-petcare",
-  "version": "1.0.18",
+  "version": "1.0.20",
   "compatibility": ">=3.0.0",
   "sdk": 2,
   "name": {
@@ -568,8 +568,8 @@
               "id": "bowlType",
               "type": "radio",
               "label": {
-                "en": "bowl type",
-                "nl": "type bakje"
+                "en": "Bowl type",
+                "nl": "Type bakje"
               },
               "value": "single",
               "values": [

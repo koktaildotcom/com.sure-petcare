@@ -77,3 +77,6 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
   * implement multiple bowl types
 ### v1.0.19 - 08.11.2020
   * add bowl settings
+### v1.0.20 - 08.11.2020
+  * bugfix login call failed
+  * bugfix logout button

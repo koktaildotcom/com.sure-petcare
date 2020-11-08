@@ -238,11 +238,11 @@
 
             logoutEl.addEventListener('click', function (e) {
                 e.preventDefault()
+                authenticationToken = null
+                setUnauthorized();
 
-                Homey.set('token', null, err => {
+                Homey.set('token', authenticationToken, err => {
                     if (err) return Homey.alert(err)
-                    authenticationToken = null
-                    checkAuthorisation()
                 })
             })
 
@@ -260,11 +260,6 @@
                 })
 
                 errorEl.textContent = ''
-
-                console.log({
-                    username: username,
-                    password: password,
-                })
 
                 Homey.api(
                     'POST',
