@@ -6,9 +6,6 @@
   },
   "class": "other",
   "capabilities": [
-    "weight.left",
-    "weight.right",
-    "weight.both",
     "measure_battery"
   ],
   "capabilitiesOptions": {
