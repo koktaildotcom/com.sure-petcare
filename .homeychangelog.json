@@ -31,5 +31,8 @@
   },
   "1.0.15": {
     "en": "add surefeed device trigger card `weight changed`"
+  },
+  "1.0.16": {
+    "en": "extend trigger capabilities `weight changed`"
   }
 }
