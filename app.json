@@ -555,7 +555,43 @@
         "batteries": [
           "OTHER"
         ]
-      }
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Device information",
+            "nl": "Device informatie"
+          },
+          "children": [
+            {
+              "id": "bowlType",
+              "type": "radio",
+              "label": {
+                "en": "bowl type",
+                "nl": "type bakje"
+              },
+              "value": "single",
+              "values": [
+                {
+                  "id": "single",
+                  "label": {
+                    "en": "Single bowl",
+                    "nl": "Enkel bakje"
+                  }
+                },
+                {
+                  "id": "double",
+                  "label": {
+                    "en": "Double bowl",
+                    "nl": "Dubbel bakje"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": {
