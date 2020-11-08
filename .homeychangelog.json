@@ -37,5 +37,8 @@
   },
   "1.0.17": {
     "en": "trigger `weight changed` after pet eats"
+  },
+  "1.0.18": {
+    "en": "implement multiple bowl types"
   }
 }

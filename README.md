@@ -73,3 +73,5 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
   * extend trigger capabilities `weight changed`
 ### v1.0.17 - 08.11.2020
   * trigger `weight changed` after pet eats
+### v1.0.18 - 08.11.2020
+  * implement multiple bowl types
