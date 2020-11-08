@@ -34,5 +34,8 @@
   },
   "1.0.16": {
     "en": "extend trigger capabilities `weight changed`"
+  },
+  "1.0.17": {
+    "en": "trigger `weight changed` after pet eats"
   }
 }

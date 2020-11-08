@@ -71,3 +71,5 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
   * add surefeed device trigger card `weight changed`
 ### v1.0.16 - 08.11.2020
   * extend trigger capabilities `weight changed`
+### v1.0.17 - 08.11.2020
+  * trigger `weight changed` after pet eats
