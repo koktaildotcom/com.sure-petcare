@@ -65,8 +65,8 @@
           "id": "bowlType",
           "type": "radio",
           "label": {
-            "en": "bowl type",
-            "nl": "type bakje"
+            "en": "Bowl type",
+            "nl": "Type bakje"
           },
           "value": "single",
           "values": [

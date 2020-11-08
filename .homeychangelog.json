@@ -40,5 +40,8 @@
   },
   "1.0.18": {
     "en": "implement multiple bowl types"
+  },
+  "1.0.19": {
+    "en": "add bowl settings"
   }
 }
