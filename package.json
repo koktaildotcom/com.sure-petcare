@@ -1,6 +1,6 @@
 {
   "name": "com.sureflap",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "description": "Adds support for Sureflap hub",
   "main": "app.js",
   "repository": {
