@@ -3,5 +3,8 @@
   "password": "Password",
   "login": "Login",
   "logout": "Logout",
-  "login-title": "Login"
+  "login-title": "Login",
+  "left": "Left",
+  "right": "Right",
+  "both": "Both"
 }

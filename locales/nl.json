@@ -3,5 +3,8 @@
   "password": "Wachtwoord",
   "login": "Inloggen",
   "logout": "Uitloggen",
-  "login-title": "Inloggen"
+  "login-title": "Inloggen",
+  "left": "Links",
+  "right": "Rechts",
+  "both": "Beide"
 }
