@@ -69,3 +69,5 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
   * run compose before publish
 ### v1.0.15 - 07.11.2020
   * add surefeed device trigger card `weight changed`
+### v1.0.16 - 08.11.2020
+  * extend trigger capabilities `weight changed`

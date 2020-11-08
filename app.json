@@ -1,4 +1,5 @@
 {
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.sure-petcare",
   "version": "1.0.15",
   "compatibility": ">=3.0.0",
@@ -368,6 +369,42 @@
             }
           }
         ]
+      },
+      {
+        "id": "weight_changed",
+        "title": {
+          "en": "The weight is changed",
+          "nl": "Het gewicht is veranderd"
+        },
+        "tokens": [
+          {
+            "name": "bowl",
+            "title": {
+              "en": "Bowl",
+              "nl": "Bakje"
+            },
+            "example": {
+              "en": "Left",
+              "nl": "left"
+            }
+          },
+          {
+            "name": "amount",
+            "type": "number",
+            "title": {
+              "en": "Amount in grams",
+              "nl": "Hoeveelheid in gram"
+            },
+            "example": 22.5
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=surefeed-petfeeder-connect"
+          }
+        ]
       }
     ],
     "conditions": [
@@ -474,6 +511,29 @@
       "capabilities": [
         "measure_battery"
       ],
+      "capabilitiesOptions": {
+        "weight.left": {
+          "title": {
+            "en": "Weight left bowl",
+            "nl": "Gewicht bakje links"
+          },
+          "decimals": 2
+        },
+        "weight.right": {
+          "title": {
+            "en": "Weight right bowl",
+            "nl": "Gewicht bakje rechts"
+          },
+          "decimals": 2
+        },
+        "weight.both": {
+          "title": {
+            "en": "Weight bowl",
+            "nl": "Gewicht bakje"
+          },
+          "decimals": 2
+        }
+      },
       "images": {
         "large": "/drivers/surefeed-petfeeder-connect/assets/images/large.png",
         "small": "/drivers/surefeed-petfeeder-connect/assets/images/small.png"
@@ -609,6 +669,23 @@
       "getable": true,
       "setable": true,
       "uiComponent": "picker"
+    },
+    "weight": {
+      "type": "number",
+      "title": {
+        "en": "Weight in grams",
+        "nl": "Gewicht in gram"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "units": {
+        "en": "grams",
+        "nl": "gram"
+      },
+      "min": 0,
+      "max": 500,
+      "icon": "./assets/capabilities/scale.svg"
     }
   }
 }
