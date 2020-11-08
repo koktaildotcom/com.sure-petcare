@@ -87,6 +87,7 @@ module.exports = class SurePetcare extends Homey.App {
     new Homey.FlowCardTriggerDevice('pet_away').register();
     new Homey.FlowCardTriggerDevice('pet_home').register();
     new Homey.FlowCardTriggerDevice('pet_has_eating').register();
+    new Homey.FlowCardTriggerDevice('weight_changed').register();
 
     this.triggerError = new Homey.FlowCardTrigger('log_message').register();
 
