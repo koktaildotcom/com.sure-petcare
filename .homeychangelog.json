@@ -49,5 +49,8 @@
   },
   "1.0.21": {
     "en": "prevent sending initial value"
+  },
+  "1.0.22": {
+    "en": "bugfix in sending the initial value"
   }
 }

@@ -82,3 +82,6 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
   * bugfix logout button
 ### v1.0.21 - 08.11.2020
   * prevent sending initial value
+### v1.0.22 - 09.11.2020
+  * bugfix in sending the initial value
+  * simplify analysing pet data
