@@ -1,6 +1,6 @@
 {
   "id": "com.sure-petcare",
-  "version": "1.0.23",
+  "version": "2.0.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "name": {
@@ -23,7 +23,8 @@
       "cat",
       "dog",
       "sureflap",
-      "catflap"
+      "catflap",
+      "surefeed"
     ],
     "nl": [
       "sure",
@@ -32,12 +33,32 @@
       "kat",
       "hond",
       "sureflap",
-      "kattenluik"
+      "kattenluik",
+      "surefeed"
     ]
   },
   "homeyCommunityTopicId": 24127,
   "brandColor": "#16A6B6",
-  "permissions": [],
+  "permissions": [
+    "homey:manager:api"
+  ],
+  "api": {
+    "postLogin": {
+      "method": "post",
+      "path": "/login",
+      "public": true
+    },
+    "getProfile": {
+      "method": "get",
+      "path": "/profile",
+      "public": true
+    },
+    "getPhoto": {
+      "method": "get",
+      "path": "/photo/:id",
+      "public": true
+    }
+  },
   "images": {
     "large": "/assets/images/large.png",
     "small": "/assets/images/small.png"

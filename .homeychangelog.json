@@ -52,5 +52,8 @@
   },
   "1.0.22": {
     "en": "bugfix in sending the initial value"
+  },
+  "2.0.0": {
+    "en": "update to sdk 3.0"
   }
 }

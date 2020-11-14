@@ -1,6 +1,7 @@
 {
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.sure-petcare",
-  "version": "1.0.23",
+  "version": "2.0.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "name": {
@@ -23,7 +24,8 @@
       "cat",
       "dog",
       "sureflap",
-      "catflap"
+      "catflap",
+      "surefeed"
     ],
     "nl": [
       "sure",
@@ -32,12 +34,32 @@
       "kat",
       "hond",
       "sureflap",
-      "kattenluik"
+      "kattenluik",
+      "surefeed"
     ]
   },
   "homeyCommunityTopicId": 24127,
   "brandColor": "#16A6B6",
-  "permissions": [],
+  "permissions": [
+    "homey:manager:api"
+  ],
+  "api": {
+    "postLogin": {
+      "method": "post",
+      "path": "/login",
+      "public": true
+    },
+    "getProfile": {
+      "method": "get",
+      "path": "/profile",
+      "public": true
+    },
+    "getPhoto": {
+      "method": "get",
+      "path": "/photo/:id",
+      "public": true
+    }
+  },
   "images": {
     "large": "/assets/images/large.png",
     "small": "/assets/images/small.png"
@@ -368,6 +390,42 @@
             }
           }
         ]
+      },
+      {
+        "id": "weight_changed",
+        "title": {
+          "en": "The weight is changed",
+          "nl": "Het gewicht is veranderd"
+        },
+        "tokens": [
+          {
+            "name": "bowl",
+            "title": {
+              "en": "From which bowl",
+              "nl": "Uit welke bakje"
+            },
+            "example": {
+              "en": "Left",
+              "nl": "Links"
+            }
+          },
+          {
+            "name": "amount",
+            "type": "number",
+            "title": {
+              "en": "Amount in grams",
+              "nl": "Hoeveelheid in gram"
+            },
+            "example": 1.2
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=surefeed-petfeeder-connect"
+          }
+        ]
       }
     ],
     "conditions": [
@@ -474,11 +532,38 @@
       "capabilities": [
         "measure_battery"
       ],
+      "capabilitiesOptions": {
+        "weight.left": {
+          "title": {
+            "en": "Weight left bowl",
+            "nl": "Gewicht bakje links"
+          },
+          "decimals": 2
+        },
+        "weight.right": {
+          "title": {
+            "en": "Weight right bowl",
+            "nl": "Gewicht bakje rechts"
+          },
+          "decimals": 2
+        },
+        "weight.both": {
+          "title": {
+            "en": "Weight bowl",
+            "nl": "Gewicht bakje"
+          },
+          "decimals": 2
+        }
+      },
       "images": {
         "large": "/drivers/surefeed-petfeeder-connect/assets/images/large.png",
         "small": "/drivers/surefeed-petfeeder-connect/assets/images/small.png"
       },
       "pair": [
+        {
+          "id": "login",
+          "template": "login_credentials"
+        },
         {
           "id": "list_devices",
           "template": "list_devices",
@@ -495,7 +580,43 @@
         "batteries": [
           "OTHER"
         ]
-      }
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Device information",
+            "nl": "Device informatie"
+          },
+          "children": [
+            {
+              "id": "bowlType",
+              "type": "radio",
+              "label": {
+                "en": "Bowl type",
+                "nl": "Type bakje"
+              },
+              "value": "single",
+              "values": [
+                {
+                  "id": "single",
+                  "label": {
+                    "en": "Single bowl",
+                    "nl": "Enkel bakje"
+                  }
+                },
+                {
+                  "id": "double",
+                  "label": {
+                    "en": "Double bowl",
+                    "nl": "Dubbel bakje"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": {
@@ -512,6 +633,10 @@
         "small": "/drivers/sureflap-cat-flap-connect/assets/images/small.png"
       },
       "pair": [
+        {
+          "id": "login",
+          "template": "login_credentials"
+        },
         {
           "id": "list_devices",
           "template": "list_devices",
@@ -549,6 +674,10 @@
         "small": "/drivers/sureflap-pet-door-connect/assets/images/small.png"
       },
       "pair": [
+        {
+          "id": "login",
+          "template": "login_credentials"
+        },
         {
           "id": "list_devices",
           "template": "list_devices",
@@ -609,6 +738,23 @@
       "getable": true,
       "setable": true,
       "uiComponent": "picker"
+    },
+    "weight": {
+      "type": "number",
+      "title": {
+        "en": "Weight in grams",
+        "nl": "Gewicht in gram"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "units": {
+        "en": "grams",
+        "nl": "gram"
+      },
+      "min": 0,
+      "max": 500,
+      "icon": "./assets/capabilities/scale.svg"
     }
   }
 }

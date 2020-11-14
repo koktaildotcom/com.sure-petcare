@@ -1,6 +1,6 @@
 Introduction
 This app integrate the `Sure Petcare` products into Homey.
-Manage the state of your pet- or catflap and keep track of your pets!
+Manage the state of your pet- or catflap or feeder and keep track of your pets!
 
 Usage
 1. Install app

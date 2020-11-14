@@ -37,6 +37,10 @@
   },
   "pair": [
     {
+      "id": "login",
+      "template": "login_credentials"
+    },
+    {
       "id": "list_devices",
       "template": "list_devices",
       "navigation": {
