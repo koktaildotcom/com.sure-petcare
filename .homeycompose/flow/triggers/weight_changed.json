@@ -8,12 +8,12 @@
     {
       "name": "bowl",
       "title": {
-        "en": "Bowl",
-        "nl": "Bakje"
+        "en": "From which bowl",
+        "nl": "Uit welke bakje"
       },
       "example": {
         "en": "Left",
-        "nl": "left"
+        "nl": "Links"
       }
     },
     {
@@ -23,7 +23,7 @@
         "en": "Amount in grams",
         "nl": "Hoeveelheid in gram"
       },
-      "example": 22.5
+      "example": 1.2
     }
   ],
   "args": [

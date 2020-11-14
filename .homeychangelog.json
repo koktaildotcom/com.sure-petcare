@@ -31,5 +31,26 @@
   },
   "1.0.15": {
     "en": "add surefeed device trigger card `weight changed`"
+  },
+  "1.0.16": {
+    "en": "extend trigger capabilities `weight changed`"
+  },
+  "1.0.17": {
+    "en": "trigger `weight changed` after pet eats"
+  },
+  "1.0.18": {
+    "en": "implement multiple bowl types"
+  },
+  "1.0.19": {
+    "en": "add bowl settings"
+  },
+  "1.0.20": {
+    "en": "bugfix login form"
+  },
+  "1.0.21": {
+    "en": "prevent sending initial value"
+  },
+  "1.0.22": {
+    "en": "bugfix in sending the initial value"
   }
 }

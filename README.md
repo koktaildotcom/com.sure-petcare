@@ -69,3 +69,19 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
   * run compose before publish
 ### v1.0.15 - 07.11.2020
   * add surefeed device trigger card `weight changed`
+### v1.0.16 - 08.11.2020
+  * extend trigger capabilities `weight changed`
+### v1.0.17 - 08.11.2020
+  * trigger `weight changed` after pet eats
+### v1.0.18 - 08.11.2020
+  * implement multiple bowl types
+### v1.0.19 - 08.11.2020
+  * add bowl settings
+### v1.0.20 - 08.11.2020
+  * bugfix login call failed
+  * bugfix logout button
+### v1.0.21 - 08.11.2020
+  * prevent sending initial value
+### v1.0.22 - 09.11.2020
+  * bugfix in sending the initial value
+  * simplify analysing pet data

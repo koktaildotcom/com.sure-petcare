@@ -87,6 +87,7 @@ module.exports = class SurePetcare extends Homey.App {
     new Homey.FlowCardTriggerDevice('pet_away').register();
     new Homey.FlowCardTriggerDevice('pet_home').register();
     new Homey.FlowCardTriggerDevice('pet_has_eating').register();
+    new Homey.FlowCardTriggerDevice('weight_changed').register();
 
     this.triggerError = new Homey.FlowCardTrigger('log_message').register();
 
@@ -210,28 +211,7 @@ module.exports = class SurePetcare extends Homey.App {
           for (const pet of pets) {
             const storedPet = this.getStoredPet(pet.name);
             if (!storedPet) {
-              const imageUrl = this.getProperty(pet, ['photo', 'location']);
-              const newPet = {
-                id: pet.id,
-                imageUrl,
-                name: pet.name,
-                description: pet.comments,
-              };
-
-              try {
-                newPet.status.feeding = this.getProperty(pet, ['status', 'feeding']);
-              } catch (e) {
-                // don't support feeding
-              }
-
-              try {
-                newPet.position = this.getProperty(pet, ['position']);
-              } catch (e) {
-                // don't support position
-              }
-
-              console.log('store pet');
-              this.storedPets.push(newPet);
+              this.storedPets.push({ ...pet });
             }
           }
         }

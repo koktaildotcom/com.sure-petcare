@@ -1,3 +1,5 @@
+'use strict';
+
 const Homey = require('homey');
 
 module.exports = [
@@ -5,15 +7,19 @@ module.exports = [
     method: 'POST',
     path: '/login',
     fn: (args, callback) => {
-      if (args.body.hasOwnProperty('username') === false) {
+      if (Object.prototype.hasOwnProperty.call(args, 'body') === false) {
+        callback('No body found');
+      }
+
+      if (Object.prototype.hasOwnProperty.call(args.body, 'username') === false) {
         callback('No username found');
       }
 
-      if (args.body.hasOwnProperty('password') === false) {
+      if (Object.prototype.hasOwnProperty.call(args.body, 'password') === false) {
         callback('No password found');
       }
 
-      this.homey.app.login(args.body.username, args.body.password)
+      Homey.app.login(args.body.username, args.body.password)
         .then(token => {
           return callback(null, token);
         }).catch(error => {
@@ -37,7 +43,7 @@ module.exports = [
     method: 'GET',
     path: '/photo/:id',
     fn: (args, callback) => {
-      Homey.app.client.getPhoto(parseInt(args.params.id))
+      Homey.app.client.getPhoto(parseInt(args.params.id, 10))
         .then(photo => {
           return callback(null, photo);
         }).catch(error => {
