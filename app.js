@@ -9,6 +9,7 @@ module.exports = class SurePetcare extends Homey.App {
     this.log('SureFlap is running...');
     this.syncInProgress = false;
     this.timeout = null;
+    // @todo get devices from the driver
     this.devices = [];
     this.storedPets = [];
 
