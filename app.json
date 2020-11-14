@@ -561,12 +561,21 @@
       },
       "pair": [
         {
-          "id": "login",
-          "template": "login_credentials"
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "../assets/icon.svg"
+          },
+          "navigation": {
+            "next": "list_devices"
+          }
         },
         {
           "id": "list_devices",
           "template": "list_devices",
+          "options": {
+            "singular": true
+          },
           "navigation": {
             "next": "add_device"
           }
@@ -634,12 +643,21 @@
       },
       "pair": [
         {
-          "id": "login",
-          "template": "login_credentials"
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "../assets/icon.svg"
+          },
+          "navigation": {
+            "next": "list_devices"
+          }
         },
         {
           "id": "list_devices",
           "template": "list_devices",
+          "options": {
+            "singular": true
+          },
           "navigation": {
             "next": "add_device"
           }
@@ -675,12 +693,18 @@
       },
       "pair": [
         {
-          "id": "login",
-          "template": "login_credentials"
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "../assets/icon.svg"
+          }
         },
         {
           "id": "list_devices",
           "template": "list_devices",
+          "options": {
+            "singular": true
+          },
           "navigation": {
             "next": "add_device"
           }
