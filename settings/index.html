@@ -224,7 +224,7 @@
                                             Homey.alert(err.message)
                                         }
 
-                                        setAuthorized(profile, photo.location);
+									  setAuthorized(profile, photo.hasOwnProperty(location) ? photo.location : null);
                                     })
                             } else {
                                 setAuthorized(profile);

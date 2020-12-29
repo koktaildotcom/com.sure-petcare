@@ -85,3 +85,5 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
 ### v1.0.22 - 09.11.2020
   * bugfix in sending the initial value
   * simplify analysing pet data
+### v1.0.23 - 29.12.2020
+  * bugfix when the image location isn't set
