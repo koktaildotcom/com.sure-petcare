@@ -87,3 +87,5 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
   * simplify analysing pet data
 ### v1.0.23 - 29.12.2020
   * bugfix when the image location isn't set
+### v1.0.24 - 30.12.2020
+  * bugfix getting the profile image

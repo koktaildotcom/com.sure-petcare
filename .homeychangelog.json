@@ -55,5 +55,8 @@
   },
   "1.0.23": {
     "en": "bugfix when the image location isn't set"
+  },
+  "1.0.24": {
+    "en": "bugfix getting the profile image"
   }
 }

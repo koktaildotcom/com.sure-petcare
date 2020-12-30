@@ -214,8 +214,7 @@
                             if (err) {
                                 Homey.alert(err.message)
                             }
-
-                            if (!profile.hasOwnProperty('photo_id')) {
+                            if (profile.hasOwnProperty('photo_id') && profile['photo_id']) {
                                 Homey.api(
                                     'GET',
                                     '/photo/' + profile['photo_id'],
@@ -224,7 +223,12 @@
                                             Homey.alert(err.message)
                                         }
 
-									  setAuthorized(profile, photo.hasOwnProperty(location) ? photo.location : null);
+                                        let photoUrl = null;
+                                        if(photo && photo.hasOwnProperty('location')){
+										   photoUrl = photo.location;
+                                        }
+
+                                        setAuthorized(profile, photoUrl);
                                     })
                             } else {
                                 setAuthorized(profile);
