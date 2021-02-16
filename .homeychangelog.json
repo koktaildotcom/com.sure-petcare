@@ -61,5 +61,8 @@
   },
   "2.0.0": {
     "en": "update to sdk 3.0"
+  },
+  "2.0.1": {
+    "en": "fixed trigger bug when weight is < 0\n fixed bug switching bowl types"
   }
 }
