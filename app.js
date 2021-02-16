@@ -9,26 +9,26 @@ module.exports = class SurePetcare extends Homey.App {
     this.log('SureFlap is running...');
     this.syncInProgress = false;
     this.timeout = null;
+    // @todo get devices from the driver
     this.devices = [];
     this.storedPets = [];
 
-    if (undefined === Homey.ManagerSettings.get('token')) {
-      Homey.ManagerSettings.set('token', null);
+    if (undefined === this.homey.settings.get('token')) {
+      this.homey.settings.set('token', null);
     }
 
-    this.client = new SurePetcareClient(Homey.ManagerSettings.get('token'));
+    this.client = new SurePetcareClient(this.homey.settings.get('token'));
 
-    new Homey.FlowCardTriggerDevice('specific_pet_has_eating')
-      .registerRunListener((args, state) => {
+    this.homey.flow.getDeviceTriggerCard('specific_pet_has_eating')
+      .registerRunListener(async (args, state) => {
         let match = false;
         if (Object.prototype.hasOwnProperty.call(args, 'pet') && Object.prototype.hasOwnProperty.call(args.pet, 'id')) {
           match = args.pet.id === state.petId;
         }
-        return Promise.resolve(match);
+        return match;
       })
-      .register()
       .getArgument('pet')
-      .registerAutocompleteListener((query, args) => {
+      .registerAutocompleteListener(async (query, args) => {
         let matches = this.storedPets.filter(
           pet => {
             return pet.name.match(new RegExp(query, 'gi'));
@@ -37,20 +37,19 @@ module.exports = class SurePetcare extends Homey.App {
         if (!matches) {
           matches = [];
         }
-        return Promise.resolve(matches);
+        return matches;
       });
 
-    new Homey.FlowCardTriggerDevice('specific_pet_away')
-      .registerRunListener((args, state) => {
+    this.homey.flow.getDeviceTriggerCard('specific_pet_away')
+      .registerRunListener(async (args, state) => {
         let match = false;
         if (Object.prototype.hasOwnProperty.call(args, 'pet') && Object.prototype.hasOwnProperty.call(args.pet, 'id')) {
           match = args.pet.id === state.petId;
         }
-        return Promise.resolve(match);
+        return match;
       })
-      .register()
       .getArgument('pet')
-      .registerAutocompleteListener((query, args) => {
+      .registerAutocompleteListener(async (query, args) => {
         let matches = this.storedPets.filter(
           pet => {
             return pet.name.match(new RegExp(query, 'gi'));
@@ -59,20 +58,19 @@ module.exports = class SurePetcare extends Homey.App {
         if (!matches) {
           matches = [];
         }
-        return Promise.resolve(matches);
+        return matches;
       });
 
-    new Homey.FlowCardTriggerDevice('specific_pet_home')
-      .registerRunListener((args, state) => {
+    this.homey.flow.getDeviceTriggerCard('specific_pet_home')
+      .registerRunListener(async (args, state) => {
         let match = false;
         if (Object.prototype.hasOwnProperty.call(args, 'pet') && Object.prototype.hasOwnProperty.call(args.pet, 'id')) {
           match = args.pet.id === state.petId;
         }
-        return Promise.resolve(match);
+        return match;
       })
-      .register()
       .getArgument('pet')
-      .registerAutocompleteListener((query, args) => {
+      .registerAutocompleteListener(async (query, args) => {
         let matches = this.storedPets.filter(
           pet => {
             return pet.name.match(new RegExp(query, 'gi'));
@@ -81,15 +79,15 @@ module.exports = class SurePetcare extends Homey.App {
         if (!matches) {
           matches = [];
         }
-        return Promise.resolve(matches);
+        return matches;
       });
 
-    new Homey.FlowCardTriggerDevice('pet_away').register();
-    new Homey.FlowCardTriggerDevice('pet_home').register();
-    new Homey.FlowCardTriggerDevice('pet_has_eating').register();
-    new Homey.FlowCardTriggerDevice('weight_changed').register();
+    this.homey.flow.getDeviceTriggerCard('pet_away');
+    this.homey.flow.getDeviceTriggerCard('pet_home');
+    this.homey.flow.getDeviceTriggerCard('pet_has_eating');
+    this.homey.flow.getDeviceTriggerCard('weight_changed');
 
-    this.triggerError = new Homey.FlowCardTrigger('log_message').register();
+    this.triggerError = this.homey.flow.getTriggerCard('log_message');
 
     this._synchronise();
   }
@@ -188,7 +186,7 @@ module.exports = class SurePetcare extends Homey.App {
       return;
     }
 
-    if (Homey.app.client.hasToken() === false) {
+    if (this.client.hasToken() === false) {
       this.logMessage('log', 'Not authorized');
       this._setNewTimeout();
       return;
@@ -204,7 +202,7 @@ module.exports = class SurePetcare extends Homey.App {
       return;
     }
 
-    Homey.app.client.getStart()
+    this.client.getStart()
       .then(syncData => {
         const pets = this.getProperty(syncData, ['pets']);
         if (pets.length > 0) {
@@ -237,7 +235,7 @@ module.exports = class SurePetcare extends Homey.App {
       .then(syncData => {
         return this.devices.reduce((promise, device) => {
           return promise.then(() => {
-            return Homey.app.updateDevice(device, syncData);
+            return this.updateDevice(device, syncData);
           });
         }, Promise.resolve(syncData));
       })
@@ -270,7 +268,7 @@ module.exports = class SurePetcare extends Homey.App {
    * @returns {Promise}
    */
   async login(username, password) {
-    const token = await Homey.app.client.authenticate(username, password);
+    const token = await this.client.authenticate(username, password);
     await Homey.ManagerSettings.set('token', token);
 
     return token;

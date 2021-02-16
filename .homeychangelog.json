@@ -58,5 +58,8 @@
   },
   "1.0.24": {
     "en": "bugfix getting the profile image"
+  },
+  "2.0.0": {
+    "en": "update to sdk 3.0"
   }
 }

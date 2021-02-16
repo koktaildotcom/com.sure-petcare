@@ -1,9 +1,7 @@
-'use strict'
+'use strict';
 
-const SureflapDevice = require('../../lib/sureflap-device.js')
+const SureflapDevice = require('../../lib/sureflap-device.js');
 
-class SureflapPetDoorConnect extends SureflapDevice {
+module.exports = class SureflapPetDoorConnect extends SureflapDevice {
 
-}
-
-module.exports = SureflapPetDoorConnect
+};

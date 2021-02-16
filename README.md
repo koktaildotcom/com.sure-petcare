@@ -89,3 +89,8 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
   * bugfix when the image location isn't set
 ### v1.0.24 - 30.12.2020
   * bugfix getting the profile image
+### v2.0.0 - 14.11.2020
+  * update to SDK 3.0
+### v2.0.1 - 16.02.2021
+  * fixed trigger bug when weight is < 0
+  * fixed bug switching bowl types

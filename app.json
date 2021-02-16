@@ -1,9 +1,9 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.sure-petcare",
-  "version": "1.0.24",
-  "compatibility": ">=3.0.0",
-  "sdk": 2,
+  "version": "2.0.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
   "name": {
     "en": "Sure Petcare",
     "nl": "Sure Petcare"
@@ -24,7 +24,8 @@
       "cat",
       "dog",
       "sureflap",
-      "catflap"
+      "catflap",
+      "surefeed"
     ],
     "nl": [
       "sure",
@@ -33,12 +34,32 @@
       "kat",
       "hond",
       "sureflap",
-      "kattenluik"
+      "kattenluik",
+      "surefeed"
     ]
   },
   "homeyCommunityTopicId": 24127,
   "brandColor": "#16A6B6",
-  "permissions": [],
+  "permissions": [
+    "homey:manager:api"
+  ],
+  "api": {
+    "postLogin": {
+      "method": "post",
+      "path": "/login",
+      "public": true
+    },
+    "getProfile": {
+      "method": "get",
+      "path": "/profile",
+      "public": true
+    },
+    "getPhoto": {
+      "method": "get",
+      "path": "/photo/:id",
+      "public": true
+    }
+  },
   "images": {
     "large": "/assets/images/large.png",
     "small": "/assets/images/small.png"
@@ -540,8 +561,21 @@
       },
       "pair": [
         {
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "../assets/icon.svg"
+          },
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
+          "options": {
+            "singular": true
+          },
           "navigation": {
             "next": "add_device"
           }
@@ -609,8 +643,21 @@
       },
       "pair": [
         {
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "../assets/icon.svg"
+          },
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
+          "options": {
+            "singular": true
+          },
           "navigation": {
             "next": "add_device"
           }
@@ -646,8 +693,18 @@
       },
       "pair": [
         {
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "../assets/icon.svg"
+          }
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
+          "options": {
+            "singular": true
+          },
           "navigation": {
             "next": "add_device"
           }
