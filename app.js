@@ -269,7 +269,7 @@ module.exports = class SurePetcare extends Homey.App {
    */
   async login(username, password) {
     const token = await this.client.authenticate(username, password);
-    await Homey.ManagerSettings.set('token', token);
+    await this.homey.settings.set('token', token);
 
     return token;
   }
@@ -280,7 +280,7 @@ module.exports = class SurePetcare extends Homey.App {
    * set a new timeout for synchronisation
    */
   _setNewTimeout() {
-    const interval = 1000 * 5;
+    const interval = 1000 * 10;
 
     this.syncInProgress = false;
 
