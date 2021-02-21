@@ -6,8 +6,7 @@ Manage the state of your pet- or catflap and keep track of your pets!
 
 Do you like the app? You can make me happy by buying me a beer! [![](https://img.shields.io/badge/paypal-donate-green.svg)](https://www.paypal.me/koktaildotcom)
 
-## Cards
-
+## Sureflap cards
 ### Trigger
 1. Lock mode change
 1. Log error message
@@ -21,6 +20,13 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
 
 ### Action
 1. Set lock mode
+
+## Surefeed cards
+####Trigger
+1. Pet has eating
+1. Specific pet has eating
+1. Weight changed
+1. Bowl has been refilled
 
 ## Usage
 1. Install app
@@ -94,3 +100,5 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
 ### v2.0.1 - 16.02.2021
   * fixed trigger bug when weight is < 0
   * fixed bug switching bowl types
+### v2.0.2 - 21.02.2021
+  * add trigger card: Bowl has been refilled

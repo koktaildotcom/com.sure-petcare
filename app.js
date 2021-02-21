@@ -86,6 +86,7 @@ module.exports = class SurePetcare extends Homey.App {
     this.homey.flow.getDeviceTriggerCard('pet_home');
     this.homey.flow.getDeviceTriggerCard('pet_has_eating');
     this.homey.flow.getDeviceTriggerCard('weight_changed');
+    this.homey.flow.getDeviceTriggerCard('bowl_has_been_refilled');
 
     this.triggerError = this.homey.flow.getTriggerCard('log_message');
 
@@ -280,7 +281,7 @@ module.exports = class SurePetcare extends Homey.App {
    * set a new timeout for synchronisation
    */
   _setNewTimeout() {
-    const interval = 1000 * 10;
+    const interval = 1000 * 5;
 
     this.syncInProgress = false;
 

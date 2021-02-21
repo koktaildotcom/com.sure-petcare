@@ -1,0 +1,36 @@
+{
+  "id": "bowl_has_been_refilled",
+  "title": {
+    "en": "A bowl has been refilled",
+    "nl": "Een bakje is bijgevuld"
+  },
+  "tokens": [
+    {
+      "name": "bowl",
+      "title": {
+        "en": "From which bowl",
+        "nl": "Uit welke bakje"
+      },
+      "example": {
+        "en": "Left",
+        "nl": "Links"
+      }
+    },
+    {
+      "name": "amount",
+      "type": "number",
+      "title": {
+        "en": "Amount in grams",
+        "nl": "Hoeveelheid in gram"
+      },
+      "example": 1.2
+    }
+  ],
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=surefeed-petfeeder-connect"
+    }
+  ]
+}
