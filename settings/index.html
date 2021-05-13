@@ -163,19 +163,19 @@
             const nameEl = document.getElementById('name')
 
             function setupApp() {
-                Homey.get('username', function (err, username) {
+                Homey.get('username', (err, username) => {
                     if (err) {
                         usernameEl.value = ''
                     }
                     usernameEl.value = username
                 })
-                Homey.get('password', function (err, password) {
-                    if (err) {
-                        passwordEl.value = ''
-                    }
-                    passwordEl.value = password
+                // remove password and don't use it anymore
+                Homey.get('password', () => {
+                  Homey.set('password', authenticationToken, err => {
+                    if (err) return Homey.alert(err)
+                  })
                 })
-                Homey.get('token', function (err, result) {
+                Homey.get('token', (err, result) => {
                     if (err) return Homey.alert(err)
                     authenticationToken = result
 
@@ -256,9 +256,6 @@
                 const password = passwordEl.value
 
                 Homey.set('username', username, err => {
-                    if (err) return Homey.alert(err)
-                })
-                Homey.set('password', password, err => {
                     if (err) return Homey.alert(err)
                 })
 

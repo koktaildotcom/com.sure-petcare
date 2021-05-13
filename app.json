@@ -308,6 +308,10 @@
           "en": "A specific pet goes away",
           "nl": "Een specifiek huisdier is naar buiten gegaan"
         },
+        "titleFormatted": {
+          "en": "[[pet]] goes away",
+          "nl": "[[pet]] is naar buiten gegaan"
+        },
         "tokens": [
           {
             "name": "pet",
@@ -342,6 +346,10 @@
         "title": {
           "en": "A specific pet has eaten",
           "nl": "Een specifiek huisdier heeft gegeten"
+        },
+        "titleFormatted": {
+          "en": "[[pet]] has eaten",
+          "nl": "[[pet]] heeft gegeten"
         },
         "tokens": [
           {
@@ -397,6 +405,10 @@
         "title": {
           "en": "A specific pet came home",
           "nl": "Een specifiek huisdier is thuis gekomen"
+        },
+        "titleFormatted": {
+          "en": "[[pet]] came home",
+          "nl": "[[pet]] is thuis gekomen"
         },
         "tokens": [
           {
@@ -471,6 +483,10 @@
           "en": "Lock mode !{{is|is not}}",
           "nl": "Slot modus !{{is|is niet}}"
         },
+        "titleFormatted": {
+          "en": "Lock mode is [[lock_mode]]",
+          "nl": "Slot modus is [[lock_mode]]"
+        },
         "args": [
           {
             "name": "lock_mode",
@@ -516,6 +532,10 @@
         "title": {
           "en": "Set lock mode to:",
           "nl": "Zet slot modus naar:"
+        },
+        "titleFormatted": {
+          "en": "Set lock mode to [[lock_mode]]",
+          "nl": "Zet slot modus naar [[lock_mode]]"
         },
         "args": [
           {
@@ -597,13 +617,22 @@
       },
       "pair": [
         {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "login_credentials",
           "template": "login_credentials",
           "options": {
-            "logo": "../assets/icon.svg"
-          },
-          "navigation": {
-            "next": "list_devices"
+            "logo": "../assets/icon.svg",
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            }
           }
         },
         {
@@ -679,13 +708,22 @@
       },
       "pair": [
         {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "login_credentials",
           "template": "login_credentials",
           "options": {
-            "logo": "../assets/icon.svg"
-          },
-          "navigation": {
-            "next": "list_devices"
+            "logo": "../assets/icon.svg",
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            }
           }
         },
         {
@@ -729,10 +767,22 @@
       },
       "pair": [
         {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
           "id": "login_credentials",
           "template": "login_credentials",
           "options": {
-            "logo": "../assets/icon.svg"
+            "logo": "../assets/icon.svg",
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            }
           }
         },
         {

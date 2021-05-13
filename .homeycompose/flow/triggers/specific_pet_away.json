@@ -4,6 +4,10 @@
     "en": "A specific pet goes away",
     "nl": "Een specifiek huisdier is naar buiten gegaan"
   },
+  "titleFormatted": {
+    "en": "[[pet]] goes away",
+    "nl": "[[pet]] is naar buiten gegaan"
+  },
   "tokens": [
     {
       "name": "pet",

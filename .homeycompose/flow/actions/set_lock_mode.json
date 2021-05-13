@@ -4,6 +4,10 @@
     "en": "Set lock mode to:",
     "nl": "Zet slot modus naar:"
   },
+  "titleFormatted": {
+    "en": "Set lock mode to [[lock_mode]]",
+    "nl": "Zet slot modus naar [[lock_mode]]"
+  },
   "args": [
     {
       "name": "lock_mode",

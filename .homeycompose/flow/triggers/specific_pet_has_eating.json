@@ -4,6 +4,10 @@
     "en": "A specific pet has eaten",
     "nl": "Een specifiek huisdier heeft gegeten"
   },
+  "titleFormatted": {
+    "en": "[[pet]] has eaten",
+    "nl": "[[pet]] heeft gegeten"
+  },
   "tokens": [
     {
       "name": "pet",

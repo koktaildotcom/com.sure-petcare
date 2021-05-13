@@ -4,6 +4,10 @@
     "en": "A specific pet came home",
     "nl": "Een specifiek huisdier is thuis gekomen"
   },
+  "titleFormatted": {
+    "en": "[[pet]] came home",
+    "nl": "[[pet]] is thuis gekomen"
+  },
   "tokens": [
     {
       "name": "pet",
