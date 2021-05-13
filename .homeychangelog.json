@@ -67,5 +67,8 @@
   },
   "2.0.2": {
     "en": "add trigger card: Bowl has been refilled"
+  },
+  "2.0.3": {
+    "en": "improve authentication and minor bugfixes"
   }
 }

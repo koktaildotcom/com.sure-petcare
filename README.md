@@ -102,3 +102,9 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
   * fixed bug switching bowl types
 ### v2.0.2 - 21.02.2021
   * add trigger card: Bowl has been refilled
+### v2.0.3 - 13.05.2021
+  * ceil the value to prevent triggering 0.01 grams change
+  * improve authentication handling
+  * add new logo for login screen
+  * remove known devices from the list
+  * allow selecting multiple in pairing process
