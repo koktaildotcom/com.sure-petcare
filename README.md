@@ -108,3 +108,6 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
   * add new logo for login screen
   * remove known devices from the list
   * allow selecting multiple in pairing process
+
+## Final note ##
+Do you like the app? [Donate me a beer!](https://www.paypal.me/koktaildotcom)
