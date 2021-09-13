@@ -101,10 +101,12 @@ module.exports = class SurePetcare extends Homey.App {
     console.log(`${this._getDateTime(new Date())} ${message}`);
     if (severity === 'error' || severity === 'debug') {
       if (this.triggerError) {
-        this.triggerError.trigger({
-          severity,
-          message,
-        });
+        this.triggerError
+          .trigger({
+            severity,
+            message,
+          })
+          .catch(this.error);
       }
     }
   }
