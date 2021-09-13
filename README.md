@@ -108,6 +108,8 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
   * add new logo for login screen
   * remove known devices from the list
   * allow selecting multiple in pairing process
+### v2.0.4 - 13.09.2021
+  * bugfix in Homey core. In 1.7.3 the function getId is now protected
 
 ## Final note ##
 Do you like the app? [Donate me a beer!](https://www.paypal.me/koktaildotcom)

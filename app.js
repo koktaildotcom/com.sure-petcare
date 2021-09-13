@@ -141,7 +141,7 @@ module.exports = class SurePetcare extends Homey.App {
    * @param device SureflapDevice
    */
   registerDevice(device) {
-    this.logMessage('log', `register device ${device.getId()}`);
+    this.logMessage('log', `register device ${device.getAppId()}`);
     this.devices.push(device);
   }
 
