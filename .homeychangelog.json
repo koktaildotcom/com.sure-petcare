@@ -70,5 +70,8 @@
   },
   "2.0.3": {
     "en": "improve authentication and minor bugfixes"
+  },
+  "2.0.4": {
+    "en": "bugfix in Homey core. In 1.7.3 the function getId is now protected"
   }
 }
