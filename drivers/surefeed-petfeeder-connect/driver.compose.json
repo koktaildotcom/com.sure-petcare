@@ -4,6 +4,12 @@
     "en": "Surefeed Microchip Petfeeder",
     "nl": "Sureflap Microchip Voerbak"
   },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "cloud"
+  ],
   "class": "other",
   "capabilities": [
     "measure_battery"

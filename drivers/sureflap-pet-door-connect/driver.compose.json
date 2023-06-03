@@ -3,6 +3,12 @@
     "en": "Sureflap Pet Door Connect",
     "nl": "Sureflap Huisdierluik Connect"
   },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "cloud"
+  ],
   "class": "lock",
   "capabilities": [
     "lock_mode",

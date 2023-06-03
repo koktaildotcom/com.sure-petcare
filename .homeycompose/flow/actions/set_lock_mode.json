@@ -10,6 +10,10 @@
   },
   "args": [
     {
+      "title": {
+        "en": "Lock mode",
+        "nl": "Lock mode"
+      },
       "name": "lock_mode",
       "type": "dropdown",
       "values": [
