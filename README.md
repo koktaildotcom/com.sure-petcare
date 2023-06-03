@@ -1,5 +1,7 @@
 # Sure Petcare
 
+![app image](assets/images/large.png)
+
 ## Introduction
 This app integrate the `Sure Petcare` products into Homey.
 Manage the state of your pet- or catflap and keep track of your pets!  
