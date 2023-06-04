@@ -205,7 +205,7 @@
             }
 
             function checkAuthorisation() {
-                document.body.classList.add('loading')
+                document.body.classList.add('loading');
                 if (authenticationToken) {
                     Homey.api(
                         'GET',
@@ -252,8 +252,8 @@
             formEl.addEventListener('submit', function (e) {
                 e.preventDefault()
 
-                const username = usernameEl.value
-                const password = passwordEl.value
+                const username = usernameEl && usernameEl.value
+                const password = passwordEl && passwordEl.value
 
                 Homey.set('username', username, err => {
                     if (err) return Homey.alert(err)

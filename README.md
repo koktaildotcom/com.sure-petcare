@@ -1,5 +1,7 @@
 # Sure Petcare
 
+![app image](assets/images/large.png)
+
 ## Introduction
 This app integrate the `Sure Petcare` products into Homey.
 Manage the state of your pet- or catflap and keep track of your pets!  
@@ -110,6 +112,8 @@ Do you like the app? You can make me happy by buying me a beer! [![](https://img
   * allow selecting multiple in pairing process
 ### v2.0.4 - 13.09.2021
   * bugfix in Homey core. In 1.7.3 the function getId is now protected
+### v2.0.5 - 17.06.2023
+  * add user agent to client
 
 ## Final note ##
 Do you like the app? [Donate me a beer!](https://www.paypal.me/koktaildotcom)

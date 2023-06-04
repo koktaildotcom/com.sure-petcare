@@ -1,7 +1,11 @@
 {
   "id": "com.sure-petcare",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "compatibility": ">=5.0.0",
+  "platforms": [
+    "local"
+  ],
+  "support": "https://community.homey.app/t/app-pro-sure-petcare-app-sureflap-pet-door-sureflap-cat-flap/24127/214",
   "sdk": 3,
   "name": {
     "en": "Sure Petcare",

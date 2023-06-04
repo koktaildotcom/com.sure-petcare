@@ -3,6 +3,12 @@
     "en": "Sureflap Cat Flap Connect",
     "nl": "Sureflap Katten Flap Connect"
   },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "cloud"
+  ],
   "class": "lock",
   "capabilities": [
     "lock_mode",

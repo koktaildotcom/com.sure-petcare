@@ -30,6 +30,10 @@
     {
       "name": "pet",
       "type": "autocomplete",
+      "title": {
+        "en": "Search your pet",
+        "nl": "Zoek je huisdier"
+      },
       "placeholder": {
         "en": "Search your pet",
         "nl": "Zoek je huisdier"
