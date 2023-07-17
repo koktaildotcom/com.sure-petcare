@@ -7,6 +7,7 @@
   "tokens": [
     {
       "name": "bowl",
+      "type": "string",
       "title": {
         "en": "From which bowl",
         "nl": "Uit welke bakje"

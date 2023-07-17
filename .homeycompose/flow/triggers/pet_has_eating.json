@@ -7,6 +7,7 @@
   "tokens": [
     {
       "name": "pet",
+      "type": "string",
       "title": {
         "en": "Pet",
         "nl": "Huisdier"
@@ -18,6 +19,7 @@
     },
     {
       "name": "bowl",
+      "type": "string",
       "title": {
         "en": "From which bowl",
         "nl": "Uit welke bakje"

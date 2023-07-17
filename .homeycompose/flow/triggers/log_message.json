@@ -7,6 +7,7 @@
   "tokens": [
     {
       "name": "severity",
+      "type": "string",
       "title": {
         "en": "severity",
         "nl": "severity"
@@ -18,6 +19,7 @@
     },
     {
       "name": "message",
+      "type": "string",
       "title": {
         "en": "message",
         "nl": "message"

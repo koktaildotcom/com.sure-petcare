@@ -90,6 +90,7 @@
         "tokens": [
           {
             "name": "bowl",
+            "type": "string",
             "title": {
               "en": "From which bowl",
               "nl": "Uit welke bakje"
@@ -126,6 +127,7 @@
         "tokens": [
           {
             "name": "lock_mode",
+            "type": "string",
             "title": {
               "en": "Lock mode",
               "nl": "Slot modus"
@@ -183,6 +185,7 @@
         "tokens": [
           {
             "name": "severity",
+            "type": "string",
             "title": {
               "en": "severity",
               "nl": "severity"
@@ -194,6 +197,7 @@
           },
           {
             "name": "message",
+            "type": "string",
             "title": {
               "en": "message",
               "nl": "message"
@@ -214,6 +218,7 @@
         "tokens": [
           {
             "name": "pet",
+            "type": "string",
             "title": {
               "en": "Pet",
               "nl": "Huisdier"
@@ -241,6 +246,7 @@
         "tokens": [
           {
             "name": "pet",
+            "type": "string",
             "title": {
               "en": "Pet",
               "nl": "Huisdier"
@@ -252,6 +258,7 @@
           },
           {
             "name": "bowl",
+            "type": "string",
             "title": {
               "en": "From which bowl",
               "nl": "Uit welke bakje"
@@ -288,6 +295,7 @@
         "tokens": [
           {
             "name": "pet",
+            "type": "string",
             "title": {
               "en": "Pet",
               "nl": "Huisdier"
@@ -319,6 +327,7 @@
         "tokens": [
           {
             "name": "pet",
+            "type": "string",
             "title": {
               "en": "Pet",
               "nl": "Huisdier"
@@ -362,6 +371,7 @@
         "tokens": [
           {
             "name": "pet",
+            "type": "string",
             "title": {
               "en": "Pet",
               "nl": "Huisdier"
@@ -373,6 +383,7 @@
           },
           {
             "name": "bowl",
+            "type": "string",
             "title": {
               "en": "From which bowl",
               "nl": "Uit welke bakje"
@@ -425,6 +436,7 @@
         "tokens": [
           {
             "name": "pet",
+            "type": "string",
             "title": {
               "en": "Pet",
               "nl": "Huisdier"
@@ -464,6 +476,7 @@
         "tokens": [
           {
             "name": "bowl",
+            "type": "string",
             "title": {
               "en": "From which bowl",
               "nl": "Uit welke bakje"
@@ -732,7 +745,7 @@
       ],
       "class": "lock",
       "capabilities": [
-        "lock_mode",
+        "sureflap_lock_mode",
         "measure_battery"
       ],
       "images": {
@@ -794,7 +807,7 @@
       ],
       "class": "lock",
       "capabilities": [
-        "lock_mode",
+        "sureflap_lock_mode",
         "measure_battery"
       ],
       "images": {
@@ -842,7 +855,7 @@
     }
   ],
   "capabilities": {
-    "lock_mode": {
+    "sureflap_lock_mode": {
       "type": "enum",
       "title": {
         "en": "Lock mode",

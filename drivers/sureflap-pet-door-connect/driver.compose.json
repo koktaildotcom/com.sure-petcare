@@ -11,7 +11,7 @@
   ],
   "class": "lock",
   "capabilities": [
-    "lock_mode",
+    "sureflap_lock_mode",
     "measure_battery"
   ],
   "images": {

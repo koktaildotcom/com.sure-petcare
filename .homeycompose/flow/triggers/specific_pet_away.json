@@ -11,6 +11,7 @@
   "tokens": [
     {
       "name": "pet",
+      "type": "string",
       "title": {
         "en": "Pet",
         "nl": "Huisdier"

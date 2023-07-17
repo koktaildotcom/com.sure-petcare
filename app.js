@@ -283,7 +283,7 @@ module.exports = class SurePetcare extends Homey.App {
    * set a new timeout for synchronisation
    */
   _setNewTimeout() {
-    const interval = 1000 * 5;
+    const interval = 1000 * 60;
 
     this.syncInProgress = false;
 
