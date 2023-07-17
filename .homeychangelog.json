@@ -76,5 +76,8 @@
   },
   "2.0.5": {
     "en": "Add useragent to client"
+  },
+  "2.0.6": {
+    "en": "Make compatible with HP23"
   }
 }
