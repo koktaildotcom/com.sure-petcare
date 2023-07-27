@@ -5,8 +5,8 @@
     "nl": "Slot modus !{{is|is niet}}"
   },
   "titleFormatted": {
-    "en": "Lock mode is [[lock_mode]]",
-    "nl": "Slot modus is [[lock_mode]]"
+    "en": "Lock mode !{{is|is not}} [[lock_mode]]",
+    "nl": "Slot modus !{{is|is niet}} [[lock_mode]]"
   },
   "args": [
     {
