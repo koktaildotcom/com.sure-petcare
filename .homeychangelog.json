@@ -85,5 +85,8 @@
   },
   "2.0.8": {
     "en": "Fixed issue with lock cards"
+  },
+  "2.0.9": {
+    "en": "Bugfix authentication mechanism"
   }
 }
