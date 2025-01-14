@@ -856,6 +856,7 @@
   ],
   "capabilities": {
     "sureflap_lock_mode": {
+      "id": "sureflap_lock_mode",
       "type": "enum",
       "title": {
         "en": "Lock mode",
@@ -896,6 +897,7 @@
       "uiComponent": "picker"
     },
     "weight": {
+      "id": "weight",
       "type": "number",
       "title": {
         "en": "Weight in grams",
