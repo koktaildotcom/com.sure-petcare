@@ -1,4 +1,5 @@
 {
+  "id": "sureflap_lock_mode",
   "type": "enum",
   "title": {
     "en": "Lock mode",

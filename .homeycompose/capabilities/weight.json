@@ -1,4 +1,5 @@
 {
+  "id": "weight",
   "type": "number",
   "title": {
     "en": "Weight in grams",
