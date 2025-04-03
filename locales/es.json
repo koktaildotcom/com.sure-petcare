@@ -1,0 +1,10 @@
+{
+  "login-success": "Has iniciado sesión",
+  "username": "Nombre de usuario",
+  "password": "Contraseña",
+  "login": "Iniciar sesión",
+  "logout": "Cerrar sesión",
+  "left": "Izquierda",
+  "right": "Derecha",
+  "both": "Sencillo"
+}

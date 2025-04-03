@@ -1,0 +1,10 @@
+{
+  "login-success": "Du har logget inn",
+  "username": "Brukernavn",
+  "password": "Passord",
+  "login": "Logg inn",
+  "logout": "Logg ut",
+  "left": "Venstre",
+  "right": "Høyre",
+  "both": "Enkel"
+}

@@ -2,7 +2,17 @@
   "id": "weight_changed",
   "title": {
     "en": "The weight is changed",
-    "nl": "Het gewicht is veranderd"
+    "nl": "Het gewicht is veranderd",
+    "da": "Vægten er ændret",
+    "de": "Das Gewicht hat sich geändert",
+    "es": "El peso ha cambiado",
+    "fr": "Le poids a changé",
+    "it": "Il peso è cambiato",
+    "no": "Vekten er endret",
+    "sv": "Vikten har ändrats",
+    "pl": "Waga została zmieniona",
+    "ru": "Вес изменен",
+    "ko": "무게가 변경되었습니다"
   },
   "tokens": [
     {
@@ -10,11 +20,31 @@
       "type": "string",
       "title": {
         "en": "From which bowl",
-        "nl": "Uit welke bakje"
+        "nl": "Uit welke bakje",
+        "da": "Fra hvilken skål",
+        "de": "Aus welcher Schüssel",
+        "es": "De qué cuenco",
+        "fr": "De quel bol",
+        "it": "Da quale ciotola",
+        "no": "Fra hvilken bolle",
+        "sv": "Från vilken skål",
+        "pl": "Z której miski",
+        "ru": "Из какой миски",
+        "ko": "어떤 그릇에서"
       },
       "example": {
         "en": "Left",
-        "nl": "Links"
+        "nl": "Links",
+        "da": "Venstre",
+        "de": "Links",
+        "es": "Izquierda",
+        "fr": "Gauche",
+        "it": "Sinistra",
+        "no": "Venstre",
+        "sv": "Vänster",
+        "pl": "Lewa",
+        "ru": "Лево",
+        "ko": "왼쪽"
       }
     },
     {
@@ -22,7 +52,17 @@
       "type": "number",
       "title": {
         "en": "Amount in grams",
-        "nl": "Hoeveelheid in gram"
+        "nl": "Hoeveelheid in gram",
+        "da": "Mængde i gram",
+        "de": "Menge in Gramm",
+        "es": "Cantidad en gramos",
+        "fr": "Quantité en grammes",
+        "it": "Quantità in grammi",
+        "no": "Mengde i gram",
+        "sv": "Mängd i gram",
+        "pl": "Ilość w gramach",
+        "ru": "Количество в граммах",
+        "ko": "그램 단위 양"
       },
       "example": 1.2
     }

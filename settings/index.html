@@ -1,306 +1,130 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-    <style type="text/css">
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        body.unauthorized #form,
-        body.authorized #profile {
-            display: flex;
-        }
-
-        body.unauthorized.loading #form,
-        body.authorized.loading #profile {
-            display: none;
-        }
-
-        body.loading #loading {
-            display: inline-block;
-        }
-
-        body #form,
-        body #profile,
-        body #loading {
-            display: none;
-        }
-
-        body.loading #loading div {
-            border: 3px solid #fff;
-            border-top: 3px solid #597181;
-            border-radius: 50%;
-            width: 25px;
-            height: 25px;
-            animation: spin 0.5s linear infinite;
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        .title {
-            font-size: 2em;
-            margin-bottom: 0.9em;
-            text-align: center;
-            color: #597181;
-            font-weight: 400;
-        }
-
-        .logo {
-            position: relative;
-            margin: auto;
-            width: 150px;
-            height: 150px;
-            margin-bottom: 1em;
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
-            background-image: url(./logo.png);
-        }
-
-        .avatar {
-            position: relative;
-            margin: auto;
-            width: 100px;
-            height: 100px;
-            border-radius: 100px;
-            background: #eee;
-            margin-bottom: 1em;
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
-            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
-        }
-
-        #profile {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        #name {
-            font-size: 1em;
-            margin-bottom: 1em;
-            text-align: center;
-            color: #597181;
-            font-weight: 400;
-        }
-
-        #form {
-            flex-direction: column;
-            align-items: center;
-            padding: 1em;
-        }
-
-        #form input {
-        }
-
-        #form #username,
-        #form #password {
-        }
-
-        #form #submit {
-            align-self: center;
-        }
-
-        .input-text {
-            width: 240px;
-            border: 1px solid #D4D9E3;
-            padding: 8px 10px;
-            height: 40px;
-            font-size: 14px;
-            color: #ED8C00;
-            box-sizing: border-box;
-            transition: all 0.3s;
-            margin-bottom: 0.5em;
-        }
-
-        .input-text:focus {
-            border-color: #ED8C00;
-        }
-
-        .sure-patcare-button {
-            display: inline-block;
-            background: #4fb0bd;
-            color: white;
-            border-radius: 6px;
-            border: none;
-            line-height: 38px;
-            padding: 0 40px;
-            height: 40px;
-            font-size: 16px;
-            transition: all 0.3s;
-            -webkit-appearance: none;
-            margin-top: 1em;
-        }
-
-        .sure-patcare-button:hover {
-            cursor: pointer;
-            background: #3b919a;
-        }
-    </style>
-
-    <script type="text/javascript" src="/homey.js" data-origin="settings"></script>
-    <script type="text/javascript">
-        function onHomeyReady(Homey) {
-
-            let authenticationToken = null
-            const usernameEl = document.getElementById('username')
-            const passwordEl = document.getElementById('password')
-            const formEl = document.getElementById('form')
-            const errorEl = document.getElementById('error')
-            const logoutEl = document.getElementById('logout')
-            const avatarEl = document.getElementById('avatar')
-            const nameEl = document.getElementById('name')
-
-            function setupApp() {
-                Homey.get('username', (err, username) => {
-                    if (err) {
-                        usernameEl.value = ''
-                    }
-                    usernameEl.value = username
-                })
-                // remove password and don't use it anymore
-                Homey.get('password', () => {
-                  Homey.set('password', authenticationToken, err => {
-                    if (err) return Homey.alert(err)
-                  })
-                })
-                Homey.get('token', (err, result) => {
-                    if (err) return Homey.alert(err)
-                    authenticationToken = result
-
-                    Homey.ready()
-                    checkAuthorisation()
-                })
-            }
-
-            function setAuthorized(profile, image = null) {
-                if (image) {
-                    avatarEl.style.backgroundImage = 'url(\'' + image + '\')'
-                } else {
-                    avatarEl.style.backgroundImage = 'url(\'./logo.png\')'
-                }
-
-                nameEl.innerHTML = profile['first_name'] + ' ' + profile['last_name']
-
-                document.body.classList.remove('unauthorized')
-                document.body.classList.add('authorized')
-                document.body.classList.remove('loading')
-            }
-
-            function setUnauthorized() {
-                document.body.classList.remove('authorized')
-                document.body.classList.add('unauthorized')
-                document.body.classList.remove('loading')
-            }
-
-            function checkAuthorisation() {
-                document.body.classList.add('loading');
-                if (authenticationToken) {
-                    Homey.api(
-                        'GET',
-                        '/profile',
-                        (err, profile) => {
-                            if (err) {
-                                Homey.alert(err.message)
-                            }
-                            if (profile.hasOwnProperty('photo_id') && profile['photo_id']) {
-                                Homey.api(
-                                    'GET',
-                                    '/photo/' + profile['photo_id'],
-                                    (err, photo) => {
-                                        if (err) {
-                                            Homey.alert(err.message)
-                                        }
-
-                                        let photoUrl = null;
-                                        if(photo && photo.hasOwnProperty('location')){
-										   photoUrl = photo.location;
-                                        }
-
-                                        setAuthorized(profile, photoUrl);
-                                    })
-                            } else {
-                                setAuthorized(profile);
-                            }
-                        })
-                } else {
-                    setUnauthorized();
-                }
-            }
-
-            logoutEl.addEventListener('click', function (e) {
-                e.preventDefault()
-                authenticationToken = null
-                setUnauthorized();
-
-                Homey.set('token', authenticationToken, err => {
-                    if (err) return Homey.alert(err)
-                })
-            })
-
-            formEl.addEventListener('submit', function (e) {
-                e.preventDefault()
-
-                const username = usernameEl && usernameEl.value
-                const password = passwordEl && passwordEl.value
-
-                Homey.set('username', username, err => {
-                    if (err) return Homey.alert(err)
-                })
-
-                errorEl.textContent = ''
-
-                Homey.api(
-                    'POST',
-                    '/postLogin',
-                    {
-                        username: username,
-                        password: password,
-                    },
-                    (err, token) => {
-                        if (err) {
-                            Homey.alert(err.message)
-                        }
-                        authenticationToken = token
-                        checkAuthorisation()
-                    })
-            })
-
-            setupApp()
-        }
-    </script>
+    <script
+            type="text/javascript"
+            src="/homey.js"
+            data-origin="settings"
+    ></script>
 </head>
 <body>
 
-<div id="loading">
-    <div></div>
-</div>
+<fieldset class="homey-form-fieldset" id="done" style="display: none">
+    <div class="homey-form-group">
+        <legend class="homey-form-legend" data-i18n="login-success">
+            You have logged in
+        </legend>
+    </div>
 
-<div id="profile">
-    <div id="avatar" class="avatar"></div>
-    <h2 class="name" id="name"></h2>
-    <input id="logout" type="submit" data-i18n-value="logout" class="sure-patcare-button"/>
-</div>
+    <div class="homey-form-group">
+        <button id="logout" class="homey-button-primary-full">
+            <span data-i18n="logout">logout</span>
+        </button>
+    </div>
+</fieldset>
 
-<form id="form" action="/" method="post">
-    <div class="logo"></div>
-    <h2 class="title" data-i18n="login-title"></h2>
-    <input id="username" name="username" type="email" value="" data-i18n-placeholder="username" class="input-text"/>
-    <input id="password" name="password" type="password" value="" data-i18n-placeholder="password" class="input-text"/>
-    <input id="submit" type="submit" data-i18n-value="login" class="sure-patcare-button"/>
-    <p id="error"></p>
-</form>
+<fieldset class="homey-form-fieldset" id="login-form" style="display: none">
+    <legend class="homey-form-legend" data-i18n="login">Login</legend>
 
+    <div class="homey-form-group">
+        <label class="homey-form-label" for="username">
+            <span data-i18n="username">Username</span>
+        </label>
+        <input class="homey-form-input" id="username" type="text"/>
+    </div>
+    <div class="homey-form-group">
+        <label class="homey-form-label" for="password">
+            <span data-i18n="password">Password</span>
+        </label>
+        <input class="homey-form-input" id="password" type="password"/>
+    </div>
+
+    <button id="save" class="homey-button-primary-full">
+        <span data-i18n="login">Login</span>
+    </button>
+</fieldset>
+
+<script type="text/javascript">
+  function onHomeyReady(Homey) {
+    Homey.ready();
+
+    var usernameElement = document.getElementById("username");
+    var passwordElement = document.getElementById("password");
+    var loginElement = document.getElementById("save");
+    var logoutElement = document.getElementById("logout");
+
+    const checkLoginState = () => {
+      Homey.get('token', (err, token) => {
+        if (err) return Homey.alert(err)
+        if (token) {
+          document.getElementById('done').style.display = 'block';
+          document.getElementById('login-form').style.display = 'none';
+        } else {
+          document.getElementById('done').style.display = 'none';
+          document.getElementById('login-form').style.display = 'block';
+        }
+      })
+    }
+
+    checkLoginState();
+
+    Homey.get("username", function (err, username) {
+      if (err) return Homey.alert(err);
+      usernameElement.value = username;
+    });
+
+    Homey.get("password", function (err, password) {
+      if (err) return Homey.alert(err);
+      passwordElement.value = password;
+    });
+
+    logoutElement.addEventListener("click", function (e) {
+      e.preventDefault()
+
+      Homey.set('token', '', err => {
+        if (err) return Homey.alert(err)
+        checkLoginState();
+      })
+    })
+
+    loginElement.addEventListener("click", function (e) {
+      e.preventDefault()
+
+      const username = usernameElement && usernameElement.value
+      const password = passwordElement && passwordElement.value
+
+      Homey.set("username", username, function (err) {
+        if (err) return Homey.alert(err);
+      });
+      Homey.set("password", password, function (err) {
+        if (err) return Homey.alert(err);
+      });
+
+      Homey.set('username', username, err => {
+        if (err) return Homey.alert(err)
+      })
+      Homey.set('password', password, err => {
+        if (err) return Homey.alert(err)
+      })
+
+      Homey.api(
+        'POST',
+        '/login',
+        {
+          username: username,
+          password: password,
+        },
+        (err, token) => {
+          if (err) {
+            Homey.alert(err.message)
+          }
+          Homey.set('token', token, err => {
+            if (err) return Homey.alert(err)
+            checkLoginState();
+          })
+        })
+    })
+  }
+</script>
 </body>
 </html>

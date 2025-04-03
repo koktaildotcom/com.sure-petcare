@@ -2,10 +2,6 @@
 
 module.exports = {
   async postLogin({ homey, body }) {
-    if (!body) {
-      return 'No body found';
-    }
-
     if (Object.prototype.hasOwnProperty.call(body, 'username') === false) {
       return 'No username found';
     }

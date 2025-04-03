@@ -2,7 +2,17 @@
   "id": "pet_away",
   "title": {
     "en": "A pet goes away",
-    "nl": "Een huisdier is naar buiten gegaan"
+    "nl": "Een huisdier is naar buiten gegaan",
+    "da": "Et kæledyr går væk",
+    "de": "Ein Haustier geht weg",
+    "es": "Una mascota se va",
+    "fr": "Un animal de compagnie s'en va",
+    "it": "Un animale domestico va via",
+    "no": "Et kjæledyr går bort",
+    "sv": "Ett husdjur går iväg",
+    "pl": "Zwierz odchodzi",
+    "ru": "Питомец уходит",
+    "ko": "애완동물이 떠납니다"
   },
   "tokens": [
     {
@@ -10,11 +20,31 @@
       "type": "string",
       "title": {
         "en": "Pet",
-        "nl": "Huisdier"
+        "nl": "Huisdier",
+        "da": "Kæledyr",
+        "de": "Haustier",
+        "es": "Mascota",
+        "fr": "Animal",
+        "it": "Animale",
+        "no": "Kjæledyr",
+        "sv": "Husdjur",
+        "pl": "Zwierzak",
+        "ru": "Питомец",
+        "ko": "애완동물"
       },
       "example": {
         "en": "Mr. kat",
-        "nl": "Mr. kat"
+        "nl": "Mr. kat",
+        "da": "Mr. kat",
+        "de": "Mr. kat",
+        "es": "Mr. kat",
+        "fr": "Mr. kat",
+        "it": "Mr. kat",
+        "no": "Mr. kat",
+        "sv": "Mr. kat",
+        "pl": "Mr. kat",
+        "ru": "Mr. kat",
+        "ko": "Mr. kat"
       }
     }
   ],

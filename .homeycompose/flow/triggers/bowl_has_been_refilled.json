@@ -2,7 +2,17 @@
   "id": "bowl_has_been_refilled",
   "title": {
     "en": "A bowl has been refilled",
-    "nl": "Een bakje is bijgevuld"
+    "nl": "Een bakje is bijgevuld",
+    "da": "En skål er blevet fyldt op",
+    "de": "Eine Schale wurde nachgefüllt",
+    "es": "Un cuenco ha sido rellenado",
+    "fr": "Un bol a été rempli",
+    "it": "Una ciotola è stata riempita",
+    "no": "En skål har blitt fylt opp",
+    "sv": "En skål har fyllts på",
+    "pl": "Miska została uzupełniona",
+    "ru": "Миска была пополнена",
+    "ko": "그릇이 다시 채워졌습니다"
   },
   "tokens": [
     {
@@ -10,11 +20,31 @@
       "type": "string",
       "title": {
         "en": "From which bowl",
-        "nl": "Uit welke bakje"
+        "nl": "Uit welke bakje",
+        "da": "Fra hvilken skål",
+        "de": "Aus welcher Schale",
+        "es": "De qué cuenco",
+        "fr": "De quel bol",
+        "it": "Da quale ciotola",
+        "no": "Fra hvilken skål",
+        "sv": "Från vilken skål",
+        "pl": "Z której miski",
+        "ru": "Из какой миски",
+        "ko": "어떤 그릇에서"
       },
       "example": {
         "en": "Left",
-        "nl": "Links"
+        "nl": "Links",
+        "da": "Venstre",
+        "de": "Links",
+        "es": "Izquierda",
+        "fr": "Gauche",
+        "it": "Sinistra",
+        "no": "Venstre",
+        "sv": "Vänster",
+        "pl": "Lewo",
+        "ru": "Лево",
+        "ko": "왼쪽"
       }
     },
     {
@@ -22,7 +52,17 @@
       "type": "number",
       "title": {
         "en": "Amount in grams",
-        "nl": "Hoeveelheid in gram"
+        "nl": "Hoeveelheid in gram",
+        "da": "Mængde i gram",
+        "de": "Menge in Gramm",
+        "es": "Cantidad en gramos",
+        "fr": "Quantité en grammes",
+        "it": "Quantità in grammi",
+        "no": "Mengde i gram",
+        "sv": "Mängd i gram",
+        "pl": "Ilość w gramach",
+        "ru": "Количество в граммах",
+        "ko": "그램 단위 양"
       },
       "example": 1.2
     }

@@ -3,35 +3,85 @@
   "type": "enum",
   "title": {
     "en": "Lock mode",
-    "nl": "Slot modus"
+    "nl": "Slot modus",
+    "da": "Låsetilstand",
+    "de": "Verriegelungsmodus",
+    "es": "Modo de bloqueo",
+    "fr": "Mode de verrouillage",
+    "it": "Modalità di blocco",
+    "no": "Låsemodus",
+    "sv": "Låsläge",
+    "pl": "Tryb zamka",
+    "ru": "Режим блокировки",
+    "ko": "잠금 모드"
   },
   "values": [
     {
       "id": "open",
       "title": {
         "en": "Open",
-        "nl": "Open"
+        "nl": "Open",
+        "da": "Åben",
+        "de": "Offen",
+        "es": "Abierto",
+        "fr": "Ouvert",
+        "it": "Aperto",
+        "no": "Åpen",
+        "sv": "Öppen",
+        "pl": "Otwarty",
+        "ru": "Открыто",
+        "ko": "열림"
       }
     },
     {
       "id": "keep_inside",
       "title": {
         "en": "Keep inside",
-        "nl": "Binnen houden"
+        "nl": "Binnen houden",
+        "da": "Hold inde",
+        "de": "Drinnen bleiben",
+        "es": "Mantener dentro",
+        "fr": "Garder à l'intérieur",
+        "it": "Tenere dentro",
+        "no": "Hold inne",
+        "sv": "Håll inne",
+        "pl": "Trzymaj wewnątrz",
+        "ru": "Оставаться внутри",
+        "ko": "안쪽으로 유지"
       }
     },
     {
       "id": "keep_outside",
       "title": {
         "en": "Keep outside",
-        "nl": "Buiten houden"
+        "nl": "Buiten houden",
+        "da": "Hold ude",
+        "de": "Draußen bleiben",
+        "es": "Mantener fuera",
+        "fr": "Garder à l'extérieur",
+        "it": "Tenere fuori",
+        "no": "Hold ute",
+        "sv": "Håll ute",
+        "pl": "Trzymaj na zewnątrz",
+        "ru": "Оставаться снаружи",
+        "ko": "바깥으로 유지"
       }
     },
     {
       "id": "lock_both_ways",
       "title": {
         "en": "Lock both ways",
-        "nl": "Beide kanten vergrendelen"
+        "nl": "Beide kanten vergrendelen",
+        "da": "Lås begge veje",
+        "de": "Beidseitig verriegeln",
+        "es": "Bloquear en ambos sentidos",
+        "fr": "Verrouiller dans les deux sens",
+        "it": "Blocca in entrambe le direzioni",
+        "no": "Lås begge veier",
+        "sv": "Lås båda vägar",
+        "pl": "Zablokuj w obu kierunkach",
+        "ru": "Заблокировать в обоих направлениях",
+        "ko": "양방향 잠금"
       }
     }
   ],

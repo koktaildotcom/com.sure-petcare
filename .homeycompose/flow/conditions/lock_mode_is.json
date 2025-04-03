@@ -2,18 +2,48 @@
   "id": "lock_mode_is",
   "title": {
     "en": "Lock mode !{{is|is not}}",
-    "nl": "Slot modus !{{is|is niet}}"
+    "nl": "Slot modus !{{is|is niet}}",
+    "da": "Lås tilstand !{{er|er ikke}}",
+    "de": "Sperrmodus !{{ist|ist nicht}}",
+    "es": "Modo de bloqueo !{{es|no es}}",
+    "fr": "Mode verrouillage !{{est|n'est pas}}",
+    "it": "Modalità blocco !{{è|non è}}",
+    "no": "Låsemodus !{{er|er ikke}}",
+    "sv": "Låsläge !{{är|är inte}}",
+    "pl": "Tryb blokady !{{jest|nie jest}}",
+    "ru": "Режим блокировки !{{включен|не включен}}",
+    "ko": "잠금 모드 !{{입니다|아닙니다}}"
   },
   "titleFormatted": {
     "en": "Lock mode !{{is|is not}} [[lock_mode]]",
-    "nl": "Slot modus !{{is|is niet}} [[lock_mode]]"
+    "nl": "Slot modus !{{is|is niet}} [[lock_mode]]",
+    "da": "Lås tilstand !{{er|er ikke}} [[lock_mode]]",
+    "de": "Sperrmodus !{{ist|ist nicht}} [[lock_mode]]",
+    "es": "Modo de bloqueo !{{es|no es}} [[lock_mode]]",
+    "fr": "Mode verrouillage !{{est|n'est pas}} [[lock_mode]]",
+    "it": "Modalità blocco !{{è|non è}} [[lock_mode]]",
+    "no": "Låsemodus !{{er|er ikke}} [[lock_mode]]",
+    "sv": "Låsläge !{{är|är inte}} [[lock_mode]]",
+    "pl": "Tryb blokady !{{jest|nie jest}} [[lock_mode]]",
+    "ru": "Режим блокировки !{{включен|не включен}} [[lock_mode]]",
+    "ko": "잠금 모드 !{{입니다|아닙니다}} [[lock_mode]]"
   },
   "args": [
     {
       "name": "lock_mode",
       "title": {
         "en": "Lock mode",
-        "nl": "Lock mode"
+        "nl": "Lock mode",
+        "da": "Lås tilstand",
+        "de": "Sperrmodus",
+        "es": "Modo de bloqueo",
+        "fr": "Mode verrouillage",
+        "it": "Modalità blocco",
+        "no": "Låsemodus",
+        "sv": "Låsläge",
+        "pl": "Tryb blokady",
+        "ru": "Режим блокировки",
+        "ko": "잠금 모드"
       },
       "type": "dropdown",
       "values": [
@@ -21,28 +51,68 @@
           "id": "open",
           "title": {
             "en": "Open",
-            "nl": "Open"
+            "nl": "Open",
+            "da": "Åben",
+            "de": "Offen",
+            "es": "Abierto",
+            "fr": "Ouvert",
+            "it": "Aperto",
+            "no": "Åpen",
+            "sv": "Öppen",
+            "pl": "Otwarty",
+            "ru": "Открыто",
+            "ko": "열림"
           }
         },
         {
           "id": "keep_inside",
           "title": {
             "en": "Keep inside",
-            "nl": "Binnen houden"
+            "nl": "Binnen houden",
+            "da": "Behold indendørs",
+            "de": "Innen behalten",
+            "es": "Mantener adentro",
+            "fr": "Garder à l'intérieur",
+            "it": "Tenere dentro",
+            "no": "Hold inne",
+            "sv": "Behåll inne",
+            "pl": "Pozostawić wewnątrz",
+            "ru": "Оставить внутри",
+            "ko": "안에 유지"
           }
         },
         {
           "id": "keep_outside",
           "title": {
             "en": "Keep outside",
-            "nl": "Buiten houden"
+            "nl": "Buiten houden",
+            "da": "Behold udendørs",
+            "de": "Draußen behalten",
+            "es": "Mantener afuera",
+            "fr": "Garder à l'extérieur",
+            "it": "Tenere fuori",
+            "no": "Hold ute",
+            "sv": "Behåll ute",
+            "pl": "Pozostawić na zewnątrz",
+            "ru": "Оставить снаружи",
+            "ko": "밖에 유지"
           }
         },
         {
           "id": "lock_both_ways",
           "title": {
             "en": "Lock both ways",
-            "nl": "Beide kanten vergrendelen"
+            "nl": "Beide kanten vergrendelen",
+            "da": "Lås begge veje",
+            "de": "Beide Wege sperren",
+            "es": "Bloquear ambos lados",
+            "fr": "Verrouiller dans les deux sens",
+            "it": "Blocca in entrambi i modi",
+            "no": "Lås begge veier",
+            "sv": "Lås båda riktningar",
+            "pl": "Zablokuj obie strony",
+            "ru": "Заблокировать в обе стороны",
+            "ko": "양방향 잠금"
           }
         }
       ],

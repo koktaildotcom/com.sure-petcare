@@ -2,11 +2,31 @@
   "id": "specific_pet_home",
   "title": {
     "en": "A specific pet came home",
-    "nl": "Een specifiek huisdier is thuis gekomen"
+    "nl": "Een specifiek huisdier is thuis gekomen",
+    "da": "Et bestemt kæledyr kom hjem",
+    "de": "Ein bestimmtes Haustier kam nach Hause",
+    "es": "Una mascota específica llegó a casa",
+    "fr": "Un animal de compagnie spécifique est rentré à la maison",
+    "it": "Un animale domestico specifico è tornato a casa",
+    "no": "Et bestemt kjæledyr kom hjem",
+    "sv": "Ett specifikt husdjur kom hem",
+    "pl": "Konkretny zwierzak wrócił do domu",
+    "ru": "Конкретное домашнее животное вернулось домой",
+    "ko": "특정 애완동물이 집에 돌아왔습니다"
   },
   "titleFormatted": {
     "en": "[[pet]] came home",
-    "nl": "[[pet]] is thuis gekomen"
+    "nl": "[[pet]] is thuis gekomen",
+    "da": "[[pet]] kom hjem",
+    "de": "[[pet]] kam nach Hause",
+    "es": "[[pet]] llegó a casa",
+    "fr": "[[pet]] est rentré à la maison",
+    "it": "[[pet]] è tornato a casa",
+    "no": "[[pet]] kom hjem",
+    "sv": "[[pet]] kom hem",
+    "pl": "[[pet]] wrócił do domu",
+    "ru": "[[pet]] вернулся домой",
+    "ko": "[[pet]] 집에 돌아왔습니다"
   },
   "tokens": [
     {
@@ -14,7 +34,17 @@
       "type": "string",
       "title": {
         "en": "Pet",
-        "nl": "Huisdier"
+        "nl": "Huisdier",
+        "da": "Kæledyr",
+        "de": "Haustier",
+        "es": "Mascota",
+        "fr": "Animal",
+        "it": "Animale domestico",
+        "no": "Kjæledyr",
+        "sv": "Husdjur",
+        "pl": "Zwierzak",
+        "ru": "Домашнее животное",
+        "ko": "애완동물"
       },
       "example": {
         "en": "Mr. kat",
@@ -33,11 +63,31 @@
       "type": "autocomplete",
       "title": {
         "en": "Search your pet",
-        "nl": "Zoek je huisdier"
+        "nl": "Zoek je huisdier",
+        "da": "Søg dit kæledyr",
+        "de": "Suche dein Haustier",
+        "es": "Busca tu mascota",
+        "fr": "Recherchez votre animal",
+        "it": "Cerca il tuo animale domestico",
+        "no": "Søk etter kjæledyret ditt",
+        "sv": "Sök ditt husdjur",
+        "pl": "Wyszukaj swojego zwierzaka",
+        "ru": "Поиск вашего питомца",
+        "ko": "애완동물 검색"
       },
       "placeholder": {
         "en": "Search your pet",
-        "nl": "Zoek je huisdier"
+        "nl": "Zoek je huisdier",
+        "da": "Søg dit kæledyr",
+        "de": "Suche dein Haustier",
+        "es": "Busca tu mascota",
+        "fr": "Recherchez votre animal",
+        "it": "Cerca il tuo animale domestico",
+        "no": "Søk etter kjæledyret ditt",
+        "sv": "Sök ditt husdjur",
+        "pl": "Wyszukaj swojego zwierzaka",
+        "ru": "Поиск вашего питомца",
+        "ko": "애완동물 검색"
       }
     }
   ]

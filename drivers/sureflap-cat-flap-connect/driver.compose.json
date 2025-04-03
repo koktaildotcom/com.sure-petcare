@@ -1,7 +1,17 @@
 {
   "name": {
     "en": "Sureflap Cat Flap Connect",
-    "nl": "Sureflap Katten Flap Connect"
+    "nl": "Sureflap Katten Flap Connect",
+    "da": "Sureflap Kattelem Connect",
+    "de": "Sureflap Katzenklappe Connect",
+    "es": "Sureflap Gatera Connect",
+    "fr": "Sureflap Chatière Connect",
+    "it": "Sureflap Gattaiola Connect",
+    "no": "Sureflap Katteluke Connect",
+    "sv": "Sureflap Kattlucka Connect",
+    "pl": "Sureflap Drzwiczki Connect",
+    "ru": "Sureflap Кошачья Дверца Connect",
+    "ko": "Sureflap 고양이 플랩 Connect"
   },
   "platforms": [
     "local"
@@ -30,11 +40,31 @@
         "logo": "../assets/login.svg",
         "usernameLabel": {
           "en": "E-mail address",
-          "nl": "E-mail adres"
+          "nl": "E-mail adres",
+          "da": "E-mail adresse",
+          "de": "E-Mail-Adresse",
+          "es": "Dirección de correo",
+          "fr": "Adresse e-mail",
+          "it": "Indirizzo e-mail",
+          "no": "E-postadresse",
+          "sv": "E-postadress",
+          "pl": "Adres e-mail",
+          "ru": "Адрес электронной почты",
+          "ko": "이메일 주소"
         },
         "passwordLabel": {
           "en": "Password",
-          "nl": "Wachtwoord"
+          "nl": "Wachtwoord",
+          "da": "Adgangskode",
+          "de": "Passwort",
+          "es": "Contraseña",
+          "fr": "Mot de passe",
+          "it": "Password",
+          "no": "Passord",
+          "sv": "Lösenord",
+          "pl": "Hasło",
+          "ru": "Пароль",
+          "ko": "비밀번호"
         }
       }
     },

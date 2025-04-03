@@ -1,0 +1,10 @@
+{
+  "login-success": "Hai effettuato l'accesso",
+  "username": "Nome utente",
+  "password": "Password",
+  "login": "Accedi",
+  "logout": "Esci",
+  "left": "Sinistra",
+  "right": "Destra",
+  "both": "Singolo"
+}

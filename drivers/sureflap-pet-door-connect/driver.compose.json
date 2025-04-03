@@ -1,7 +1,17 @@
 {
   "name": {
     "en": "Sureflap Pet Door Connect",
-    "nl": "Sureflap Huisdierluik Connect"
+    "nl": "Sureflap Huisdierluik Connect",
+    "da": "Sureflap Kæledyrsdør Connect",
+    "de": "Sureflap Haustiertür Connect",
+    "es": "Sureflap Puerta para Mascotas Connect",
+    "fr": "Sureflap Porte pour Animaux Connect",
+    "it": "Sureflap Porta per Animali Connect",
+    "no": "Sureflap Kjæledyrsdør Connect",
+    "sv": "Sureflap Husdjursdörr Connect",
+    "pl": "Sureflap Drzwiczki dla Zwierząt Connect",
+    "ru": "Sureflap Дверца для домашних животных Connect",
+    "ko": "Sureflap 애완동물 문 Connect"
   },
   "platforms": [
     "local"
@@ -30,11 +40,31 @@
         "logo": "../assets/login.svg",
         "usernameLabel": {
           "en": "E-mail address",
-          "nl": "E-mail adres"
+          "nl": "E-mail adres",
+          "da": "E-mail adresse",
+          "de": "E-Mail-Adresse",
+          "es": "Dirección de correo electrónico",
+          "fr": "Adresse e-mail",
+          "it": "Indirizzo e-mail",
+          "no": "E-postadresse",
+          "sv": "E-postadress",
+          "pl": "Adres e-mail",
+          "ru": "Электронная почта",
+          "ko": "이메일 주소"
         },
         "passwordLabel": {
           "en": "Password",
-          "nl": "Wachtwoord"
+          "nl": "Wachtwoord",
+          "da": "Adgangskode",
+          "de": "Passwort",
+          "es": "Contraseña",
+          "fr": "Mot de passe",
+          "it": "Password",
+          "no": "Passord",
+          "sv": "Lösenord",
+          "pl": "Hasło",
+          "ru": "Пароль",
+          "ko": "비밀번호"
         }
       }
     },

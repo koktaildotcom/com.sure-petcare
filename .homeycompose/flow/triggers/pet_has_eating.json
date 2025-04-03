@@ -2,7 +2,17 @@
   "id": "pet_has_eating",
   "title": {
     "en": "A pet has eaten",
-    "nl": "Een huisdier heeft gegeten"
+    "nl": "Een huisdier heeft gegeten",
+    "da": "Et kæledyr har spist",
+    "de": "Ein Haustier hat gefressen",
+    "es": "Una mascota ha comido",
+    "fr": "Un animal de compagnie a mangé",
+    "it": "Un animale domestico ha mangiato",
+    "no": "Et kjæledyr har spist",
+    "sv": "Ett husdjur har ätit",
+    "pl": "Zwierzę domowe zjadło",
+    "ru": "Питомец поел",
+    "ko": "반려동물이 먹었습니다"
   },
   "tokens": [
     {
@@ -10,11 +20,31 @@
       "type": "string",
       "title": {
         "en": "Pet",
-        "nl": "Huisdier"
+        "nl": "Huisdier",
+        "da": "Kæledyr",
+        "de": "Haustier",
+        "es": "Mascota",
+        "fr": "Animal",
+        "it": "Animale domestico",
+        "no": "Kjæledyr",
+        "sv": "Husdjur",
+        "pl": "Zwierzę",
+        "ru": "Питомец",
+        "ko": "반려동물"
       },
       "example": {
         "en": "Mr. kat",
-        "nl": "Mr. kat"
+        "nl": "Mr. kat",
+        "da": "Mr. kat",
+        "de": "Mr. kat",
+        "es": "Mr. kat",
+        "fr": "Mr. kat",
+        "it": "Mr. kat",
+        "no": "Mr. kat",
+        "sv": "Mr. kat",
+        "pl": "Mr. kat",
+        "ru": "Mr. kat",
+        "ko": "Mr. kat"
       }
     },
     {
@@ -22,11 +52,31 @@
       "type": "string",
       "title": {
         "en": "From which bowl",
-        "nl": "Uit welke bakje"
+        "nl": "Uit welke bakje",
+        "da": "Fra hvilken skål",
+        "de": "Aus welcher Schüssel",
+        "es": "¿De qué tazón?",
+        "fr": "De quel bol",
+        "it": "Da quale ciotola",
+        "no": "Fra hvilken skål",
+        "sv": "Från vilken skål",
+        "pl": "Z której miski",
+        "ru": "Из какой миски",
+        "ko": "어느 그릇에서"
       },
       "example": {
         "en": "Left",
-        "nl": "Links"
+        "nl": "Links",
+        "da": "Venstre",
+        "de": "Links",
+        "es": "Izquierda",
+        "fr": "Gauche",
+        "it": "Sinistra",
+        "no": "Venstre",
+        "sv": "Vänster",
+        "pl": "Lewo",
+        "ru": "Слева",
+        "ko": "왼쪽"
       }
     },
     {
@@ -34,7 +84,17 @@
       "type": "number",
       "title": {
         "en": "Amount in grams",
-        "nl": "Hoeveelheid in gram"
+        "nl": "Hoeveelheid in gram",
+        "da": "Mængde i gram",
+        "de": "Menge in Gramm",
+        "es": "Cantidad en gramos",
+        "fr": "Quantité en grammes",
+        "it": "Quantità in grammi",
+        "no": "Mengde i gram",
+        "sv": "Mängd i gram",
+        "pl": "Ilość w gramach",
+        "ru": "Количество в граммах",
+        "ko": "그램 단위의 양"
       },
       "example": 1.2
     }

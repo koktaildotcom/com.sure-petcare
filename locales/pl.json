@@ -1,0 +1,10 @@
+{
+  "login-success": "Zalogowano pomyślnie",
+  "username": "Nazwa użytkownika",
+  "password": "Hasło",
+  "login": "Zaloguj się",
+  "logout": "Wyloguj się",
+  "left": "Lewo",
+  "right": "Prawo",
+  "both": "Pojedynczy"
+}

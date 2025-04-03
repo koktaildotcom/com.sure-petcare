@@ -2,11 +2,31 @@
   "id": "specific_pet_has_eating",
   "title": {
     "en": "A specific pet has eaten",
-    "nl": "Een specifiek huisdier heeft gegeten"
+    "nl": "Een specifiek huisdier heeft gegeten",
+    "da": "Et bestemt kæledyr har spist",
+    "de": "Ein bestimmtes Haustier hat gefressen",
+    "es": "Una mascota específica ha comido",
+    "fr": "Un animal spécifique a mangé",
+    "it": "Un animale specifico ha mangiato",
+    "no": "Et bestemt kjæledyr har spist",
+    "sv": "Ett specifikt husdjur har ätit",
+    "pl": "Konkretny zwierzak zjadł",
+    "ru": "Конкретное животное поело",
+    "ko": "특정한 애완동물이 먹었습니다"
   },
   "titleFormatted": {
     "en": "[[pet]] has eaten",
-    "nl": "[[pet]] heeft gegeten"
+    "nl": "[[pet]] heeft gegeten",
+    "da": "[[pet]] har spist",
+    "de": "[[pet]] hat gefressen",
+    "es": "[[pet]] ha comido",
+    "fr": "[[pet]] a mangé",
+    "it": "[[pet]] ha mangiato",
+    "no": "[[pet]] har spist",
+    "sv": "[[pet]] har ätit",
+    "pl": "[[pet]] zjadł",
+    "ru": "[[pet]] поел",
+    "ko": "[[pet]] 먹었습니다"
   },
   "tokens": [
     {
@@ -14,11 +34,31 @@
       "type": "string",
       "title": {
         "en": "Pet",
-        "nl": "Huisdier"
+        "nl": "Huisdier",
+        "da": "Kæledyr",
+        "de": "Haustier",
+        "es": "Mascota",
+        "fr": "Animal",
+        "it": "Animale domestico",
+        "no": "Kjæledyr",
+        "sv": "Husdjur",
+        "pl": "Zwierzę domowe",
+        "ru": "Домашнее животное",
+        "ko": "애완동물"
       },
       "example": {
         "en": "Mr. kat",
-        "nl": "Mr. kat"
+        "nl": "Mr. kat",
+        "da": "Mr. kat",
+        "de": "Mr. kat",
+        "es": "Sr. kat",
+        "fr": "M. kat",
+        "it": "Sig. kat",
+        "no": "Mr. kat",
+        "sv": "Mr. kat",
+        "pl": "Pan kat",
+        "ru": "Мистер кат",
+        "ko": "미스터 캣"
       }
     },
     {
@@ -26,11 +66,31 @@
       "type": "string",
       "title": {
         "en": "From which bowl",
-        "nl": "Uit welke bakje"
+        "nl": "Uit welke bakje",
+        "da": "Fra hvilken skål",
+        "de": "Aus welcher Schüssel",
+        "es": "De qué bol",
+        "fr": "De quel bol",
+        "it": "Da quale ciotola",
+        "no": "Fra hvilken skål",
+        "sv": "Från vilken skål",
+        "pl": "Z której miski",
+        "ru": "Из какой миски",
+        "ko": "어떤 그릇에서"
       },
       "example": {
         "en": "Left",
-        "nl": "Links"
+        "nl": "Links",
+        "da": "Venstre",
+        "de": "Links",
+        "es": "Izquierda",
+        "fr": "Gauche",
+        "it": "Sinistra",
+        "no": "Venstre",
+        "sv": "Vänster",
+        "pl": "Lewo",
+        "ru": "Лево",
+        "ko": "왼쪽"
       }
     },
     {
@@ -38,7 +98,17 @@
       "type": "number",
       "title": {
         "en": "Amount in grams",
-        "nl": "Hoeveelheid in gram"
+        "nl": "Hoeveelheid in gram",
+        "da": "Mængde i gram",
+        "de": "Menge in Gramm",
+        "es": "Cantidad en gramos",
+        "fr": "Quantité en grammes",
+        "it": "Quantità in grammi",
+        "no": "Mengde i gram",
+        "sv": "Mängd i gram",
+        "pl": "Ilość w gramach",
+        "ru": "Количество в граммах",
+        "ko": "그램 단위의 양"
       },
       "example": 1.2
     }
@@ -54,11 +124,31 @@
       "type": "autocomplete",
       "title": {
         "en": "Search your pet",
-        "nl": "Zoek je huisdier"
+        "nl": "Zoek je huisdier",
+        "da": "Søg dit kæledyr",
+        "de": "Suche dein Haustier",
+        "es": "Busca tu mascota",
+        "fr": "Recherchez votre animal",
+        "it": "Cerca il tuo animale domestico",
+        "no": "Søk etter kjæledyret ditt",
+        "sv": "Sök ditt husdjur",
+        "pl": "Szukaj swojego zwierzaka",
+        "ru": "Найдите своего питомца",
+        "ko": "애완동물 검색"
       },
       "placeholder": {
         "en": "Search your pet",
-        "nl": "Zoek je huisdier"
+        "nl": "Zoek je huisdier",
+        "da": "Søg dit kæledyr",
+        "de": "Suche dein Haustier",
+        "es": "Busca tu mascota",
+        "fr": "Recherchez votre animal",
+        "it": "Cerca il tuo animale domestico",
+        "no": "Søk etter kjæledyret ditt",
+        "sv": "Sök ditt husdjur",
+        "pl": "Szukaj swojego zwierzaka",
+        "ru": "Найдите своего питомца",
+        "ko": "애완동물 검색"
       }
     }
   ]

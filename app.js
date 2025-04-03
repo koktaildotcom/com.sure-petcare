@@ -90,7 +90,7 @@ module.exports = class SurePetcare extends Homey.App {
 
     this.triggerError = this.homey.flow.getTriggerCard('log_message');
 
-    this._synchronise();
+    this.homey.setTimeout(this._synchronise.bind(this), 2000);
   }
 
   /**
@@ -201,7 +201,6 @@ module.exports = class SurePetcare extends Homey.App {
     if (this.devices.length === 0) {
       this.logMessage('log', 'No devices found');
       this._setNewTimeout();
-
       return;
     }
 
@@ -254,14 +253,15 @@ module.exports = class SurePetcare extends Homey.App {
 
   /**
    * update the devices one by one
-   *
-   * @param device SureflapDevice
-   * @param data object
-   *
-   * @returns {Promise.<SureflapDevice>}
    */
   async updateDevice(device, data) {
-    return device.update(data.devices.find(deviceData => deviceData.id === device.id));
+    const currentDevice = data.devices.find(deviceData => deviceData.id === device.id);
+
+    if (!currentDevice) {
+      return new Error(`Device ${device.name} not found`);
+    }
+
+    return device.update(currentDevice);
   }
 
   /**
@@ -290,6 +290,7 @@ module.exports = class SurePetcare extends Homey.App {
     if (this.timeout) {
       clearTimeout(this.timeout);
     }
+
     this.timeout = setTimeout(this._synchronise.bind(this), interval);
   }
 
@@ -301,8 +302,8 @@ module.exports = class SurePetcare extends Homey.App {
    */
   getProperty(target, params) {
     for (const param of params) {
-      if (!this.hasProperties(target, [param])) {
-        throw new Error(`Unknown param: ${param}`);
+      if (target == null || !this.hasProperties(target, [param])) {
+        console.error(`Unknown param: ${param}`);
       }
       target = target[param];
     }

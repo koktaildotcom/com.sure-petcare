@@ -1,0 +1,10 @@
+{
+  "login-success": "로그인되었습니다.",
+  "username": "사용자 이름",
+  "password": "비밀번호",
+  "login": "로그인",
+  "logout": "로그아웃",
+  "left": "왼쪽",
+  "right": "오른쪽",
+  "both": "단일"
+}

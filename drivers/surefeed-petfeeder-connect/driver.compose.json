@@ -2,7 +2,17 @@
   "id": "surefeed-petfeeder-connect",
   "name": {
     "en": "Surefeed Microchip Petfeeder",
-    "nl": "Sureflap Microchip Voerbak"
+    "nl": "Sureflap Microchip Voerbak",
+    "da": "Surefeed Mikrochip Dyrefeeder",
+    "de": "Surefeed Mikrochip Futterautomat",
+    "es": "Surefeed Comedero con Microchip",
+    "fr": "Surefeed Distributeur de Nourriture à Puce",
+    "it": "Surefeed Dispenser Microchip per Animali",
+    "no": "Surefeed Mikrochip Mateautomat",
+    "sv": "Surefeed Mikrochip Matningsstation",
+    "pl": "Surefeed Mikroczipowy Podajnik Karmy",
+    "ru": "Surefeed Микрочип Кормушка",
+    "ko": "Surefeed 마이크로칩 급이기"
   },
   "platforms": [
     "local"
@@ -18,21 +28,51 @@
     "weight.left": {
       "title": {
         "en": "Weight left bowl",
-        "nl": "Gewicht bakje links"
+        "nl": "Gewicht bakje links",
+        "da": "Vægt venstre skål",
+        "de": "Gewicht linke Schale",
+        "es": "Peso del bol izquierdo",
+        "fr": "Poids bols gauche",
+        "it": "Peso ciotola sinistra",
+        "no": "Vekt venstre bolle",
+        "sv": "Vikt vänster skål",
+        "pl": "Waga miski po lewej",
+        "ru": "Вес левой миски",
+        "ko": "왼쪽 그릇 무게"
       },
       "decimals": 2
     },
     "weight.right": {
       "title": {
         "en": "Weight right bowl",
-        "nl": "Gewicht bakje rechts"
+        "nl": "Gewicht bakje rechts",
+        "da": "Vægt højre skål",
+        "de": "Gewicht rechte Schale",
+        "es": "Peso del bol derecho",
+        "fr": "Poids bols droit",
+        "it": "Peso ciotola destra",
+        "no": "Vekt høyre bolle",
+        "sv": "Vikt höger skål",
+        "pl": "Waga miski po prawej",
+        "ru": "Вес правой миски",
+        "ko": "오른쪽 그릇 무게"
       },
       "decimals": 2
     },
     "weight.both": {
       "title": {
         "en": "Weight bowl",
-        "nl": "Gewicht bakje"
+        "nl": "Gewicht bakje",
+        "da": "Vægt skål",
+        "de": "Gewicht Schale",
+        "es": "Peso del bol",
+        "fr": "Poids du bol",
+        "it": "Peso ciotola",
+        "no": "Vekt bolle",
+        "sv": "Vikt skål",
+        "pl": "Waga miski",
+        "ru": "Вес миски",
+        "ko": "그릇 무게"
       },
       "decimals": 2
     }
@@ -53,11 +93,31 @@
         "logo": "../assets/login.svg",
         "usernameLabel": {
           "en": "E-mail address",
-          "nl": "E-mail adres"
+          "nl": "E-mail adres",
+          "da": "E-mail adresse",
+          "de": "E-Mail-Adresse",
+          "es": "Dirección de correo electrónico",
+          "fr": "Adresse e-mail",
+          "it": "Indirizzo e-mail",
+          "no": "E-postadresse",
+          "sv": "E-postadress",
+          "pl": "Adres e-mail",
+          "ru": "Адрес электронной почты",
+          "ko": "이메일 주소"
         },
         "passwordLabel": {
           "en": "Password",
-          "nl": "Wachtwoord"
+          "nl": "Wachtwoord",
+          "da": "Adgangskode",
+          "de": "Passwort",
+          "es": "Contraseña",
+          "fr": "Mot de passe",
+          "it": "Password",
+          "no": "Passord",
+          "sv": "Lösenord",
+          "pl": "Hasło",
+          "ru": "Пароль",
+          "ko": "비밀번호"
         }
       }
     },
@@ -83,7 +143,17 @@
       "type": "group",
       "label": {
         "en": "Device information",
-        "nl": "Device informatie"
+        "nl": "Device informatie",
+        "da": "Enhedsinformation",
+        "de": "Geräteinformationen",
+        "es": "Información del dispositivo",
+        "fr": "Informations sur l'appareil",
+        "it": "Informazioni sul dispositivo",
+        "no": "Enhetsinformasjon",
+        "sv": "Enhetsinformation",
+        "pl": "Informacje o urządzeniu",
+        "ru": "Информация об устройстве",
+        "ko": "장치 정보"
       },
       "children": [
         {
@@ -91,7 +161,17 @@
           "type": "radio",
           "label": {
             "en": "Bowl type",
-            "nl": "Type bakje"
+            "nl": "Type bakje",
+            "da": "Skål type",
+            "de": "Schalentyp",
+            "es": "Tipo de bol",
+            "fr": "Type de bol",
+            "it": "Tipo di ciotola",
+            "no": "Bolletype",
+            "sv": "Skåltyp",
+            "pl": "Typ miski",
+            "ru": "Тип миски",
+            "ko": "그릇 종류"
           },
           "value": "single",
           "values": [
@@ -99,14 +179,34 @@
               "id": "single",
               "label": {
                 "en": "Single bowl",
-                "nl": "Enkel bakje"
+                "nl": "Enkel bakje",
+                "da": "Enkelt skål",
+                "de": "Einzelschale",
+                "es": "Bol único",
+                "fr": "Bol unique",
+                "it": "Ciotola singola",
+                "no": "Enkel bolle",
+                "sv": "Enkel skål",
+                "pl": "Pojedyncza miska",
+                "ru": "Одинарная миска",
+                "ko": "단일 그릇"
               }
             },
             {
               "id": "double",
               "label": {
                 "en": "Double bowl",
-                "nl": "Dubbel bakje"
+                "nl": "Dubbel bakje",
+                "da": "Dobbelt skål",
+                "de": "Doppelschale",
+                "es": "Doble bol",
+                "fr": "Bol double",
+                "it": "Ciotola doppia",
+                "no": "Dobbelt bolle",
+                "sv": "Dubbel skål",
+                "pl": "Podwójna miska",
+                "ru": "Двойная миска",
+                "ko": "이중 그릇"
               }
             }
           ]

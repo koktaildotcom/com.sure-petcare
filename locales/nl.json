@@ -1,9 +1,9 @@
 {
+  "login-success": "Je bent ingelogd",
   "username": "Gebruikersnaam",
   "password": "Wachtwoord",
   "login": "Inloggen",
   "logout": "Uitloggen",
-  "login-title": "Inloggen",
   "left": "Links",
   "right": "Rechts",
   "both": "Enkel"

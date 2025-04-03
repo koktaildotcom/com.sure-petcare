@@ -2,7 +2,17 @@
   "id": "log_message",
   "title": {
     "en": "The app generates a error",
-    "nl": "De app genereert een error"
+    "nl": "De app genereert een error",
+    "da": "Appen genererer en fejl",
+    "de": "Die App erzeugt einen Fehler",
+    "es": "La aplicación genera un error",
+    "fr": "L'application génère une erreur",
+    "it": "L'app genera un errore",
+    "no": "Appen genererer en feil",
+    "sv": "Appen genererar ett fel",
+    "pl": "Aplikacja generuje błąd",
+    "ru": "Приложение генерирует ошибку",
+    "ko": "앱이 오류를 생성합니다"
   },
   "tokens": [
     {
@@ -10,11 +20,31 @@
       "type": "string",
       "title": {
         "en": "severity",
-        "nl": "severity"
+        "nl": "severity",
+        "da": "alvorlighed",
+        "de": "Schweregrad",
+        "es": "gravedad",
+        "fr": "sévérité",
+        "it": "gravità",
+        "no": "alvorlighetsgrad",
+        "sv": "allvarlighetsgrad",
+        "pl": "dotkliwość",
+        "ru": "серьезность",
+        "ko": "심각도"
       },
       "example": {
         "en": "error",
-        "nl": "error"
+        "nl": "error",
+        "da": "fejl",
+        "de": "Fehler",
+        "es": "error",
+        "fr": "erreur",
+        "it": "errore",
+        "no": "feil",
+        "sv": "fel",
+        "pl": "błąd",
+        "ru": "ошибка",
+        "ko": "오류"
       }
     },
     {
@@ -22,11 +52,31 @@
       "type": "string",
       "title": {
         "en": "message",
-        "nl": "message"
+        "nl": "message",
+        "da": "besked",
+        "de": "Nachricht",
+        "es": "mensaje",
+        "fr": "message",
+        "it": "messaggio",
+        "no": "melding",
+        "sv": "meddelande",
+        "pl": "wiadomość",
+        "ru": "сообщение",
+        "ko": "메시지"
       },
       "example": {
         "en": "An error occur",
-        "nl": "Er is een fout opgetreden"
+        "nl": "Er is een fout opgetreden",
+        "da": "Der opstår en fejl",
+        "de": "Ein Fehler tritt auf",
+        "es": "Ocurre un error",
+        "fr": "Une erreur s'est produite",
+        "it": "Si verifica un errore",
+        "no": "En feil oppstår",
+        "sv": "Ett fel inträffar",
+        "pl": "Wystąpił błąd",
+        "ru": "Происходит ошибка",
+        "ko": "오류가 발생합니다"
       }
     }
   ]

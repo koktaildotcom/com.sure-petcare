@@ -3,14 +3,34 @@
   "type": "number",
   "title": {
     "en": "Weight in grams",
-    "nl": "Gewicht in gram"
+    "nl": "Gewicht in gram",
+    "da": "Vægt i gram",
+    "de": "Gewicht in Gramm",
+    "es": "Peso en gramos",
+    "fr": "Poids en grammes",
+    "it": "Peso in grammi",
+    "no": "Vekt i gram",
+    "sv": "Vikt i gram",
+    "pl": "Waga w gramach",
+    "ru": "Вес в граммах",
+    "ko": "무게 (그램)"
   },
   "uiComponent": "sensor",
   "getable": true,
   "setable": false,
   "units": {
     "en": "grams",
-    "nl": "gram"
+    "nl": "gram",
+    "da": "gram",
+    "de": "Gramm",
+    "es": "gramos",
+    "fr": "grammes",
+    "it": "grammi",
+    "no": "gram",
+    "sv": "gram",
+    "pl": "gramów",
+    "ru": "граммы",
+    "ko": "그램"
   },
   "min": 0,
   "max": 500,

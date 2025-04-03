@@ -2,7 +2,17 @@
   "id": "pet_home",
   "title": {
     "en": "A pet came home",
-    "nl": "Een huisdier is thuis gekomen"
+    "nl": "Een huisdier is thuis gekomen",
+    "da": "Et kæledyr kom hjem",
+    "de": "Ein Haustier kam nach Hause",
+    "es": "Una mascota llegó a casa",
+    "fr": "Un animal est rentré à la maison",
+    "it": "Un animale domestico è tornato a casa",
+    "no": "Et kjæledyr kom hjem",
+    "sv": "Ett husdjur kom hem",
+    "pl": "Zwierzę domowe wróciło do domu",
+    "ru": "Питомец вернулся домой",
+    "ko": "애완동물이 집에 돌아왔습니다"
   },
   "tokens": [
     {
@@ -10,11 +20,31 @@
       "type": "string",
       "title": {
         "en": "Pet",
-        "nl": "Huisdier"
+        "nl": "Huisdier",
+        "da": "Kæledyr",
+        "de": "Haustier",
+        "es": "Mascota",
+        "fr": "Animal de compagnie",
+        "it": "Animale domestico",
+        "no": "Kjæledyr",
+        "sv": "Husdjur",
+        "pl": "Zwierzę domowe",
+        "ru": "Питомец",
+        "ko": "애완동물"
       },
       "example": {
         "en": "Mr. kat",
-        "nl": "Mr. kat"
+        "nl": "Mr. kat",
+        "da": "Mr. kat",
+        "de": "Mr. kat",
+        "es": "Mr. kat",
+        "fr": "Mr. kat",
+        "it": "Mr. kat",
+        "no": "Mr. kat",
+        "sv": "Mr. kat",
+        "pl": "Mr. kat",
+        "ru": "Mr. kat",
+        "ko": "Mr. kat"
       }
     }
   ],

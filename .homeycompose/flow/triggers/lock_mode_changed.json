@@ -2,7 +2,17 @@
   "id": "lock_mode_changed",
   "title": {
     "en": "Lock mode has changed",
-    "nl": "Slot modus is veranderd"
+    "nl": "Slot modus is veranderd",
+    "da": "Låsetilstand er ændret",
+    "de": "Sperrmodus hat sich geändert",
+    "es": "El modo de bloqueo ha cambiado",
+    "fr": "Le mode de verrouillage a changé",
+    "it": "La modalità di blocco è cambiata",
+    "no": "Låsemodus er endret",
+    "sv": "Läget för låsning har ändrats",
+    "pl": "Tryb blokady został zmieniony",
+    "ru": "Режим блокировки изменился",
+    "ko": "잠금 모드가 변경되었습니다"
   },
   "tokens": [
     {
@@ -10,11 +20,31 @@
       "type": "string",
       "title": {
         "en": "Lock mode",
-        "nl": "Slot modus"
+        "nl": "Slot modus",
+        "da": "Låsetilstand",
+        "de": "Sperrmodus",
+        "es": "Modo de bloqueo",
+        "fr": "Mode de verrouillage",
+        "it": "Modalità di blocco",
+        "no": "Låsemodus",
+        "sv": "Låsläge",
+        "pl": "Tryb blokady",
+        "ru": "Режим блокировки",
+        "ko": "잠금 모드"
       },
       "example": {
         "en": "Open",
-        "nl": "Open"
+        "nl": "Open",
+        "da": "Åben",
+        "de": "Offen",
+        "es": "Abierto",
+        "fr": "Ouvert",
+        "it": "Aperto",
+        "no": "Åpen",
+        "sv": "Öppen",
+        "pl": "Otwarty",
+        "ru": "Открыто",
+        "ko": "열림"
       }
     }
   ],
@@ -27,28 +57,68 @@
           "id": "open",
           "title": {
             "en": "Open",
-            "nl": "Open"
+            "nl": "Open",
+            "da": "Åben",
+            "de": "Offen",
+            "es": "Abierto",
+            "fr": "Ouvert",
+            "it": "Aperto",
+            "no": "Åpen",
+            "sv": "Öppen",
+            "pl": "Otwarty",
+            "ru": "Открыто",
+            "ko": "열림"
           }
         },
         {
           "id": "keep_inside",
           "title": {
             "en": "Keep inside",
-            "nl": "Binnen houden"
+            "nl": "Binnen houden",
+            "da": "Hold inde",
+            "de": "Drinnen halten",
+            "es": "Mantener dentro",
+            "fr": "Garder à l'intérieur",
+            "it": "Tenere dentro",
+            "no": "Hold inne",
+            "sv": "Håll inne",
+            "pl": "Trzymać wewnątrz",
+            "ru": "Оставить внутри",
+            "ko": "내부에 유지"
           }
         },
         {
           "id": "keep_outside",
           "title": {
             "en": "Keep outside",
-            "nl": "Buiten houden"
+            "nl": "Buiten houden",
+            "da": "Hold ude",
+            "de": "Draußen halten",
+            "es": "Mantener fuera",
+            "fr": "Garder à l'extérieur",
+            "it": "Tenere fuori",
+            "no": "Hold ute",
+            "sv": "Håll utanför",
+            "pl": "Trzymać na zewnątrz",
+            "ru": "Оставить снаружи",
+            "ko": "외부에 유지"
           }
         },
         {
           "id": "lock_both_ways",
           "title": {
             "en": "Lock both ways",
-            "nl": "Beide kanten vergrendelen"
+            "nl": "Beide kanten vergrendelen",
+            "da": "Lås begge veje",
+            "de": "Beide Richtungen sperren",
+            "es": "Bloquear en ambas direcciones",
+            "fr": "Verrouiller dans les deux sens",
+            "it": "Bloccare in entrambi i modi",
+            "no": "Lås begge veier",
+            "sv": "Lås båda riktningarna",
+            "pl": "Zablokuj w obu kierunkach",
+            "ru": "Заблокировать в обоих направлениях",
+            "ko": "양방향 잠금"
           }
         }
       ],

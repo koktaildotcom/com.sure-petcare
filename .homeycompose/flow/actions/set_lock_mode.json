@@ -2,17 +2,47 @@
   "id": "set_lock_mode",
   "title": {
     "en": "Set lock mode to:",
-    "nl": "Zet slot modus naar:"
+    "nl": "Zet slot modus naar:",
+    "da": "Indstil låsetilstand til:",
+    "de": "Sperrmodus einstellen auf:",
+    "es": "Establecer modo de bloqueo a:",
+    "fr": "Définir le mode de verrouillage sur :",
+    "it": "Imposta la modalità di blocco su:",
+    "no": "Sett låsemodus til:",
+    "sv": "Ställ in låsläget till:",
+    "pl": "Ustaw tryb blokady na:",
+    "ru": "Установить режим блокировки на:",
+    "ko": "잠금 모드를 다음으로 설정:"
   },
   "titleFormatted": {
     "en": "Set lock mode to [[lock_mode]]",
-    "nl": "Zet slot modus naar [[lock_mode]]"
+    "nl": "Zet slot modus naar [[lock_mode]]",
+    "da": "Indstil låsetilstand til [[lock_mode]]",
+    "de": "Sperrmodus einstellen auf [[lock_mode]]",
+    "es": "Establecer modo de bloqueo a [[lock_mode]]",
+    "fr": "Définir le mode de verrouillage sur [[lock_mode]]",
+    "it": "Imposta la modalità di blocco su [[lock_mode]]",
+    "no": "Sett låsemodus til [[lock_mode]]",
+    "sv": "Ställ in låsläget till [[lock_mode]]",
+    "pl": "Ustaw tryb blokady na [[lock_mode]]",
+    "ru": "Установить режим блокировки на [[lock_mode]]",
+    "ko": "잠금 모드를 [[lock_mode]](으)로 설정"
   },
   "args": [
     {
       "title": {
         "en": "Lock mode",
-        "nl": "Lock mode"
+        "nl": "Lock mode",
+        "da": "Låsetilstand",
+        "de": "Sperrmodus",
+        "es": "Modo de bloqueo",
+        "fr": "Mode de verrouillage",
+        "it": "Modalità di blocco",
+        "no": "Låsemodus",
+        "sv": "Låsläge",
+        "pl": "Tryb blokady",
+        "ru": "Режим блокировки",
+        "ko": "잠금 모드"
       },
       "name": "lock_mode",
       "type": "dropdown",
@@ -21,28 +51,68 @@
           "id": "open",
           "title": {
             "en": "Open",
-            "nl": "Open"
+            "nl": "Open",
+            "da": "Åben",
+            "de": "Offen",
+            "es": "Abierto",
+            "fr": "Ouvert",
+            "it": "Aperto",
+            "no": "Åpen",
+            "sv": "Öppen",
+            "pl": "Otwarty",
+            "ru": "Открыто",
+            "ko": "열림"
           }
         },
         {
           "id": "keep_inside",
           "title": {
             "en": "Keep inside",
-            "nl": "Binnen houden"
+            "nl": "Binnen houden",
+            "da": "Bliv inde",
+            "de": "Drinnen bleiben",
+            "es": "Permanecer dentro",
+            "fr": "Rester à l'intérieur",
+            "it": "Rimani dentro",
+            "no": "Hold deg inne",
+            "sv": "Stanna inne",
+            "pl": "Zostań wewnątrz",
+            "ru": "Остаться внутри",
+            "ko": "안에 있도록"
           }
         },
         {
           "id": "keep_outside",
           "title": {
             "en": "Keep outside",
-            "nl": "Buiten houden"
+            "nl": "Buiten houden",
+            "da": "Bliv udenfor",
+            "de": "Draußen bleiben",
+            "es": "Permanecer fuera",
+            "fr": "Rester dehors",
+            "it": "Rimani fuori",
+            "no": "Hold deg utenfor",
+            "sv": "Stanna ute",
+            "pl": "Zostań na zewnątrz",
+            "ru": "Остаться снаружи",
+            "ko": "밖에 있도록"
           }
         },
         {
           "id": "lock_both_ways",
           "title": {
             "en": "Lock both ways",
-            "nl": "Beide kanten vergrendelen"
+            "nl": "Beide kanten vergrendelen",
+            "da": "Lås begge veje",
+            "de": "Beidseitig verriegeln",
+            "es": "Bloquear ambas direcciones",
+            "fr": "Verrouiller dans les deux sens",
+            "it": "Blocca in entrambe le direzioni",
+            "no": "Lås begge veier",
+            "sv": "Lås båda vägarna",
+            "pl": "Zablokuj w obu kierunkach",
+            "ru": "Заблокировать в обе стороны",
+            "ko": "양방향 잠금"
           }
         }
       ],
