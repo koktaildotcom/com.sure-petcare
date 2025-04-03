@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.sure-petcare",
-  "version": "2.0.9",
+  "version": "2.0.10",
   "compatibility": ">=5.0.0",
   "platforms": [
     "local"
@@ -10,11 +10,31 @@
   "sdk": 3,
   "name": {
     "en": "Sure Petcare",
-    "nl": "Sure Petcare"
+    "nl": "Sure Petcare",
+    "da": "Sure Petcare",
+    "de": "Sure Petcare",
+    "es": "Sure Petcare",
+    "fr": "Sure Petcare",
+    "it": "Sure Petcare",
+    "no": "Sure Petcare",
+    "sv": "Sure Petcare",
+    "pl": "Sure Petcare",
+    "ru": "Sure Petcare",
+    "ko": "Sure Petcare"
   },
   "description": {
     "en": "A smart way to keep your pets safe and healthy",
-    "nl": "Een slimme manier om uw huisdieren veilig en gezond te houden"
+    "nl": "Een slimme manier om uw huisdieren veilig en gezond te houden",
+    "da": "En smart måde at holde dine kæledyr sikre og sunde",
+    "de": "Eine intelligente Möglichkeit, Ihre Haustiere sicher und gesund zu halten",
+    "es": "Una manera inteligente de mantener a tus mascotas seguras y saludables",
+    "fr": "Une manière intelligente de garder vos animaux en sécurité et en bonne santé",
+    "it": "Un modo intelligente per mantenere i tuoi animali al sicuro e in salute",
+    "no": "En smart måte å holde kjæledyrene dine trygge og sunne",
+    "sv": "Ett smart sätt att hålla dina husdjur säkra och friska",
+    "pl": "Inteligentny sposób na zapewnienie bezpieczeństwa i zdrowia twoich zwierząt",
+    "ru": "Умный способ сохранить ваших питомцев в безопасности и здоровье",
+    "ko": "반려동물을 안전하고 건강하게 지키는 스마트한 방법"
   },
   "category": [
     "localization",
@@ -39,6 +59,106 @@
       "hond",
       "sureflap",
       "kattenluik",
+      "surefeed"
+    ],
+    "da": [
+      "sure",
+      "kæledyrspleje",
+      "kæledyr",
+      "kat",
+      "hund",
+      "sureflap",
+      "kattelem",
+      "surefeed"
+    ],
+    "de": [
+      "sure",
+      "haustierpflege",
+      "haustier",
+      "katze",
+      "hund",
+      "sureflap",
+      "katzenklappe",
+      "surefeed"
+    ],
+    "es": [
+      "sure",
+      "ocuparse de mascotas",
+      "mascota",
+      "gato",
+      "perro",
+      "sureflap",
+      "gatera",
+      "surefeed"
+    ],
+    "fr": [
+      "sure",
+      "soin des animaux",
+      "animal de compagnie",
+      "chat",
+      "chien",
+      "sureflap",
+      "chatière",
+      "surefeed"
+    ],
+    "it": [
+      "sure",
+      "cura degli animali",
+      "animale domestico",
+      "gatto",
+      "cane",
+      "sureflap",
+      "porta per gatti",
+      "surefeed"
+    ],
+    "no": [
+      "sure",
+      "dyrepleie",
+      "kjæledyr",
+      "katt",
+      "hund",
+      "sureflap",
+      "kattelem",
+      "surefeed"
+    ],
+    "sv": [
+      "sure",
+      "husdjursvård",
+      "husdjur",
+      "katt",
+      "hund",
+      "sureflap",
+      "kattlucka",
+      "surefeed"
+    ],
+    "pl": [
+      "sure",
+      "opieka nad zwierzętami",
+      "zwierzę",
+      "kot",
+      "pies",
+      "sureflap",
+      "drzwiczki dla kota",
+      "surefeed"
+    ],
+    "ru": [
+      "sure",
+      "уход за питомцем",
+      "домашнее животное",
+      "кот",
+      "собака",
+      "sureflap",
+      "кошачья дверца",
+      "surefeed"
+    ],
+    "ko": [
+      "sure",
+      "반려동물 관리",
+      "반려동물",
+      "고양이",
+      "강아지",
+      "sureflap",
+      "고양이 출입구",
       "surefeed"
     ]
   },
@@ -85,7 +205,17 @@
         "id": "bowl_has_been_refilled",
         "title": {
           "en": "A bowl has been refilled",
-          "nl": "Een bakje is bijgevuld"
+          "nl": "Een bakje is bijgevuld",
+          "da": "En skål er blevet fyldt op",
+          "de": "Eine Schale wurde nachgefüllt",
+          "es": "Un cuenco ha sido rellenado",
+          "fr": "Un bol a été rempli",
+          "it": "Una ciotola è stata riempita",
+          "no": "En skål har blitt fylt opp",
+          "sv": "En skål har fyllts på",
+          "pl": "Miska została uzupełniona",
+          "ru": "Миска была пополнена",
+          "ko": "그릇이 다시 채워졌습니다"
         },
         "tokens": [
           {
@@ -93,11 +223,31 @@
             "type": "string",
             "title": {
               "en": "From which bowl",
-              "nl": "Uit welke bakje"
+              "nl": "Uit welke bakje",
+              "da": "Fra hvilken skål",
+              "de": "Aus welcher Schale",
+              "es": "De qué cuenco",
+              "fr": "De quel bol",
+              "it": "Da quale ciotola",
+              "no": "Fra hvilken skål",
+              "sv": "Från vilken skål",
+              "pl": "Z której miski",
+              "ru": "Из какой миски",
+              "ko": "어떤 그릇에서"
             },
             "example": {
               "en": "Left",
-              "nl": "Links"
+              "nl": "Links",
+              "da": "Venstre",
+              "de": "Links",
+              "es": "Izquierda",
+              "fr": "Gauche",
+              "it": "Sinistra",
+              "no": "Venstre",
+              "sv": "Vänster",
+              "pl": "Lewo",
+              "ru": "Лево",
+              "ko": "왼쪽"
             }
           },
           {
@@ -105,7 +255,17 @@
             "type": "number",
             "title": {
               "en": "Amount in grams",
-              "nl": "Hoeveelheid in gram"
+              "nl": "Hoeveelheid in gram",
+              "da": "Mængde i gram",
+              "de": "Menge in Gramm",
+              "es": "Cantidad en gramos",
+              "fr": "Quantité en grammes",
+              "it": "Quantità in grammi",
+              "no": "Mengde i gram",
+              "sv": "Mängd i gram",
+              "pl": "Ilość w gramach",
+              "ru": "Количество в граммах",
+              "ko": "그램 단위 양"
             },
             "example": 1.2
           }
@@ -122,7 +282,17 @@
         "id": "lock_mode_changed",
         "title": {
           "en": "Lock mode has changed",
-          "nl": "Slot modus is veranderd"
+          "nl": "Slot modus is veranderd",
+          "da": "Låsetilstand er ændret",
+          "de": "Sperrmodus hat sich geändert",
+          "es": "El modo de bloqueo ha cambiado",
+          "fr": "Le mode de verrouillage a changé",
+          "it": "La modalità di blocco è cambiata",
+          "no": "Låsemodus er endret",
+          "sv": "Läget för låsning har ändrats",
+          "pl": "Tryb blokady został zmieniony",
+          "ru": "Режим блокировки изменился",
+          "ko": "잠금 모드가 변경되었습니다"
         },
         "tokens": [
           {
@@ -130,11 +300,31 @@
             "type": "string",
             "title": {
               "en": "Lock mode",
-              "nl": "Slot modus"
+              "nl": "Slot modus",
+              "da": "Låsetilstand",
+              "de": "Sperrmodus",
+              "es": "Modo de bloqueo",
+              "fr": "Mode de verrouillage",
+              "it": "Modalità di blocco",
+              "no": "Låsemodus",
+              "sv": "Låsläge",
+              "pl": "Tryb blokady",
+              "ru": "Режим блокировки",
+              "ko": "잠금 모드"
             },
             "example": {
               "en": "Open",
-              "nl": "Open"
+              "nl": "Open",
+              "da": "Åben",
+              "de": "Offen",
+              "es": "Abierto",
+              "fr": "Ouvert",
+              "it": "Aperto",
+              "no": "Åpen",
+              "sv": "Öppen",
+              "pl": "Otwarty",
+              "ru": "Открыто",
+              "ko": "열림"
             }
           }
         ],
@@ -147,28 +337,68 @@
                 "id": "open",
                 "title": {
                   "en": "Open",
-                  "nl": "Open"
+                  "nl": "Open",
+                  "da": "Åben",
+                  "de": "Offen",
+                  "es": "Abierto",
+                  "fr": "Ouvert",
+                  "it": "Aperto",
+                  "no": "Åpen",
+                  "sv": "Öppen",
+                  "pl": "Otwarty",
+                  "ru": "Открыто",
+                  "ko": "열림"
                 }
               },
               {
                 "id": "keep_inside",
                 "title": {
                   "en": "Keep inside",
-                  "nl": "Binnen houden"
+                  "nl": "Binnen houden",
+                  "da": "Hold inde",
+                  "de": "Drinnen halten",
+                  "es": "Mantener dentro",
+                  "fr": "Garder à l'intérieur",
+                  "it": "Tenere dentro",
+                  "no": "Hold inne",
+                  "sv": "Håll inne",
+                  "pl": "Trzymać wewnątrz",
+                  "ru": "Оставить внутри",
+                  "ko": "내부에 유지"
                 }
               },
               {
                 "id": "keep_outside",
                 "title": {
                   "en": "Keep outside",
-                  "nl": "Buiten houden"
+                  "nl": "Buiten houden",
+                  "da": "Hold ude",
+                  "de": "Draußen halten",
+                  "es": "Mantener fuera",
+                  "fr": "Garder à l'extérieur",
+                  "it": "Tenere fuori",
+                  "no": "Hold ute",
+                  "sv": "Håll utanför",
+                  "pl": "Trzymać na zewnątrz",
+                  "ru": "Оставить снаружи",
+                  "ko": "외부에 유지"
                 }
               },
               {
                 "id": "lock_both_ways",
                 "title": {
                   "en": "Lock both ways",
-                  "nl": "Beide kanten vergrendelen"
+                  "nl": "Beide kanten vergrendelen",
+                  "da": "Lås begge veje",
+                  "de": "Beide Richtungen sperren",
+                  "es": "Bloquear en ambas direcciones",
+                  "fr": "Verrouiller dans les deux sens",
+                  "it": "Bloccare in entrambi i modi",
+                  "no": "Lås begge veier",
+                  "sv": "Lås båda riktningarna",
+                  "pl": "Zablokuj w obu kierunkach",
+                  "ru": "Заблокировать в обоих направлениях",
+                  "ko": "양방향 잠금"
                 }
               }
             ],
@@ -180,7 +410,17 @@
         "id": "log_message",
         "title": {
           "en": "The app generates a error",
-          "nl": "De app genereert een error"
+          "nl": "De app genereert een error",
+          "da": "Appen genererer en fejl",
+          "de": "Die App erzeugt einen Fehler",
+          "es": "La aplicación genera un error",
+          "fr": "L'application génère une erreur",
+          "it": "L'app genera un errore",
+          "no": "Appen genererer en feil",
+          "sv": "Appen genererar ett fel",
+          "pl": "Aplikacja generuje błąd",
+          "ru": "Приложение генерирует ошибку",
+          "ko": "앱이 오류를 생성합니다"
         },
         "tokens": [
           {
@@ -188,11 +428,31 @@
             "type": "string",
             "title": {
               "en": "severity",
-              "nl": "severity"
+              "nl": "severity",
+              "da": "alvorlighed",
+              "de": "Schweregrad",
+              "es": "gravedad",
+              "fr": "sévérité",
+              "it": "gravità",
+              "no": "alvorlighetsgrad",
+              "sv": "allvarlighetsgrad",
+              "pl": "dotkliwość",
+              "ru": "серьезность",
+              "ko": "심각도"
             },
             "example": {
               "en": "error",
-              "nl": "error"
+              "nl": "error",
+              "da": "fejl",
+              "de": "Fehler",
+              "es": "error",
+              "fr": "erreur",
+              "it": "errore",
+              "no": "feil",
+              "sv": "fel",
+              "pl": "błąd",
+              "ru": "ошибка",
+              "ko": "오류"
             }
           },
           {
@@ -200,11 +460,31 @@
             "type": "string",
             "title": {
               "en": "message",
-              "nl": "message"
+              "nl": "message",
+              "da": "besked",
+              "de": "Nachricht",
+              "es": "mensaje",
+              "fr": "message",
+              "it": "messaggio",
+              "no": "melding",
+              "sv": "meddelande",
+              "pl": "wiadomość",
+              "ru": "сообщение",
+              "ko": "메시지"
             },
             "example": {
               "en": "An error occur",
-              "nl": "Er is een fout opgetreden"
+              "nl": "Er is een fout opgetreden",
+              "da": "Der opstår en fejl",
+              "de": "Ein Fehler tritt auf",
+              "es": "Ocurre un error",
+              "fr": "Une erreur s'est produite",
+              "it": "Si verifica un errore",
+              "no": "En feil oppstår",
+              "sv": "Ett fel inträffar",
+              "pl": "Wystąpił błąd",
+              "ru": "Происходит ошибка",
+              "ko": "오류가 발생합니다"
             }
           }
         ]
@@ -213,7 +493,17 @@
         "id": "pet_away",
         "title": {
           "en": "A pet goes away",
-          "nl": "Een huisdier is naar buiten gegaan"
+          "nl": "Een huisdier is naar buiten gegaan",
+          "da": "Et kæledyr går væk",
+          "de": "Ein Haustier geht weg",
+          "es": "Una mascota se va",
+          "fr": "Un animal de compagnie s'en va",
+          "it": "Un animale domestico va via",
+          "no": "Et kjæledyr går bort",
+          "sv": "Ett husdjur går iväg",
+          "pl": "Zwierz odchodzi",
+          "ru": "Питомец уходит",
+          "ko": "애완동물이 떠납니다"
         },
         "tokens": [
           {
@@ -221,11 +511,31 @@
             "type": "string",
             "title": {
               "en": "Pet",
-              "nl": "Huisdier"
+              "nl": "Huisdier",
+              "da": "Kæledyr",
+              "de": "Haustier",
+              "es": "Mascota",
+              "fr": "Animal",
+              "it": "Animale",
+              "no": "Kjæledyr",
+              "sv": "Husdjur",
+              "pl": "Zwierzak",
+              "ru": "Питомец",
+              "ko": "애완동물"
             },
             "example": {
               "en": "Mr. kat",
-              "nl": "Mr. kat"
+              "nl": "Mr. kat",
+              "da": "Mr. kat",
+              "de": "Mr. kat",
+              "es": "Mr. kat",
+              "fr": "Mr. kat",
+              "it": "Mr. kat",
+              "no": "Mr. kat",
+              "sv": "Mr. kat",
+              "pl": "Mr. kat",
+              "ru": "Mr. kat",
+              "ko": "Mr. kat"
             }
           }
         ],
@@ -241,7 +551,17 @@
         "id": "pet_has_eating",
         "title": {
           "en": "A pet has eaten",
-          "nl": "Een huisdier heeft gegeten"
+          "nl": "Een huisdier heeft gegeten",
+          "da": "Et kæledyr har spist",
+          "de": "Ein Haustier hat gefressen",
+          "es": "Una mascota ha comido",
+          "fr": "Un animal de compagnie a mangé",
+          "it": "Un animale domestico ha mangiato",
+          "no": "Et kjæledyr har spist",
+          "sv": "Ett husdjur har ätit",
+          "pl": "Zwierzę domowe zjadło",
+          "ru": "Питомец поел",
+          "ko": "반려동물이 먹었습니다"
         },
         "tokens": [
           {
@@ -249,11 +569,31 @@
             "type": "string",
             "title": {
               "en": "Pet",
-              "nl": "Huisdier"
+              "nl": "Huisdier",
+              "da": "Kæledyr",
+              "de": "Haustier",
+              "es": "Mascota",
+              "fr": "Animal",
+              "it": "Animale domestico",
+              "no": "Kjæledyr",
+              "sv": "Husdjur",
+              "pl": "Zwierzę",
+              "ru": "Питомец",
+              "ko": "반려동물"
             },
             "example": {
               "en": "Mr. kat",
-              "nl": "Mr. kat"
+              "nl": "Mr. kat",
+              "da": "Mr. kat",
+              "de": "Mr. kat",
+              "es": "Mr. kat",
+              "fr": "Mr. kat",
+              "it": "Mr. kat",
+              "no": "Mr. kat",
+              "sv": "Mr. kat",
+              "pl": "Mr. kat",
+              "ru": "Mr. kat",
+              "ko": "Mr. kat"
             }
           },
           {
@@ -261,11 +601,31 @@
             "type": "string",
             "title": {
               "en": "From which bowl",
-              "nl": "Uit welke bakje"
+              "nl": "Uit welke bakje",
+              "da": "Fra hvilken skål",
+              "de": "Aus welcher Schüssel",
+              "es": "¿De qué tazón?",
+              "fr": "De quel bol",
+              "it": "Da quale ciotola",
+              "no": "Fra hvilken skål",
+              "sv": "Från vilken skål",
+              "pl": "Z której miski",
+              "ru": "Из какой миски",
+              "ko": "어느 그릇에서"
             },
             "example": {
               "en": "Left",
-              "nl": "Links"
+              "nl": "Links",
+              "da": "Venstre",
+              "de": "Links",
+              "es": "Izquierda",
+              "fr": "Gauche",
+              "it": "Sinistra",
+              "no": "Venstre",
+              "sv": "Vänster",
+              "pl": "Lewo",
+              "ru": "Слева",
+              "ko": "왼쪽"
             }
           },
           {
@@ -273,7 +633,17 @@
             "type": "number",
             "title": {
               "en": "Amount in grams",
-              "nl": "Hoeveelheid in gram"
+              "nl": "Hoeveelheid in gram",
+              "da": "Mængde i gram",
+              "de": "Menge in Gramm",
+              "es": "Cantidad en gramos",
+              "fr": "Quantité en grammes",
+              "it": "Quantità in grammi",
+              "no": "Mengde i gram",
+              "sv": "Mängd i gram",
+              "pl": "Ilość w gramach",
+              "ru": "Количество в граммах",
+              "ko": "그램 단위의 양"
             },
             "example": 1.2
           }
@@ -290,7 +660,17 @@
         "id": "pet_home",
         "title": {
           "en": "A pet came home",
-          "nl": "Een huisdier is thuis gekomen"
+          "nl": "Een huisdier is thuis gekomen",
+          "da": "Et kæledyr kom hjem",
+          "de": "Ein Haustier kam nach Hause",
+          "es": "Una mascota llegó a casa",
+          "fr": "Un animal est rentré à la maison",
+          "it": "Un animale domestico è tornato a casa",
+          "no": "Et kjæledyr kom hjem",
+          "sv": "Ett husdjur kom hem",
+          "pl": "Zwierzę domowe wróciło do domu",
+          "ru": "Питомец вернулся домой",
+          "ko": "애완동물이 집에 돌아왔습니다"
         },
         "tokens": [
           {
@@ -298,11 +678,31 @@
             "type": "string",
             "title": {
               "en": "Pet",
-              "nl": "Huisdier"
+              "nl": "Huisdier",
+              "da": "Kæledyr",
+              "de": "Haustier",
+              "es": "Mascota",
+              "fr": "Animal de compagnie",
+              "it": "Animale domestico",
+              "no": "Kjæledyr",
+              "sv": "Husdjur",
+              "pl": "Zwierzę domowe",
+              "ru": "Питомец",
+              "ko": "애완동물"
             },
             "example": {
               "en": "Mr. kat",
-              "nl": "Mr. kat"
+              "nl": "Mr. kat",
+              "da": "Mr. kat",
+              "de": "Mr. kat",
+              "es": "Mr. kat",
+              "fr": "Mr. kat",
+              "it": "Mr. kat",
+              "no": "Mr. kat",
+              "sv": "Mr. kat",
+              "pl": "Mr. kat",
+              "ru": "Mr. kat",
+              "ko": "Mr. kat"
             }
           }
         ],
@@ -318,11 +718,31 @@
         "id": "specific_pet_away",
         "title": {
           "en": "A specific pet goes away",
-          "nl": "Een specifiek huisdier is naar buiten gegaan"
+          "nl": "Een specifiek huisdier is naar buiten gegaan",
+          "da": "Et specifikt kæledyr går væk",
+          "de": "Ein bestimmtes Haustier geht weg",
+          "es": "Una mascota específica se va",
+          "fr": "Un animal spécifique s'en va",
+          "it": "Un animale specifico se ne va",
+          "no": "Et bestemt kjæledyr går bort",
+          "sv": "Ett specifikt husdjur går bort",
+          "pl": "Konkretny zwierzak odchodzi",
+          "ru": "Конкретное животное уходит",
+          "ko": "특정 애완동물이 나갑니다"
         },
         "titleFormatted": {
           "en": "[[pet]] goes away",
-          "nl": "[[pet]] is naar buiten gegaan"
+          "nl": "[[pet]] is naar buiten gegaan",
+          "da": "[[pet]] går væk",
+          "de": "[[pet]] geht weg",
+          "es": "[[pet]] se va",
+          "fr": "[[pet]] s'en va",
+          "it": "[[pet]] se ne va",
+          "no": "[[pet]] går bort",
+          "sv": "[[pet]] går bort",
+          "pl": "[[pet]] odchodzi",
+          "ru": "[[pet]] уходит",
+          "ko": "[[pet]] 나갑니다"
         },
         "tokens": [
           {
@@ -330,7 +750,17 @@
             "type": "string",
             "title": {
               "en": "Pet",
-              "nl": "Huisdier"
+              "nl": "Huisdier",
+              "da": "Kæledyr",
+              "de": "Haustier",
+              "es": "Mascota",
+              "fr": "Animal",
+              "it": "Animale",
+              "no": "Kjæledyr",
+              "sv": "Husdjur",
+              "pl": "Zwierzak",
+              "ru": "Питомец",
+              "ko": "애완동물"
             },
             "example": {
               "en": "Mr. kat",
@@ -349,11 +779,31 @@
             "type": "autocomplete",
             "title": {
               "en": "Search your pet",
-              "nl": "Zoek je huisdier"
+              "nl": "Zoek je huisdier",
+              "da": "Søg efter dit kæledyr",
+              "de": "Suche dein Haustier",
+              "es": "Busca tu mascota",
+              "fr": "Recherchez votre animal",
+              "it": "Cerca il tuo animale",
+              "no": "Søk etter kjæledyret ditt",
+              "sv": "Sök ditt husdjur",
+              "pl": "Wyszukaj swoje zwierzę",
+              "ru": "Найти питомца",
+              "ko": "애완동물 검색"
             },
             "placeholder": {
               "en": "Search your pet",
-              "nl": "Zoek je huisdier"
+              "nl": "Zoek je huisdier",
+              "da": "Søg efter dit kæledyr",
+              "de": "Suche dein Haustier",
+              "es": "Busca tu mascota",
+              "fr": "Recherchez votre animal",
+              "it": "Cerca il tuo animale",
+              "no": "Søk etter kjæledyret ditt",
+              "sv": "Sök ditt husdjur",
+              "pl": "Wyszukaj swoje zwierzę",
+              "ru": "Найти питомца",
+              "ko": "애완동물 검색"
             }
           }
         ]
@@ -362,11 +812,31 @@
         "id": "specific_pet_has_eating",
         "title": {
           "en": "A specific pet has eaten",
-          "nl": "Een specifiek huisdier heeft gegeten"
+          "nl": "Een specifiek huisdier heeft gegeten",
+          "da": "Et bestemt kæledyr har spist",
+          "de": "Ein bestimmtes Haustier hat gefressen",
+          "es": "Una mascota específica ha comido",
+          "fr": "Un animal spécifique a mangé",
+          "it": "Un animale specifico ha mangiato",
+          "no": "Et bestemt kjæledyr har spist",
+          "sv": "Ett specifikt husdjur har ätit",
+          "pl": "Konkretny zwierzak zjadł",
+          "ru": "Конкретное животное поело",
+          "ko": "특정한 애완동물이 먹었습니다"
         },
         "titleFormatted": {
           "en": "[[pet]] has eaten",
-          "nl": "[[pet]] heeft gegeten"
+          "nl": "[[pet]] heeft gegeten",
+          "da": "[[pet]] har spist",
+          "de": "[[pet]] hat gefressen",
+          "es": "[[pet]] ha comido",
+          "fr": "[[pet]] a mangé",
+          "it": "[[pet]] ha mangiato",
+          "no": "[[pet]] har spist",
+          "sv": "[[pet]] har ätit",
+          "pl": "[[pet]] zjadł",
+          "ru": "[[pet]] поел",
+          "ko": "[[pet]] 먹었습니다"
         },
         "tokens": [
           {
@@ -374,11 +844,31 @@
             "type": "string",
             "title": {
               "en": "Pet",
-              "nl": "Huisdier"
+              "nl": "Huisdier",
+              "da": "Kæledyr",
+              "de": "Haustier",
+              "es": "Mascota",
+              "fr": "Animal",
+              "it": "Animale domestico",
+              "no": "Kjæledyr",
+              "sv": "Husdjur",
+              "pl": "Zwierzę domowe",
+              "ru": "Домашнее животное",
+              "ko": "애완동물"
             },
             "example": {
               "en": "Mr. kat",
-              "nl": "Mr. kat"
+              "nl": "Mr. kat",
+              "da": "Mr. kat",
+              "de": "Mr. kat",
+              "es": "Sr. kat",
+              "fr": "M. kat",
+              "it": "Sig. kat",
+              "no": "Mr. kat",
+              "sv": "Mr. kat",
+              "pl": "Pan kat",
+              "ru": "Мистер кат",
+              "ko": "미스터 캣"
             }
           },
           {
@@ -386,11 +876,31 @@
             "type": "string",
             "title": {
               "en": "From which bowl",
-              "nl": "Uit welke bakje"
+              "nl": "Uit welke bakje",
+              "da": "Fra hvilken skål",
+              "de": "Aus welcher Schüssel",
+              "es": "De qué bol",
+              "fr": "De quel bol",
+              "it": "Da quale ciotola",
+              "no": "Fra hvilken skål",
+              "sv": "Från vilken skål",
+              "pl": "Z której miski",
+              "ru": "Из какой миски",
+              "ko": "어떤 그릇에서"
             },
             "example": {
               "en": "Left",
-              "nl": "Links"
+              "nl": "Links",
+              "da": "Venstre",
+              "de": "Links",
+              "es": "Izquierda",
+              "fr": "Gauche",
+              "it": "Sinistra",
+              "no": "Venstre",
+              "sv": "Vänster",
+              "pl": "Lewo",
+              "ru": "Лево",
+              "ko": "왼쪽"
             }
           },
           {
@@ -398,7 +908,17 @@
             "type": "number",
             "title": {
               "en": "Amount in grams",
-              "nl": "Hoeveelheid in gram"
+              "nl": "Hoeveelheid in gram",
+              "da": "Mængde i gram",
+              "de": "Menge in Gramm",
+              "es": "Cantidad en gramos",
+              "fr": "Quantité en grammes",
+              "it": "Quantità in grammi",
+              "no": "Mengde i gram",
+              "sv": "Mängd i gram",
+              "pl": "Ilość w gramach",
+              "ru": "Количество в граммах",
+              "ko": "그램 단위의 양"
             },
             "example": 1.2
           }
@@ -414,11 +934,31 @@
             "type": "autocomplete",
             "title": {
               "en": "Search your pet",
-              "nl": "Zoek je huisdier"
+              "nl": "Zoek je huisdier",
+              "da": "Søg dit kæledyr",
+              "de": "Suche dein Haustier",
+              "es": "Busca tu mascota",
+              "fr": "Recherchez votre animal",
+              "it": "Cerca il tuo animale domestico",
+              "no": "Søk etter kjæledyret ditt",
+              "sv": "Sök ditt husdjur",
+              "pl": "Szukaj swojego zwierzaka",
+              "ru": "Найдите своего питомца",
+              "ko": "애완동물 검색"
             },
             "placeholder": {
               "en": "Search your pet",
-              "nl": "Zoek je huisdier"
+              "nl": "Zoek je huisdier",
+              "da": "Søg dit kæledyr",
+              "de": "Suche dein Haustier",
+              "es": "Busca tu mascota",
+              "fr": "Recherchez votre animal",
+              "it": "Cerca il tuo animale domestico",
+              "no": "Søk etter kjæledyret ditt",
+              "sv": "Sök ditt husdjur",
+              "pl": "Szukaj swojego zwierzaka",
+              "ru": "Найдите своего питомца",
+              "ko": "애완동물 검색"
             }
           }
         ]
@@ -427,11 +967,31 @@
         "id": "specific_pet_home",
         "title": {
           "en": "A specific pet came home",
-          "nl": "Een specifiek huisdier is thuis gekomen"
+          "nl": "Een specifiek huisdier is thuis gekomen",
+          "da": "Et bestemt kæledyr kom hjem",
+          "de": "Ein bestimmtes Haustier kam nach Hause",
+          "es": "Una mascota específica llegó a casa",
+          "fr": "Un animal de compagnie spécifique est rentré à la maison",
+          "it": "Un animale domestico specifico è tornato a casa",
+          "no": "Et bestemt kjæledyr kom hjem",
+          "sv": "Ett specifikt husdjur kom hem",
+          "pl": "Konkretny zwierzak wrócił do domu",
+          "ru": "Конкретное домашнее животное вернулось домой",
+          "ko": "특정 애완동물이 집에 돌아왔습니다"
         },
         "titleFormatted": {
           "en": "[[pet]] came home",
-          "nl": "[[pet]] is thuis gekomen"
+          "nl": "[[pet]] is thuis gekomen",
+          "da": "[[pet]] kom hjem",
+          "de": "[[pet]] kam nach Hause",
+          "es": "[[pet]] llegó a casa",
+          "fr": "[[pet]] est rentré à la maison",
+          "it": "[[pet]] è tornato a casa",
+          "no": "[[pet]] kom hjem",
+          "sv": "[[pet]] kom hem",
+          "pl": "[[pet]] wrócił do domu",
+          "ru": "[[pet]] вернулся домой",
+          "ko": "[[pet]] 집에 돌아왔습니다"
         },
         "tokens": [
           {
@@ -439,7 +999,17 @@
             "type": "string",
             "title": {
               "en": "Pet",
-              "nl": "Huisdier"
+              "nl": "Huisdier",
+              "da": "Kæledyr",
+              "de": "Haustier",
+              "es": "Mascota",
+              "fr": "Animal",
+              "it": "Animale domestico",
+              "no": "Kjæledyr",
+              "sv": "Husdjur",
+              "pl": "Zwierzak",
+              "ru": "Домашнее животное",
+              "ko": "애완동물"
             },
             "example": {
               "en": "Mr. kat",
@@ -458,11 +1028,31 @@
             "type": "autocomplete",
             "title": {
               "en": "Search your pet",
-              "nl": "Zoek je huisdier"
+              "nl": "Zoek je huisdier",
+              "da": "Søg dit kæledyr",
+              "de": "Suche dein Haustier",
+              "es": "Busca tu mascota",
+              "fr": "Recherchez votre animal",
+              "it": "Cerca il tuo animale domestico",
+              "no": "Søk etter kjæledyret ditt",
+              "sv": "Sök ditt husdjur",
+              "pl": "Wyszukaj swojego zwierzaka",
+              "ru": "Поиск вашего питомца",
+              "ko": "애완동물 검색"
             },
             "placeholder": {
               "en": "Search your pet",
-              "nl": "Zoek je huisdier"
+              "nl": "Zoek je huisdier",
+              "da": "Søg dit kæledyr",
+              "de": "Suche dein Haustier",
+              "es": "Busca tu mascota",
+              "fr": "Recherchez votre animal",
+              "it": "Cerca il tuo animale domestico",
+              "no": "Søk etter kjæledyret ditt",
+              "sv": "Sök ditt husdjur",
+              "pl": "Wyszukaj swojego zwierzaka",
+              "ru": "Поиск вашего питомца",
+              "ko": "애완동물 검색"
             }
           }
         ]
@@ -471,7 +1061,17 @@
         "id": "weight_changed",
         "title": {
           "en": "The weight is changed",
-          "nl": "Het gewicht is veranderd"
+          "nl": "Het gewicht is veranderd",
+          "da": "Vægten er ændret",
+          "de": "Das Gewicht hat sich geändert",
+          "es": "El peso ha cambiado",
+          "fr": "Le poids a changé",
+          "it": "Il peso è cambiato",
+          "no": "Vekten er endret",
+          "sv": "Vikten har ändrats",
+          "pl": "Waga została zmieniona",
+          "ru": "Вес изменен",
+          "ko": "무게가 변경되었습니다"
         },
         "tokens": [
           {
@@ -479,11 +1079,31 @@
             "type": "string",
             "title": {
               "en": "From which bowl",
-              "nl": "Uit welke bakje"
+              "nl": "Uit welke bakje",
+              "da": "Fra hvilken skål",
+              "de": "Aus welcher Schüssel",
+              "es": "De qué cuenco",
+              "fr": "De quel bol",
+              "it": "Da quale ciotola",
+              "no": "Fra hvilken bolle",
+              "sv": "Från vilken skål",
+              "pl": "Z której miski",
+              "ru": "Из какой миски",
+              "ko": "어떤 그릇에서"
             },
             "example": {
               "en": "Left",
-              "nl": "Links"
+              "nl": "Links",
+              "da": "Venstre",
+              "de": "Links",
+              "es": "Izquierda",
+              "fr": "Gauche",
+              "it": "Sinistra",
+              "no": "Venstre",
+              "sv": "Vänster",
+              "pl": "Lewa",
+              "ru": "Лево",
+              "ko": "왼쪽"
             }
           },
           {
@@ -491,7 +1111,17 @@
             "type": "number",
             "title": {
               "en": "Amount in grams",
-              "nl": "Hoeveelheid in gram"
+              "nl": "Hoeveelheid in gram",
+              "da": "Mængde i gram",
+              "de": "Menge in Gramm",
+              "es": "Cantidad en gramos",
+              "fr": "Quantité en grammes",
+              "it": "Quantità in grammi",
+              "no": "Mengde i gram",
+              "sv": "Mängd i gram",
+              "pl": "Ilość w gramach",
+              "ru": "Количество в граммах",
+              "ko": "그램 단위 양"
             },
             "example": 1.2
           }
@@ -510,18 +1140,48 @@
         "id": "lock_mode_is",
         "title": {
           "en": "Lock mode !{{is|is not}}",
-          "nl": "Slot modus !{{is|is niet}}"
+          "nl": "Slot modus !{{is|is niet}}",
+          "da": "Lås tilstand !{{er|er ikke}}",
+          "de": "Sperrmodus !{{ist|ist nicht}}",
+          "es": "Modo de bloqueo !{{es|no es}}",
+          "fr": "Mode verrouillage !{{est|n'est pas}}",
+          "it": "Modalità blocco !{{è|non è}}",
+          "no": "Låsemodus !{{er|er ikke}}",
+          "sv": "Låsläge !{{är|är inte}}",
+          "pl": "Tryb blokady !{{jest|nie jest}}",
+          "ru": "Режим блокировки !{{включен|не включен}}",
+          "ko": "잠금 모드 !{{입니다|아닙니다}}"
         },
         "titleFormatted": {
           "en": "Lock mode !{{is|is not}} [[lock_mode]]",
-          "nl": "Slot modus !{{is|is niet}} [[lock_mode]]"
+          "nl": "Slot modus !{{is|is niet}} [[lock_mode]]",
+          "da": "Lås tilstand !{{er|er ikke}} [[lock_mode]]",
+          "de": "Sperrmodus !{{ist|ist nicht}} [[lock_mode]]",
+          "es": "Modo de bloqueo !{{es|no es}} [[lock_mode]]",
+          "fr": "Mode verrouillage !{{est|n'est pas}} [[lock_mode]]",
+          "it": "Modalità blocco !{{è|non è}} [[lock_mode]]",
+          "no": "Låsemodus !{{er|er ikke}} [[lock_mode]]",
+          "sv": "Låsläge !{{är|är inte}} [[lock_mode]]",
+          "pl": "Tryb blokady !{{jest|nie jest}} [[lock_mode]]",
+          "ru": "Режим блокировки !{{включен|не включен}} [[lock_mode]]",
+          "ko": "잠금 모드 !{{입니다|아닙니다}} [[lock_mode]]"
         },
         "args": [
           {
             "name": "lock_mode",
             "title": {
               "en": "Lock mode",
-              "nl": "Lock mode"
+              "nl": "Lock mode",
+              "da": "Lås tilstand",
+              "de": "Sperrmodus",
+              "es": "Modo de bloqueo",
+              "fr": "Mode verrouillage",
+              "it": "Modalità blocco",
+              "no": "Låsemodus",
+              "sv": "Låsläge",
+              "pl": "Tryb blokady",
+              "ru": "Режим блокировки",
+              "ko": "잠금 모드"
             },
             "type": "dropdown",
             "values": [
@@ -529,28 +1189,68 @@
                 "id": "open",
                 "title": {
                   "en": "Open",
-                  "nl": "Open"
+                  "nl": "Open",
+                  "da": "Åben",
+                  "de": "Offen",
+                  "es": "Abierto",
+                  "fr": "Ouvert",
+                  "it": "Aperto",
+                  "no": "Åpen",
+                  "sv": "Öppen",
+                  "pl": "Otwarty",
+                  "ru": "Открыто",
+                  "ko": "열림"
                 }
               },
               {
                 "id": "keep_inside",
                 "title": {
                   "en": "Keep inside",
-                  "nl": "Binnen houden"
+                  "nl": "Binnen houden",
+                  "da": "Behold indendørs",
+                  "de": "Innen behalten",
+                  "es": "Mantener adentro",
+                  "fr": "Garder à l'intérieur",
+                  "it": "Tenere dentro",
+                  "no": "Hold inne",
+                  "sv": "Behåll inne",
+                  "pl": "Pozostawić wewnątrz",
+                  "ru": "Оставить внутри",
+                  "ko": "안에 유지"
                 }
               },
               {
                 "id": "keep_outside",
                 "title": {
                   "en": "Keep outside",
-                  "nl": "Buiten houden"
+                  "nl": "Buiten houden",
+                  "da": "Behold udendørs",
+                  "de": "Draußen behalten",
+                  "es": "Mantener afuera",
+                  "fr": "Garder à l'extérieur",
+                  "it": "Tenere fuori",
+                  "no": "Hold ute",
+                  "sv": "Behåll ute",
+                  "pl": "Pozostawić na zewnątrz",
+                  "ru": "Оставить снаружи",
+                  "ko": "밖에 유지"
                 }
               },
               {
                 "id": "lock_both_ways",
                 "title": {
                   "en": "Lock both ways",
-                  "nl": "Beide kanten vergrendelen"
+                  "nl": "Beide kanten vergrendelen",
+                  "da": "Lås begge veje",
+                  "de": "Beide Wege sperren",
+                  "es": "Bloquear ambos lados",
+                  "fr": "Verrouiller dans les deux sens",
+                  "it": "Blocca in entrambi i modi",
+                  "no": "Lås begge veier",
+                  "sv": "Lås båda riktningar",
+                  "pl": "Zablokuj obie strony",
+                  "ru": "Заблокировать в обе стороны",
+                  "ko": "양방향 잠금"
                 }
               }
             ],
@@ -564,17 +1264,47 @@
         "id": "set_lock_mode",
         "title": {
           "en": "Set lock mode to:",
-          "nl": "Zet slot modus naar:"
+          "nl": "Zet slot modus naar:",
+          "da": "Indstil låsetilstand til:",
+          "de": "Sperrmodus einstellen auf:",
+          "es": "Establecer modo de bloqueo a:",
+          "fr": "Définir le mode de verrouillage sur :",
+          "it": "Imposta la modalità di blocco su:",
+          "no": "Sett låsemodus til:",
+          "sv": "Ställ in låsläget till:",
+          "pl": "Ustaw tryb blokady na:",
+          "ru": "Установить режим блокировки на:",
+          "ko": "잠금 모드를 다음으로 설정:"
         },
         "titleFormatted": {
           "en": "Set lock mode to [[lock_mode]]",
-          "nl": "Zet slot modus naar [[lock_mode]]"
+          "nl": "Zet slot modus naar [[lock_mode]]",
+          "da": "Indstil låsetilstand til [[lock_mode]]",
+          "de": "Sperrmodus einstellen auf [[lock_mode]]",
+          "es": "Establecer modo de bloqueo a [[lock_mode]]",
+          "fr": "Définir le mode de verrouillage sur [[lock_mode]]",
+          "it": "Imposta la modalità di blocco su [[lock_mode]]",
+          "no": "Sett låsemodus til [[lock_mode]]",
+          "sv": "Ställ in låsläget till [[lock_mode]]",
+          "pl": "Ustaw tryb blokady na [[lock_mode]]",
+          "ru": "Установить режим блокировки на [[lock_mode]]",
+          "ko": "잠금 모드를 [[lock_mode]](으)로 설정"
         },
         "args": [
           {
             "title": {
               "en": "Lock mode",
-              "nl": "Lock mode"
+              "nl": "Lock mode",
+              "da": "Låsetilstand",
+              "de": "Sperrmodus",
+              "es": "Modo de bloqueo",
+              "fr": "Mode de verrouillage",
+              "it": "Modalità di blocco",
+              "no": "Låsemodus",
+              "sv": "Låsläge",
+              "pl": "Tryb blokady",
+              "ru": "Режим блокировки",
+              "ko": "잠금 모드"
             },
             "name": "lock_mode",
             "type": "dropdown",
@@ -583,28 +1313,68 @@
                 "id": "open",
                 "title": {
                   "en": "Open",
-                  "nl": "Open"
+                  "nl": "Open",
+                  "da": "Åben",
+                  "de": "Offen",
+                  "es": "Abierto",
+                  "fr": "Ouvert",
+                  "it": "Aperto",
+                  "no": "Åpen",
+                  "sv": "Öppen",
+                  "pl": "Otwarty",
+                  "ru": "Открыто",
+                  "ko": "열림"
                 }
               },
               {
                 "id": "keep_inside",
                 "title": {
                   "en": "Keep inside",
-                  "nl": "Binnen houden"
+                  "nl": "Binnen houden",
+                  "da": "Bliv inde",
+                  "de": "Drinnen bleiben",
+                  "es": "Permanecer dentro",
+                  "fr": "Rester à l'intérieur",
+                  "it": "Rimani dentro",
+                  "no": "Hold deg inne",
+                  "sv": "Stanna inne",
+                  "pl": "Zostań wewnątrz",
+                  "ru": "Остаться внутри",
+                  "ko": "안에 있도록"
                 }
               },
               {
                 "id": "keep_outside",
                 "title": {
                   "en": "Keep outside",
-                  "nl": "Buiten houden"
+                  "nl": "Buiten houden",
+                  "da": "Bliv udenfor",
+                  "de": "Draußen bleiben",
+                  "es": "Permanecer fuera",
+                  "fr": "Rester dehors",
+                  "it": "Rimani fuori",
+                  "no": "Hold deg utenfor",
+                  "sv": "Stanna ute",
+                  "pl": "Zostań na zewnątrz",
+                  "ru": "Остаться снаружи",
+                  "ko": "밖에 있도록"
                 }
               },
               {
                 "id": "lock_both_ways",
                 "title": {
                   "en": "Lock both ways",
-                  "nl": "Beide kanten vergrendelen"
+                  "nl": "Beide kanten vergrendelen",
+                  "da": "Lås begge veje",
+                  "de": "Beidseitig verriegeln",
+                  "es": "Bloquear ambas direcciones",
+                  "fr": "Verrouiller dans les deux sens",
+                  "it": "Blocca in entrambe le direzioni",
+                  "no": "Lås begge veier",
+                  "sv": "Lås båda vägarna",
+                  "pl": "Zablokuj w obu kierunkach",
+                  "ru": "Заблокировать в обе стороны",
+                  "ko": "양방향 잠금"
                 }
               }
             ],
@@ -619,7 +1389,17 @@
       "id": "surefeed-petfeeder-connect",
       "name": {
         "en": "Surefeed Microchip Petfeeder",
-        "nl": "Sureflap Microchip Voerbak"
+        "nl": "Sureflap Microchip Voerbak",
+        "da": "Surefeed Mikrochip Dyrefeeder",
+        "de": "Surefeed Mikrochip Futterautomat",
+        "es": "Surefeed Comedero con Microchip",
+        "fr": "Surefeed Distributeur de Nourriture à Puce",
+        "it": "Surefeed Dispenser Microchip per Animali",
+        "no": "Surefeed Mikrochip Mateautomat",
+        "sv": "Surefeed Mikrochip Matningsstation",
+        "pl": "Surefeed Mikroczipowy Podajnik Karmy",
+        "ru": "Surefeed Микрочип Кормушка",
+        "ko": "Surefeed 마이크로칩 급이기"
       },
       "platforms": [
         "local"
@@ -635,21 +1415,51 @@
         "weight.left": {
           "title": {
             "en": "Weight left bowl",
-            "nl": "Gewicht bakje links"
+            "nl": "Gewicht bakje links",
+            "da": "Vægt venstre skål",
+            "de": "Gewicht linke Schale",
+            "es": "Peso del bol izquierdo",
+            "fr": "Poids bols gauche",
+            "it": "Peso ciotola sinistra",
+            "no": "Vekt venstre bolle",
+            "sv": "Vikt vänster skål",
+            "pl": "Waga miski po lewej",
+            "ru": "Вес левой миски",
+            "ko": "왼쪽 그릇 무게"
           },
           "decimals": 2
         },
         "weight.right": {
           "title": {
             "en": "Weight right bowl",
-            "nl": "Gewicht bakje rechts"
+            "nl": "Gewicht bakje rechts",
+            "da": "Vægt højre skål",
+            "de": "Gewicht rechte Schale",
+            "es": "Peso del bol derecho",
+            "fr": "Poids bols droit",
+            "it": "Peso ciotola destra",
+            "no": "Vekt høyre bolle",
+            "sv": "Vikt höger skål",
+            "pl": "Waga miski po prawej",
+            "ru": "Вес правой миски",
+            "ko": "오른쪽 그릇 무게"
           },
           "decimals": 2
         },
         "weight.both": {
           "title": {
             "en": "Weight bowl",
-            "nl": "Gewicht bakje"
+            "nl": "Gewicht bakje",
+            "da": "Vægt skål",
+            "de": "Gewicht Schale",
+            "es": "Peso del bol",
+            "fr": "Poids du bol",
+            "it": "Peso ciotola",
+            "no": "Vekt bolle",
+            "sv": "Vikt skål",
+            "pl": "Waga miski",
+            "ru": "Вес миски",
+            "ko": "그릇 무게"
           },
           "decimals": 2
         }
@@ -670,11 +1480,31 @@
             "logo": "../assets/login.svg",
             "usernameLabel": {
               "en": "E-mail address",
-              "nl": "E-mail adres"
+              "nl": "E-mail adres",
+              "da": "E-mail adresse",
+              "de": "E-Mail-Adresse",
+              "es": "Dirección de correo electrónico",
+              "fr": "Adresse e-mail",
+              "it": "Indirizzo e-mail",
+              "no": "E-postadresse",
+              "sv": "E-postadress",
+              "pl": "Adres e-mail",
+              "ru": "Адрес электронной почты",
+              "ko": "이메일 주소"
             },
             "passwordLabel": {
               "en": "Password",
-              "nl": "Wachtwoord"
+              "nl": "Wachtwoord",
+              "da": "Adgangskode",
+              "de": "Passwort",
+              "es": "Contraseña",
+              "fr": "Mot de passe",
+              "it": "Password",
+              "no": "Passord",
+              "sv": "Lösenord",
+              "pl": "Hasło",
+              "ru": "Пароль",
+              "ko": "비밀번호"
             }
           }
         },
@@ -700,7 +1530,17 @@
           "type": "group",
           "label": {
             "en": "Device information",
-            "nl": "Device informatie"
+            "nl": "Device informatie",
+            "da": "Enhedsinformation",
+            "de": "Geräteinformationen",
+            "es": "Información del dispositivo",
+            "fr": "Informations sur l'appareil",
+            "it": "Informazioni sul dispositivo",
+            "no": "Enhetsinformasjon",
+            "sv": "Enhetsinformation",
+            "pl": "Informacje o urządzeniu",
+            "ru": "Информация об устройстве",
+            "ko": "장치 정보"
           },
           "children": [
             {
@@ -708,7 +1548,17 @@
               "type": "radio",
               "label": {
                 "en": "Bowl type",
-                "nl": "Type bakje"
+                "nl": "Type bakje",
+                "da": "Skål type",
+                "de": "Schalentyp",
+                "es": "Tipo de bol",
+                "fr": "Type de bol",
+                "it": "Tipo di ciotola",
+                "no": "Bolletype",
+                "sv": "Skåltyp",
+                "pl": "Typ miski",
+                "ru": "Тип миски",
+                "ko": "그릇 종류"
               },
               "value": "single",
               "values": [
@@ -716,14 +1566,34 @@
                   "id": "single",
                   "label": {
                     "en": "Single bowl",
-                    "nl": "Enkel bakje"
+                    "nl": "Enkel bakje",
+                    "da": "Enkelt skål",
+                    "de": "Einzelschale",
+                    "es": "Bol único",
+                    "fr": "Bol unique",
+                    "it": "Ciotola singola",
+                    "no": "Enkel bolle",
+                    "sv": "Enkel skål",
+                    "pl": "Pojedyncza miska",
+                    "ru": "Одинарная миска",
+                    "ko": "단일 그릇"
                   }
                 },
                 {
                   "id": "double",
                   "label": {
                     "en": "Double bowl",
-                    "nl": "Dubbel bakje"
+                    "nl": "Dubbel bakje",
+                    "da": "Dobbelt skål",
+                    "de": "Doppelschale",
+                    "es": "Doble bol",
+                    "fr": "Bol double",
+                    "it": "Ciotola doppia",
+                    "no": "Dobbelt bolle",
+                    "sv": "Dubbel skål",
+                    "pl": "Podwójna miska",
+                    "ru": "Двойная миска",
+                    "ko": "이중 그릇"
                   }
                 }
               ]
@@ -735,7 +1605,17 @@
     {
       "name": {
         "en": "Sureflap Cat Flap Connect",
-        "nl": "Sureflap Katten Flap Connect"
+        "nl": "Sureflap Katten Flap Connect",
+        "da": "Sureflap Kattelem Connect",
+        "de": "Sureflap Katzenklappe Connect",
+        "es": "Sureflap Gatera Connect",
+        "fr": "Sureflap Chatière Connect",
+        "it": "Sureflap Gattaiola Connect",
+        "no": "Sureflap Katteluke Connect",
+        "sv": "Sureflap Kattlucka Connect",
+        "pl": "Sureflap Drzwiczki Connect",
+        "ru": "Sureflap Кошачья Дверца Connect",
+        "ko": "Sureflap 고양이 플랩 Connect"
       },
       "platforms": [
         "local"
@@ -764,11 +1644,31 @@
             "logo": "../assets/login.svg",
             "usernameLabel": {
               "en": "E-mail address",
-              "nl": "E-mail adres"
+              "nl": "E-mail adres",
+              "da": "E-mail adresse",
+              "de": "E-Mail-Adresse",
+              "es": "Dirección de correo",
+              "fr": "Adresse e-mail",
+              "it": "Indirizzo e-mail",
+              "no": "E-postadresse",
+              "sv": "E-postadress",
+              "pl": "Adres e-mail",
+              "ru": "Адрес электронной почты",
+              "ko": "이메일 주소"
             },
             "passwordLabel": {
               "en": "Password",
-              "nl": "Wachtwoord"
+              "nl": "Wachtwoord",
+              "da": "Adgangskode",
+              "de": "Passwort",
+              "es": "Contraseña",
+              "fr": "Mot de passe",
+              "it": "Password",
+              "no": "Passord",
+              "sv": "Lösenord",
+              "pl": "Hasło",
+              "ru": "Пароль",
+              "ko": "비밀번호"
             }
           }
         },
@@ -797,7 +1697,17 @@
     {
       "name": {
         "en": "Sureflap Pet Door Connect",
-        "nl": "Sureflap Huisdierluik Connect"
+        "nl": "Sureflap Huisdierluik Connect",
+        "da": "Sureflap Kæledyrsdør Connect",
+        "de": "Sureflap Haustiertür Connect",
+        "es": "Sureflap Puerta para Mascotas Connect",
+        "fr": "Sureflap Porte pour Animaux Connect",
+        "it": "Sureflap Porta per Animali Connect",
+        "no": "Sureflap Kjæledyrsdør Connect",
+        "sv": "Sureflap Husdjursdörr Connect",
+        "pl": "Sureflap Drzwiczki dla Zwierząt Connect",
+        "ru": "Sureflap Дверца для домашних животных Connect",
+        "ko": "Sureflap 애완동물 문 Connect"
       },
       "platforms": [
         "local"
@@ -826,11 +1736,31 @@
             "logo": "../assets/login.svg",
             "usernameLabel": {
               "en": "E-mail address",
-              "nl": "E-mail adres"
+              "nl": "E-mail adres",
+              "da": "E-mail adresse",
+              "de": "E-Mail-Adresse",
+              "es": "Dirección de correo electrónico",
+              "fr": "Adresse e-mail",
+              "it": "Indirizzo e-mail",
+              "no": "E-postadresse",
+              "sv": "E-postadress",
+              "pl": "Adres e-mail",
+              "ru": "Электронная почта",
+              "ko": "이메일 주소"
             },
             "passwordLabel": {
               "en": "Password",
-              "nl": "Wachtwoord"
+              "nl": "Wachtwoord",
+              "da": "Adgangskode",
+              "de": "Passwort",
+              "es": "Contraseña",
+              "fr": "Mot de passe",
+              "it": "Password",
+              "no": "Passord",
+              "sv": "Lösenord",
+              "pl": "Hasło",
+              "ru": "Пароль",
+              "ko": "비밀번호"
             }
           }
         },
@@ -860,35 +1790,85 @@
       "type": "enum",
       "title": {
         "en": "Lock mode",
-        "nl": "Slot modus"
+        "nl": "Slot modus",
+        "da": "Låsetilstand",
+        "de": "Verriegelungsmodus",
+        "es": "Modo de bloqueo",
+        "fr": "Mode de verrouillage",
+        "it": "Modalità di blocco",
+        "no": "Låsemodus",
+        "sv": "Låsläge",
+        "pl": "Tryb zamka",
+        "ru": "Режим блокировки",
+        "ko": "잠금 모드"
       },
       "values": [
         {
           "id": "open",
           "title": {
             "en": "Open",
-            "nl": "Open"
+            "nl": "Open",
+            "da": "Åben",
+            "de": "Offen",
+            "es": "Abierto",
+            "fr": "Ouvert",
+            "it": "Aperto",
+            "no": "Åpen",
+            "sv": "Öppen",
+            "pl": "Otwarty",
+            "ru": "Открыто",
+            "ko": "열림"
           }
         },
         {
           "id": "keep_inside",
           "title": {
             "en": "Keep inside",
-            "nl": "Binnen houden"
+            "nl": "Binnen houden",
+            "da": "Hold inde",
+            "de": "Drinnen bleiben",
+            "es": "Mantener dentro",
+            "fr": "Garder à l'intérieur",
+            "it": "Tenere dentro",
+            "no": "Hold inne",
+            "sv": "Håll inne",
+            "pl": "Trzymaj wewnątrz",
+            "ru": "Оставаться внутри",
+            "ko": "안쪽으로 유지"
           }
         },
         {
           "id": "keep_outside",
           "title": {
             "en": "Keep outside",
-            "nl": "Buiten houden"
+            "nl": "Buiten houden",
+            "da": "Hold ude",
+            "de": "Draußen bleiben",
+            "es": "Mantener fuera",
+            "fr": "Garder à l'extérieur",
+            "it": "Tenere fuori",
+            "no": "Hold ute",
+            "sv": "Håll ute",
+            "pl": "Trzymaj na zewnątrz",
+            "ru": "Оставаться снаружи",
+            "ko": "바깥으로 유지"
           }
         },
         {
           "id": "lock_both_ways",
           "title": {
             "en": "Lock both ways",
-            "nl": "Beide kanten vergrendelen"
+            "nl": "Beide kanten vergrendelen",
+            "da": "Lås begge veje",
+            "de": "Beidseitig verriegeln",
+            "es": "Bloquear en ambos sentidos",
+            "fr": "Verrouiller dans les deux sens",
+            "it": "Blocca in entrambe le direzioni",
+            "no": "Lås begge veier",
+            "sv": "Lås båda vägar",
+            "pl": "Zablokuj w obu kierunkach",
+            "ru": "Заблокировать в обоих направлениях",
+            "ko": "양방향 잠금"
           }
         }
       ],
@@ -901,14 +1881,34 @@
       "type": "number",
       "title": {
         "en": "Weight in grams",
-        "nl": "Gewicht in gram"
+        "nl": "Gewicht in gram",
+        "da": "Vægt i gram",
+        "de": "Gewicht in Gramm",
+        "es": "Peso en gramos",
+        "fr": "Poids en grammes",
+        "it": "Peso in grammi",
+        "no": "Vekt i gram",
+        "sv": "Vikt i gram",
+        "pl": "Waga w gramach",
+        "ru": "Вес в граммах",
+        "ko": "무게 (그램)"
       },
       "uiComponent": "sensor",
       "getable": true,
       "setable": false,
       "units": {
         "en": "grams",
-        "nl": "gram"
+        "nl": "gram",
+        "da": "gram",
+        "de": "Gramm",
+        "es": "gramos",
+        "fr": "grammes",
+        "it": "grammi",
+        "no": "gram",
+        "sv": "gram",
+        "pl": "gramów",
+        "ru": "граммы",
+        "ko": "그램"
       },
       "min": 0,
       "max": 500,

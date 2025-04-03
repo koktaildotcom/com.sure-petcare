@@ -1,6 +1,6 @@
 {
   "id": "com.sure-petcare",
-  "version": "2.0.9",
+  "version": "2.0.10",
   "compatibility": ">=5.0.0",
   "platforms": [
     "local"
@@ -9,11 +9,31 @@
   "sdk": 3,
   "name": {
     "en": "Sure Petcare",
-    "nl": "Sure Petcare"
+    "nl": "Sure Petcare",
+    "da": "Sure Petcare",
+    "de": "Sure Petcare",
+    "es": "Sure Petcare",
+    "fr": "Sure Petcare",
+    "it": "Sure Petcare",
+    "no": "Sure Petcare",
+    "sv": "Sure Petcare",
+    "pl": "Sure Petcare",
+    "ru": "Sure Petcare",
+    "ko": "Sure Petcare"
   },
   "description": {
     "en": "A smart way to keep your pets safe and healthy",
-    "nl": "Een slimme manier om uw huisdieren veilig en gezond te houden"
+    "nl": "Een slimme manier om uw huisdieren veilig en gezond te houden",
+    "da": "En smart måde at holde dine kæledyr sikre og sunde",
+    "de": "Eine intelligente Möglichkeit, Ihre Haustiere sicher und gesund zu halten",
+    "es": "Una manera inteligente de mantener a tus mascotas seguras y saludables",
+    "fr": "Une manière intelligente de garder vos animaux en sécurité et en bonne santé",
+    "it": "Un modo intelligente per mantenere i tuoi animali al sicuro e in salute",
+    "no": "En smart måte å holde kjæledyrene dine trygge og sunne",
+    "sv": "Ett smart sätt att hålla dina husdjur säkra och friska",
+    "pl": "Inteligentny sposób na zapewnienie bezpieczeństwa i zdrowia twoich zwierząt",
+    "ru": "Умный способ сохранить ваших питомцев в безопасности и здоровье",
+    "ko": "반려동물을 안전하고 건강하게 지키는 스마트한 방법"
   },
   "category": [
     "localization",
@@ -38,6 +58,106 @@
       "hond",
       "sureflap",
       "kattenluik",
+      "surefeed"
+    ],
+    "da": [
+      "sure",
+      "kæledyrspleje",
+      "kæledyr",
+      "kat",
+      "hund",
+      "sureflap",
+      "kattelem",
+      "surefeed"
+    ],
+    "de": [
+      "sure",
+      "haustierpflege",
+      "haustier",
+      "katze",
+      "hund",
+      "sureflap",
+      "katzenklappe",
+      "surefeed"
+    ],
+    "es": [
+      "sure",
+      "ocuparse de mascotas",
+      "mascota",
+      "gato",
+      "perro",
+      "sureflap",
+      "gatera",
+      "surefeed"
+    ],
+    "fr": [
+      "sure",
+      "soin des animaux",
+      "animal de compagnie",
+      "chat",
+      "chien",
+      "sureflap",
+      "chatière",
+      "surefeed"
+    ],
+    "it": [
+      "sure",
+      "cura degli animali",
+      "animale domestico",
+      "gatto",
+      "cane",
+      "sureflap",
+      "porta per gatti",
+      "surefeed"
+    ],
+    "no": [
+      "sure",
+      "dyrepleie",
+      "kjæledyr",
+      "katt",
+      "hund",
+      "sureflap",
+      "kattelem",
+      "surefeed"
+    ],
+    "sv": [
+      "sure",
+      "husdjursvård",
+      "husdjur",
+      "katt",
+      "hund",
+      "sureflap",
+      "kattlucka",
+      "surefeed"
+    ],
+    "pl": [
+      "sure",
+      "opieka nad zwierzętami",
+      "zwierzę",
+      "kot",
+      "pies",
+      "sureflap",
+      "drzwiczki dla kota",
+      "surefeed"
+    ],
+    "ru": [
+      "sure",
+      "уход за питомцем",
+      "домашнее животное",
+      "кот",
+      "собака",
+      "sureflap",
+      "кошачья дверца",
+      "surefeed"
+    ],
+    "ko": [
+      "sure",
+      "반려동물 관리",
+      "반려동물",
+      "고양이",
+      "강아지",
+      "sureflap",
+      "고양이 출입구",
       "surefeed"
     ]
   },

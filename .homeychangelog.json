@@ -88,5 +88,8 @@
   },
   "2.0.9": {
     "en": "Bugfix authentication mechanism"
+  },
+  "2.0.10": {
+    "en": "Improve app settings"
   }
 }
