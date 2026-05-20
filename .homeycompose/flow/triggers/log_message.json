@@ -12,7 +12,8 @@
     "sv": "Appen genererar ett fel",
     "pl": "Aplikacja generuje błąd",
     "ru": "Приложение генерирует ошибку",
-    "ko": "앱이 오류를 생성합니다"
+    "ko": "앱이 오류를 생성합니다",
+    "ar": "يولد التطبيق خطأ"
   },
   "tokens": [
     {
@@ -30,7 +31,8 @@
         "sv": "allvarlighetsgrad",
         "pl": "dotkliwość",
         "ru": "серьезность",
-        "ko": "심각도"
+        "ko": "심각도",
+        "ar": "الحدة"
       },
       "example": {
         "en": "error",
@@ -44,7 +46,8 @@
         "sv": "fel",
         "pl": "błąd",
         "ru": "ошибка",
-        "ko": "오류"
+        "ko": "오류",
+        "ar": "خطأ"
       }
     },
     {
@@ -62,7 +65,8 @@
         "sv": "meddelande",
         "pl": "wiadomość",
         "ru": "сообщение",
-        "ko": "메시지"
+        "ko": "메시지",
+        "ar": "رسالة"
       },
       "example": {
         "en": "An error occur",
@@ -76,7 +80,8 @@
         "sv": "Ett fel inträffar",
         "pl": "Wystąpił błąd",
         "ru": "Происходит ошибка",
-        "ko": "오류가 발생합니다"
+        "ko": "오류가 발생합니다",
+        "ar": "حدث خطأ"
       }
     }
   ]

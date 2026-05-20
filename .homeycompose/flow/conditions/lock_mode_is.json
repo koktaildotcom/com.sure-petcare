@@ -12,7 +12,8 @@
     "sv": "Låsläge !{{är|är inte}}",
     "pl": "Tryb blokady !{{jest|nie jest}}",
     "ru": "Режим блокировки !{{включен|не включен}}",
-    "ko": "잠금 모드 !{{입니다|아닙니다}}"
+    "ko": "잠금 모드 !{{입니다|아닙니다}}",
+    "ar": "وضع القفل !{{is|ليس}}"
   },
   "titleFormatted": {
     "en": "Lock mode !{{is|is not}} [[lock_mode]]",
@@ -26,7 +27,8 @@
     "sv": "Låsläge !{{är|är inte}} [[lock_mode]]",
     "pl": "Tryb blokady !{{jest|nie jest}} [[lock_mode]]",
     "ru": "Режим блокировки !{{включен|не включен}} [[lock_mode]]",
-    "ko": "잠금 모드 !{{입니다|아닙니다}} [[lock_mode]]"
+    "ko": "잠금 모드 !{{입니다|아닙니다}} [[lock_mode]]",
+    "ar": "وضع القفل !{{هو|ليس}} [[lock_mode]]"
   },
   "args": [
     {
@@ -43,7 +45,8 @@
         "sv": "Låsläge",
         "pl": "Tryb blokady",
         "ru": "Режим блокировки",
-        "ko": "잠금 모드"
+        "ko": "잠금 모드",
+        "ar": "وضع القفل"
       },
       "type": "dropdown",
       "values": [
@@ -61,7 +64,8 @@
             "sv": "Öppen",
             "pl": "Otwarty",
             "ru": "Открыто",
-            "ko": "열림"
+            "ko": "열림",
+            "ar": "افتح"
           }
         },
         {
@@ -78,7 +82,8 @@
             "sv": "Behåll inne",
             "pl": "Pozostawić wewnątrz",
             "ru": "Оставить внутри",
-            "ko": "안에 유지"
+            "ko": "안에 유지",
+            "ar": "ابق بالداخل"
           }
         },
         {
@@ -95,7 +100,8 @@
             "sv": "Behåll ute",
             "pl": "Pozostawić na zewnątrz",
             "ru": "Оставить снаружи",
-            "ko": "밖에 유지"
+            "ko": "밖에 유지",
+            "ar": "ابقَ في الخارج"
           }
         },
         {
@@ -112,7 +118,8 @@
             "sv": "Lås båda riktningar",
             "pl": "Zablokuj obie strony",
             "ru": "Заблокировать в обе стороны",
-            "ko": "양방향 잠금"
+            "ko": "양방향 잠금",
+            "ar": "قفل في كلا الاتجاهين"
           }
         }
       ],

@@ -1,8 +1,8 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.sure-petcare",
-  "version": "2.0.10",
-  "compatibility": ">=5.0.0",
+  "version": "3.0.0",
+  "compatibility": ">=12.2.0",
   "platforms": [
     "local"
   ],
@@ -202,6 +202,56 @@
   "flow": {
     "triggers": [
       {
+        "id": "alarm_offline_false",
+        "title": {
+          "en": "The connection to the hub is online",
+          "nl": "De verbinding met de hub is online",
+          "da": "Forbindelsen til hubben er online",
+          "de": "Die Verbindung zum Hub ist online.",
+          "es": "La conexión al hub está en línea.",
+          "fr": "La connexion au hub est en ligne.",
+          "it": "La connessione all'hub è online.",
+          "no": "Tilkoblingen til huben er online",
+          "sv": "Anslutningen till hubben är online",
+          "pl": "Połączenie z hubem jest aktywne",
+          "ru": "Соединение с хабом установлено",
+          "ko": "허브와의 연결이 온라인 상태입니다.",
+          "ar": "الاتصال بالمحور متصل بالإنترنت"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=felaqua-connect"
+          }
+        ]
+      },
+      {
+        "id": "alarm_offline_true",
+        "title": {
+          "en": "The connection to the hub is offline",
+          "nl": "De verbinding met de hub is offline",
+          "da": "Forbindelsen til hubben er offline",
+          "de": "Die Verbindung zum Hub ist offline.",
+          "es": "La conexión con el hub está desconectada.",
+          "fr": "La connexion au hub est hors ligne.",
+          "it": "La connessione all'hub è offline.",
+          "no": "Tilkoblingen til huben er frakoblet.",
+          "sv": "Anslutningen till hubben är offline",
+          "pl": "Połączenie z hubem jest offline.",
+          "ru": "Соединение с хабом отсутствует",
+          "ko": "허브와의 연결이 오프라인 상태입니다.",
+          "ar": "الاتصال بالمحور غير متصل بالإنترنت"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=felaqua-connect"
+          }
+        ]
+      },
+      {
         "id": "bowl_has_been_refilled",
         "title": {
           "en": "A bowl has been refilled",
@@ -215,7 +265,8 @@
           "sv": "En skål har fyllts på",
           "pl": "Miska została uzupełniona",
           "ru": "Миска была пополнена",
-          "ko": "그릇이 다시 채워졌습니다"
+          "ko": "그릇이 다시 채워졌습니다",
+          "ar": "تم إعادة ملء الوعاء"
         },
         "tokens": [
           {
@@ -233,7 +284,8 @@
               "sv": "Från vilken skål",
               "pl": "Z której miski",
               "ru": "Из какой миски",
-              "ko": "어떤 그릇에서"
+              "ko": "어떤 그릇에서",
+              "ar": "من أي وعاء؟"
             },
             "example": {
               "en": "Left",
@@ -247,7 +299,8 @@
               "sv": "Vänster",
               "pl": "Lewo",
               "ru": "Лево",
-              "ko": "왼쪽"
+              "ko": "왼쪽",
+              "ar": "يسار"
             }
           },
           {
@@ -265,7 +318,8 @@
               "sv": "Mängd i gram",
               "pl": "Ilość w gramach",
               "ru": "Количество в граммах",
-              "ko": "그램 단위 양"
+              "ko": "그램 단위 양",
+              "ar": "الكمية بالجرامات"
             },
             "example": 1.2
           }
@@ -275,6 +329,207 @@
             "name": "device",
             "type": "device",
             "filter": "driver_id=surefeed-petfeeder-connect"
+          }
+        ]
+      },
+      {
+        "id": "felaqua_fill_level_changed",
+        "title": {
+          "en": "The fill level has changed",
+          "nl": "Het vulniveau is veranderd",
+          "da": "Fyldningsniveauet er ændret",
+          "de": "Der Füllstand hat sich geändert.",
+          "es": "El nivel de llenado ha cambiado.",
+          "fr": "Le niveau de remplissage a changé",
+          "it": "Il livello di riempimento è cambiato",
+          "no": "Fyllingsnivået har endret seg",
+          "sv": "Fyllnadsnivån har ändrats",
+          "pl": "Poziom napełnienia się zmienił",
+          "ru": "Уровень наполнения изменился",
+          "ko": "충전 수준이 변경되었습니다.",
+          "ar": "تم تغيير مستوى الملء"
+        },
+        "tokens": [
+          {
+            "name": "fill_level",
+            "type": "number",
+            "title": {
+              "en": "Fill level",
+              "nl": "Vulniveau",
+              "da": "Fyldningsniveau",
+              "de": "Füllstand",
+              "es": "Nivel de llenado",
+              "fr": "Niveau de remplissage",
+              "it": "Livello di riempimento",
+              "no": "Fyllingsnivå",
+              "sv": "Fyllnadsnivå",
+              "pl": "Poziom napełnienia",
+              "ru": "Уровень наполнения",
+              "ko": "충전 수준",
+              "ar": "مستوى الامتلاء"
+            },
+            "units": {
+              "en": "%",
+              "nl": "%",
+              "da": "%",
+              "de": "%",
+              "es": "%",
+              "fr": "%",
+              "it": "%",
+              "no": "%",
+              "sv": "%",
+              "pl": "%",
+              "ru": "%",
+              "ko": "%",
+              "ar": "٪"
+            },
+            "example": 3
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=felaqua-connect"
+          }
+        ]
+      },
+      {
+        "id": "felaqua_fill_level_less_than",
+        "title": {
+          "en": "The fill level became less than...",
+          "nl": "Het vulniveau wordt minder dan...",
+          "da": "Fyldningsniveauet blev mindre end...",
+          "de": "Der Füllstand ist unter... gesunken.",
+          "es": "El nivel de llenado se volvió menor que...",
+          "fr": "Le niveau de remplissage est devenu inférieur à...",
+          "it": "Il livello di riempimento è diventato inferiore a...",
+          "no": "Fyllingsnivået ble mindre enn...",
+          "sv": "Fyllnadsnivån blev mindre än...",
+          "pl": "Poziom napełnienia spadł poniżej...",
+          "ru": "Уровень наполнения стал меньше, чем...",
+          "ko": "충전 수준이 ...보다 낮아졌습니다.",
+          "ar": "مستوى الملء أصبح أقل من..."
+        },
+        "titleFormatted": {
+          "en": "The fill level became less than [[fill_level]]%",
+          "nl": "Het vulniveau wordt minder dan [[fill_level]]%",
+          "da": "Fyldningsniveauet blev mindre end [[fill_level]]%",
+          "de": "Der Füllstand ist auf weniger als [[fill_level]]% gesunken.",
+          "es": "El nivel de llenado se redujo a menos del [[fill_level]]%.",
+          "fr": "Le niveau de remplissage est devenu inférieur à [[fill_level]]%.",
+          "it": "Il livello di riempimento è sceso sotto il [[fill_level]]%",
+          "no": "Fyllingsnivået ble mindre enn [[fill_level]]%",
+          "sv": "Fyllnadsnivån blev mindre än [[fill_level]]%",
+          "pl": "Poziom napełnienia spadł poniżej [[fill_level]]%",
+          "ru": "Уровень заполнения стал меньше [[fill_level]]%",
+          "ko": "충전 수준이 [[fill_level]]% 미만이 되었습니다.",
+          "ar": "مستوى الملء أصبح أقل من [[fill_level]]%"
+        },
+        "tokens": [
+          {
+            "name": "fill_level",
+            "type": "number",
+            "title": {
+              "en": "Fill level",
+              "nl": "Vulniveau",
+              "da": "Fyldningsniveau",
+              "de": "Füllstand",
+              "es": "Nivel de llenado",
+              "fr": "Niveau de remplissage",
+              "it": "Livello di riempimento",
+              "no": "Fyllingsnivå",
+              "sv": "Fyllnadsnivå",
+              "pl": "Poziom napełnienia",
+              "ru": "Уровень наполнения",
+              "ko": "충전 수준",
+              "ar": "مستوى الامتلاء"
+            },
+            "units": {
+              "en": "%",
+              "nl": "%",
+              "da": "%",
+              "de": "%",
+              "es": "%",
+              "fr": "%",
+              "it": "%",
+              "no": "%",
+              "sv": "%",
+              "pl": "%",
+              "ru": "%",
+              "ko": "%",
+              "ar": "٪"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=felaqua-connect"
+          },
+          {
+            "name": "fill_level",
+            "type": "number",
+            "title": {
+              "en": "%",
+              "nl": "%",
+              "da": "%",
+              "de": "%",
+              "es": "%",
+              "fr": "%",
+              "it": "%",
+              "no": "%",
+              "sv": "%",
+              "pl": "%",
+              "ru": "%",
+              "ko": "%",
+              "ar": "٪"
+            },
+            "units": {
+              "en": "%",
+              "nl": "%",
+              "da": "%",
+              "de": "%",
+              "es": "%",
+              "fr": "%",
+              "it": "%",
+              "no": "%",
+              "sv": "%",
+              "pl": "%",
+              "ru": "%",
+              "ko": "%",
+              "ar": "٪"
+            },
+            "required": true,
+            "min": 1,
+            "max": 100,
+            "step": 1
+          }
+        ]
+      },
+      {
+        "id": "felaqua_was_refilled",
+        "title": {
+          "en": "The reservoir was refilled",
+          "nl": "Het reservoir is bijgevuld",
+          "da": "Reservoiret blev genopfyldt",
+          "de": "Das Reservoir wurde nachgefüllt.",
+          "es": "El depósito fue rellenado.",
+          "fr": "Le réservoir a été rempli.",
+          "it": "Il serbatoio è stato riempito di nuovo",
+          "no": "Reservoaret ble fylt opp igjen",
+          "sv": "Behållaren fylldes på igen",
+          "pl": "Zbiornik został napełniony ponownie",
+          "ru": "Резервуар был пополнен.",
+          "ko": "저수지가 다시 채워졌습니다.",
+          "ar": "تم إعادة ملء الخزان"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=felaqua-connect"
           }
         ]
       },
@@ -292,7 +547,8 @@
           "sv": "Läget för låsning har ändrats",
           "pl": "Tryb blokady został zmieniony",
           "ru": "Режим блокировки изменился",
-          "ko": "잠금 모드가 변경되었습니다"
+          "ko": "잠금 모드가 변경되었습니다",
+          "ar": "تم تغيير وضع القفل"
         },
         "tokens": [
           {
@@ -310,7 +566,8 @@
               "sv": "Låsläge",
               "pl": "Tryb blokady",
               "ru": "Режим блокировки",
-              "ko": "잠금 모드"
+              "ko": "잠금 모드",
+              "ar": "وضع القفل"
             },
             "example": {
               "en": "Open",
@@ -324,7 +581,8 @@
               "sv": "Öppen",
               "pl": "Otwarty",
               "ru": "Открыто",
-              "ko": "열림"
+              "ko": "열림",
+              "ar": "افتح"
             }
           }
         ],
@@ -347,7 +605,8 @@
                   "sv": "Öppen",
                   "pl": "Otwarty",
                   "ru": "Открыто",
-                  "ko": "열림"
+                  "ko": "열림",
+                  "ar": "افتح"
                 }
               },
               {
@@ -364,7 +623,8 @@
                   "sv": "Håll inne",
                   "pl": "Trzymać wewnątrz",
                   "ru": "Оставить внутри",
-                  "ko": "내부에 유지"
+                  "ko": "내부에 유지",
+                  "ar": "ابق بالداخل"
                 }
               },
               {
@@ -381,7 +641,8 @@
                   "sv": "Håll utanför",
                   "pl": "Trzymać na zewnątrz",
                   "ru": "Оставить снаружи",
-                  "ko": "외부에 유지"
+                  "ko": "외부에 유지",
+                  "ar": "ابقَ في الخارج"
                 }
               },
               {
@@ -398,7 +659,8 @@
                   "sv": "Lås båda riktningarna",
                   "pl": "Zablokuj w obu kierunkach",
                   "ru": "Заблокировать в обоих направлениях",
-                  "ko": "양방향 잠금"
+                  "ko": "양방향 잠금",
+                  "ar": "قفل في كلا الاتجاهين"
                 }
               }
             ],
@@ -420,7 +682,8 @@
           "sv": "Appen genererar ett fel",
           "pl": "Aplikacja generuje błąd",
           "ru": "Приложение генерирует ошибку",
-          "ko": "앱이 오류를 생성합니다"
+          "ko": "앱이 오류를 생성합니다",
+          "ar": "يولد التطبيق خطأ"
         },
         "tokens": [
           {
@@ -438,7 +701,8 @@
               "sv": "allvarlighetsgrad",
               "pl": "dotkliwość",
               "ru": "серьезность",
-              "ko": "심각도"
+              "ko": "심각도",
+              "ar": "الحدة"
             },
             "example": {
               "en": "error",
@@ -452,7 +716,8 @@
               "sv": "fel",
               "pl": "błąd",
               "ru": "ошибка",
-              "ko": "오류"
+              "ko": "오류",
+              "ar": "خطأ"
             }
           },
           {
@@ -470,7 +735,8 @@
               "sv": "meddelande",
               "pl": "wiadomość",
               "ru": "сообщение",
-              "ko": "메시지"
+              "ko": "메시지",
+              "ar": "رسالة"
             },
             "example": {
               "en": "An error occur",
@@ -484,7 +750,8 @@
               "sv": "Ett fel inträffar",
               "pl": "Wystąpił błąd",
               "ru": "Происходит ошибка",
-              "ko": "오류가 발생합니다"
+              "ko": "오류가 발생합니다",
+              "ar": "حدث خطأ"
             }
           }
         ]
@@ -503,7 +770,8 @@
           "sv": "Ett husdjur går iväg",
           "pl": "Zwierz odchodzi",
           "ru": "Питомец уходит",
-          "ko": "애완동물이 떠납니다"
+          "ko": "애완동물이 떠납니다",
+          "ar": "يغادر حيوان أليف"
         },
         "tokens": [
           {
@@ -521,7 +789,8 @@
               "sv": "Husdjur",
               "pl": "Zwierzak",
               "ru": "Питомец",
-              "ko": "애완동물"
+              "ko": "애완동물",
+              "ar": "حيوان أليف"
             },
             "example": {
               "en": "Mr. kat",
@@ -535,7 +804,8 @@
               "sv": "Mr. kat",
               "pl": "Mr. kat",
               "ru": "Mr. kat",
-              "ko": "Mr. kat"
+              "ko": "Mr. kat",
+              "ar": "السيد كات"
             }
           }
         ],
@@ -544,6 +814,87 @@
             "name": "device",
             "type": "device",
             "filter": "driver_id=sureflap-pet-door-connect|sureflap-cat-flap-connect"
+          }
+        ]
+      },
+      {
+        "id": "pet_drank",
+        "title": {
+          "en": "A pet drank",
+          "nl": "Een huisdier heeft gedronken",
+          "da": "Et kæledyr drak",
+          "de": "Ein Haustier hat getrunken.",
+          "es": "Una mascota bebió",
+          "fr": "Un animal a bu",
+          "it": "Un animale domestico ha bevuto",
+          "no": "Et kjæledyr drakk",
+          "sv": "Ett husdjur drack",
+          "pl": "Zwierzak pił",
+          "ru": "Питомец попил воды",
+          "ko": "애완동물이 물을 마셨어요.",
+          "ar": "شرب حيوان أليف"
+        },
+        "tokens": [
+          {
+            "name": "pet",
+            "type": "string",
+            "title": {
+              "en": "Pet",
+              "nl": "Huisdier",
+              "da": "Kæledyr",
+              "de": "Haustier",
+              "es": "Mascota",
+              "fr": "Animal de compagnie",
+              "it": "Animale domestico",
+              "no": "Kjæledyr",
+              "sv": "Husdjur",
+              "pl": "Zwierzak",
+              "ru": "Домашний питомец",
+              "ko": "애완동물",
+              "ar": "حيوان أليف"
+            },
+            "example": {
+              "en": "Mr. kat",
+              "nl": "Mr. kat",
+              "da": "Hr. kat",
+              "de": "Herr Kat",
+              "es": "Mr. kat",
+              "fr": "M. kat",
+              "it": "Mr. kat",
+              "no": "Mr. kat",
+              "sv": "Mr. kat",
+              "pl": "Pan kot",
+              "ru": "Мистер Кэт",
+              "ko": "미스터 캣",
+              "ar": "السيد كات"
+            }
+          },
+          {
+            "name": "amount",
+            "type": "number",
+            "title": {
+              "en": "Amount",
+              "nl": "Hoeveelheid",
+              "da": "Beløb",
+              "de": "Betrag",
+              "es": "Cantidad",
+              "fr": "Montant",
+              "it": "Importo",
+              "no": "Beløp",
+              "sv": "Belopp",
+              "pl": "Kwota",
+              "ru": "Сумма",
+              "ko": "금액",
+              "ar": "المبلغ"
+            },
+            "example": 12
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=felaqua-connect"
           }
         ]
       },
@@ -561,7 +912,8 @@
           "sv": "Ett husdjur har ätit",
           "pl": "Zwierzę domowe zjadło",
           "ru": "Питомец поел",
-          "ko": "반려동물이 먹었습니다"
+          "ko": "반려동물이 먹었습니다",
+          "ar": "لقد أكل حيوان أليف"
         },
         "tokens": [
           {
@@ -579,7 +931,8 @@
               "sv": "Husdjur",
               "pl": "Zwierzę",
               "ru": "Питомец",
-              "ko": "반려동물"
+              "ko": "반려동물",
+              "ar": "حيوان أليف"
             },
             "example": {
               "en": "Mr. kat",
@@ -593,7 +946,8 @@
               "sv": "Mr. kat",
               "pl": "Mr. kat",
               "ru": "Mr. kat",
-              "ko": "Mr. kat"
+              "ko": "Mr. kat",
+              "ar": "السيد كات"
             }
           },
           {
@@ -611,7 +965,8 @@
               "sv": "Från vilken skål",
               "pl": "Z której miski",
               "ru": "Из какой миски",
-              "ko": "어느 그릇에서"
+              "ko": "어느 그릇에서",
+              "ar": "من أي وعاء؟"
             },
             "example": {
               "en": "Left",
@@ -625,7 +980,8 @@
               "sv": "Vänster",
               "pl": "Lewo",
               "ru": "Слева",
-              "ko": "왼쪽"
+              "ko": "왼쪽",
+              "ar": "يسار"
             }
           },
           {
@@ -643,7 +999,8 @@
               "sv": "Mängd i gram",
               "pl": "Ilość w gramach",
               "ru": "Количество в граммах",
-              "ko": "그램 단위의 양"
+              "ko": "그램 단위의 양",
+              "ar": "الكمية بالجرامات"
             },
             "example": 1.2
           }
@@ -670,7 +1027,8 @@
           "sv": "Ett husdjur kom hem",
           "pl": "Zwierzę domowe wróciło do domu",
           "ru": "Питомец вернулся домой",
-          "ko": "애완동물이 집에 돌아왔습니다"
+          "ko": "애완동물이 집에 돌아왔습니다",
+          "ar": "عاد حيوان أليف إلى المنزل"
         },
         "tokens": [
           {
@@ -688,7 +1046,8 @@
               "sv": "Husdjur",
               "pl": "Zwierzę domowe",
               "ru": "Питомец",
-              "ko": "애완동물"
+              "ko": "애완동물",
+              "ar": "حيوان أليف"
             },
             "example": {
               "en": "Mr. kat",
@@ -702,7 +1061,8 @@
               "sv": "Mr. kat",
               "pl": "Mr. kat",
               "ru": "Mr. kat",
-              "ko": "Mr. kat"
+              "ko": "Mr. kat",
+              "ar": "السيد كات"
             }
           }
         ],
@@ -728,7 +1088,8 @@
           "sv": "Ett specifikt husdjur går bort",
           "pl": "Konkretny zwierzak odchodzi",
           "ru": "Конкретное животное уходит",
-          "ko": "특정 애완동물이 나갑니다"
+          "ko": "특정 애완동물이 나갑니다",
+          "ar": "يغادر حيوان أليف معين"
         },
         "titleFormatted": {
           "en": "[[pet]] goes away",
@@ -742,7 +1103,8 @@
           "sv": "[[pet]] går bort",
           "pl": "[[pet]] odchodzi",
           "ru": "[[pet]] уходит",
-          "ko": "[[pet]] 나갑니다"
+          "ko": "[[pet]] 나갑니다",
+          "ar": "[[pet]] يذهب بعيدًا"
         },
         "tokens": [
           {
@@ -760,11 +1122,23 @@
               "sv": "Husdjur",
               "pl": "Zwierzak",
               "ru": "Питомец",
-              "ko": "애완동물"
+              "ko": "애완동물",
+              "ar": "حيوان أليف"
             },
             "example": {
               "en": "Mr. kat",
-              "nl": "Mr. kat"
+              "nl": "Mr. kat",
+              "da": "Hr. kat",
+              "de": "Herr Kat",
+              "es": "Mr. kat",
+              "fr": "M. kat",
+              "it": "Mr. kat",
+              "no": "Mr. kat",
+              "sv": "Mr. kat",
+              "pl": "Pan Kot",
+              "ru": "Мистер Кэт",
+              "ko": "미스터 캣",
+              "ar": "السيد كات"
             }
           }
         ],
@@ -789,7 +1163,8 @@
               "sv": "Sök ditt husdjur",
               "pl": "Wyszukaj swoje zwierzę",
               "ru": "Найти питомца",
-              "ko": "애완동물 검색"
+              "ko": "애완동물 검색",
+              "ar": "ابحث عن حيوانك الأليف"
             },
             "placeholder": {
               "en": "Search your pet",
@@ -803,7 +1178,138 @@
               "sv": "Sök ditt husdjur",
               "pl": "Wyszukaj swoje zwierzę",
               "ru": "Найти питомца",
-              "ko": "애완동물 검색"
+              "ko": "애완동물 검색",
+              "ar": "ابحث عن حيوانك الأليف"
+            }
+          }
+        ]
+      },
+      {
+        "id": "specific_pet_drank",
+        "title": {
+          "en": "A specific pet drank",
+          "nl": "Een specifiek huisdier heeft gedronken",
+          "da": "En bestemt kæledyr drak",
+          "de": "Ein bestimmtes Haustier hat getrunken.",
+          "es": "Una mascota específica bebió",
+          "fr": "Un animal spécifique a bu",
+          "it": "Un animale specifico ha bevuto",
+          "no": "En bestemt kjæledyr drakk",
+          "sv": "En specifik husdjur drack",
+          "pl": "Konkretny zwierzak pił",
+          "ru": "Конкретное животное выпило",
+          "ko": "특정 반려동물이 물을 마셨습니다.",
+          "ar": "شرب حيوان أليف معين"
+        },
+        "titleFormatted": {
+          "en": "[[pet]] drank",
+          "nl": "[[pet]] heeft gedronken",
+          "da": "[[pet]] drak",
+          "de": "[[pet]] hat getrunken",
+          "es": "[[pet]] bebió",
+          "fr": "[[pet]] a bu",
+          "it": "[[pet]] ha bevuto",
+          "no": "[[pet]] drakk",
+          "sv": "[[pet]] drack",
+          "pl": "[[pet]] pił",
+          "ru": "[[pet]] попил(а)",
+          "ko": "[[pet]]가 물을 마셨어요",
+          "ar": "[[pet]] شرب"
+        },
+        "tokens": [
+          {
+            "name": "pet",
+            "type": "string",
+            "title": {
+              "en": "Pet",
+              "nl": "Huisdier",
+              "da": "Kæledyr",
+              "de": "Haustier",
+              "es": "Mascota",
+              "fr": "Animal de compagnie",
+              "it": "Animale domestico",
+              "no": "Kjæledyr",
+              "sv": "Husdjur",
+              "pl": "Zwierzak",
+              "ru": "Домашнее животное",
+              "ko": "애완동물",
+              "ar": "حيوان أليف"
+            },
+            "example": {
+              "en": "Mr. kat",
+              "nl": "Mr. kat",
+              "da": "Hr. kat",
+              "de": "Herr Kat",
+              "es": "Mr. kat",
+              "fr": "Mr. kat",
+              "it": "Mr. kat",
+              "no": "Mr. kat",
+              "sv": "Mr. kat",
+              "pl": "Pan Kot",
+              "ru": "Мистер Кот",
+              "ko": "미스터 캣",
+              "ar": "السيد كات"
+            }
+          },
+          {
+            "name": "amount",
+            "type": "number",
+            "title": {
+              "en": "Amount",
+              "nl": "Hoeveelheid",
+              "da": "Beløb",
+              "de": "Betrag",
+              "es": "Cantidad",
+              "fr": "Montant",
+              "it": "Importo",
+              "no": "Beløp",
+              "sv": "Belopp",
+              "pl": "Kwota",
+              "ru": "Количество",
+              "ko": "금액",
+              "ar": "المبلغ"
+            },
+            "example": 12
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=felaqua-connect"
+          },
+          {
+            "name": "pet",
+            "type": "autocomplete",
+            "title": {
+              "en": "Search your pet",
+              "nl": "Zoek je huisdier",
+              "da": "Søg efter dit kæledyr",
+              "de": "Suche dein Haustier",
+              "es": "Busca a tu mascota",
+              "fr": "Recherchez votre animal de compagnie",
+              "it": "Cerca il tuo animale domestico",
+              "no": "Søk etter kjæledyret ditt",
+              "sv": "Sök efter ditt husdjur",
+              "pl": "Wyszukaj swojego zwierzaka",
+              "ru": "Найдите вашего питомца",
+              "ko": "반려동물 검색",
+              "ar": "ابحث عن حيوانك الأليف"
+            },
+            "placeholder": {
+              "en": "Search your pet",
+              "nl": "Zoek je huisdier",
+              "da": "Søg efter dit kæledyr",
+              "de": "Suche dein Haustier",
+              "es": "Busca a tu mascota",
+              "fr": "Recherchez votre animal de compagnie",
+              "it": "Cerca il tuo animale domestico",
+              "no": "Søk etter kjæledyret ditt",
+              "sv": "Sök efter ditt husdjur",
+              "pl": "Wyszukaj swojego zwierzaka",
+              "ru": "Найдите вашего питомца",
+              "ko": "반려동물 검색",
+              "ar": "ابحث عن حيوانك الأليف"
             }
           }
         ]
@@ -822,7 +1328,8 @@
           "sv": "Ett specifikt husdjur har ätit",
           "pl": "Konkretny zwierzak zjadł",
           "ru": "Конкретное животное поело",
-          "ko": "특정한 애완동물이 먹었습니다"
+          "ko": "특정한 애완동물이 먹었습니다",
+          "ar": "حيوان أليف معين قد أكل"
         },
         "titleFormatted": {
           "en": "[[pet]] has eaten",
@@ -836,7 +1343,8 @@
           "sv": "[[pet]] har ätit",
           "pl": "[[pet]] zjadł",
           "ru": "[[pet]] поел",
-          "ko": "[[pet]] 먹었습니다"
+          "ko": "[[pet]] 먹었습니다",
+          "ar": "[[pet]] قد أكل"
         },
         "tokens": [
           {
@@ -854,7 +1362,8 @@
               "sv": "Husdjur",
               "pl": "Zwierzę domowe",
               "ru": "Домашнее животное",
-              "ko": "애완동물"
+              "ko": "애완동물",
+              "ar": "حيوان أليف"
             },
             "example": {
               "en": "Mr. kat",
@@ -868,7 +1377,8 @@
               "sv": "Mr. kat",
               "pl": "Pan kat",
               "ru": "Мистер кат",
-              "ko": "미스터 캣"
+              "ko": "미스터 캣",
+              "ar": "السيد كات"
             }
           },
           {
@@ -886,7 +1396,8 @@
               "sv": "Från vilken skål",
               "pl": "Z której miski",
               "ru": "Из какой миски",
-              "ko": "어떤 그릇에서"
+              "ko": "어떤 그릇에서",
+              "ar": "من أي وعاء؟"
             },
             "example": {
               "en": "Left",
@@ -900,7 +1411,8 @@
               "sv": "Vänster",
               "pl": "Lewo",
               "ru": "Лево",
-              "ko": "왼쪽"
+              "ko": "왼쪽",
+              "ar": "يسار"
             }
           },
           {
@@ -918,7 +1430,8 @@
               "sv": "Mängd i gram",
               "pl": "Ilość w gramach",
               "ru": "Количество в граммах",
-              "ko": "그램 단위의 양"
+              "ko": "그램 단위의 양",
+              "ar": "الكمية بالجرامات"
             },
             "example": 1.2
           }
@@ -944,7 +1457,8 @@
               "sv": "Sök ditt husdjur",
               "pl": "Szukaj swojego zwierzaka",
               "ru": "Найдите своего питомца",
-              "ko": "애완동물 검색"
+              "ko": "애완동물 검색",
+              "ar": "ابحث عن حيوانك الأليف"
             },
             "placeholder": {
               "en": "Search your pet",
@@ -958,7 +1472,8 @@
               "sv": "Sök ditt husdjur",
               "pl": "Szukaj swojego zwierzaka",
               "ru": "Найдите своего питомца",
-              "ko": "애완동물 검색"
+              "ko": "애완동물 검색",
+              "ar": "ابحث عن حيوانك الأليف"
             }
           }
         ]
@@ -977,7 +1492,8 @@
           "sv": "Ett specifikt husdjur kom hem",
           "pl": "Konkretny zwierzak wrócił do domu",
           "ru": "Конкретное домашнее животное вернулось домой",
-          "ko": "특정 애완동물이 집에 돌아왔습니다"
+          "ko": "특정 애완동물이 집에 돌아왔습니다",
+          "ar": "عاد حيوان أليف معين إلى المنزل"
         },
         "titleFormatted": {
           "en": "[[pet]] came home",
@@ -991,7 +1507,8 @@
           "sv": "[[pet]] kom hem",
           "pl": "[[pet]] wrócił do domu",
           "ru": "[[pet]] вернулся домой",
-          "ko": "[[pet]] 집에 돌아왔습니다"
+          "ko": "[[pet]] 집에 돌아왔습니다",
+          "ar": "[[pet]] عاد إلى المنزل"
         },
         "tokens": [
           {
@@ -1009,11 +1526,23 @@
               "sv": "Husdjur",
               "pl": "Zwierzak",
               "ru": "Домашнее животное",
-              "ko": "애완동물"
+              "ko": "애완동물",
+              "ar": "حيوان أليف"
             },
             "example": {
               "en": "Mr. kat",
-              "nl": "Mr. kat"
+              "nl": "Mr. kat",
+              "da": "Mr. kat",
+              "de": "Herr Kat",
+              "es": "Mr. kat",
+              "fr": "M. kat",
+              "it": "Mr. kat",
+              "no": "Mr. kat",
+              "sv": "Mr. kat",
+              "pl": "Pan Kot",
+              "ru": "Мистер Кэт",
+              "ko": "미스터 캣",
+              "ar": "السيد كات"
             }
           }
         ],
@@ -1038,7 +1567,8 @@
               "sv": "Sök ditt husdjur",
               "pl": "Wyszukaj swojego zwierzaka",
               "ru": "Поиск вашего питомца",
-              "ko": "애완동물 검색"
+              "ko": "애완동물 검색",
+              "ar": "ابحث عن حيوانك الأليف"
             },
             "placeholder": {
               "en": "Search your pet",
@@ -1052,7 +1582,8 @@
               "sv": "Sök ditt husdjur",
               "pl": "Wyszukaj swojego zwierzaka",
               "ru": "Поиск вашего питомца",
-              "ko": "애완동물 검색"
+              "ko": "애완동물 검색",
+              "ar": "ابحث عن حيوانك الأليف"
             }
           }
         ]
@@ -1071,7 +1602,8 @@
           "sv": "Vikten har ändrats",
           "pl": "Waga została zmieniona",
           "ru": "Вес изменен",
-          "ko": "무게가 변경되었습니다"
+          "ko": "무게가 변경되었습니다",
+          "ar": "تم تغيير الوزن"
         },
         "tokens": [
           {
@@ -1089,7 +1621,8 @@
               "sv": "Från vilken skål",
               "pl": "Z której miski",
               "ru": "Из какой миски",
-              "ko": "어떤 그릇에서"
+              "ko": "어떤 그릇에서",
+              "ar": "من أي وعاء؟"
             },
             "example": {
               "en": "Left",
@@ -1103,7 +1636,8 @@
               "sv": "Vänster",
               "pl": "Lewa",
               "ru": "Лево",
-              "ko": "왼쪽"
+              "ko": "왼쪽",
+              "ar": "يسار"
             }
           },
           {
@@ -1121,7 +1655,8 @@
               "sv": "Mängd i gram",
               "pl": "Ilość w gramach",
               "ru": "Количество в граммах",
-              "ko": "그램 단위 양"
+              "ko": "그램 단위 양",
+              "ar": "الكمية بالجرامات"
             },
             "example": 1.2
           }
@@ -1137,6 +1672,31 @@
     ],
     "conditions": [
       {
+        "id": "alarm_offline",
+        "title": {
+          "en": "The connection to the hub is !{{online|offline}}",
+          "nl": "De verbinding met de hub is !{{online|offline}}",
+          "da": "Forbindelsen til hubben er !{{online|offline}}",
+          "de": "Die Verbindung zum Hub ist !{{online|offline}}",
+          "es": "La conexión al hub está !{{en línea|fuera de línea}}",
+          "fr": "La connexion au hub est !{{en ligne|hors ligne}}",
+          "it": "La connessione all'hub è !{{online|offline}}",
+          "no": "Tilkoblingen til huben er !{{online|offline}}",
+          "sv": "Anslutningen till hubben är !{{online|offline}}",
+          "pl": "Połączenie z hubem jest !{{online|offline}}",
+          "ru": "Соединение с хабом !{{онлайн|офлайн}}",
+          "ko": "허브와의 연결이 !{{온라인|오프라인}}입니다.",
+          "ar": "الاتصال بالمحور هو !{{متصل|غير متصل}}"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=felaqua-connect"
+          }
+        ]
+      },
+      {
         "id": "lock_mode_is",
         "title": {
           "en": "Lock mode !{{is|is not}}",
@@ -1150,7 +1710,8 @@
           "sv": "Låsläge !{{är|är inte}}",
           "pl": "Tryb blokady !{{jest|nie jest}}",
           "ru": "Режим блокировки !{{включен|не включен}}",
-          "ko": "잠금 모드 !{{입니다|아닙니다}}"
+          "ko": "잠금 모드 !{{입니다|아닙니다}}",
+          "ar": "وضع القفل !{{is|ليس}}"
         },
         "titleFormatted": {
           "en": "Lock mode !{{is|is not}} [[lock_mode]]",
@@ -1164,7 +1725,8 @@
           "sv": "Låsläge !{{är|är inte}} [[lock_mode]]",
           "pl": "Tryb blokady !{{jest|nie jest}} [[lock_mode]]",
           "ru": "Режим блокировки !{{включен|не включен}} [[lock_mode]]",
-          "ko": "잠금 모드 !{{입니다|아닙니다}} [[lock_mode]]"
+          "ko": "잠금 모드 !{{입니다|아닙니다}} [[lock_mode]]",
+          "ar": "وضع القفل !{{هو|ليس}} [[lock_mode]]"
         },
         "args": [
           {
@@ -1181,7 +1743,8 @@
               "sv": "Låsläge",
               "pl": "Tryb blokady",
               "ru": "Режим блокировки",
-              "ko": "잠금 모드"
+              "ko": "잠금 모드",
+              "ar": "وضع القفل"
             },
             "type": "dropdown",
             "values": [
@@ -1199,7 +1762,8 @@
                   "sv": "Öppen",
                   "pl": "Otwarty",
                   "ru": "Открыто",
-                  "ko": "열림"
+                  "ko": "열림",
+                  "ar": "افتح"
                 }
               },
               {
@@ -1216,7 +1780,8 @@
                   "sv": "Behåll inne",
                   "pl": "Pozostawić wewnątrz",
                   "ru": "Оставить внутри",
-                  "ko": "안에 유지"
+                  "ko": "안에 유지",
+                  "ar": "ابق بالداخل"
                 }
               },
               {
@@ -1233,7 +1798,8 @@
                   "sv": "Behåll ute",
                   "pl": "Pozostawić na zewnątrz",
                   "ru": "Оставить снаружи",
-                  "ko": "밖에 유지"
+                  "ko": "밖에 유지",
+                  "ar": "ابقَ في الخارج"
                 }
               },
               {
@@ -1250,7 +1816,8 @@
                   "sv": "Lås båda riktningar",
                   "pl": "Zablokuj obie strony",
                   "ru": "Заблокировать в обе стороны",
-                  "ko": "양방향 잠금"
+                  "ko": "양방향 잠금",
+                  "ar": "قفل في كلا الاتجاهين"
                 }
               }
             ],
@@ -1274,7 +1841,8 @@
           "sv": "Ställ in låsläget till:",
           "pl": "Ustaw tryb blokady na:",
           "ru": "Установить режим блокировки на:",
-          "ko": "잠금 모드를 다음으로 설정:"
+          "ko": "잠금 모드를 다음으로 설정:",
+          "ar": "اضبط وضع القفل على:"
         },
         "titleFormatted": {
           "en": "Set lock mode to [[lock_mode]]",
@@ -1288,7 +1856,8 @@
           "sv": "Ställ in låsläget till [[lock_mode]]",
           "pl": "Ustaw tryb blokady na [[lock_mode]]",
           "ru": "Установить режим блокировки на [[lock_mode]]",
-          "ko": "잠금 모드를 [[lock_mode]](으)로 설정"
+          "ko": "잠금 모드를 [[lock_mode]](으)로 설정",
+          "ar": "اضبط وضع القفل على [[lock_mode]]"
         },
         "args": [
           {
@@ -1304,7 +1873,8 @@
               "sv": "Låsläge",
               "pl": "Tryb blokady",
               "ru": "Режим блокировки",
-              "ko": "잠금 모드"
+              "ko": "잠금 모드",
+              "ar": "وضع القفل"
             },
             "name": "lock_mode",
             "type": "dropdown",
@@ -1323,7 +1893,8 @@
                   "sv": "Öppen",
                   "pl": "Otwarty",
                   "ru": "Открыто",
-                  "ko": "열림"
+                  "ko": "열림",
+                  "ar": "افتح"
                 }
               },
               {
@@ -1340,7 +1911,8 @@
                   "sv": "Stanna inne",
                   "pl": "Zostań wewnątrz",
                   "ru": "Остаться внутри",
-                  "ko": "안에 있도록"
+                  "ko": "안에 있도록",
+                  "ar": "ابق بالداخل"
                 }
               },
               {
@@ -1357,7 +1929,8 @@
                   "sv": "Stanna ute",
                   "pl": "Zostań na zewnątrz",
                   "ru": "Остаться снаружи",
-                  "ko": "밖에 있도록"
+                  "ko": "밖에 있도록",
+                  "ar": "ابقَ في الخارج"
                 }
               },
               {
@@ -1374,7 +1947,8 @@
                   "sv": "Lås båda vägarna",
                   "pl": "Zablokuj w obu kierunkach",
                   "ru": "Заблокировать в обе стороны",
-                  "ko": "양방향 잠금"
+                  "ko": "양방향 잠금",
+                  "ar": "قفل في كلا الاتجاهين"
                 }
               }
             ],
@@ -1385,6 +1959,103 @@
     ]
   },
   "drivers": [
+    {
+      "id": "felaqua-connect",
+      "name": {
+        "en": "Felaqua Connect",
+        "nl": "Felaqua Connect",
+        "da": "Felaqua Connect",
+        "de": "Felaqua Connect",
+        "es": "Felaqua Connect",
+        "fr": "Felaqua Connect",
+        "it": "Felaqua Connect",
+        "no": "Felaqua Connect",
+        "sv": "Felaqua Connect",
+        "pl": "Felaqua Connect",
+        "ru": "Felaqua Connect",
+        "ko": "펠라콰 커넥트",
+        "ar": "فيلاكو كونكت"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
+      "class": "other",
+      "capabilities": [
+        "measure_battery",
+        "measure_fill_level",
+        "alarm_offline",
+        "measure_signal_strength"
+      ],
+      "images": {
+        "large": "/drivers/felaqua-connect/assets/images/large.png",
+        "small": "/drivers/felaqua-connect/assets/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "loading",
+          "template": "loading"
+        },
+        {
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "../assets/login.svg",
+            "usernameLabel": {
+              "en": "E-mail address",
+              "nl": "E-mail adres",
+              "da": "E-mail adresse",
+              "de": "E-Mail-Adresse",
+              "es": "Dirección de correo electrónico",
+              "fr": "Adresse e-mail",
+              "it": "Indirizzo e-mail",
+              "no": "E-postadresse",
+              "sv": "E-postadress",
+              "pl": "Adres e-mail",
+              "ru": "Адрес электронной почты",
+              "ko": "이메일 주소",
+              "ar": "عنوان البريد الإلكتروني"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord",
+              "da": "Adgangskode",
+              "de": "Passwort",
+              "es": "Contraseña",
+              "fr": "Mot de passe",
+              "it": "Password",
+              "no": "Passord",
+              "sv": "Lösenord",
+              "pl": "Hasło",
+              "ru": "Пароль",
+              "ko": "비밀번호",
+              "ar": "كلمة المرور"
+            }
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_device"
+          }
+        },
+        {
+          "id": "add_device",
+          "template": "add_devices"
+        }
+      ],
+      "energy": {
+        "batteries": [
+          "C",
+          "C",
+          "C",
+          "C"
+        ]
+      }
+    },
     {
       "id": "surefeed-petfeeder-connect",
       "name": {
@@ -1399,7 +2070,8 @@
         "sv": "Surefeed Mikrochip Matningsstation",
         "pl": "Surefeed Mikroczipowy Podajnik Karmy",
         "ru": "Surefeed Микрочип Кормушка",
-        "ko": "Surefeed 마이크로칩 급이기"
+        "ko": "Surefeed 마이크로칩 급이기",
+        "ar": "Surefeed مايكروتشيب بيتفيدير"
       },
       "platforms": [
         "local"
@@ -1425,7 +2097,8 @@
             "sv": "Vikt vänster skål",
             "pl": "Waga miski po lewej",
             "ru": "Вес левой миски",
-            "ko": "왼쪽 그릇 무게"
+            "ko": "왼쪽 그릇 무게",
+            "ar": "وزن الوعاء الأيسر"
           },
           "decimals": 2
         },
@@ -1442,7 +2115,8 @@
             "sv": "Vikt höger skål",
             "pl": "Waga miski po prawej",
             "ru": "Вес правой миски",
-            "ko": "오른쪽 그릇 무게"
+            "ko": "오른쪽 그릇 무게",
+            "ar": "وعاء الوزن الأيمن"
           },
           "decimals": 2
         },
@@ -1459,7 +2133,8 @@
             "sv": "Vikt skål",
             "pl": "Waga miski",
             "ru": "Вес миски",
-            "ko": "그릇 무게"
+            "ko": "그릇 무게",
+            "ar": "وعاء الوزن"
           },
           "decimals": 2
         }
@@ -1490,7 +2165,8 @@
               "sv": "E-postadress",
               "pl": "Adres e-mail",
               "ru": "Адрес электронной почты",
-              "ko": "이메일 주소"
+              "ko": "이메일 주소",
+              "ar": "عنوان البريد الإلكتروني"
             },
             "passwordLabel": {
               "en": "Password",
@@ -1504,7 +2180,8 @@
               "sv": "Lösenord",
               "pl": "Hasło",
               "ru": "Пароль",
-              "ko": "비밀번호"
+              "ko": "비밀번호",
+              "ar": "كلمة المرور"
             }
           }
         },
@@ -1522,7 +2199,10 @@
       ],
       "energy": {
         "batteries": [
-          "OTHER"
+          "C",
+          "C",
+          "C",
+          "C"
         ]
       },
       "settings": [
@@ -1540,7 +2220,8 @@
             "sv": "Enhetsinformation",
             "pl": "Informacje o urządzeniu",
             "ru": "Информация об устройстве",
-            "ko": "장치 정보"
+            "ko": "장치 정보",
+            "ar": "معلومات الجهاز"
           },
           "children": [
             {
@@ -1558,7 +2239,8 @@
                 "sv": "Skåltyp",
                 "pl": "Typ miski",
                 "ru": "Тип миски",
-                "ko": "그릇 종류"
+                "ko": "그릇 종류",
+                "ar": "نوع الوعاء"
               },
               "value": "single",
               "values": [
@@ -1576,7 +2258,8 @@
                     "sv": "Enkel skål",
                     "pl": "Pojedyncza miska",
                     "ru": "Одинарная миска",
-                    "ko": "단일 그릇"
+                    "ko": "단일 그릇",
+                    "ar": "وعاء واحد"
                   }
                 },
                 {
@@ -1593,7 +2276,8 @@
                     "sv": "Dubbel skål",
                     "pl": "Podwójna miska",
                     "ru": "Двойная миска",
-                    "ko": "이중 그릇"
+                    "ko": "이중 그릇",
+                    "ar": "وعاء مزدوج"
                   }
                 }
               ]
@@ -1615,7 +2299,8 @@
         "sv": "Sureflap Kattlucka Connect",
         "pl": "Sureflap Drzwiczki Connect",
         "ru": "Sureflap Кошачья Дверца Connect",
-        "ko": "Sureflap 고양이 플랩 Connect"
+        "ko": "Sureflap 고양이 플랩 Connect",
+        "ar": "Sureflap Cat Flap Connect"
       },
       "platforms": [
         "local"
@@ -1654,7 +2339,8 @@
               "sv": "E-postadress",
               "pl": "Adres e-mail",
               "ru": "Адрес электронной почты",
-              "ko": "이메일 주소"
+              "ko": "이메일 주소",
+              "ar": "عنوان البريد الإلكتروني"
             },
             "passwordLabel": {
               "en": "Password",
@@ -1668,7 +2354,8 @@
               "sv": "Lösenord",
               "pl": "Hasło",
               "ru": "Пароль",
-              "ko": "비밀번호"
+              "ko": "비밀번호",
+              "ar": "كلمة المرور"
             }
           }
         },
@@ -1707,7 +2394,8 @@
         "sv": "Sureflap Husdjursdörr Connect",
         "pl": "Sureflap Drzwiczki dla Zwierząt Connect",
         "ru": "Sureflap Дверца для домашних животных Connect",
-        "ko": "Sureflap 애완동물 문 Connect"
+        "ko": "Sureflap 애완동물 문 Connect",
+        "ar": "Sureflap Pet Door Connect"
       },
       "platforms": [
         "local"
@@ -1746,7 +2434,8 @@
               "sv": "E-postadress",
               "pl": "Adres e-mail",
               "ru": "Электронная почта",
-              "ko": "이메일 주소"
+              "ko": "이메일 주소",
+              "ar": "عنوان البريد الإلكتروني"
             },
             "passwordLabel": {
               "en": "Password",
@@ -1760,7 +2449,8 @@
               "sv": "Lösenord",
               "pl": "Hasło",
               "ru": "Пароль",
-              "ko": "비밀번호"
+              "ko": "비밀번호",
+              "ar": "كلمة المرور"
             }
           }
         },
@@ -1785,6 +2475,132 @@
     }
   ],
   "capabilities": {
+    "alarm_offline": {
+      "id": "alarm_offline",
+      "type": "boolean",
+      "title": {
+        "en": "Connection to the hub",
+        "nl": "Verbinding met de hub",
+        "da": "Forbindelse til hubben",
+        "de": "Verbindung zum Hub",
+        "es": "Conexión al hub",
+        "fr": "Connexion au hub",
+        "it": "Connessione all'hub",
+        "no": "Tilkobling til huben",
+        "sv": "Anslutning till hubben",
+        "pl": "Połączenie z hubem",
+        "ru": "Подключение к хабу",
+        "ko": "허브에 연결",
+        "ar": "الاتصال بالمحور"
+      },
+      "titleTrue": {
+        "en": "Offline",
+        "nl": "Offline",
+        "da": "Offline",
+        "de": "Offline",
+        "es": "Desconectado",
+        "fr": "Hors ligne",
+        "it": "Offline",
+        "no": "Frakoblet",
+        "sv": "Offline",
+        "pl": "Offline",
+        "ru": "Офлайн",
+        "ko": "오프라인",
+        "ar": "غير متصل بالإنترنت"
+      },
+      "titleFalse": {
+        "en": "Online",
+        "nl": "Online",
+        "da": "Online",
+        "de": "Online",
+        "es": "En línea",
+        "fr": "En ligne",
+        "it": "Online",
+        "no": "På nett",
+        "sv": "Online",
+        "pl": "Online",
+        "ru": "Онлайн",
+        "ko": "온라인",
+        "ar": "عبر الإنترنت"
+      },
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Offline",
+        "nl": "Offline",
+        "da": "Offline",
+        "de": "Offline",
+        "es": "Desconectado",
+        "fr": "Hors ligne",
+        "it": "Offline",
+        "no": "Frakoblet",
+        "sv": "Offline",
+        "pl": "Offline",
+        "ru": "Офлайн",
+        "ko": "오프라인",
+        "ar": "غير متصل بالإنترنت"
+      },
+      "insightsTitleFalse": {
+        "en": "Online",
+        "nl": "Online",
+        "da": "Online",
+        "de": "Online",
+        "es": "En línea",
+        "fr": "En ligne",
+        "it": "Online",
+        "no": "På nett",
+        "sv": "Online",
+        "pl": "Online",
+        "ru": "Онлайн",
+        "ko": "온라인",
+        "ar": "متصل"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "icon": "./assets/capabilities/hub.svg"
+    },
+    "measure_fill_level": {
+      "id": "measure_fill_level",
+      "type": "number",
+      "title": {
+        "en": "Fill level",
+        "nl": "Vulniveau",
+        "da": "Fyldningsniveau",
+        "de": "Füllstand",
+        "es": "Nivel de llenado",
+        "fr": "Niveau de remplissage",
+        "it": "Livello di riempimento",
+        "no": "Fyllingsnivå",
+        "sv": "Fyllnadsnivå",
+        "pl": "Poziom napełnienia",
+        "ru": "Уровень наполнения",
+        "ko": "충전 수준",
+        "ar": "مستوى الامتلاء"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "units": {
+        "en": "%",
+        "nl": "%",
+        "da": "%",
+        "de": "%",
+        "es": "%",
+        "fr": "%",
+        "it": "%",
+        "no": "%",
+        "sv": "%",
+        "pl": "%",
+        "ru": "%",
+        "ko": "%",
+        "ar": "٪"
+      },
+      "insights": true,
+      "min": 0,
+      "max": 100,
+      "decimals": 0,
+      "icon": "./assets/capabilities/water.svg"
+    },
     "sureflap_lock_mode": {
       "id": "sureflap_lock_mode",
       "type": "enum",
@@ -1800,7 +2616,8 @@
         "sv": "Låsläge",
         "pl": "Tryb zamka",
         "ru": "Режим блокировки",
-        "ko": "잠금 모드"
+        "ko": "잠금 모드",
+        "ar": "وضع القفل"
       },
       "values": [
         {
@@ -1817,7 +2634,8 @@
             "sv": "Öppen",
             "pl": "Otwarty",
             "ru": "Открыто",
-            "ko": "열림"
+            "ko": "열림",
+            "ar": "افتح"
           }
         },
         {
@@ -1834,7 +2652,8 @@
             "sv": "Håll inne",
             "pl": "Trzymaj wewnątrz",
             "ru": "Оставаться внутри",
-            "ko": "안쪽으로 유지"
+            "ko": "안쪽으로 유지",
+            "ar": "ابق بالداخل"
           }
         },
         {
@@ -1851,7 +2670,8 @@
             "sv": "Håll ute",
             "pl": "Trzymaj na zewnątrz",
             "ru": "Оставаться снаружи",
-            "ko": "바깥으로 유지"
+            "ko": "바깥으로 유지",
+            "ar": "ابقَ في الخارج"
           }
         },
         {
@@ -1868,7 +2688,8 @@
             "sv": "Lås båda vägar",
             "pl": "Zablokuj w obu kierunkach",
             "ru": "Заблокировать в обоих направлениях",
-            "ko": "양방향 잠금"
+            "ko": "양방향 잠금",
+            "ar": "قفل في كلا الاتجاهين"
           }
         }
       ],
@@ -1891,7 +2712,8 @@
         "sv": "Vikt i gram",
         "pl": "Waga w gramach",
         "ru": "Вес в граммах",
-        "ko": "무게 (그램)"
+        "ko": "무게 (그램)",
+        "ar": "الوزن بالجرامات"
       },
       "uiComponent": "sensor",
       "getable": true,
@@ -1908,7 +2730,8 @@
         "sv": "gram",
         "pl": "gramów",
         "ru": "граммы",
-        "ko": "그램"
+        "ko": "그램",
+        "ar": "جرامات"
       },
       "min": 0,
       "max": 500,

@@ -12,7 +12,8 @@
     "sv": "Ett husdjur går iväg",
     "pl": "Zwierz odchodzi",
     "ru": "Питомец уходит",
-    "ko": "애완동물이 떠납니다"
+    "ko": "애완동물이 떠납니다",
+    "ar": "يغادر حيوان أليف"
   },
   "tokens": [
     {
@@ -30,7 +31,8 @@
         "sv": "Husdjur",
         "pl": "Zwierzak",
         "ru": "Питомец",
-        "ko": "애완동물"
+        "ko": "애완동물",
+        "ar": "حيوان أليف"
       },
       "example": {
         "en": "Mr. kat",
@@ -44,7 +46,8 @@
         "sv": "Mr. kat",
         "pl": "Mr. kat",
         "ru": "Mr. kat",
-        "ko": "Mr. kat"
+        "ko": "Mr. kat",
+        "ar": "السيد كات"
       }
     }
   ],

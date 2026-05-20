@@ -1,6 +1,6 @@
 'use strict';
 
-const SurePetcareDriver = require('../../lib/sure-petcare-driver.js');
+const SurePetcareDriver = require('../../lib/sure-petcare-driver');
 
 module.exports = class SureflapCatFlapConnectDriver extends SurePetcareDriver {
 

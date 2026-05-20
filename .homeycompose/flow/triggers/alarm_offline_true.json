@@ -1,0 +1,25 @@
+{
+  "id": "alarm_offline_true",
+  "title": {
+    "en": "The connection to the hub is offline",
+    "nl": "De verbinding met de hub is offline",
+    "da": "Forbindelsen til hubben er offline",
+    "de": "Die Verbindung zum Hub ist offline.",
+    "es": "La conexión con el hub está desconectada.",
+    "fr": "La connexion au hub est hors ligne.",
+    "it": "La connessione all'hub è offline.",
+    "no": "Tilkoblingen til huben er frakoblet.",
+    "sv": "Anslutningen till hubben är offline",
+    "pl": "Połączenie z hubem jest offline.",
+    "ru": "Соединение с хабом отсутствует",
+    "ko": "허브와의 연결이 오프라인 상태입니다.",
+    "ar": "الاتصال بالمحور غير متصل بالإنترنت"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=felaqua-connect"
+    }
+  ]
+}

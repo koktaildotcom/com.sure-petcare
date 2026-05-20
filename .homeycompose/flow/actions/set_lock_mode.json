@@ -12,7 +12,8 @@
     "sv": "Ställ in låsläget till:",
     "pl": "Ustaw tryb blokady na:",
     "ru": "Установить режим блокировки на:",
-    "ko": "잠금 모드를 다음으로 설정:"
+    "ko": "잠금 모드를 다음으로 설정:",
+    "ar": "اضبط وضع القفل على:"
   },
   "titleFormatted": {
     "en": "Set lock mode to [[lock_mode]]",
@@ -26,7 +27,8 @@
     "sv": "Ställ in låsläget till [[lock_mode]]",
     "pl": "Ustaw tryb blokady na [[lock_mode]]",
     "ru": "Установить режим блокировки на [[lock_mode]]",
-    "ko": "잠금 모드를 [[lock_mode]](으)로 설정"
+    "ko": "잠금 모드를 [[lock_mode]](으)로 설정",
+    "ar": "اضبط وضع القفل على [[lock_mode]]"
   },
   "args": [
     {
@@ -42,7 +44,8 @@
         "sv": "Låsläge",
         "pl": "Tryb blokady",
         "ru": "Режим блокировки",
-        "ko": "잠금 모드"
+        "ko": "잠금 모드",
+        "ar": "وضع القفل"
       },
       "name": "lock_mode",
       "type": "dropdown",
@@ -61,7 +64,8 @@
             "sv": "Öppen",
             "pl": "Otwarty",
             "ru": "Открыто",
-            "ko": "열림"
+            "ko": "열림",
+            "ar": "افتح"
           }
         },
         {
@@ -78,7 +82,8 @@
             "sv": "Stanna inne",
             "pl": "Zostań wewnątrz",
             "ru": "Остаться внутри",
-            "ko": "안에 있도록"
+            "ko": "안에 있도록",
+            "ar": "ابق بالداخل"
           }
         },
         {
@@ -95,7 +100,8 @@
             "sv": "Stanna ute",
             "pl": "Zostań na zewnątrz",
             "ru": "Остаться снаружи",
-            "ko": "밖에 있도록"
+            "ko": "밖에 있도록",
+            "ar": "ابقَ في الخارج"
           }
         },
         {
@@ -112,7 +118,8 @@
             "sv": "Lås båda vägarna",
             "pl": "Zablokuj w obu kierunkach",
             "ru": "Заблокировать в обе стороны",
-            "ko": "양방향 잠금"
+            "ko": "양방향 잠금",
+            "ar": "قفل في كلا الاتجاهين"
           }
         }
       ],

@@ -1,5 +1,5 @@
 {
-  "extends": "athom",
+  "extends": "athom/homey-app",
   "rules": {
     "no-console": "off"
   }

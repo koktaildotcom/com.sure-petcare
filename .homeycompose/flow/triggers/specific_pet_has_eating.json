@@ -12,7 +12,8 @@
     "sv": "Ett specifikt husdjur har ätit",
     "pl": "Konkretny zwierzak zjadł",
     "ru": "Конкретное животное поело",
-    "ko": "특정한 애완동물이 먹었습니다"
+    "ko": "특정한 애완동물이 먹었습니다",
+    "ar": "حيوان أليف معين قد أكل"
   },
   "titleFormatted": {
     "en": "[[pet]] has eaten",
@@ -26,7 +27,8 @@
     "sv": "[[pet]] har ätit",
     "pl": "[[pet]] zjadł",
     "ru": "[[pet]] поел",
-    "ko": "[[pet]] 먹었습니다"
+    "ko": "[[pet]] 먹었습니다",
+    "ar": "[[pet]] قد أكل"
   },
   "tokens": [
     {
@@ -44,7 +46,8 @@
         "sv": "Husdjur",
         "pl": "Zwierzę domowe",
         "ru": "Домашнее животное",
-        "ko": "애완동물"
+        "ko": "애완동물",
+        "ar": "حيوان أليف"
       },
       "example": {
         "en": "Mr. kat",
@@ -58,7 +61,8 @@
         "sv": "Mr. kat",
         "pl": "Pan kat",
         "ru": "Мистер кат",
-        "ko": "미스터 캣"
+        "ko": "미스터 캣",
+        "ar": "السيد كات"
       }
     },
     {
@@ -76,7 +80,8 @@
         "sv": "Från vilken skål",
         "pl": "Z której miski",
         "ru": "Из какой миски",
-        "ko": "어떤 그릇에서"
+        "ko": "어떤 그릇에서",
+        "ar": "من أي وعاء؟"
       },
       "example": {
         "en": "Left",
@@ -90,7 +95,8 @@
         "sv": "Vänster",
         "pl": "Lewo",
         "ru": "Лево",
-        "ko": "왼쪽"
+        "ko": "왼쪽",
+        "ar": "يسار"
       }
     },
     {
@@ -108,7 +114,8 @@
         "sv": "Mängd i gram",
         "pl": "Ilość w gramach",
         "ru": "Количество в граммах",
-        "ko": "그램 단위의 양"
+        "ko": "그램 단위의 양",
+        "ar": "الكمية بالجرامات"
       },
       "example": 1.2
     }
@@ -134,7 +141,8 @@
         "sv": "Sök ditt husdjur",
         "pl": "Szukaj swojego zwierzaka",
         "ru": "Найдите своего питомца",
-        "ko": "애완동물 검색"
+        "ko": "애완동물 검색",
+        "ar": "ابحث عن حيوانك الأليف"
       },
       "placeholder": {
         "en": "Search your pet",
@@ -148,7 +156,8 @@
         "sv": "Sök ditt husdjur",
         "pl": "Szukaj swojego zwierzaka",
         "ru": "Найдите своего питомца",
-        "ko": "애완동물 검색"
+        "ko": "애완동물 검색",
+        "ar": "ابحث عن حيوانك الأليف"
       }
     }
   ]

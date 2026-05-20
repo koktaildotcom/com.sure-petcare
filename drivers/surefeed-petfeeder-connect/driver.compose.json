@@ -12,7 +12,8 @@
     "sv": "Surefeed Mikrochip Matningsstation",
     "pl": "Surefeed Mikroczipowy Podajnik Karmy",
     "ru": "Surefeed Микрочип Кормушка",
-    "ko": "Surefeed 마이크로칩 급이기"
+    "ko": "Surefeed 마이크로칩 급이기",
+    "ar": "Surefeed مايكروتشيب بيتفيدير"
   },
   "platforms": [
     "local"
@@ -38,7 +39,8 @@
         "sv": "Vikt vänster skål",
         "pl": "Waga miski po lewej",
         "ru": "Вес левой миски",
-        "ko": "왼쪽 그릇 무게"
+        "ko": "왼쪽 그릇 무게",
+        "ar": "وزن الوعاء الأيسر"
       },
       "decimals": 2
     },
@@ -55,7 +57,8 @@
         "sv": "Vikt höger skål",
         "pl": "Waga miski po prawej",
         "ru": "Вес правой миски",
-        "ko": "오른쪽 그릇 무게"
+        "ko": "오른쪽 그릇 무게",
+        "ar": "وعاء الوزن الأيمن"
       },
       "decimals": 2
     },
@@ -72,7 +75,8 @@
         "sv": "Vikt skål",
         "pl": "Waga miski",
         "ru": "Вес миски",
-        "ko": "그릇 무게"
+        "ko": "그릇 무게",
+        "ar": "وعاء الوزن"
       },
       "decimals": 2
     }
@@ -103,7 +107,8 @@
           "sv": "E-postadress",
           "pl": "Adres e-mail",
           "ru": "Адрес электронной почты",
-          "ko": "이메일 주소"
+          "ko": "이메일 주소",
+          "ar": "عنوان البريد الإلكتروني"
         },
         "passwordLabel": {
           "en": "Password",
@@ -117,7 +122,8 @@
           "sv": "Lösenord",
           "pl": "Hasło",
           "ru": "Пароль",
-          "ko": "비밀번호"
+          "ko": "비밀번호",
+          "ar": "كلمة المرور"
         }
       }
     },
@@ -135,7 +141,10 @@
   ],
   "energy": {
     "batteries": [
-      "OTHER"
+      "C",
+      "C",
+      "C",
+      "C"
     ]
   },
   "settings": [
@@ -153,7 +162,8 @@
         "sv": "Enhetsinformation",
         "pl": "Informacje o urządzeniu",
         "ru": "Информация об устройстве",
-        "ko": "장치 정보"
+        "ko": "장치 정보",
+        "ar": "معلومات الجهاز"
       },
       "children": [
         {
@@ -171,7 +181,8 @@
             "sv": "Skåltyp",
             "pl": "Typ miski",
             "ru": "Тип миски",
-            "ko": "그릇 종류"
+            "ko": "그릇 종류",
+            "ar": "نوع الوعاء"
           },
           "value": "single",
           "values": [
@@ -189,7 +200,8 @@
                 "sv": "Enkel skål",
                 "pl": "Pojedyncza miska",
                 "ru": "Одинарная миска",
-                "ko": "단일 그릇"
+                "ko": "단일 그릇",
+                "ar": "وعاء واحد"
               }
             },
             {
@@ -206,7 +218,8 @@
                 "sv": "Dubbel skål",
                 "pl": "Podwójna miska",
                 "ru": "Двойная миска",
-                "ko": "이중 그릇"
+                "ko": "이중 그릇",
+                "ar": "وعاء مزدوج"
               }
             }
           ]

@@ -1,0 +1,81 @@
+{
+  "id": "pet_drank",
+  "title": {
+    "en": "A pet drank",
+    "nl": "Een huisdier heeft gedronken",
+    "da": "Et kæledyr drak",
+    "de": "Ein Haustier hat getrunken.",
+    "es": "Una mascota bebió",
+    "fr": "Un animal a bu",
+    "it": "Un animale domestico ha bevuto",
+    "no": "Et kjæledyr drakk",
+    "sv": "Ett husdjur drack",
+    "pl": "Zwierzak pił",
+    "ru": "Питомец попил воды",
+    "ko": "애완동물이 물을 마셨어요.",
+    "ar": "شرب حيوان أليف"
+  },
+  "tokens": [
+    {
+      "name": "pet",
+      "type": "string",
+      "title": {
+        "en": "Pet",
+        "nl": "Huisdier",
+        "da": "Kæledyr",
+        "de": "Haustier",
+        "es": "Mascota",
+        "fr": "Animal de compagnie",
+        "it": "Animale domestico",
+        "no": "Kjæledyr",
+        "sv": "Husdjur",
+        "pl": "Zwierzak",
+        "ru": "Домашний питомец",
+        "ko": "애완동물",
+        "ar": "حيوان أليف"
+      },
+      "example": {
+        "en": "Mr. kat",
+        "nl": "Mr. kat",
+        "da": "Hr. kat",
+        "de": "Herr Kat",
+        "es": "Mr. kat",
+        "fr": "M. kat",
+        "it": "Mr. kat",
+        "no": "Mr. kat",
+        "sv": "Mr. kat",
+        "pl": "Pan kot",
+        "ru": "Мистер Кэт",
+        "ko": "미스터 캣",
+        "ar": "السيد كات"
+      }
+    },
+    {
+      "name": "amount",
+      "type": "number",
+      "title": {
+        "en": "Amount",
+        "nl": "Hoeveelheid",
+        "da": "Beløb",
+        "de": "Betrag",
+        "es": "Cantidad",
+        "fr": "Montant",
+        "it": "Importo",
+        "no": "Beløp",
+        "sv": "Belopp",
+        "pl": "Kwota",
+        "ru": "Сумма",
+        "ko": "금액",
+        "ar": "المبلغ"
+      },
+      "example": 12
+    }
+  ],
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=felaqua-connect"
+    }
+  ]
+}

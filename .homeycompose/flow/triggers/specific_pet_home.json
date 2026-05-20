@@ -12,7 +12,8 @@
     "sv": "Ett specifikt husdjur kom hem",
     "pl": "Konkretny zwierzak wrócił do domu",
     "ru": "Конкретное домашнее животное вернулось домой",
-    "ko": "특정 애완동물이 집에 돌아왔습니다"
+    "ko": "특정 애완동물이 집에 돌아왔습니다",
+    "ar": "عاد حيوان أليف معين إلى المنزل"
   },
   "titleFormatted": {
     "en": "[[pet]] came home",
@@ -26,7 +27,8 @@
     "sv": "[[pet]] kom hem",
     "pl": "[[pet]] wrócił do domu",
     "ru": "[[pet]] вернулся домой",
-    "ko": "[[pet]] 집에 돌아왔습니다"
+    "ko": "[[pet]] 집에 돌아왔습니다",
+    "ar": "[[pet]] عاد إلى المنزل"
   },
   "tokens": [
     {
@@ -44,11 +46,23 @@
         "sv": "Husdjur",
         "pl": "Zwierzak",
         "ru": "Домашнее животное",
-        "ko": "애완동물"
+        "ko": "애완동물",
+        "ar": "حيوان أليف"
       },
       "example": {
         "en": "Mr. kat",
-        "nl": "Mr. kat"
+        "nl": "Mr. kat",
+        "da": "Mr. kat",
+        "de": "Herr Kat",
+        "es": "Mr. kat",
+        "fr": "M. kat",
+        "it": "Mr. kat",
+        "no": "Mr. kat",
+        "sv": "Mr. kat",
+        "pl": "Pan Kot",
+        "ru": "Мистер Кэт",
+        "ko": "미스터 캣",
+        "ar": "السيد كات"
       }
     }
   ],
@@ -73,7 +87,8 @@
         "sv": "Sök ditt husdjur",
         "pl": "Wyszukaj swojego zwierzaka",
         "ru": "Поиск вашего питомца",
-        "ko": "애완동물 검색"
+        "ko": "애완동물 검색",
+        "ar": "ابحث عن حيوانك الأليف"
       },
       "placeholder": {
         "en": "Search your pet",
@@ -87,7 +102,8 @@
         "sv": "Sök ditt husdjur",
         "pl": "Wyszukaj swojego zwierzaka",
         "ru": "Поиск вашего питомца",
-        "ko": "애완동물 검색"
+        "ko": "애완동물 검색",
+        "ar": "ابحث عن حيوانك الأليف"
       }
     }
   ]

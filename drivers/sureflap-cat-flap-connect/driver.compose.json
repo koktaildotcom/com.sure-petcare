@@ -11,7 +11,8 @@
     "sv": "Sureflap Kattlucka Connect",
     "pl": "Sureflap Drzwiczki Connect",
     "ru": "Sureflap Кошачья Дверца Connect",
-    "ko": "Sureflap 고양이 플랩 Connect"
+    "ko": "Sureflap 고양이 플랩 Connect",
+    "ar": "Sureflap Cat Flap Connect"
   },
   "platforms": [
     "local"
@@ -50,7 +51,8 @@
           "sv": "E-postadress",
           "pl": "Adres e-mail",
           "ru": "Адрес электронной почты",
-          "ko": "이메일 주소"
+          "ko": "이메일 주소",
+          "ar": "عنوان البريد الإلكتروني"
         },
         "passwordLabel": {
           "en": "Password",
@@ -64,7 +66,8 @@
           "sv": "Lösenord",
           "pl": "Hasło",
           "ru": "Пароль",
-          "ko": "비밀번호"
+          "ko": "비밀번호",
+          "ar": "كلمة المرور"
         }
       }
     },

@@ -5,8 +5,8 @@ const SurePetcareClient = require('./lib/sure-petcare-api');
 
 module.exports = class SurePetcare extends Homey.App {
 
-  onInit() {
-    this.log('SureFlap is running...');
+  async onInit() {
+    this.log('SurePetcare is running...');
     this.syncInProgress = false;
     this.timeout = null;
 
@@ -82,11 +82,47 @@ module.exports = class SurePetcare extends Homey.App {
         return matches;
       });
 
+    this.homey.flow.getDeviceTriggerCard('specific_pet_drank')
+      .registerRunListener(async (args, state) => {
+        let match = false;
+        if (Object.prototype.hasOwnProperty.call(args, 'pet') && Object.prototype.hasOwnProperty.call(args.pet, 'id')) {
+          match = args.pet.id === state.petId;
+        }
+        return match;
+      })
+      .getArgument('pet')
+      .registerAutocompleteListener(async (query, args) => {
+        let matches = this.storedPets.filter(
+          pet => {
+            return pet.name.match(new RegExp(query, 'gi'));
+          },
+        );
+        if (!matches) {
+          matches = [];
+        }
+        return matches;
+      });
+
+    this.homey.flow.getDeviceTriggerCard('felaqua_fill_level_less_than')
+      .registerRunListener(async (args, state) => {
+        return state.fill_level < args.fill_level;
+      });
+
+    this.homey.flow.getConditionCard('alarm_offline')
+      .registerRunListener(async (args) => {
+        return args.device?.getCapabilityValue('alarm_offline') === false;
+      });
+
     this.homey.flow.getDeviceTriggerCard('pet_away');
     this.homey.flow.getDeviceTriggerCard('pet_home');
     this.homey.flow.getDeviceTriggerCard('pet_has_eating');
     this.homey.flow.getDeviceTriggerCard('weight_changed');
     this.homey.flow.getDeviceTriggerCard('bowl_has_been_refilled');
+    this.homey.flow.getDeviceTriggerCard('pet_drank');
+    this.homey.flow.getDeviceTriggerCard('felaqua_fill_level_changed');
+    this.homey.flow.getDeviceTriggerCard('felaqua_was_refilled');
+    this.homey.flow.getDeviceTriggerCard('alarm_offline_true');
+    this.homey.flow.getDeviceTriggerCard('alarm_offline_false');
 
     this.triggerError = this.homey.flow.getTriggerCard('log_message');
 
@@ -211,7 +247,7 @@ module.exports = class SurePetcare extends Homey.App {
           for (const pet of pets) {
             const storedPet = this.getStoredPet(pet.name);
             if (!storedPet) {
-              this.storedPets.push({ ...pet });
+              this.storedPets.push({...pet});
             }
           }
         }

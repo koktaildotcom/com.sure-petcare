@@ -1,0 +1,25 @@
+{
+  "id": "alarm_offline",
+  "title": {
+    "en": "The connection to the hub is !{{online|offline}}",
+    "nl": "De verbinding met de hub is !{{online|offline}}",
+    "da": "Forbindelsen til hubben er !{{online|offline}}",
+    "de": "Die Verbindung zum Hub ist !{{online|offline}}",
+    "es": "La conexión al hub está !{{en línea|fuera de línea}}",
+    "fr": "La connexion au hub est !{{en ligne|hors ligne}}",
+    "it": "La connessione all'hub è !{{online|offline}}",
+    "no": "Tilkoblingen til huben er !{{online|offline}}",
+    "sv": "Anslutningen till hubben är !{{online|offline}}",
+    "pl": "Połączenie z hubem jest !{{online|offline}}",
+    "ru": "Соединение с хабом !{{онлайн|офлайн}}",
+    "ko": "허브와의 연결이 !{{온라인|오프라인}}입니다.",
+    "ar": "الاتصال بالمحور هو !{{متصل|غير متصل}}"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=felaqua-connect"
+    }
+  ]
+}

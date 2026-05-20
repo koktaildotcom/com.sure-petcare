@@ -2,10 +2,10 @@
 
 const SurePetcareDriver = require('../../lib/sure-petcare-driver');
 
-module.exports = class SurefeedPetfeederConnectDriver extends SurePetcareDriver {
+module.exports = class FelaquaConnectDriver extends SurePetcareDriver {
 
   getProductId() {
-    return 4;
+    return 8;
   }
 
 };

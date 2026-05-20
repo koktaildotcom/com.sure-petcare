@@ -1,0 +1,114 @@
+{
+  "id": "felaqua_fill_level_less_than",
+  "title": {
+    "en": "The fill level became less than...",
+    "nl": "Het vulniveau wordt minder dan...",
+    "da": "Fyldningsniveauet blev mindre end...",
+    "de": "Der Füllstand ist unter... gesunken.",
+    "es": "El nivel de llenado se volvió menor que...",
+    "fr": "Le niveau de remplissage est devenu inférieur à...",
+    "it": "Il livello di riempimento è diventato inferiore a...",
+    "no": "Fyllingsnivået ble mindre enn...",
+    "sv": "Fyllnadsnivån blev mindre än...",
+    "pl": "Poziom napełnienia spadł poniżej...",
+    "ru": "Уровень наполнения стал меньше, чем...",
+    "ko": "충전 수준이 ...보다 낮아졌습니다.",
+    "ar": "مستوى الملء أصبح أقل من..."
+  },
+  "titleFormatted": {
+    "en": "The fill level became less than [[fill_level]]%",
+    "nl": "Het vulniveau wordt minder dan [[fill_level]]%",
+    "da": "Fyldningsniveauet blev mindre end [[fill_level]]%",
+    "de": "Der Füllstand ist auf weniger als [[fill_level]]% gesunken.",
+    "es": "El nivel de llenado se redujo a menos del [[fill_level]]%.",
+    "fr": "Le niveau de remplissage est devenu inférieur à [[fill_level]]%.",
+    "it": "Il livello di riempimento è sceso sotto il [[fill_level]]%",
+    "no": "Fyllingsnivået ble mindre enn [[fill_level]]%",
+    "sv": "Fyllnadsnivån blev mindre än [[fill_level]]%",
+    "pl": "Poziom napełnienia spadł poniżej [[fill_level]]%",
+    "ru": "Уровень заполнения стал меньше [[fill_level]]%",
+    "ko": "충전 수준이 [[fill_level]]% 미만이 되었습니다.",
+    "ar": "مستوى الملء أصبح أقل من [[fill_level]]%"
+  },
+  "tokens": [
+    {
+      "name": "fill_level",
+      "type": "number",
+      "title": {
+        "en": "Fill level",
+        "nl": "Vulniveau",
+        "da": "Fyldningsniveau",
+        "de": "Füllstand",
+        "es": "Nivel de llenado",
+        "fr": "Niveau de remplissage",
+        "it": "Livello di riempimento",
+        "no": "Fyllingsnivå",
+        "sv": "Fyllnadsnivå",
+        "pl": "Poziom napełnienia",
+        "ru": "Уровень наполнения",
+        "ko": "충전 수준",
+        "ar": "مستوى الامتلاء"
+      },
+      "units": {
+        "en": "%",
+        "nl": "%",
+        "da": "%",
+        "de": "%",
+        "es": "%",
+        "fr": "%",
+        "it": "%",
+        "no": "%",
+        "sv": "%",
+        "pl": "%",
+        "ru": "%",
+        "ko": "%",
+        "ar": "٪"
+      }
+    }
+  ],
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=felaqua-connect"
+    },
+    {
+      "name": "fill_level",
+      "type": "number",
+      "title": {
+        "en": "%",
+        "nl": "%",
+        "da": "%",
+        "de": "%",
+        "es": "%",
+        "fr": "%",
+        "it": "%",
+        "no": "%",
+        "sv": "%",
+        "pl": "%",
+        "ru": "%",
+        "ko": "%",
+        "ar": "٪"
+      },
+      "units": {
+        "en": "%",
+        "nl": "%",
+        "da": "%",
+        "de": "%",
+        "es": "%",
+        "fr": "%",
+        "it": "%",
+        "no": "%",
+        "sv": "%",
+        "pl": "%",
+        "ru": "%",
+        "ko": "%",
+        "ar": "٪"
+      },
+      "required": true,
+      "min": 1,
+      "max": 100,
+      "step": 1
+    }
+  ]
+}

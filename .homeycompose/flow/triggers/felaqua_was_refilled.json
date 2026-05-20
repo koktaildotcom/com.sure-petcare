@@ -1,0 +1,25 @@
+{
+  "id": "felaqua_was_refilled",
+  "title": {
+    "en": "The reservoir was refilled",
+    "nl": "Het reservoir is bijgevuld",
+    "da": "Reservoiret blev genopfyldt",
+    "de": "Das Reservoir wurde nachgefüllt.",
+    "es": "El depósito fue rellenado.",
+    "fr": "Le réservoir a été rempli.",
+    "it": "Il serbatoio è stato riempito di nuovo",
+    "no": "Reservoaret ble fylt opp igjen",
+    "sv": "Behållaren fylldes på igen",
+    "pl": "Zbiornik został napełniony ponownie",
+    "ru": "Резервуар был пополнен.",
+    "ko": "저수지가 다시 채워졌습니다.",
+    "ar": "تم إعادة ملء الخزان"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=felaqua-connect"
+    }
+  ]
+}

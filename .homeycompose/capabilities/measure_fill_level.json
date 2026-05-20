@@ -1,0 +1,42 @@
+{
+  "id": "measure_fill_level",
+  "type": "number",
+  "title": {
+    "en": "Fill level",
+    "nl": "Vulniveau",
+    "da": "Fyldningsniveau",
+    "de": "Füllstand",
+    "es": "Nivel de llenado",
+    "fr": "Niveau de remplissage",
+    "it": "Livello di riempimento",
+    "no": "Fyllingsnivå",
+    "sv": "Fyllnadsnivå",
+    "pl": "Poziom napełnienia",
+    "ru": "Уровень наполнения",
+    "ko": "충전 수준",
+    "ar": "مستوى الامتلاء"
+  },
+  "uiComponent": "sensor",
+  "getable": true,
+  "setable": false,
+  "units": {
+    "en": "%",
+    "nl": "%",
+    "da": "%",
+    "de": "%",
+    "es": "%",
+    "fr": "%",
+    "it": "%",
+    "no": "%",
+    "sv": "%",
+    "pl": "%",
+    "ru": "%",
+    "ko": "%",
+    "ar": "٪"
+  },
+  "insights": true,
+  "min": 0,
+  "max": 100,
+  "decimals": 0,
+  "icon": "./assets/capabilities/water.svg"
+}

@@ -13,7 +13,8 @@
     "sv": "Vikt i gram",
     "pl": "Waga w gramach",
     "ru": "Вес в граммах",
-    "ko": "무게 (그램)"
+    "ko": "무게 (그램)",
+    "ar": "الوزن بالجرامات"
   },
   "uiComponent": "sensor",
   "getable": true,
@@ -30,7 +31,8 @@
     "sv": "gram",
     "pl": "gramów",
     "ru": "граммы",
-    "ko": "그램"
+    "ko": "그램",
+    "ar": "جرامات"
   },
   "min": 0,
   "max": 500,

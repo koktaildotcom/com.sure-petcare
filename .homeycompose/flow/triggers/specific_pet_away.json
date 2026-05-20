@@ -12,7 +12,8 @@
     "sv": "Ett specifikt husdjur går bort",
     "pl": "Konkretny zwierzak odchodzi",
     "ru": "Конкретное животное уходит",
-    "ko": "특정 애완동물이 나갑니다"
+    "ko": "특정 애완동물이 나갑니다",
+    "ar": "يغادر حيوان أليف معين"
   },
   "titleFormatted": {
     "en": "[[pet]] goes away",
@@ -26,7 +27,8 @@
     "sv": "[[pet]] går bort",
     "pl": "[[pet]] odchodzi",
     "ru": "[[pet]] уходит",
-    "ko": "[[pet]] 나갑니다"
+    "ko": "[[pet]] 나갑니다",
+    "ar": "[[pet]] يذهب بعيدًا"
   },
   "tokens": [
     {
@@ -44,11 +46,23 @@
         "sv": "Husdjur",
         "pl": "Zwierzak",
         "ru": "Питомец",
-        "ko": "애완동물"
+        "ko": "애완동물",
+        "ar": "حيوان أليف"
       },
       "example": {
         "en": "Mr. kat",
-        "nl": "Mr. kat"
+        "nl": "Mr. kat",
+        "da": "Hr. kat",
+        "de": "Herr Kat",
+        "es": "Mr. kat",
+        "fr": "M. kat",
+        "it": "Mr. kat",
+        "no": "Mr. kat",
+        "sv": "Mr. kat",
+        "pl": "Pan Kot",
+        "ru": "Мистер Кэт",
+        "ko": "미스터 캣",
+        "ar": "السيد كات"
       }
     }
   ],
@@ -73,7 +87,8 @@
         "sv": "Sök ditt husdjur",
         "pl": "Wyszukaj swoje zwierzę",
         "ru": "Найти питомца",
-        "ko": "애완동물 검색"
+        "ko": "애완동물 검색",
+        "ar": "ابحث عن حيوانك الأليف"
       },
       "placeholder": {
         "en": "Search your pet",
@@ -87,7 +102,8 @@
         "sv": "Sök ditt husdjur",
         "pl": "Wyszukaj swoje zwierzę",
         "ru": "Найти питомца",
-        "ko": "애완동물 검색"
+        "ko": "애완동물 검색",
+        "ar": "ابحث عن حيوانك الأليف"
       }
     }
   ]

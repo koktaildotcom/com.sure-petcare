@@ -12,7 +12,8 @@
     "sv": "Ett husdjur kom hem",
     "pl": "Zwierzę domowe wróciło do domu",
     "ru": "Питомец вернулся домой",
-    "ko": "애완동물이 집에 돌아왔습니다"
+    "ko": "애완동물이 집에 돌아왔습니다",
+    "ar": "عاد حيوان أليف إلى المنزل"
   },
   "tokens": [
     {
@@ -30,7 +31,8 @@
         "sv": "Husdjur",
         "pl": "Zwierzę domowe",
         "ru": "Питомец",
-        "ko": "애완동물"
+        "ko": "애완동물",
+        "ar": "حيوان أليف"
       },
       "example": {
         "en": "Mr. kat",
@@ -44,7 +46,8 @@
         "sv": "Mr. kat",
         "pl": "Mr. kat",
         "ru": "Mr. kat",
-        "ko": "Mr. kat"
+        "ko": "Mr. kat",
+        "ar": "السيد كات"
       }
     }
   ],
