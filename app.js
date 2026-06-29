@@ -121,8 +121,6 @@ module.exports = class SurePetcare extends Homey.App {
     this.homey.flow.getDeviceTriggerCard('pet_drank');
     this.homey.flow.getDeviceTriggerCard('felaqua_fill_level_changed');
     this.homey.flow.getDeviceTriggerCard('felaqua_was_refilled');
-    this.homey.flow.getDeviceTriggerCard('alarm_offline_true');
-    this.homey.flow.getDeviceTriggerCard('alarm_offline_false');
 
     this.triggerError = this.homey.flow.getTriggerCard('log_message');
 
