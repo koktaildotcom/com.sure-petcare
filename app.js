@@ -113,6 +113,28 @@ module.exports = class SurePetcare extends Homey.App {
         return args.device?.getCapabilityValue('alarm_offline') === false;
       });
 
+    this.homey.flow.getConditionCard('pet_is_home')
+      .registerRunListener(async (args) => {
+        let match = false;
+        if (Object.prototype.hasOwnProperty.call(args, 'pet') && Object.prototype.hasOwnProperty.call(args.pet, 'id')) {
+          const storedPet = this.storedPets.find((pet) => pet.id === args.pet.id);
+          match = storedPet?.position?.where === 1;
+        }
+        return match;
+      })
+      .getArgument('pet')
+      .registerAutocompleteListener(async (query, args) => {
+        let matches = this.storedPets.filter(
+          (pet) => {
+            return pet.name.match(new RegExp(query, 'gi'));
+          },
+        );
+        if (!matches) {
+          matches = [];
+        }
+        return matches;
+      });
+
     this.homey.flow.getDeviceTriggerCard('pet_away');
     this.homey.flow.getDeviceTriggerCard('pet_home');
     this.homey.flow.getDeviceTriggerCard('pet_has_eating');
