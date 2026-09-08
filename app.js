@@ -30,7 +30,7 @@ module.exports = class SurePetcare extends Homey.App {
       .getArgument('pet')
       .registerAutocompleteListener(async (query, args) => {
         let matches = this.storedPets.filter(
-          pet => {
+          (pet) => {
             return pet.name.match(new RegExp(query, 'gi'));
           },
         );
@@ -51,7 +51,7 @@ module.exports = class SurePetcare extends Homey.App {
       .getArgument('pet')
       .registerAutocompleteListener(async (query, args) => {
         let matches = this.storedPets.filter(
-          pet => {
+          (pet) => {
             return pet.name.match(new RegExp(query, 'gi'));
           },
         );
@@ -72,7 +72,7 @@ module.exports = class SurePetcare extends Homey.App {
       .getArgument('pet')
       .registerAutocompleteListener(async (query, args) => {
         let matches = this.storedPets.filter(
-          pet => {
+          (pet) => {
             return pet.name.match(new RegExp(query, 'gi'));
           },
         );
@@ -93,7 +93,7 @@ module.exports = class SurePetcare extends Homey.App {
       .getArgument('pet')
       .registerAutocompleteListener(async (query, args) => {
         let matches = this.storedPets.filter(
-          pet => {
+          (pet) => {
             return pet.name.match(new RegExp(query, 'gi'));
           },
         );
@@ -105,7 +105,7 @@ module.exports = class SurePetcare extends Homey.App {
 
     this.homey.flow.getDeviceTriggerCard('felaqua_fill_level_less_than')
       .registerRunListener(async (args, state) => {
-        return state.fill_level < args.fill_level;
+        return state.fill_level < args.fill_level && state.previous_fill_level >= args.fill_level;
       });
 
     this.homey.flow.getConditionCard('alarm_offline')
@@ -184,7 +184,7 @@ module.exports = class SurePetcare extends Homey.App {
    */
   unregisterDevice(device) {
     this.logMessage('log', `unregister device ${device.id}`);
-    this.devices = this.devices.filter(current => current.name !== device.name);
+    this.devices = this.devices.filter((current) => current.name !== device.name);
   }
 
   /**
@@ -193,7 +193,7 @@ module.exports = class SurePetcare extends Homey.App {
    * @param name
    */
   getStoredPet(name) {
-    return this.storedPets.find(storedPet => storedPet.name === name);
+    return this.storedPets.find((storedPet) => storedPet.name === name);
   }
 
   /**
@@ -239,19 +239,19 @@ module.exports = class SurePetcare extends Homey.App {
     }
 
     this.client.getStart()
-      .then(syncData => {
+      .then((syncData) => {
         const pets = this.getProperty(syncData, ['pets']);
         if (pets.length > 0) {
           for (const pet of pets) {
             const storedPet = this.getStoredPet(pet.name);
             if (!storedPet) {
-              this.storedPets.push({...pet});
+              this.storedPets.push({ ...pet });
             }
           }
         }
         return syncData;
       })
-      .then(syncData => {
+      .then((syncData) => {
         return this.devices.reduce((promise, device) => {
           promise.then(async () => {
             const pets = this.getProperty(syncData, ['pets']);
@@ -268,7 +268,7 @@ module.exports = class SurePetcare extends Homey.App {
           return Promise.resolve(syncData);
         }, Promise.resolve());
       })
-      .then(syncData => {
+      .then((syncData) => {
         return this.devices.reduce((promise, device) => {
           return promise.then(() => {
             return this.updateDevice(device, syncData);
@@ -279,7 +279,7 @@ module.exports = class SurePetcare extends Homey.App {
         this.logMessage('log', `Hub sync complete in: ${(new Date() - updateDevicesTime) / 1000} seconds`);
         this._setNewTimeout();
       })
-      .catch(error => {
+      .catch((error) => {
         this.logMessage('error', error.toString());
         this._setNewTimeout();
       });
@@ -289,7 +289,7 @@ module.exports = class SurePetcare extends Homey.App {
    * update the devices one by one
    */
   async updateDevice(device, data) {
-    const currentDevice = data.devices.find(deviceData => deviceData.id === device.id);
+    const currentDevice = data.devices.find((deviceData) => deviceData.id === device.id);
 
     if (!currentDevice) {
       return new Error(`Device ${device.name} not found`);
@@ -322,10 +322,10 @@ module.exports = class SurePetcare extends Homey.App {
     this.syncInProgress = false;
 
     if (this.timeout) {
-      clearTimeout(this.timeout);
+      this.homey.clearTimeout(this.timeout);
     }
 
-    this.timeout = setTimeout(this._synchronise.bind(this), interval);
+    this.timeout = this.homey.setTimeout(this._synchronise.bind(this), interval);
   }
 
   /**
