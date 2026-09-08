@@ -91,5 +91,8 @@
   },
   "2.0.10": {
     "en": "Improve app settings"
+  },
+  "3.0.0": {
+    "en": "Added support for the Felaqua Connect water dispenser, a pet is home condition card and insights for the bowl weights"
   }
 }
