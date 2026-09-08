@@ -17,6 +17,7 @@
     "ar": "الوزن بالجرامات"
   },
   "uiComponent": "sensor",
+  "insights": true,
   "getable": true,
   "setable": false,
   "units": {
