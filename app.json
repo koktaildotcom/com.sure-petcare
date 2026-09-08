@@ -20,7 +20,8 @@
     "sv": "Sure Petcare",
     "pl": "Sure Petcare",
     "ru": "Sure Petcare",
-    "ko": "Sure Petcare"
+    "ko": "Sure Petcare",
+    "ar": "Sure Petcare"
   },
   "description": {
     "en": "A smart way to keep your pets safe and healthy",
@@ -34,7 +35,8 @@
     "sv": "Ett smart sätt att hålla dina husdjur säkra och friska",
     "pl": "Inteligentny sposób na zapewnienie bezpieczeństwa i zdrowia twoich zwierząt",
     "ru": "Умный способ сохранить ваших питомцев в безопасности и здоровье",
-    "ko": "반려동물을 안전하고 건강하게 지키는 스마트한 방법"
+    "ko": "반려동물을 안전하고 건강하게 지키는 스마트한 방법",
+    "ar": "طريقة ذكية للحفاظ على سلامة وصحة حيواناتك الأليفة"
   },
   "category": [
     "localization",
@@ -160,6 +162,16 @@
       "sureflap",
       "고양이 출입구",
       "surefeed"
+    ],
+    "ar": [
+      "sure",
+      "رعاية الحيوانات الأليفة",
+      "حيوان أليف",
+      "قطة",
+      "كلب",
+      "sureflap",
+      "باب القطة",
+      "surefeed"
     ]
   },
   "homeyCommunityTopicId": 24127,
@@ -191,6 +203,14 @@
   "author": {
     "name": "Leendert De Kok",
     "email": "koktaildotcom@hotmail.com"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Bas-Jan de Ridder",
+        "email": "bas-janderidder@hotmail.com"
+      }
+    ]
   },
   "contributing": {
     "donate": {
