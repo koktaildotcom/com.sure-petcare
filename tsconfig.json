@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "commonjs",
+    "allowJs": true,
+    "checkJs": false,
+    "noEmit": true,
+    "types": [
+      "homey-apps-sdk-v3-types",
+      "node"
+    ]
+  },
+  "include": [
+    "app.js",
+    "lib/**/*.js",
+    "drivers/**/*.js"
+  ]
+}
